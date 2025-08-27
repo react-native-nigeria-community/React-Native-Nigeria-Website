@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+@import "tailwindcss";
+
+@theme {
+    /* Colors for h1, h2, h3, h4, h5, h6, p */
+    --color-primary: #161C2D;
+    --color-secondary: #FFEE00;
+    --color-accent: #F64B4B;
+    /* Background colors */
+    --color-bg-primary: #ffffff;
+    --color-bg-secondary: #161C2D;
+
+    /* Font families */
+    --font-rubik: 'Rubik', sans-serif;
+    --font-manrope: 'Manrope', sans-serif;
+};
