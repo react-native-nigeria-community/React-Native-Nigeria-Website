@@ -10,8 +10,15 @@
     /* Background colors */
     --color-bg-primary: #ffffff;
     --color-bg-secondary: #161C2D;
+    /* Border colors */
+    --color-border-primary: #E7E9ED;
 
     /* Font families */
     --font-rubik: 'Rubik', sans-serif;
     --font-manrope: 'Manrope', sans-serif;
-};
+}
+
+.monotone-noise {
+    /* ... */
+    background: #ffffff url('assets/svg/noise.svg');
+}
