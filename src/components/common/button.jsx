@@ -2,9 +2,9 @@ import React from "react";
 // import '../../index.css';
 
 const VARIANT_STYLES = {
-    primary: "bg-secondary rounded-lg text-primary font-rubik py-3.5 px-6 text-[18px] font-medium",
-    secondary: "bg-primary rounded-lg text-secondary w-[206px] font-rubik py-3.5 text-[18px] font-medium",
-    accent: "bg-primary border-2 border-border-primary rounded-lg text-secondary font-rubik py-3 px-[60px] text-[18px] font-medium",
+    primary: "bg-secondary rounded-lg text-primary font-rubik px-6 text-[18px] font-medium",
+    secondary: "bg-primary rounded-lg text-secondary w-[206px] font-rubik text-[18px] font-medium",
+    accent: "bg-primary border-2 border-border-primary rounded-lg text-secondary font-rubik px-[60px] text-[18px] font-medium",
 };
 
 const disableButton = false;
