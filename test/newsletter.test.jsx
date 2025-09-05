@@ -1,0 +1,44 @@
+import { render, screen, fireEvent } from "@testing-library/react";
+import "@testing-library/jest-dom";
+import Newsletter from "../src/components/sections/newsletter.jsx";
+
+// mock window.alert so it doesn’t actually pop up during test
+global.alert = jest.fn();
+
+describe("Newsletter Component", () => {
+    beforeEach(() => {
+        jest.clearAllMocks();
+    });
+
+    it("renders heading and subheading", () => {
+        render(<Newsletter />);
+        expect(screen.getByText("Subscribe to our newsletter")).toBeInTheDocument();
+        expect(
+            screen.getByText(/Stay updated with events, resources, and the latest in React Native./i)
+        ).toBeInTheDocument();
+    });
+
+    it("shows error when submitting invalid email", () => {
+        render(<Newsletter />);
+        const input = screen.getByPlaceholderText("Email address");
+        const button = screen.getByRole("button", { name: /subscribe/i });
+
+        fireEvent.change(input, { target: { value: "invalid-email" } });
+        fireEvent.click(button);
+
+        expect(screen.getByText("Please enter a valid email address.")).toBeInTheDocument();
+        expect(global.alert).not.toHaveBeenCalled();
+    });
+
+    it("calls alert and clears input when submitting valid email", () => {
+        render(<Newsletter />);
+        const input = screen.getByPlaceholderText("Email address");
+        const button = screen.getByRole("button", { name: /subscribe/i });
+
+        fireEvent.change(input, { target: { value: "test@example.com" } });
+        fireEvent.click(button);
+
+        expect(global.alert).toHaveBeenCalledWith("Subscribed with: test@example.com");
+        expect(input.value).toBe(""); // should clear after submit
+    });
+});
