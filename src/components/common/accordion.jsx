@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { ChevronDown, ChevronUp } from "lucide-react";
+import chevronDown from "../../assets/svg/chevrondown.svg";
+import chevronUp from "../../assets/svg/chevronup.svg";
 
 const AccordionItems = ({ title, children, isOpen, onClick }) => {
     return (
@@ -17,10 +18,11 @@ const AccordionItems = ({ title, children, isOpen, onClick }) => {
                     {title}
                 </span>
                 {isOpen ? (
-                    <ChevronUp className="w-5 h-5 text-primary transition-transform duration-300" />
+                        <img src={chevronUp} className="w-5 h-5 transition-transform duration-300" alt="" />
                 ) : (
-                    <ChevronDown className="w-5 h-5 text-secondary transition-transform duration-300" />
-                )}
+                    <img src={chevronDown} className="w-5 h-5 transition-transform duration-300" alt="" />
+                    )
+                }
             </button>
 
             {/* Accordion Content */}
