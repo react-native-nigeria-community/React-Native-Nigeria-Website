@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import chevronDown from "../../assets/svg/chevrondown.svg";
-import chevronUp from "../../assets/svg/chevronup.svg";
+import ChevronUp from "../../assets/svg/chevronup.svg";
+import ChevronDown from "../../assets/svg/chevrondown.svg";
 
 const AccordionItems = ({ title, children, isOpen, onClick }) => {
     return (
@@ -18,9 +18,9 @@ const AccordionItems = ({ title, children, isOpen, onClick }) => {
                     {title}
                 </span>
                 {isOpen ? (
-                        <img src={chevronUp} className="w-5 h-5 transition-transform duration-300" alt="" />
+                    <img src={ChevronUp} className="w-5 h-5 transition-transform duration-300 text-secondary fill-secondary" alt="chevron-up" />
                 ) : (
-                    <img src={chevronDown} className="w-5 h-5 transition-transform duration-300" alt="" />
+                    <img src={ChevronDown} className="w-5 h-5 transition-transform duration-300" alt="chevrondown" />
                     )
                 }
             </button>
