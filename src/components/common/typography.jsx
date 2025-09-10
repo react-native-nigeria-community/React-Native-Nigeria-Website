@@ -8,17 +8,22 @@ const TYPOGRAPHY_VARIANTS = {
     h3: "text-h3 font-semibold leading-snug text-primary",
     h4: "text-h4 font-medium leading-normal text-primary",
     h5: "text-h5 font-medium leading-normal text-primary",
-    h6: "text-h6 font-medium leading-normal text-primary",
+    h6: "text-h6 leading-normal text-primary",
     p: "text-p leading-relaxed text-primary",
 };
 
-const Typography = ({ as = "p", variant = "p", className, children, ...props }) => {
-    const Component = as; // allows dynamic HTML element
+const Typography = ({ as = "p", variant = "p", responsiveVariant, className, children, ...props }) => {
+    const Component = as;
+
+    let variantClasses = TYPOGRAPHY_VARIANTS[variant];
+    if (responsiveVariant) {
+        for (const [breakpoint, v] of Object.entries(responsiveVariant)) {
+            variantClasses += ` ${breakpoint}:${TYPOGRAPHY_VARIANTS[v]}`;
+        }
+    }
+
     return (
-        <Component
-            className={clsx(TYPOGRAPHY_VARIANTS[variant], className)}
-            {...props}
-        >
+        <Component className={clsx(variantClasses, className)} {...props}>
             {children}
         </Component>
     );
