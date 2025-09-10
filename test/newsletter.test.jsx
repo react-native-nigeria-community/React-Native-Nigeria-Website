@@ -3,6 +3,7 @@ import "@testing-library/jest-dom";
 import Newsletter from "../src/components/sections/newsletter.jsx";
 
 // mock window.alert so it doesn’t actually pop up during test
+// eslint-disable-next-line no-undef
 global.alert = jest.fn();
 
 describe("Newsletter Component", () => {
@@ -36,6 +37,7 @@ describe("Newsletter Component", () => {
         fireEvent.click(button);
 
         expect(screen.getByText("Please enter a valid email address.")).toBeInTheDocument();
+        // eslint-disable-next-line no-undef
         expect(global.alert).not.toHaveBeenCalled();
     });
 
@@ -47,6 +49,7 @@ describe("Newsletter Component", () => {
         fireEvent.change(input, { target: { value: "test@example.com" } });
         fireEvent.click(button);
 
+        // eslint-disable-next-line no-undef
         expect(global.alert).toHaveBeenCalledWith("Subscribed with: test@example.com");
         expect(input.value).toBe(""); // should clear after submit
     });
