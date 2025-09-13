@@ -26,7 +26,6 @@ const Navbar = () => {
                 <li className="hover:text-secondary text-secondary cursor-pointer">Home</li>
                 <li className="hover:text-secondary cursor-pointer">About</li>
                 <li className="hover:text-secondary cursor-pointer">Events</li>
-                <li className="hover:text-secondary cursor-pointer">Contact</li>
             </ul>
 
             {/* Desktop Button */}
