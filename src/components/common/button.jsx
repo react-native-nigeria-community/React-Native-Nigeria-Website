@@ -1,5 +1,4 @@
 import React from "react";
-// import '../../index.css';
 
 const VARIANT_STYLES = {
     primary: "bg-secondary rounded-lg text-primary font-rubik px-6 text-[18px] font-medium",
@@ -9,7 +8,7 @@ const VARIANT_STYLES = {
 
 const disableButton = false;
 
-const Button = ({ children, onClick, disabled = disableButton, type = "button", variant = "primary" }) => {
+const Button = ({ children, className, onClick, disabled = disableButton, type = "button", variant = "primary" }) => {
     const baseStyles = "px-4 py-2 rounded disabled:opacity-50";
     const variantStyles = VARIANT_STYLES[variant] || VARIANT_STYLES.primary;
 
@@ -18,7 +17,7 @@ const Button = ({ children, onClick, disabled = disableButton, type = "button", 
             type={type}
             disabled={disabled}
             onClick={onClick}
-            className={`${baseStyles} ${variantStyles}`}
+            className={`${baseStyles} ${variantStyles} ${className}`}
         >
             {children}
         </button>
