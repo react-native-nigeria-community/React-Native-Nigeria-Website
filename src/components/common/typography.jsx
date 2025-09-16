@@ -12,11 +12,24 @@ const TYPOGRAPHY_VARIANTS = {
     p: "text-p leading-relaxed text-primary",
 };
 
-const Typography = ({ as = "p", variant = "p", className, children, ...props }) => {
-    const Component = as; // allows dynamic HTML element
+const Typography = ({
+                        as = "p",
+                        variant = "p",
+                        responsiveVariant = {},
+                        className,
+                        children,
+                        ...props
+                    }) => {
+    const Component = as;
+
+    // Build responsive classes like "lg:text-h4"
+    const responsiveClasses = Object.entries(responsiveVariant)
+        .map(([bp, v]) => `${bp}:${TYPOGRAPHY_VARIANTS[v]?.split(" ")[0] || ""}`)
+        .join(" ");
+
     return (
         <Component
-            className={clsx(TYPOGRAPHY_VARIANTS[variant], className)}
+            className={clsx(TYPOGRAPHY_VARIANTS[variant], responsiveClasses, className)}
             {...props}
         >
             {children}
