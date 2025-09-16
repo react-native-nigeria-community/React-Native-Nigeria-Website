@@ -1,20 +1,35 @@
 import './App.css'
-import Typography from "./components/common/typography.jsx";
+import Accordion from "./components/common/accordion.jsx";
 
 function App() {
 
+    const accordionItems = [
+        {
+            title: "Who can join the community?",
+            content: "Yes, joining the community is completely free. We believe in open knowledge sharing and collaboration.",
+        },
+        {
+            title: "Is membership free?",
+            content: "Yes, joining the community is completely free. We believe in open knowledge sharing and collaboration.",
+        },
+        {
+            title: " Do I need prior experience with React Native?",
+            content: "No, beginners are welcome. The community offers resources and mentorship to help you get started.",
+        },
+        {
+            title: "How do I get updates on events and activities?",
+            content: "No, beginners are welcome. The community offers resources and mentorship to help you get started.",
+        },
+        {
+            title: "Can I showcase my React Native projects?",
+            content: "No, beginners are welcome. The community offers resources and mentorship to help you get started.",
+        },
+    ];
+
     return (
-        <>
-            <div className="space-y-4 p-6">
-                <Typography variant="h1" as="h1">Heading 1</Typography>
-                <Typography variant="h2" as="h2">Heading 2</Typography>
-                <Typography variant="h3" as="h3">Heading 3</Typography>
-                <Typography variant="h4" as="h4">Heading 4</Typography>
-                <Typography variant="h5" as="h5">Heading 5</Typography>
-                <Typography variant="h6" as="h6">Heading 6</Typography>
-                <Typography variant="p" as="p">Paragraph</Typography>
-            </div>
-        </>
+        <div className="">
+            <Accordion items={accordionItems} allowMultiple={false} />
+        </div>
     );
 }
 
