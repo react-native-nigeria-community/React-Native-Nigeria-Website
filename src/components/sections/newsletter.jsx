@@ -9,7 +9,8 @@ const Newsletter = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        if (!email.includes("@")) {
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(email)) {
             setError("Please enter a valid email address.");
         } else {
             setError("");

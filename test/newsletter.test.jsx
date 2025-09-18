@@ -27,16 +27,20 @@ describe("Newsletter Component", () => {
         ).toBeInTheDocument();
     });
 
-    it("shows error when submitting invalid email", () => {
-        render(<Newsletter />);
-        const input = screen.getByPlaceholderText("Email address");
-        const button = screen.getByRole("button", { name: /subscribe/i });
+    const invalidEmails = ["", "plainaddress", "missing@domain", "user@.com"];
 
-        fireEvent.change(input, { target: { value: "invalid-email" } });
-        fireEvent.click(button);
+    invalidEmails.forEach((email) => {
+        it(`shows error when submitting invalid email: "${email}"`, () => {
+            render(<Newsletter />);
+            const input = screen.getByPlaceholderText("Email address");
+            const button = screen.getByRole("button", { name: /subscribe/i });
 
-        expect(screen.getByText("Please enter a valid email address.")).toBeInTheDocument();
-        expect(global.alert).not.toHaveBeenCalled();
+            fireEvent.change(input, { target: { value: email } });
+            fireEvent.click(button);
+
+            expect(screen.getByText("Please enter a valid email address.")).toBeInTheDocument();
+            expect(global.alert).not.toHaveBeenCalled();
+        });
     });
 
     it("calls alert and clears input when submitting valid email", () => {
