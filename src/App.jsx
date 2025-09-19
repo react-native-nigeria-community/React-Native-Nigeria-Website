@@ -1,10 +1,10 @@
 import './App.css'
-import NavbarComponent from "./components/layouts/navbar.jsx";
+import FooterComponent from "./components/layouts/footer.jsx";
 
 function App() {
 
     return (
-        <NavbarComponent />
+        <FooterComponent />
     );
 }
 
