@@ -1,17 +1,17 @@
 import './App.css';
-import ButtonComponent from "./components/commons/button.jsx";
+import TypographyComponent from "./components/commons/typography.jsx";
 
 function App() {
 
-    const handleClick = () => {
-        alert("Button clicked!");
-    };
-
     return (
-        <div className="bg-black w-full flex flex-col gap-4 items-center p-10 justify-center">
-            <ButtonComponent onClick={handleClick} variant="primary">Join Community</ButtonComponent>
-            <ButtonComponent onClick={handleClick} variant="secondary">RSVP</ButtonComponent>
-            <ButtonComponent onClick={handleClick} variant="accent">View Calendar</ButtonComponent>
+        <div>
+            <TypographyComponent variant="h1" as="h1">Heading 1</TypographyComponent>
+            <TypographyComponent variant="h2" as="h2">Heading 2</TypographyComponent>
+            <TypographyComponent variant="h3" as="h3">Heading 3</TypographyComponent>
+            <TypographyComponent variant="h4" as="h4">Heading 4</TypographyComponent>
+            <TypographyComponent variant="h5" as="h5">Heading 5</TypographyComponent>
+            <TypographyComponent variant="h6" as="h6">Heading 6</TypographyComponent>
+            <TypographyComponent variant="p" as="p">Paragraph</TypographyComponent>
         </div>
     );
 }
