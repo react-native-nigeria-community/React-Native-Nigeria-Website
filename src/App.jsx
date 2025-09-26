@@ -1,5 +1,5 @@
 import './App.css';
-import NewsletterComponent from "./components/layouts/newsletter.jsx";
+import NewsletterComponent from "./components/sections/newsletter.jsx";
 
 function App() {
 
