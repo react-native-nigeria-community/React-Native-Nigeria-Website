@@ -1,10 +1,10 @@
 import './App.css';
-import NewsletterComponent from "./components/sections/newsletter.jsx";
+import NavbarComponent from "./components/layouts/navbar.jsx";
 
 function App() {
 
     return (
-        <NewsletterComponent />
+        <NavbarComponent />
     );
 }
 
