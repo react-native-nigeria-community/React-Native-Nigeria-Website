@@ -1,10 +1,10 @@
 import './App.css';
-import FooterComponent from "./components/layouts/footer.jsx";
+import HomePage from "./pages/home.jsx";
 
 function App() {
 
     return (
-        <FooterComponent />
+        <HomePage />
     );
 }
 
