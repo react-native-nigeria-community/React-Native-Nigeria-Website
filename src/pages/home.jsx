@@ -1,12 +1,10 @@
-import TypographyComponent from "../components/commons/typography.jsx";
+import NavbarComponent from "../components/layouts/navbar.jsx";
 
 function HomePage () {
     return (
-        <div className={"mx-auto"}>
-            <TypographyComponent as={"h1"} variant={"h1"}>
-                Welcome to the Home Page
-            </TypographyComponent>
-        </div>
+        <>
+            <NavbarComponent />
+        </>
     )
 }
 
