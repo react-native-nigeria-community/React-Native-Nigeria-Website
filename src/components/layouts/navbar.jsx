@@ -8,7 +8,7 @@ const NavbarComponent = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <nav className="fixed top-0 left-0 right-0 flex items-center justify-between w-full px-[20px] lg:px-[125px] py-4 z-50">
+        <nav className="sticky lg:fixed top-0 left-0 right-0 flex items-center justify-between w-full px-[20px] lg:px-[125px] py-4 z-50">
             {/* Logo + Branding */}
             <div className="flex items-center gap-1">
                 <img src={LogoPNG} alt="official-logo" className="w-12 h-12" />
