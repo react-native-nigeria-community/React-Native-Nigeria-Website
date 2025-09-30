@@ -5,7 +5,6 @@ import ChevronDownSVG from "../../assets/svg/chevrondown.svg";
 const AccordionItems = ({ title, children, isOpen, onClick }) => {
     return (
         <div className="mx-6 lg:mx-[155px]">
-            {/* Accordion Header */}
             <button
                 className={`w-full flex items-center justify-between text-[12px] lg:text-h4 px-4 py-2.5 lg:px-[100px] h-14 lg:h-[157px] rounded-xl lg:rounded-[40px] transition-all duration-300 text-left
                 ${isOpen ? "bg-white border lg:border-primary" : "bg-primary"} `}
