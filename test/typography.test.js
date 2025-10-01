@@ -29,8 +29,9 @@ describe("Typography Component", () => {
             </TypographyComponent>
         );
         const heading = screen.getByText("Custom Heading");
-        expect(heading).toHaveClass("text-h3");
-        expect(heading).toHaveClass("text-red-500");
+        expect(heading).toHaveClass("text-mh3"); // mobile first
+        expect(heading).toHaveClass("lg:text-h3"); // responsive
+        expect(heading).toHaveClass("text-red-500"); // custom class
     });
 
     it("renders multiple variants correctly", () => {
@@ -43,5 +44,26 @@ describe("Typography Component", () => {
 
         expect(screen.getByText("Heading 4")).toHaveClass("text-h4");
         expect(screen.getByText("Paragraph")).toHaveClass("text-p");
+    });
+
+    it("applies responsiveVariant classes correctly", () => {
+        render(
+            <TypographyComponent
+                variant="p"
+                as="p"
+                responsiveVariant={{ lg: "h4", md: "h2" }}
+            >
+                Responsive Text
+            </TypographyComponent>
+        );
+
+        const text = screen.getByText("Responsive Text");
+
+        // Default base class
+        expect(text).toHaveClass("text-p");
+
+        // Responsive classes applied
+        expect(text).toHaveClass("md:text-h2");
+        expect(text).toHaveClass("lg:text-h4");
     });
 });
