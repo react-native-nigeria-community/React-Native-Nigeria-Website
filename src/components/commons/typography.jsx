@@ -5,7 +5,7 @@ import clsx from "clsx";
 const TYPOGRAPHY_VARIANTS = {
     h1: "text-h1 font-bold leading-tight text-primary",
     h2: "text-h2 font-semibold leading-snug text-primary",
-    h3: "text-h3 font-semibold leading-snug text-primary",
+    h3: "text-mh3 lg:text-h3 font-semibold leading-snug text-primary",
     h4: "text-h4 font-medium leading-normal text-primary",
     h5: "text-h5 font-medium leading-normal text-primary",
     h6: "text-h6 font-medium leading-normal text-primary",
