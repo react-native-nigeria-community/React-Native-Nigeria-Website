@@ -23,7 +23,6 @@ const AccordionItems = ({ title, children, isOpen, onClick }) => {
                 )
                 }
             </button>
-
             {/* Accordion Content */}
             <div
                 className={`overflow-hidden transition-all duration-500 ease-in-out 
