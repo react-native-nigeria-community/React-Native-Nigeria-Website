@@ -1,0 +1,41 @@
+import { render, screen, fireEvent } from "@testing-library/react";
+import "@testing-library/jest-dom";
+import ButtonComponent from '../src/components/commons/button.jsx';
+
+describe("Button Component", () => {
+    it("renders with children text", () => {
+        render(<ButtonComponent>Click Me</ButtonComponent>);
+        expect(screen.getByText("Click Me")).toBeInTheDocument();
+    });
+
+    it("applies primary variant styles by default", () => {
+        render(<ButtonComponent>Primary</ButtonComponent>);
+        const button = screen.getByRole("button", { name: /Primary/i });
+        expect(button).toHaveClass("bg-secondary");
+    });
+
+    it("applies secondary variant styles", () => {
+        render(<ButtonComponent variant="secondary">Secondary</ButtonComponent>);
+        const button = screen.getByRole("button", { name: /Secondary/i });
+        expect(button).toHaveClass("bg-primary");
+    });
+
+    it("applies accent variant styles", () => {
+        render(<ButtonComponent variant="accent">Accent</ButtonComponent>);
+        const button = screen.getByRole("button", { name: /Accent/i });
+        expect(button).toHaveClass("border-2");
+    });
+
+    it("calls onClick when clicked", () => {
+        const handleClick = jest.fn();
+        render(<ButtonComponent onClick={handleClick}>Click Me</ButtonComponent>);
+        fireEvent.click(screen.getByText("Click Me"));
+        expect(handleClick).toHaveBeenCalledTimes(1);
+    });
+
+    it("is disabled when disabled prop is true", () => {
+        render(<ButtonComponent disabled>Disabled</ButtonComponent>);
+        const button = screen.getByText("Disabled");
+        expect(button).toBeDisabled();
+    });
+});
