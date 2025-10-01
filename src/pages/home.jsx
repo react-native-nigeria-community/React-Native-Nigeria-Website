@@ -7,6 +7,7 @@ import CommunitySVG from "../assets/svg/community.svg";
 import CalendarSVG from "../assets/svg/calendar.svg";
 import ReactSVG from "../assets/svg/react-b.svg";
 import LightBulbSVG from "../assets/svg/light-bulb.svg";
+import GridFlowCard from "../components/commons/grid-flow-card.jsx";
 
 function HomePage () {
     const [phase, setPhase] = useState(0); // 0 = first anim, 1 = second anim
@@ -64,61 +65,26 @@ function HomePage () {
                 {/* Second block */}
                 <div className={"space-y-[30px] lg:flex lg:items-center lg:justify-center"}>
                     <div className={"mx-6 lg:grid lg:place-content-start lg:place-items-start lg:grid-cols-2 lg:space-x-[50px] lg:space-y-[80px] lg:w-[960px]"}>
-                        <div className={"px-6 grid grid-cols-4 grid-rows-3 space-x-5 lg:px-0 lg:w-[455px] lg:grid lg:grid-flow-row-dense lg:grid-cols-4 lg:grid-rows-3 text-left"}>
-                            <div className={"w-fit row-span-1 lg:row-span-4"}>
-                                <div className={" rounded-[15px] p-4 lg:p-[22px] bg-secondary/10"}>
-                                    <img src={CommunitySVG} alt={"Community Logo"} className={""} />
-                                </div>
-                            </div>
-                            <div  className={"col-span-3 lg:col-span-3 lg:text-nowrap lg:row-span-1 lg:h-fit"}>
-                                <TypographyComponent as={"h4"} variant={"h4"} className={"font-semibold! tracking-normal leading-[100%]!"}>Community talks & pro tips</TypographyComponent>
-                            </div>
-                            <div  className={"mt-3 col-span-4 row-span-2 lg:col-span-3 lg:row-span-3 h-full"}>
-                                <p className={"text-base/7 font-[400] tracking-normal text-primary/70"}>Learn from real experiences, expert tips, and smarter ways to build with React Native.</p>
-                            </div>
-                        </div>
-
-                        <div className={"px-6 grid grid-cols-4 grid-rows-3 space-x-5 lg:px-0 lg:w-[455px] lg:grid lg:grid-flow-row-dense lg:grid-cols-4 lg:grid-rows-3 text-left"}>
-                            <div className={"w-fit row-span-1 lg:row-span-4"}>
-                                <div className={" rounded-[15px] p-4 lg:p-[22px] bg-secondary/10"}>
-                                    <img src={ReactSVG} alt={"Community Logo"} className={""} />
-                                </div>
-                            </div>
-                            <div  className={"col-span-3 lg:col-span-3 lg:text-nowrap lg:row-span-1 lg:h-fit"}>
-                                <TypographyComponent as={"h4"} variant={"h4"} className={"font-semibold! tracking-normal leading-[100%]!"}>Real-world project showcases</TypographyComponent>
-                            </div>
-                            <div  className={"mt-3 col-span-4 row-span-2 lg:col-span-3 lg:row-span-3 h-full"}>
-                                <p className={"text-base/7 font-[400] tracking-normal text-primary/70"}>Explore real apps built by our community, with insights into how they were made.</p>
-                            </div>
-                        </div>
-
-                        <div className={"px-6 grid grid-cols-4 grid-rows-3 space-x-5 lg:px-0 lg:w-[455px] lg:grid lg:grid-flow-row-dense lg:grid-cols-4 lg:grid-rows-3 text-left"}>
-                            <div className={"w-fit row-span-1 lg:row-span-4"}>
-                                <div className={" rounded-[15px] p-4 lg:p-[22px] bg-secondary/10"}>
-                                    <img src={CommunitySVG} alt={"Community Logo"} className={""} />
-                                </div>
-                            </div>
-                            <div  className={"col-span-3 lg:col-span-3 lg:text-nowrap lg:row-span-1 lg:h-fit"}>
-                                <TypographyComponent as={"h4"} variant={"h4"} className={"font-semibold! tracking-normal leading-[100%]!"}>Community events & meetups</TypographyComponent>
-                            </div>
-                            <div  className={"mt-3 col-span-4 row-span-2 lg:col-span-3 lg:row-span-3 h-full"}>
-                                <p className={"text-base/7 font-[400] tracking-normal text-primary/70"}>Connect, learn, and grow through our events, talks, and local meetups. Whether online or offline. </p>
-                            </div>
-                        </div>
-
-                        <div className={"px-6 grid grid-cols-4 grid-rows-3 space-x-5 lg:px-0 lg:w-[455px] lg:grid lg:grid-flow-row-dense lg:grid-cols-4 lg:grid-rows-3 text-left"}>
-                            <div className={"w-fit row-span-1 lg:row-span-4"}>
-                                <div className={" rounded-[15px] p-4 lg:p-[22px] bg-secondary/10"}>
-                                    <img src={LightBulbSVG} alt={"Community Logo"} className={""} />
-                                </div>
-                            </div>
-                            <div  className={"col-span-3 lg:col-span-3 lg:text-nowrap lg:row-span-1 lg:h-fit"}>
-                                <TypographyComponent as={"h4"} variant={"h4"} className={"font-semibold! tracking-normal leading-[100%]!"}>Performance tips that go deep</TypographyComponent>
-                            </div>
-                            <div  className={"mt-3 col-span-4 row-span-2 lg:col-span-3 lg:row-span-3 h-full"}>
-                                <p className={"text-base/7 font-[400] tracking-normal text-primary/70"}>Discover advanced techniques to make your React Native apps faster and smoother.</p>
-                            </div>
-                        </div>
+                        <GridFlowCard
+                            icon={CommunitySVG}
+                            title="Community talks & pro tips"
+                            description="Learn from real experiences, expert tips, and smarter ways to build with React Native."
+                        />
+                        <GridFlowCard
+                            icon={ReactSVG}
+                            title="Real-world project showcases"
+                            description="Explore real apps built by our community, with insights into how they were made."
+                        />
+                        <GridFlowCard
+                            icon={CommunitySVG}
+                            title="Community events & meetups"
+                            description="Connect, learn, and grow through our events, talks, and local meetups. Whether online or offline."
+                        />
+                        <GridFlowCard
+                            icon={LightBulbSVG}
+                            title="Performance tips that go deep"
+                            description="Discover advanced techniques to make your React Native apps faster and smoother."
+                        />
                     </div>
                 </div>
 
