@@ -12,10 +12,33 @@ import GridFlowCard from "../components/commons/grid-flow-card.jsx";
 function HomePage () {
     const [phase, setPhase] = useState(0); // 0 = first anim, 1 = second anim
 
+    const features = [
+        {
+            icon: CommunitySVG,
+            title: "Community talks & pro tips",
+            description: "Learn from real experiences, expert tips, and smarter ways to build with React Native."
+        },
+        {
+            icon: ReactSVG,
+            title: "Real-world project showcases",
+            description: "Explore real apps built by our community, with insights into how they were made."
+        },
+        {
+            icon: CalendarSVG,
+            title: "Community events & meetups",
+            description: "Connect, learn, and grow through our events, talks, and local meetups. Whether online or offline."
+        },
+        {
+            icon: LightBulbSVG,
+            title: "Performance tips that go deep",
+            description: "Discover advanced techniques to make your React Native apps faster and smoother."
+        }
+    ];
+
     return (
         <>
             <NavbarComponent />
-            <section className={"mb-yellow-bg lg:yellow-bg h-[366px] lg:h-[655px] flex items-center justify-center text-center lg:w-full"}>
+            <section className={"bg-[url(./assets/img/mb-yellow.png)] lg:bg-[url(./assets/img/yellow-swiggly-bg.png)] bg-no-repeat bg-bottom h-[366px] lg:h-[655px] flex items-center justify-center text-center lg:w-full"}>
                 <div className={"gird justify-items-center content-center"}>
                     <div className={"px-6 lg:w-[758px]"}>
                         <p className={"uppercase leading-5 tracking-normal text-[16px] lg:text-[14px]"}>Build with react native</p>
@@ -65,32 +88,20 @@ function HomePage () {
                 {/* Second block */}
                 <div className={"space-y-[30px] lg:flex lg:items-center lg:justify-center"}>
                     <div className={"mx-6 lg:grid lg:place-content-start lg:place-items-start lg:grid-cols-2 lg:space-x-[50px] lg:space-y-[80px] lg:w-[960px]"}>
-                        <GridFlowCard
-                            icon={CommunitySVG}
-                            title="Community talks & pro tips"
-                            description="Learn from real experiences, expert tips, and smarter ways to build with React Native."
-                        />
-                        <GridFlowCard
-                            icon={ReactSVG}
-                            title="Real-world project showcases"
-                            description="Explore real apps built by our community, with insights into how they were made."
-                        />
-                        <GridFlowCard
-                            icon={CommunitySVG}
-                            title="Community events & meetups"
-                            description="Connect, learn, and grow through our events, talks, and local meetups. Whether online or offline."
-                        />
-                        <GridFlowCard
-                            icon={LightBulbSVG}
-                            title="Performance tips that go deep"
-                            description="Discover advanced techniques to make your React Native apps faster and smoother."
-                        />
+                        {features.map((feature, index) => (
+                            <GridFlowCard
+                                key={index}
+                                icon={feature.icon}
+                                title={feature.title}
+                                description={feature.description}
+                            />
+                        ))}
                     </div>
                 </div>
 
                 {/* Third block */}
                 <div className={"px-6 text-left lg:flex lg:items-center lg:mx-[183px] lg:justify-between"}>
-                    <div className={"pb-8 space-y-6 lg:w-[589px]"}>
+                    <div className={"pb-8 space-y-6 lg:w-[589px]!"}>
                         <TypographyComponent as={"h3"} variant={"h3"} className={"text-mh3! font-normal!"}>
                             Ready to build your next React Native app?
                         </TypographyComponent>
