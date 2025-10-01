@@ -8,6 +8,10 @@ import CalendarSVG from "../assets/svg/calendar.svg";
 import ReactSVG from "../assets/svg/react-b.svg";
 import LightBulbSVG from "../assets/svg/light-bulb.svg";
 import GridFlowCard from "../components/commons/grid-flow-card.jsx";
+import Topic1PNG from "../assets/img/topics/topic-1.png";
+import Topic2PNG from "../assets/img/topics/topic-2.png";
+import Topic3PNG from "../assets/img/topics/topic-3.png";
+import FeaturedCard from "../components/commons/featured-card.jsx";
 
 function HomePage () {
     const [phase, setPhase] = useState(0); // 0 = first anim, 1 = second anim
@@ -34,6 +38,24 @@ function HomePage () {
             description: "Discover advanced techniques to make your React Native apps faster and smoother."
         }
     ];
+
+    const topics = [
+        {
+            image: Topic1PNG,
+            title: "Medium",
+            description: "Getting started with Tailwind:  Tailwind to create a button",
+        },
+        {
+            image: Topic2PNG,
+            title: "Medium",
+            description: "I know Tech is the Future but how do i get started",
+        },
+        {
+            image: Topic3PNG,
+            title: "Medium",
+            description: "Using TypeScript effectively for cleaner and scalable apps.",
+        },
+    ]
 
     return (
         <>
@@ -112,6 +134,29 @@ function HomePage () {
                     <div>
                         <ButtonComponent variant={"primary"} className={"font-normal! flex mx-auto text-xs/4 text-nowrap lg:h-fit lg:py-3.5 lg:px-[23px] lg:text-[18px] lg:font-medium!"}>Join Community</ButtonComponent>
                     </div>
+                </div>
+            </section>
+            <section className={"px-6 py-12 bg-[#F4F7FA]"}>
+                <div className={"w-[345px] lg:w-[513px] space-y-6 text-center pb-8 lg:mx-auto"}>
+                    <TypographyComponent as={"h3"} variant={"h3"} responsiveVariant={"h2"} className={"text-mh3! leading-none! text-nowrap lg:text-h2/12! lg:font-medium!"}>Featured Topics/Insights</TypographyComponent>
+                    <TypographyComponent as={"p"} variant={"p"} className={"leading-8 tracking-[-0.013em]"}>
+                        Explore key lessons, tools, and techniques shared by the community.
+                    </TypographyComponent>
+                </div>
+
+                <div className={"space-y-4 lg:mx-[155px] lg:flex lg:justify-center lg:space-x-10"}>
+                    {topics.map((topic, index) => (
+                        <FeaturedCard
+                        key={index}
+                        image={topic.image}
+                        title={topic.title}
+                        description={topic.description}
+                        />
+                    ))}
+                </div>
+
+                <div className={"hidden text-center lg:block lg:pt-12 lg:pb-[54px]"}>
+                    <ButtonComponent variant={"primary"} className={"text-[18px]/0 py-3.5 px-[23px] tracking-[-0.5px] w-[157px] h-[50px] rounded-lg!"}>Explore</ButtonComponent>
                 </div>
             </section>
         </>
