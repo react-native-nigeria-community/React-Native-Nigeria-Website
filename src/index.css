@@ -29,6 +29,11 @@
     --text-p: 1.188rem; /* 19px */
 }
 
+.monotone-noise {
+    background: #ffffff url('./assets/svg/noise.svg') no-repeat center center scroll;
+    background-size: cover;
+}
+
 .mb-yellow-bg  {
     background-image: url('./assets/img/mb-yellow.png');
     background-repeat: no-repeat;

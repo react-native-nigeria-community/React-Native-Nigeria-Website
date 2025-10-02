@@ -8,6 +8,7 @@ import CalendarSVG from "../assets/svg/calendar.svg";
 import ReactSVG from "../assets/svg/react-b.svg";
 import LightBulbSVG from "../assets/svg/light-bulb.svg";
 import GridFlowCard from "../components/commons/grid-flow-card.jsx";
+import NoiseCard from "../components/commons/noise-card.jsx";
 
 function HomePage () {
     const [phase, setPhase] = useState(0); // 0 = first anim, 1 = second anim
@@ -34,6 +35,30 @@ function HomePage () {
             description: "Discover advanced techniques to make your React Native apps faster and smoother."
         }
     ];
+
+    const liveEvents = [
+        {
+            label: 'LIVE TALK',
+            title: 'Starting a Reactnative project 2020',
+            date: 'August 25, 2020',
+            time: '10:00 AM',
+            buttonText: 'Watch Live Talk'
+        },
+        {
+            label: 'MEETUP',
+            title: 'React Native Abuja Meetup',
+            date: 'September 20, 2025',
+            time: '10:30 AM',
+            buttonText: 'RSVP'
+        },
+        {
+            label: 'EVENT',
+            title: 'Build with React Native',
+            date: 'October 3rd, 2025',
+            time: '06:00 PM',
+            buttonText: 'Register'
+        }
+    ]
 
     return (
         <>
@@ -112,6 +137,32 @@ function HomePage () {
                     <div>
                         <ButtonComponent variant={"primary"} className={"font-normal! flex mx-auto text-xs/4 text-nowrap lg:h-fit lg:py-3.5 lg:px-[23px] lg:text-[18px] lg:font-medium!"}>Join Community</ButtonComponent>
                     </div>
+                </div>
+            </section>
+
+            {/* Fourth section */}
+            <section className={"bg-primary py-12 px-6 lg:px-[165px] lg:pt-[100px] lg:pb-[39px]"}>
+                <div className={"px-6 space-y-6 pb-6"}>
+                    <TypographyComponent as={"h4"} className={"text-h4! text-center font-[600]! leading-none tracking-[-1.2px]! text-secondary lg:text-h2/12!"}>Upcoming Community Events</TypographyComponent>
+                    <TypographyComponent as={"p"} variant={"p"} className={"text-secondary text-[15px]/8! tracking-[-0.2px] text-center lg:text-p/8!"}>Stay updated on our monthly live sessions, hackathons, <br className={"hidden lg:block"}/> and IRL meetups</TypographyComponent>
+                </div>
+
+                <div className={"space-y-6 lg:space-y-0 lg:flex lg:mx-auto lg:space-x-[30px]"}>
+                    {liveEvents.map((liveEvent, index) => (
+                        <NoiseCard
+                        key={index}
+                        label={liveEvent.label}
+                        title={liveEvent.title}
+                        date={liveEvent.date}
+                        time={liveEvent.time}
+                        buttonText={liveEvent.buttonText}
+                        />
+                    ))}
+                </div>
+
+                <div className={"text-center flex justify-center gap-5 pt-[64px] text-[14px]! leading-[17px] font-medium"}>
+                    <ButtonComponent variant={"accent"} className={"lg:w-[206px] lg:h-[50px]"}>View Calendar</ButtonComponent>
+                    <ButtonComponent variant={"accent"} className={"lg:hidden"}>Register for Next</ButtonComponent>
                 </div>
             </section>
         </>
