@@ -1,0 +1,22 @@
+import  en from "../locales/en.js";
+import Topic1PNG from "../assets/img/topics/topic-1.png";
+import Topic2PNG from "../assets/img/topics/topic-2.png";
+import Topic3PNG from "../assets/img/topics/topic-3.png";
+
+export const topics = [
+    {
+        image: Topic1PNG,
+        title: en.thirdSection.medium.title,
+        description: en.thirdSection.medium.description1,
+    },
+    {
+        image: Topic2PNG,
+        title: en.thirdSection.medium.title,
+        description: en.thirdSection.medium.description2,
+    },
+    {
+        image: Topic3PNG,
+        title: en.thirdSection.medium.title,
+        description: en.thirdSection.medium.description3,
+    },
+]
