@@ -3,6 +3,7 @@ import MenuSVG from "../../assets/svg/mobile/menu.svg";
 import LogoPNG from "../../assets/img/nav-logo.png";
 import TypographyComponent from "../commons/typography.jsx";
 import ButtonComponent from "../commons/button.jsx";
+import en from "../../locales/en.js";
 
 const NavbarComponent = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -17,20 +18,20 @@ const NavbarComponent = () => {
                     as="h6"
                     className="w-[109px] font-semibold text-left" responsiveVariant={{lg: ""}}
                 >
-                    Build with React Native
+                    {en.navLogoText}
                 </TypographyComponent>
             </div>
 
             {/* Desktop Menu */}
             <ul aria-label="desktop menu" className="hidden lg:flex items-center gap-14 text-primary">
-                <li className="hover:text-secondary text-secondary cursor-pointer">Home</li>
-                <li className="hover:text-secondary cursor-pointer">About</li>
-                <li className="hover:text-secondary cursor-pointer">Events</li>
+                <li className="hover:text-secondary text-secondary cursor-pointer">{en.navHome}</li>
+                <li className="hover:text-secondary cursor-pointer">{en.navAbout}</li>
+                <li className="hover:text-secondary cursor-pointer">{en.navEvent}</li>
             </ul>
 
             {/* Desktop Button */}
             <ButtonComponent variant="primary" className="hidden lg:block">
-                Join Community
+                {en.joinCommunity}
             </ButtonComponent>
 
             {/* Mobile Menu Button + Dropdown */}
@@ -45,12 +46,12 @@ const NavbarComponent = () => {
                         isOpen ? "scale-y-100 opacity-100" : "scale-y-0 opacity-0"
                     } origin-top`}
                 >
-                    <li className="px-auto py-2.5 hover:bg-secondary/20">Home</li>
-                    <li className="px-auto py-2.5 hover:bg-secondary/20">About</li>
-                    <li className="px-auto py-2.5 hover:bg-secondary/20">Events</li>
-                    <li className="px-auto py-2.5 hover:bg-secondary/20">Contact</li>
+                    <li className="px-auto py-2.5 hover:bg-secondary/20">{en.navHome}</li>
+                    <li className="px-auto py-2.5 hover:bg-secondary/20">{en.navAbout}</li>
+                    <li className="px-auto py-2.5 hover:bg-secondary/20">{en.navEvent}</li>
+                    <li className="px-auto py-2.5 hover:bg-secondary/20">{en.navContact}</li>
                     <li className="px-auto py-2.5 text-nowrap px-auto">
-                        Join Community
+                        {en.joinCommunity}
                     </li>
                 </ul>
             </div>
