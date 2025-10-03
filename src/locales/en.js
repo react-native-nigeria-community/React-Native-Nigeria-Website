@@ -1,14 +1,17 @@
 export default {
 
     // navigation strings
-    nav1: "Home",
-    nav2: "About",
-    nav3: "Event",
+    navLogoText: "Build with React Native",
+    navHome: "Home",
+    navAbout: "About",
+    navEvent: "Event",
+    navContact: "Contact",
 
     // button strings
     joinCommunity: "Join Community",
     explore: "Explore",
     viewCalendar: "View Calendar",
+    registerNext: "Register for Next",
     subscribe: "Subscribe",
 
     // extra strings
@@ -77,7 +80,11 @@ export default {
     fourthSection: {
         upComingEvents: {
             title: "Upcoming Community Events",
-            description: "Stay updated on our monthly live sessions, hackathons, and IRL meetups",
+            description: {
+                description1: "Stay updated on our monthly live sessions, hackathons, and IRL meetups",
+                description2: "Stay updated on our monthly live sessions, hackathons,",
+                description3: "and IRL meetups",
+            },
         },
         eventCards: {
             eventCard1: {
