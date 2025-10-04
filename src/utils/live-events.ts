@@ -1,20 +1,20 @@
-import en from "../locales/en.js";
+import en from "../locales/en";
 
-/**
- * @typedef {Object} LiveEvent
- * @property {string} label - The event label text.
- * @property {string} title - The event title.
- * @property {string} date - The event date.
- * @property {string} time - The event time.
- * @property {string} buttonText - The button text for the event.
- */
+/** Defines the shape of a live event */
+export interface LiveEvent {
+    label: string;
+    title: string;
+    date: string;
+    time: string;
+    buttonText: string;
+}
 
 /**
  * Get the list of live events for a given locale.
- * @param {any} [locale=en] - The locale object (defaults to English).
- * @returns {LiveEvent[]}
+ * @param locale - Locale object (defaults to English).
+ * @returns An array of LiveEvent objects.
  */
-export function getLiveEvents(locale = en) {
+export function getLiveEvents(locale = en): LiveEvent[] {
     return [
         {
             label: locale.fourthSection.eventCards.eventCard1.smallText,
@@ -40,5 +40,4 @@ export function getLiveEvents(locale = en) {
     ];
 }
 
-/** Default English live events (convenience export) */
-export const liveEvents = getLiveEvents(en);
+export const liveEvents: LiveEvent[] = getLiveEvents(en);

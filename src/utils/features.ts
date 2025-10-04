@@ -1,22 +1,26 @@
+// @ts-ignore
 import CommunitySVG from "../assets/svg/community.svg";
+// @ts-ignore
 import ReactSVG from "../assets/svg/react-b.svg";
+// @ts-ignore
 import CalendarSVG from "../assets/svg/calendar.svg";
+// @ts-ignore
 import LightBulbSVG from "../assets/svg/light-bulb.svg";
-import en from "../locales/en.js";
+import en from "../locales/en";
 
-/**
- * @typedef {Object} Feature
- * @property {string} icon - Path to the feature icon.
- * @property {string} title - Title of the feature.
- * @property {string} description - Description of the feature.
- */
+/** Defines the shape of a feature item */
+export interface Feature {
+    icon: string;
+    title: string;
+    description: string;
+}
 
 /**
  * Get the list of features for a given locale.
- * @param {any} [locale=en] - The locale object (defaults to English).
- * @returns {Feature[]}
+ * @param locale - Locale object (defaults to English).
+ * @returns An array of Feature objects.
  */
-export function getFeatures(locale = en) {
+export function getFeatures(locale = en): Feature[] {
     return [
         {
             icon: CommunitySVG,
@@ -41,5 +45,4 @@ export function getFeatures(locale = en) {
     ];
 }
 
-/** Default English features (convenience export) */
-export const features = getFeatures(en);
+export const features: Feature[] = getFeatures(en);

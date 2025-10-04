@@ -1,21 +1,24 @@
-import en from "../locales/en.js";
+import en from "../locales/en";
+// @ts-ignore
 import Topic1PNG from "../assets/img/topics/topic-1.png";
+// @ts-ignore
 import Topic2PNG from "../assets/img/topics/topic-2.png";
+// @ts-ignore
 import Topic3PNG from "../assets/img/topics/topic-3.png";
 
-/**
- * @typedef {Object} Topic
- * @property {string} image - Path to the topic image.
- * @property {string} title - Title of the topic.
- * @property {string} description - Description of the topic.
- */
+/** Defines the shape of a topic item */
+export interface Topic {
+    image: string;
+    title: string;
+    description: string;
+}
 
 /**
  * Get the list of topics for a given locale.
- * @param {any} [locale=en] - The locale object (defaults to English).
- * @returns {Topic[]}
+ * @param locale - Locale object (defaults to English).
+ * @returns An array of Topic objects.
  */
-export function getTopics(locale = en) {
+export function getTopics(locale = en): Topic[] {
     return [
         {
             image: Topic1PNG,
@@ -35,5 +38,4 @@ export function getTopics(locale = en) {
     ];
 }
 
-/** Default English topics (convenience export) */
-export const topics = getTopics(en);
+export const topics: Topic[] = getTopics(en);

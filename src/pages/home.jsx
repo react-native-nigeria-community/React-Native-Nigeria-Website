@@ -6,8 +6,8 @@ import ButtonComponent from "../components/commons/button.jsx";
 import GridFlowCard from "../components/commons/grid-flow-card.jsx";
 import NoiseCard from "../components/commons/noise-card.jsx";
 import en from "../locales/en.js";
-import { features } from "../utils/features.js";
-import { liveEvents } from "../utils/live-events.js";
+import { features } from "../utils/features.ts";
+import { liveEvents } from "../utils/live-events.ts";
 
 function HomePage () {
     const [phase, setPhase] = useState(0); // 0 = first anim, 1 = second anim
