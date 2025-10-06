@@ -3,63 +3,14 @@ import TypographyComponent from "../components/commons/typography.jsx";
 import { TypeAnimation } from 'react-type-animation';
 import { useState } from "react";
 import ButtonComponent from "../components/commons/button.jsx";
-import CommunitySVG from "../assets/svg/community.svg";
-import CalendarSVG from "../assets/svg/calendar.svg";
-import ReactSVG from "../assets/svg/react-b.svg";
-import LightBulbSVG from "../assets/svg/light-bulb.svg";
 import GridFlowCard from "../components/commons/grid-flow-card.jsx";
 import NoiseCard from "../components/commons/noise-card.jsx";
 import en from "../locales/en.js";
+import { features } from "../utils/features.ts";
+import { liveEvents } from "../utils/live-events.ts";
 
 function HomePage () {
     const [phase, setPhase] = useState(0); // 0 = first anim, 1 = second anim
-
-    const features = [
-        {
-            icon: CommunitySVG,
-            title: "Community talks & pro tips",
-            description: "Learn from real experiences, expert tips, and smarter ways to build with React Native."
-        },
-        {
-            icon: ReactSVG,
-            title: "Real-world project showcases",
-            description: "Explore real apps built by our community, with insights into how they were made."
-        },
-        {
-            icon: CalendarSVG,
-            title: "Community events & meetups",
-            description: "Connect, learn, and grow through our events, talks, and local meetups. Whether online or offline."
-        },
-        {
-            icon: LightBulbSVG,
-            title: "Performance tips that go deep",
-            description: "Discover advanced techniques to make your React Native apps faster and smoother."
-        }
-    ];
-
-    const liveEvents = [
-        {
-            label: 'LIVE TALK',
-            title: 'Starting a Reactnative project 2020',
-            date: 'August 25, 2020',
-            time: '10:00 AM',
-            buttonText: 'Watch Live Talk'
-        },
-        {
-            label: 'MEETUP',
-            title: 'React Native Abuja Meetup',
-            date: 'September 20, 2025',
-            time: '10:30 AM',
-            buttonText: 'RSVP'
-        },
-        {
-            label: 'EVENT',
-            title: 'Build with React Native',
-            date: 'October 3rd, 2025',
-            time: '06:00 PM',
-            buttonText: 'Register'
-        }
-    ]
 
     return (
         <>
