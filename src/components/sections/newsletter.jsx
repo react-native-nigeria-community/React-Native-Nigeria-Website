@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import ButtonComponent from "../commons/button.jsx";
 import TypographyComponent from "../commons/typography.jsx";
 import InputFieldComponent from "../commons/input-field.jsx";
+import en from "../../locales/en.js";
 
 const NewsletterComponent = () => {
     const [email, setEmail] = useState("");
@@ -23,12 +24,12 @@ const NewsletterComponent = () => {
             <div className="text-center px-4 lg:px-[24px] lg:py-[77px]">
                 {/* Heading */}
                 <TypographyComponent as="h3" variant="h3" responsiveVariant={{ lg: "h4" }}>
-                    Subscribe to our newsletter
+                    {en.newsletterTitle}
                 </TypographyComponent>
 
                 {/* Subheading */}
                 <TypographyComponent as="h6" variant="h6" className={"mt-2 mb-6 text-h6 lg:text-p"} responsiveVariant={{ lg: "p" }}>
-                    Stay updated with events, resources, and the latest in React Native.
+                    {en.newsletterDescription}
                 </TypographyComponent>
 
 
@@ -39,14 +40,14 @@ const NewsletterComponent = () => {
                             id="email"
                             type="email"
                             className={"w-full p-3 lg:w-lg h-10 focus:outline-none border border-black rounded-[10px] lg:border-none"}
-                            placeholder="Email address"
+                            placeholder={en.placeholderEmail}
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                             error={error}
                         />
                         <div className="">
                             <ButtonComponent type="submit" className="w-full py-3" variant="primary" onClick={handleSubmit}>
-                                Subscribe
+                                {en.subscribe}
                             </ButtonComponent>
                         </div>
                     </div>
