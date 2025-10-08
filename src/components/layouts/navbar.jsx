@@ -21,8 +21,8 @@ const NavbarComponent = () => {
             {/* Desktop Menu */}
             <ul aria-label="desktop menu" className="hidden lg:flex items-center gap-14 text-primary">
                 <li className="hover:text-secondary text-bg2 cursor-pointer">{en.navHome}</li>
-                <a href={"/about-us"}><li className="hover:text-secondary cursor-pointer">{en.navAbout}</li></a>
-                <a href={"/events"}><li className="hover:text-secondary cursor-pointer">{en.navEvent}</li></a>
+                <li className="hover:text-secondary cursor-pointer"><a href={"/about-us"}>{en.navAbout}</a></li>
+                <li className="hover:text-secondary cursor-pointer"><a href={"/events"}>{en.navEvent}</a></li>
             </ul>
 
             {/* Desktop Button */}
@@ -42,10 +42,10 @@ const NavbarComponent = () => {
                         isOpen ? "scale-y-100 opacity-100" : "scale-y-0 opacity-0"
                     } origin-top`}
                 >
-                    <li className="px-auto py-2.5 hover:bg-bg2/20">{en.navHome}</li>
-                    <a href={"/about-us"}><li className="px-auto py-2.5 hover:bg-bg2/20">{en.navAbout}</li></a>
-                    <a href={""}><li className="px-auto py-2.5 hover:bg-bg2/20">{en.navEvent}</li></a>
-                    <li className="px-auto py-2.5 hover:bg-bg2/20">{en.navContact}</li>
+                    <li className="px-auto py-2.5 hover:bg-bg2/20"><a href={"/"}>{en.navHome}</a></li>
+                    <li className="px-auto py-2.5 hover:bg-bg2/20"><a href={"/about-us"}>{en.navAbout}</a></li>
+                    <li className="px-auto py-2.5 hover:bg-bg2/20"><a href={"/events"}>{en.navEvent}</a></li>
+                    <li className="px-auto py-2.5 hover:bg-bg2/20"><a href={"/contact"}>{en.navContact}</a></li>
                     <li className="px-auto py-2.5 text-nowrap px-auto">
                         {en.joinCommunity}
                     </li>

@@ -17,7 +17,7 @@ function HomePage () {
     return (
         <>
             <NavbarComponent />
-            <section className={"lg:bg-bg1 bg-[url(./assets/img/mb-blue.png)] lg:bg-[url(./assets/img/lg-bg-screen.png)] bg-no-repeat bg-bottom h-[366px] lg:h-[655px] flex items-center justify-center text-center lg:w-full"}>
+            <section className={"lg:bg-bg1 bg-[url(./assets/img/mb-blue.png)] md:bg-[url(./assets/img/lg-bg-screen.png)] bg-no-repeat bg-bottom h-[366px] bg-contain lg:h-[655px] flex items-center justify-center text-center lg:w-full"}>
                 <div className={"gird justify-items-center content-center"}>
                     <div className={"px-6 lg:w-[758px] text-secondary lg:text-primary"}>
                         <p className={"uppercase leading-5 tracking-normal text-[16px] lg:text-[14px]"}>{en.firstSection.reactNnc}</p>
@@ -67,7 +67,7 @@ function HomePage () {
 
                 {/* Second block */}
                 <div className={"space-y-[30px] lg:flex lg:items-center lg:justify-center"}>
-                    <div className={"mx-6 lg:grid lg:place-content-start lg:place-items-start lg:grid-cols-2 lg:space-x-[50px] lg:space-y-[80px] lg:w-[960px]"}>
+                    <div className={"mx-6 md:grid md:place-content-start md:place-items-start md:grid-cols-2 md:space-x-[50px] lg:space-y-[80px] lg:w-[960px]"}>
                         {features.map((feature, index) => (
                             <GridFlowCard
                                 key={index}
@@ -130,7 +130,7 @@ function HomePage () {
                 </div>
 
                 <div className={"px-6 pb-[40px] lg:flex lg:justify-center"}>
-                    <div className={"lg:grid lg:grid-cols-3 lg:space-x-[30px]"}>
+                    <div className={"md:grid md:grid-cols-2 md:space-x-[15px] lg:grid lg:grid-cols-3 lg:space-x-[30px]"}>
                         {openSources.map((openSource, index) => (
                             <OpenSourceCard
                             key={index}
