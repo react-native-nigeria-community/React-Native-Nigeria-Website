@@ -8,6 +8,8 @@ import NoiseCard from "../components/commons/noise-card.jsx";
 import en from "../locales/en.js";
 import { features } from "../utils/features.ts";
 import { liveEvents } from "../utils/live-events.ts";
+import {writeUp} from "../utils/write-for-us.js";
+import WriteForUsCard from "../components/sections/write-for-us.jsx";
 
 function HomePage () {
     const [phase, setPhase] = useState(0); // 0 = first anim, 1 = second anim
@@ -116,6 +118,26 @@ function HomePage () {
                 <div className={"text-center flex justify-center gap-5 pt-[64px] text-[14px]! leading-[17px] font-medium"}>
                     <ButtonComponent variant={"accent"} className={"lg:w-[206px] lg:h-[50px]"}>{en.viewCalendar}</ButtonComponent>
                     <ButtonComponent variant={"accent"} className={"lg:hidden"}>{en.registerNext}</ButtonComponent>
+                </div>
+            </section>
+
+            {/* Sixth section */}
+            <section className={"bg-secondary px-6 pt-12 pb-[58px] lg:bg-bg1"}>
+                <div className={"mb-6 space-y-6 lg:w-[589px] lg:mx-auto lg:mb-[30px] text-center"}>
+                    <TypographyComponent as={"h3"} variant={"h3"} className={"text-primary text-mh3/none! tracking-[-1.2px]! font-normal"}>{en.sixthSection.contributeCommunity.title}</TypographyComponent>
+                    <TypographyComponent as={"p"} variant={"p"} className={"font-normal! text-primary leading-8 tracking-[-0.2px] lg:tracking-[-0.2px]! lg:leading-8"}>
+                        {en.sixthSection.contributeCommunity.description}
+                    </TypographyComponent>
+                </div>
+
+                <div className={"space-y-[30px] lg:space-y-0 lg:flex lg:justify-center lg:gap-[30px]"}>
+                    {writeUp.map((writeUps, index) => (
+                        <WriteForUsCard
+                        key={index}
+                        title={writeUps.title}
+                        description={writeUps.description}
+                        />
+                    ))}
                 </div>
             </section>
         </>
