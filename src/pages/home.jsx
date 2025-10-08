@@ -8,6 +8,7 @@ import NoiseCard from "../components/commons/noise-card.jsx";
 import en from "../locales/en.js";
 import { features } from "../utils/features.ts";
 import { liveEvents } from "../utils/live-events.ts";
+import NewsletterComponent from "../components/sections/newsletter.jsx";
 
 function HomePage () {
     const [phase, setPhase] = useState(0); // 0 = first anim, 1 = second anim
@@ -118,6 +119,8 @@ function HomePage () {
                     <ButtonComponent variant={"accent"} className={"lg:hidden"}>{en.registerNext}</ButtonComponent>
                 </div>
             </section>
+
+            <NewsletterComponent />
         </>
     )
 }
