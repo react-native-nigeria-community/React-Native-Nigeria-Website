@@ -9,7 +9,7 @@ import en from "../locales/en.js";
 import { features } from "../utils/features.ts";
 import { liveEvents } from "../utils/live-events.ts";
 import OpenSourceCard from "../components/sections/open-source.jsx";
-import {openSources} from "../utils/open-source.js";
+import {sources} from "../utils/open-source.js";
 
 function HomePage () {
     const [phase, setPhase] = useState(0); // 0 = first anim, 1 = second anim
@@ -131,13 +131,13 @@ function HomePage () {
 
                 <div className={"px-6 pb-[40px] lg:flex lg:justify-center"}>
                     <div className={"md:grid md:grid-cols-2 md:space-x-[15px] lg:grid lg:grid-cols-3 lg:space-x-[30px]"}>
-                        {openSources.map((openSource, index) => (
+                        {sources.map((source, index) => (
                             <OpenSourceCard
                             key={index}
-                            star={openSource.star}
-                            fork={openSource.fork}
-                            title={openSource.title}
-                            description={openSource.description}
+                            star={source.star}
+                            fork={source.fork}
+                            title={source.title}
+                            description={source.description}
                             />
                         ))}
                     </div>

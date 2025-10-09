@@ -55,4 +55,4 @@ export function getOpenSource(locale = en): OpenSource[] {
     ];
 }
 
-export const openSources: OpenSource[] = getOpenSource(en);
+export const sources: OpenSource[] = getOpenSource(en);

@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import MenuSVG from "../../assets/svg/mobile/menu.svg";
 import LogoPNG from "../../assets/img/nav-logo.png";
-import TypographyComponent from "../commons/typography.jsx";
 import ButtonComponent from "../commons/button.jsx";
 import en from "../../locales/en.js";
+import NavList from "../commons/nav-list.jsx";
+import {links} from "../../utils/get-links.js";
 
 const NavbarComponent = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -20,13 +21,17 @@ const NavbarComponent = () => {
 
             {/* Desktop Menu */}
             <ul aria-label="desktop menu" className="hidden lg:flex items-center gap-14 text-primary">
-                <li className="hover:text-secondary text-bg2 cursor-pointer">{en.navHome}</li>
-                <li className="hover:text-secondary cursor-pointer"><a href={"/about-us"}>{en.navAbout}</a></li>
-                <li className="hover:text-secondary cursor-pointer"><a href={"/events"}>{en.navEvent}</a></li>
+                {links.slice(0, 3).map((link, index) => (
+                    <NavList
+                        key={index}
+                        label={link.label}
+                        link={link.link}
+                    />
+                ))}
             </ul>
 
             {/* Desktop Button */}
-            <ButtonComponent variant="primary" className="hidden lg:block">
+            <ButtonComponent variant="primary" className="hidden lg:block cursor-pointer">
                 {en.joinCommunity}
             </ButtonComponent>
 
@@ -42,13 +47,14 @@ const NavbarComponent = () => {
                         isOpen ? "scale-y-100 opacity-100" : "scale-y-0 opacity-0"
                     } origin-top`}
                 >
-                    <li className="px-auto py-2.5 hover:bg-bg2/20"><a href={"/"}>{en.navHome}</a></li>
-                    <li className="px-auto py-2.5 hover:bg-bg2/20"><a href={"/about-us"}>{en.navAbout}</a></li>
-                    <li className="px-auto py-2.5 hover:bg-bg2/20"><a href={"/events"}>{en.navEvent}</a></li>
-                    <li className="px-auto py-2.5 hover:bg-bg2/20"><a href={"/contact"}>{en.navContact}</a></li>
-                    <li className="px-auto py-2.5 text-nowrap px-auto">
-                        {en.joinCommunity}
-                    </li>
+                    {links.map((link, index) => (
+                        <NavList
+                        key={index}
+                        label={link.label}
+                        link={link.link}
+                        />
+                    ))}
+                    <NavList label={"Join Community"} link={""} />
                 </ul>
             </div>
         </nav>
