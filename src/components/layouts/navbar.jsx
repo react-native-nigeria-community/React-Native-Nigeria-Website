@@ -4,9 +4,11 @@ import LogoPNG from "../../assets/img/nav-logo.png";
 import TypographyComponent from "../commons/typography.jsx";
 import ButtonComponent from "../commons/button.jsx";
 import en from "../../locales/en.js";
+import { useAppNavigation } from "../../routes.jsx";
 
 const NavbarComponent = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const {goToHome, goToAbout, goToEvents, goToContact} = useAppNavigation();
 
     return (
         <nav className="bg-white lg:fixed top-0 left-0 right-0 flex items-center justify-between w-full px-[20px] lg:px-[125px] py-4 z-50">
@@ -24,9 +26,9 @@ const NavbarComponent = () => {
 
             {/* Desktop Menu */}
             <ul aria-label="desktop menu" className="hidden lg:flex items-center gap-14 text-primary">
-                <li className="hover:text-secondary text-secondary cursor-pointer">{en.navHome}</li>
-                <li className="hover:text-secondary cursor-pointer">{en.navAbout}</li>
-                <li className="hover:text-secondary cursor-pointer">{en.navEvent}</li>
+                <li className="hover:text-secondary text-secondary cursor-pointer" onClick={goToHome}>{en.navHome}</li>
+                <li className="hover:text-secondary cursor-pointer" onClick={goToAbout}>{en.navAbout}</li>
+                <li className="hover:text-secondary cursor-pointer" onClick={goToEvents}>{en.navEvent}</li>
             </ul>
 
             {/* Desktop Button */}
@@ -46,10 +48,10 @@ const NavbarComponent = () => {
                         isOpen ? "scale-y-100 opacity-100" : "scale-y-0 opacity-0"
                     } origin-top`}
                 >
-                    <li className="px-auto py-2.5 hover:bg-secondary/20">{en.navHome}</li>
-                    <li className="px-auto py-2.5 hover:bg-secondary/20">{en.navAbout}</li>
-                    <li className="px-auto py-2.5 hover:bg-secondary/20">{en.navEvent}</li>
-                    <li className="px-auto py-2.5 hover:bg-secondary/20">{en.navContact}</li>
+                    <li className="px-auto py-2.5 hover:bg-secondary/20" onClick={goToHome}>{en.navHome}</li>
+                    <li className="px-auto py-2.5 hover:bg-secondary/20" onClick={goToAbout}>{en.navAbout}</li>
+                    <li className="px-auto py-2.5 hover:bg-secondary/20" onClick={goToEvents}>{en.navEvent}</li>
+                    <li className="px-auto py-2.5 hover:bg-secondary/20" onClick={goToContact}>{en.navContact}</li>
                     <li className="px-auto py-2.5 text-nowrap px-auto">
                         {en.joinCommunity}
                     </li>
