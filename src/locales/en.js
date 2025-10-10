@@ -1,7 +1,7 @@
 export default {
 
     // navigation strings
-    navLogoText: "Build with React Native",
+    navLogoText: "React Native Nigeria",
     navHome: "Home",
     navAbout: "About",
     navEvent: "Event",
@@ -15,19 +15,25 @@ export default {
     subscribe: "Subscribe",
 
     // extra strings
+    sendMessage: "Send Message",
+    checkBoxText: "Keep me up to date on news and events",
     newsletterTitle: "Subscribe to our newsletter",
     newsletterDescription: "Stay updated with events, resources, and the latest in React Native.",
     inputEmail: "Email",
     placeholderEmail: "Email address",
-    copyRight: "© 2025 React Native Nigeria. All rights reserved",
+    labelName: "Full Name",
+    labelEmail: "Email Address",
+    labelMessage: "Message",
+    copyRight: "React Native Nigeria. All rights reserved",
     privacyPolicy: "Privacy & Policy",
     termsConditions: "Terms & Conditions",
+    writeHere: "Write here...",
 
-    /*
-    ---------------------------------------------------------------------------
-    ALL LANDING PAGE STRINGS
-    ---------------------------------------------------------------------------
-    */
+    /***************************************
+     ---------------------------------------------------------------------------
+     ALL LANDING PAGE STRINGS
+     ---------------------------------------------------------------------------
+     ****************************************/
 
     // first section
     firstSection: {
@@ -113,30 +119,43 @@ export default {
 
     // fifth section
     fifthSection: {
-        reactNnc: "React Native Nigeria Community",
+        reactNnc1: "BUILD WITH REACT NATIVE",
+        reactNNC2: "React Native Nigeria Community",
         exploreReactNative: "Explore React Native Open Source Projects",
         sourceProject: {
             project1: {
+                star: "1",
+                fork: "1",
                 title: "React Native Nigeria",
                 description: "The official open source website for React Native Nigeria.",
             },
             project2: {
+                star: "13",
+                fork: "11",
                 title: "Rave by Flutterwave",
                 description: "Accept payments effortlessly within your React Native app.",
             },
             project3: {
+                star: "4",
+                fork: "4",
                 title: "Quidpay Payments",
                 description: "Effortless payment collection with zero linking.",
             },
             project4: {
+                star: "5",
+                fork: "2",
                 title: "RN Number Counter",
                 description: "Smooth animated number counter for React Native.",
             },
             project5: {
+                star: "16",
+                fork: "5",
                 title: "Cloudinary Image Picker",
                 description: "Quickly select and upload images directly to Cloudinary.",
             },
             project6: {
+                star: "19",
+                fork: "3",
                 title: "React Native HEXShade",
                 description: "Generate lighter or darker tones instantly.",
             },
@@ -163,6 +182,33 @@ export default {
                 description: "Built something cool? Share it, get feedback, and connect with fellow devs.",
             },
         },
+    },
+
+
+    /***************************************
+     ---------------------------------------------------------------------------
+     ALL ABOUT-US PAGE STRINGS
+     ---------------------------------------------------------------------------
+     ****************************************/
+
+    aboutPage: {
+        heroText1: "About Us : Powered by Passion, Built with React Native.",
+        heroText2: "Build with React Native is where mobile creators connect, learn, and grow. From beginners to pros, our community shares insights, builds real projects, and explores the latest in React Native. Together, we’re not just coding apps, we’re shaping the future of mobile.",
+        missionStatement: "Our mission is to connect people who are building with React Native, share real-world experiences, and provide resources that help members grow their skills. Whether you’re a beginner taking your first steps in mobile development or an experienced professional pushing the boundaries of what’s possible, you’ll find support, inspiration, and collaboration here. Through shared projects, discussions, tutorials, and events, we aim to empower developers to bring their ideas to life, solve challenges together, and contribute to the global React Native ecosystem.",
+        faq: "FAQ",
+        faqTitle: "Quick answers to common questions about our community.",
+    },
+
+
+    /**
+     ---------------------------------------------------------------------------
+     ALL CONTACT PAGE STRINGS
+     ---------------------------------------------------------------------------
+     **/
+
+    contactPage: {
+        titleText: "Contact us",
+        titleDescription: "Have questions or ideas? We’d love to hear from you.",
     },
 
 };
