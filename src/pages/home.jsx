@@ -8,6 +8,8 @@ import NoiseCard from "../components/commons/noise-card.jsx";
 import en from "../locales/en.js";
 import { features } from "../utils/features.ts";
 import { liveEvents } from "../utils/live-events.ts";
+import {writeUp} from "../utils/write-for-us.js";
+import WriteForUsCard from "../components/sections/write-for-us.jsx";
 import OpenSourceCard from "../components/sections/open-source.jsx";
 import {sources} from "../utils/open-source.js";
 
@@ -141,6 +143,26 @@ function HomePage () {
                             />
                         ))}
                     </div>
+                </div>
+            </section>
+
+            {/* Sixth section */}
+            <section className={"bg-secondary px-6 pt-12 pb-[3.625rem] lg:bg-bg1"}>
+                <div className={"mb-6 space-y-6 lg:w-[589px] lg:mx-auto lg:mb-[1.875rem] text-center"}>
+                    <TypographyComponent as={"h3"} variant={"h3"} className={"text-primary text-mh3/none! tracking-[-0.075rem]! font-normal"}>{en.sixthSection.contributeCommunity.title}</TypographyComponent>
+                    <TypographyComponent as={"p"} variant={"p"} className={"font-normal! text-primary leading-8 tracking-[-0.013rem] lg:tracking-[-0.013rem]! lg:leading-8"}>
+                        {en.sixthSection.contributeCommunity.description}
+                    </TypographyComponent>
+                </div>
+
+                <div className={"space-y-[1.875rem] lg:space-y-0 lg:flex lg:justify-center lg:gap-[1.875rem]"}>
+                    {writeUp.map((writeUps, index) => (
+                        <WriteForUsCard
+                        key={index}
+                        title={writeUps.title}
+                        description={writeUps.description}
+                        />
+                    ))}
                 </div>
             </section>
         </>
