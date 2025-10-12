@@ -1,36 +1,38 @@
 import React, { useState } from "react";
 import MenuSVG from "../../assets/svg/mobile/menu.svg";
 import LogoPNG from "../../assets/img/nav-logo.png";
-import TypographyComponent from "../commons/typography.jsx";
 import ButtonComponent from "../commons/button.jsx";
+import en from "../../locales/en.js";
+import NavList from "../commons/nav-list.jsx";
+import {links} from "../../utils/get-links.js";
 
 const NavbarComponent = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <nav className="bg-white lg:fixed top-0 left-0 right-0 flex items-center justify-between w-full px-[20px] lg:px-[125px] py-4 z-50">
+        <nav className="lg:bg-bg1 lg:sticky top-0 left-0 right-0 flex items-center justify-between w-full px-[20px] lg:px-[125px] py-4 z-50">
             {/* Logo + Branding */}
             <div className="flex items-center gap-1">
-                <img src={LogoPNG} alt="official-logo" className="w-12 h-12" />
-                <TypographyComponent
-                    variant="h6"
-                    as="h6"
-                    className="w-[109px] font-semibold text-left" responsiveVariant={{lg: ""}}
-                >
-                    Build with React Native
-                </TypographyComponent>
+                <img src={LogoPNG} alt="official-logo" className="w-[31.19px] h-[31.19px] lg:w-12 lg:h-12" />
+                <p className="w-[72.28px] lg:w-[109px] text-[10.84px] leading-none tracking-normal font-semibold text-left text-secondary lg:text-primary lg:text-[16.34px]!">
+                    {en.navLogoText}
+                </p>
             </div>
 
             {/* Desktop Menu */}
             <ul aria-label="desktop menu" className="hidden lg:flex items-center gap-14 text-primary">
-                <li className="hover:text-secondary text-secondary cursor-pointer">Home</li>
-                <li className="hover:text-secondary cursor-pointer">About</li>
-                <li className="hover:text-secondary cursor-pointer">Events</li>
+                {links.slice(0, 3).map((link, index) => (
+                    <NavList
+                        key={index}
+                        label={link.label}
+                        link={link.link}
+                    />
+                ))}
             </ul>
 
             {/* Desktop Button */}
-            <ButtonComponent variant="primary" className="hidden lg:block">
-                Join Community
+            <ButtonComponent variant="primary" className="hidden lg:block cursor-pointer">
+                {en.joinCommunity}
             </ButtonComponent>
 
             {/* Mobile Menu Button + Dropdown */}
@@ -41,17 +43,18 @@ const NavbarComponent = () => {
 
                 {/* Animated Mobile Menu */}
                 <ul aria-label="mobile menu"
-                    className={`absolute right-0 mt-3 divide-y-[1px] divide-secondary px-[42px] bg-primary text-secondary rounded-[10px] shadow-lg w-[220px] overflow-hidden transform transition-transform duration-300 ${
+                    className={`absolute right-0 mt-3 divide-y-[1px] divide-bg2! px-[42px] bg-bg1 text-bg2 rounded-[10px] shadow-lg w-[220px] overflow-hidden transform transition-transform duration-300 ${
                         isOpen ? "scale-y-100 opacity-100" : "scale-y-0 opacity-0"
                     } origin-top`}
                 >
-                    <li className="px-auto py-2.5 hover:bg-secondary/20">Home</li>
-                    <li className="px-auto py-2.5 hover:bg-secondary/20">About</li>
-                    <li className="px-auto py-2.5 hover:bg-secondary/20">Events</li>
-                    <li className="px-auto py-2.5 hover:bg-secondary/20">Contact</li>
-                    <li className="px-auto py-2.5 text-nowrap px-auto">
-                        Join Community
-                    </li>
+                    {links.map((link, index) => (
+                        <NavList
+                        key={index}
+                        label={link.label}
+                        link={link.link}
+                        />
+                    ))}
+                    <NavList label={"Join Community"} link={""} />
                 </ul>
             </div>
         </nav>
