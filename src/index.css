@@ -3,12 +3,14 @@
 @import "tailwindcss";
 
 @theme {
-    --color-primary: #161C2D;
-    --color-secondary: #FFEE00;
+    --color-primary: #ffffff;
+    --color-secondary: #161C2D;
     --color-accent: #F64B4B;
     /* Background colors */
-    --color-bg-primary: #ffffff;
-    --color-bg-secondary: #161C2D;
+    --color-bg1: #272829;
+    --color-bg2: #5FDBFC;
+    --color-bg3: #FFE000;
+    --color-bg4: #F4F7FA;
     /* Border colors */
     --color-border-primary: #E7E9ED;
     --color-bd-secondary: #222222;
@@ -46,4 +48,26 @@
     background-repeat: no-repeat;
     background-position: bottom center;
     background-size: contain;
+}
+
+.silver-wave    {
+    background-image: url('./assets/img/silver-wave.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.custom-checkbox {
+    appearance: none;
+    -webkit-appearance: none;
+    background-color: #ffffff;
+    border: 2px #272829;
+    border-radius: 0.25rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.custom-checkbox:checked::after {
+    content: url('./assets/svg/gray-check-mark.svg');
 }
