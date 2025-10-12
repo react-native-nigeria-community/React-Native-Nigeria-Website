@@ -12,6 +12,7 @@ import NoiseCard from "../components/commons/noise-card.jsx";
 import en from "../locales/en.js";
 import { features } from "../utils/features.ts";
 import { liveEvents } from "../utils/live-events.ts";
+import NewsletterComponent from "../components/sections/newsletter.jsx";
 import {writeUp} from "../utils/write-for-us.js";
 import WriteForUsCard from "../components/sections/write-for-us.jsx";
 import OpenSourceCard from "../components/sections/open-source.jsx";
@@ -210,6 +211,8 @@ function HomePage () {
                     ))}
                 </div>
             </section>
+
+            <NewsletterComponent />
         </>
     )
 }
