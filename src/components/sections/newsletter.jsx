@@ -23,12 +23,12 @@ const NewsletterComponent = () => {
         <section className="w-full lg:flex lg:justify-center py-12">
             <div className="text-center px-4 lg:px-[24px] lg:py-[77px]">
                 {/* Heading */}
-                <TypographyComponent as="h3" variant="h3" responsiveVariant={{ lg: "h4" }}>
+                <TypographyComponent as="h3" variant="h3" responsiveVariant={{ lg: "h4" }} className={"text-secondary!"}>
                     {en.newsletterTitle}
                 </TypographyComponent>
 
                 {/* Subheading */}
-                <TypographyComponent as="h6" variant="h6" className={"mt-2 mb-6 text-h6 lg:text-p"} responsiveVariant={{ lg: "p" }}>
+                <TypographyComponent as="h6" variant="h6" className={"text-secondary! mt-2 mb-6 text-h6 lg:text-p"} responsiveVariant={{ lg: "p" }}>
                     {en.newsletterDescription}
                 </TypographyComponent>
 
