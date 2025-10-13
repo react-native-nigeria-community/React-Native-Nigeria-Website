@@ -3,13 +3,11 @@ import MenuSVG from "../../assets/svg/mobile/menu.svg";
 import LogoPNG from "../../assets/img/nav-logo.png";
 import ButtonComponent from "../commons/button.jsx";
 import en from "../../locales/en.js";
-import { useAppNavigation } from "../../routes.jsx";
 import NavList from "../commons/nav-list.jsx";
 import {links} from "../../utils/get-links.js";
 
 const NavbarComponent = () => {
     const [isOpen, setIsOpen] = useState(false);
-    const {goToHome, goToAbout, goToEvents, goToContact} = useAppNavigation();
 
     return (
         <nav className="lg:bg-bg1 lg:sticky top-0 left-0 right-0 flex items-center justify-between w-full px-[20px] lg:px-[125px] py-4 z-50">
