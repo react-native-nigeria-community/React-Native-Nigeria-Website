@@ -1,7 +1,6 @@
 import InputFieldComponent from "../components/commons/input-field.jsx";
 import NavbarComponent from "../components/layouts/navbar.jsx";
 import ButtonComponent from "../components/commons/button.jsx";
-import {useState} from "react";
 import CheckMarkSVG from "../assets/svg/check-mark.svg";
 import MaleAvatarPNG from "../assets/img/male-avatar.png";
 import TypographyComponent from "../components/commons/typography.jsx";
@@ -11,19 +10,6 @@ import en from "../locales/en.js";
 
 
 function Contact() {
-
-    const [email, setEmail] = useState("");
-    const [error, setError] = useState("");
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        if (!email.includes("@")) {
-            setError("Please enter a valid email address.");
-        } else {
-            setError("");
-            alert(email);
-        }
-    };
 
     return (
         <>
@@ -38,7 +24,7 @@ function Contact() {
                             Have questions or ideas? We’d love to hear from you.
                         </TypographyComponent>
 
-                        <form onSubmit={handleSubmit} className={"lg:row-span-1 lg:col-span-2"}>
+                        <form className={"lg:row-span-1 lg:col-span-2"}>
                             <div className="mt-5 px-3 flex items-center gap-3 border-1 rounded-sm border-bd-secondary/50 py-1 lg:bg-primary">
                                 <div className="border-r-1 py-4 pr-2">
                                     <img src={CheckMarkSVG}  alt="check-mark" className="h-6" />
