@@ -1,11 +1,11 @@
 import React from "react";
 import LogoPNG from "../../assets/img/nav-logo.png";
-import TwitterSVG from "../../assets/svg/twitter.svg";
-import FaceBookSVG from "../../assets/svg/facebook.svg";
-import LinkedInSVG from "../../assets/svg/linkedIn.svg";
-import SlackSVG from "../../assets/svg/slack.svg";
 import TypographyComponent from "../commons/typography.jsx";
 import en from "../../locales/en.js";
+import {links} from "../../utils/get-links.js";
+import NavList from "../commons/nav-list.jsx";
+import {socials} from "../../utils/social-icons.js";
+import SocialIcon from "../commons/social-icon.jsx";
 
 const FooterComponent = () => {
     return (
@@ -23,24 +23,22 @@ const FooterComponent = () => {
                 </div>
                 <div className={"grid w-full pt-11 lg:pt-0 lg:flex-none lg:flex-row lg:w-auto"}>
                     <ul className="flex justify-between text-h6 lg:flex-row lg:items-center lg:gap-4 font-medium">
-                        <li className="cursor-pointer hover:underline"><a href={"/"}>{en.navHome}</a></li>
-                        <li className="cursor-pointer hover:underline"><a href={"/about-us"}>{en.navAbout}</a></li>
-                        <li className="cursor-pointer hover:underline"><a href={"/events"}>{en.navEvent}</a></li>
-                        <li className="cursor-pointer hover:underline"><a href={"/contact"}>{en.navContact}</a></li>
+                        {links.map((link, index) => (
+                            <NavList
+                                key={index}
+                                label={link.label}
+                                link={link.link}
+                            />
+                        ))}
                     </ul>
                     <div className={"flex justify-center gap-6 py-11 lg:justify-end lg:py-0 lg:pt-8"}>
-                        <div className={"border-[1.5px] rounded-full border-bg1 h-[35px] w-[35px] flex justify-center items-center"}>
-                            <img src={LinkedInSVG} alt={"linkedIn-svg"} />
-                        </div>
-                        <div className={"border-[1.5px] rounded-full border-bg1 h-[35px] w-[35px] flex justify-center items-center"}>
-                            <img src={FaceBookSVG} alt={"facebook-svg"} />
-                        </div>
-                        <div className={"border-[1.5px] rounded-full border-bg1 h-[35px] w-[35px] flex justify-center items-center"}>
-                            <img src={TwitterSVG} alt={"twitter-svg"} />
-                        </div>
-                        <div className={"border-[1.5px] rounded-full border-bg1 h-[35px] w-[35px] flex justify-center items-center"}>
-                            <img src={SlackSVG} alt={"slack-svg"} />
-                        </div>
+                        {socials.map((social, index) => (
+                            <SocialIcon
+                            key={index}
+                            image={social.image}
+                            altText={social.altText}
+                            />
+                        ))}
                     </div>
                 </div>
             </div>
