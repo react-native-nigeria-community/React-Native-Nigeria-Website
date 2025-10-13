@@ -34,9 +34,9 @@ const FooterComponent = () => {
                     <div className={"flex justify-center gap-6 py-11 lg:justify-end lg:py-0 lg:pt-8"}>
                         {socials.map((social, index) => (
                             <SocialIcon
-                            key={index}
-                            image={social.image}
-                            altText={social.altText}
+                                key={index}
+                                image={social.image}
+                                altText={social.altText}
                             />
                         ))}
                     </div>
