@@ -4,7 +4,7 @@ import HomePage from "./pages/home.jsx";
 import AboutUs from "./pages/about-us.jsx";
 
 function App() {
-
+// just a dummy text
     return (
         <Routes>
             <Route path="/" element={<HomePage />} />
