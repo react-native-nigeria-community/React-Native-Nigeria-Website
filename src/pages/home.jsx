@@ -12,6 +12,7 @@ import NoiseCard from "../components/commons/noise-card.jsx";
 import en from "../locales/en.js";
 import { features } from "../utils/features.ts";
 import { liveEvents } from "../utils/live-events.ts";
+import FooterComponent from "../components/layouts/footer.jsx";
 import NewsletterComponent from "../components/sections/newsletter.jsx";
 import {writeUp} from "../utils/write-for-us.js";
 import WriteForUsCard from "../components/sections/write-for-us.jsx";
@@ -191,7 +192,6 @@ function HomePage () {
                     </div>
                 </div>
             </section>
-
             {/* Sixth section */}
             <section className={"bg-secondary px-6 pt-12 pb-[3.625rem] lg:bg-bg1"}>
                 <div className={"mb-6 space-y-6 lg:w-[589px] lg:mx-auto lg:mb-[1.875rem] text-center"}>
@@ -213,6 +213,7 @@ function HomePage () {
             </section>
 
             <NewsletterComponent />
+            <FooterComponent /> 
         </>
     )
 }
