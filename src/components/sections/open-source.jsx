@@ -1,8 +1,8 @@
 import React from "react";
 import TypographyComponent from "../commons/typography.jsx";
-import StarSvg from "../commons/svgs/star.jsx";
-import ForkSvg from "../commons/svgs/fork.jsx";
-import ArrowRightSvg from "../commons/svgs/arrow-right.jsx";
+import StarSvg from "../../assets/svg/svgs/star.jsx";
+import ForkSvg from "../../assets/svg/svgs/fork.jsx";
+import ArrowRightSvg from "../../assets/svg/svgs/arrow-right.jsx";
 
 const OpenSourceCard = ({star, fork, title, description}) => {
     return (

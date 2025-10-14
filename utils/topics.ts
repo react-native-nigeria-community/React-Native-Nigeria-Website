@@ -1,10 +1,10 @@
-import en from "../locales/en";
+import en from "../src/locales/en";
 // @ts-ignore
-import Topic1PNG from "../assets/img/topics/topic-1.png";
+import Topic1PNG from "../src/assets/img/topics/topic-1.png";
 // @ts-ignore
-import Topic2PNG from "../assets/img/topics/topic-2.png";
+import Topic2PNG from "../src/assets/img/topics/topic-2.png";
 // @ts-ignore
-import Topic3PNG from "../assets/img/topics/topic-3.png";
+import Topic3PNG from "../src/assets/img/topics/topic-3.png";
 
 /** Defines the shape of a topic item */
 export interface Topic {

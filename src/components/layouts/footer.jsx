@@ -2,9 +2,9 @@ import React from "react";
 import LogoPNG from "../../assets/img/nav-logo.png";
 import TypographyComponent from "../commons/typography.jsx";
 import en from "../../locales/en.js";
-import {links} from "../../utils/get-links.js";
+import {links} from "../../../utils/get-links.js";
 import NavList from "../commons/nav-list.jsx";
-import {socials} from "../../utils/social-icons.js";
+import {socials} from "../../../utils/social-icons.js";
 import SocialIcon from "../commons/social-icon.jsx";
 
 const FooterComponent = () => {

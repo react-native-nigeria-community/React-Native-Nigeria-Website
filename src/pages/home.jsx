@@ -10,14 +10,14 @@ import Topic3PNG from "../assets/img/topics/topic-3.png";
 import FeaturedCard from "../components/commons/featured-card.jsx";
 import NoiseCard from "../components/commons/noise-card.jsx";
 import en from "../locales/en.js";
-import { features } from "../utils/features.ts";
-import { liveEvents } from "../utils/live-events.ts";
+import { features } from "../../utils/features.ts";
+import { liveEvents } from "../../utils/live-events.ts";
 import FooterComponent from "../components/layouts/footer.jsx";
 import NewsletterComponent from "../components/sections/newsletter.jsx";
-import {writeUp} from "../utils/write-for-us.js";
+import {writeUp} from "../../utils/write-for-us.js";
 import WriteForUsCard from "../components/sections/write-for-us.jsx";
 import OpenSourceCard from "../components/sections/open-source.jsx";
-import {sources} from "../utils/open-source.js";
+import {sources} from "../../utils/open-source.js";
 
 function HomePage () {
     const [phase, setPhase] = useState(0); // 0 = first anim, 1 = second anim

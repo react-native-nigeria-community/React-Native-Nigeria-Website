@@ -1,4 +1,4 @@
-import en from "../locales/en";
+import en from "../src/locales/en";
 
 export interface GetLinks {
     label: string;
