@@ -1,4 +1,4 @@
-import { getWriteUps, writeUp, WriteForUs } from "../../src/utils/write-for-us";
+import { getWriteUps, writeUp, WriteForUs } from "../../utils/write-for-us";
 import en from "../../src/locales/en";
 
 describe("getWriteUps utility", () => {

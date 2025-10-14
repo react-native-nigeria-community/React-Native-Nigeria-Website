@@ -1,4 +1,4 @@
-import { getTopics, topics, Topic } from "../../src/utils/topics";
+import { getTopics, topics, Topic } from "../../utils/topics";
 import en from "../../src/locales/en";
 
 describe("topics utility", () => {

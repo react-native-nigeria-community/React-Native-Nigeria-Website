@@ -1,12 +1,12 @@
 // @ts-ignore
-import CommunitySVG from "../assets/svg/community.svg";
+import CommunitySVG from "../src/assets/svg/community.svg";
 // @ts-ignore
-import ReactSVG from "../assets/svg/react-b.svg";
+import ReactSVG from "../src/assets/svg/react-b.svg";
 // @ts-ignore
-import CalendarSVG from "../assets/svg/calendar.svg";
+import CalendarSVG from "../src/assets/svg/calendar.svg";
 // @ts-ignore
-import LightBulbSVG from "../assets/svg/light-bulb.svg";
-import en from "../locales/en";
+import LightBulbSVG from "../src/assets/svg/light-bulb.svg";
+import en from "../src/locales/en";
 
 /** Defines the shape of a feature item */
 export interface Feature {

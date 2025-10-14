@@ -1,4 +1,4 @@
-import { getLiveEvents, liveEvents, LiveEvent } from "../../src/utils/live-events";
+import { getLiveEvents, liveEvents, LiveEvent } from "../../utils/live-events";
 import en from "../../src/locales/en";
 
 describe("liveEvents utility", () => {

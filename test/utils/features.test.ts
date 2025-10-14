@@ -1,4 +1,4 @@
-import { getFeatures, features, Feature } from "../../src/utils/features";
+import { getFeatures, features, Feature } from "../../utils/features";
 import en from "../../src/locales/en";
 
 describe("features utility", () => {

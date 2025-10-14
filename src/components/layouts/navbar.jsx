@@ -4,7 +4,7 @@ import LogoPNG from "../../assets/img/nav-logo.png";
 import ButtonComponent from "../commons/button.jsx";
 import en from "../../locales/en.js";
 import NavList from "../commons/nav-list.jsx";
-import {links} from "../../utils/get-links.js";
+import {links} from "../../../utils/get-links.js";
 
 const NavbarComponent = () => {
     const [isOpen, setIsOpen] = useState(false);

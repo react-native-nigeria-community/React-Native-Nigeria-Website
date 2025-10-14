@@ -5,7 +5,7 @@ import FemaleAvatarPNG from "../assets/img/female-avatar.png";
 import TypographyComponent from "../components/commons/typography.jsx";
 import en from "../locales/en.js";
 import AccordionComponent from "../components/commons/accordion.jsx";
-import {accordions} from "../utils/accordion.js";
+import {accordions} from "../../utils/accordion.js";
 
 
 function AboutUs() {

@@ -1,11 +1,11 @@
 // @ts-ignore
-import TwitterSVG from "../assets/svg/twitter.svg";
+import TwitterSVG from "../src/assets/svg/twitter.svg";
 // @ts-ignore
-import FaceBookSVG from "../assets/svg/facebook.svg";
+import FaceBookSVG from "../src/assets/svg/facebook.svg";
 // @ts-ignore
-import LinkedInSVG from "../assets/svg/linkedIn.svg";
+import LinkedInSVG from "../src/assets/svg/linkedIn.svg";
 // @ts-ignore
-import SlackSVG from "../assets/svg/slack.svg";
+import SlackSVG from "../src/assets/svg/slack.svg";
 
 /** Defines the shape of a feature item */
 export interface SocialIcon {

@@ -1,4 +1,4 @@
-import en from "../locales/en";
+import en from "../src/locales/en";
 
 /** Defines the shape of a live event */
 export interface LiveEvent {

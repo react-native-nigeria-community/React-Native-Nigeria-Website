@@ -1,6 +1,6 @@
 import React from "react";
 import TypographyComponent from "../commons/typography.jsx";
-import ArrowRightSvg from "../commons/svgs/arrow-right.jsx";
+import ArrowRightSvg from "../../assets/svg/svgs/arrow-right.jsx";
 
 const WriteForUsCard = ({ title, description }) => {
     return (
