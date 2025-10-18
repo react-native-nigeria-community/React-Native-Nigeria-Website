@@ -38,6 +38,7 @@ export default {
     // first section
     firstSection: {
         reactNnc: "React Native Nigeria Community",
+        reactBrn: "Build with React Native",
         learnShareConnect: {
             learnShareConnect1: "Learn. Share. Connect.",
             learnShareConnect2: "Learn. Share. Connect. Elevate your React Native journey.",
@@ -47,7 +48,8 @@ export default {
     // second section
     secondSection: {
         whyRnn: "Why React Native Nigeria",
-        chosenByDevs: "Chosen by developers who care about performance,",
+        chosenByDevs1: "Chosen by developers who care about performance,",
+        chosenByDevs2: "community, and impact",
         communityTalks: {
             title: "Community talks & pro tips",
             description: "Learn from real experiences, expert tips, and smarter ways to build with React Native.",
@@ -73,7 +75,8 @@ export default {
     // third section
     thirdSection: {
         featuredTopics: "Featured Topics/Insight",
-        featuredTopicsDescription: "Explore hands-on tips, lessons, and tools from the React Native developer community.",
+        featuredTopicsDescription1: "Explore key lessons, tools, and techniques shared by the community.",
+        featuredTopicsDescription2: "Explore hands-on tips, lessons, and tools from the React Native developer community.",
         medium: {
             title: "Medium",
             description1: "Getting started with Tailwind:  Tailwind to create a button",
@@ -210,5 +213,59 @@ export default {
         titleText: "Contact us",
         titleDescription: "Have questions or ideas? We’d love to hear from you.",
     },
+
+    /**
+     ---------------------------------------------------------------------------
+     ALL EVENTS PAGE STRINGS
+     ---------------------------------------------------------------------------
+     **/
+
+    eventPage: {
+        firstSection: {
+            title1: "Build with React Native Events",
+            title2: "React Native Community Events",
+            slogan: "Learn, connect, and grow with our community.",
+        },
+        secondSection: {
+            title: "React Native Nigeria Abuja Meetup",
+            date: "Saturday 20th September 2025",
+            time: "11.00AM",
+            location: "The bunker, 3 Atbara Street, off Cairo Street. Ademola Adetokunbo",
+            collaborationText: "Collaborate, learn, and connect with React Native developers in Nigeria. 🚀 Talks, hands-on sessions & networking await!",
+            hostText: "Meet the host",
+            xText: "@ReactNativeNG",
+            gitText: "react-native-nigeria",
+        },
+        thirdSection: {
+            title: "Upcoming Events",
+            event1: {
+                title: "Build with React Native",
+                date: "Friday 3rd October 2025",
+                time: "6:00PM",
+                location: "Manchester",
+            },
+        },
+        fourthSection: {
+            title: "Past Events & Highlights",
+            event1: {
+                title: "Starting a React Native Project in 2020",
+                date: "3rd October 2020",
+                time: "10.00AM",
+                location: "Online",
+            },
+            event2: {
+                title: "After Create React App, What's Next?",
+                date: "5th November 2020",
+                time: "2:00PM",
+                location: "Online",
+            },
+            event3: {
+                title: "React Native Community Akure",
+                date: "18th December 2021",
+                time: "9:00AM",
+                location: "Akure",
+            },
+        },
+    }
 
 };

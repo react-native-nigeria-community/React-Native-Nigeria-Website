@@ -1,7 +1,7 @@
 import React from "react";
 
 
-const ForkSvg = ({className}) => {
+const ForkIcon = ({className}) => {
     return (
         <svg
             width="24"
@@ -18,4 +18,4 @@ const ForkSvg = ({className}) => {
     );
 }
 
-export default ForkSvg;
+export default ForkIcon;

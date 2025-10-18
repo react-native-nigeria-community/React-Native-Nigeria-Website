@@ -1,19 +1,14 @@
-import NavbarComponent from "../components/layouts/navbar.jsx";
-import NewsletterComponent from "../components/sections/newsletter.jsx";
-import FooterComponent from "../components/layouts/footer.jsx";
 import FemaleAvatarPNG from "../assets/img/female-avatar.png";
 import TypographyComponent from "../components/commons/typography.jsx";
 import en from "../locales/en.js";
 import AccordionComponent from "../components/commons/accordion.jsx";
-import {accordions} from "../../utils/accordion.js";
+import {getAccordions} from "../../utils/accordion.jsx";
 
 
 function AboutUs() {
 
     return (
         <>
-            <NavbarComponent />
-
             {/* First section */}
             <section className={"py-12 px-6 lg:bg-bg1"}>
                 <div className={"text-center lg:text-left lg:flex lg:justify-center lg:mx-auto"}>
@@ -43,12 +38,9 @@ function AboutUs() {
                     <TypographyComponent as={"h3"} variant={"h3"} className={"text-mh3! text-bg1! leading-none! tracking-normal! lg:text-h2! lg:tracking-[-1.2px]! lg:font-normal!"}>{en.aboutPage.faqTitle}</TypographyComponent>
                 </div>
                 <div className={"lg:pt-[115px]"}>
-                    <AccordionComponent items={accordions} allowMultiple={false} />
+                    <AccordionComponent items={getAccordions} allowMultiple={false} />
                 </div>
             </section>
-
-            <NewsletterComponent />
-            <FooterComponent />
         </>
     );
 }

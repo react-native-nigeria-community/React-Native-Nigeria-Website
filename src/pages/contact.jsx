@@ -1,11 +1,8 @@
 import InputFieldComponent from "../components/commons/input-field.jsx";
-import NavbarComponent from "../components/layouts/navbar.jsx";
 import ButtonComponent from "../components/commons/button.jsx";
 import CheckMarkSVG from "../assets/svg/check-mark.svg";
 import MaleAvatarPNG from "../assets/img/male-avatar.png";
 import TypographyComponent from "../components/commons/typography.jsx";
-import NewsletterComponent from "../components/sections/newsletter.jsx";
-import FooterComponent from "../components/layouts/footer.jsx";
 import en from "../locales/en.js";
 
 
@@ -13,7 +10,6 @@ function Contact() {
 
     return (
         <>
-            <NavbarComponent />
             <section className={"p-6 lg:bg-bg1"}>
                 <div className={"text-left lg:flex lg:justify-center lg:mx-auto"}>
                     <div className={"flex flex-col lg:grid lg:grid-cols-4 lg:grid-rows-2"}>
@@ -56,9 +52,6 @@ function Contact() {
                     </div>
                 </div>
             </section>
-
-            <NewsletterComponent />
-            <FooterComponent />
         </>
     );
 }

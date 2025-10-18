@@ -1,42 +1,27 @@
-// @ts-ignore
 import TwitterSVG from "../src/assets/svg/twitter.svg";
-// @ts-ignore
 import FaceBookSVG from "../src/assets/svg/facebook.svg";
-// @ts-ignore
 import LinkedInSVG from "../src/assets/svg/linkedIn.svg";
-// @ts-ignore
 import SlackSVG from "../src/assets/svg/slack.svg";
 
-/** Defines the shape of a feature item */
-export interface SocialIcon {
-    image: string;
-    altText: string;
-}
-
-/**
- * Get the list of features for a given locale.
- * @param locale - Locale object (defaults to English).
- * @returns An array of Feature objects.
- */
-export function getSocialIcons(): SocialIcon[] {
-    return [
+export const getSocials = [
         {
             image: LinkedInSVG,
             altText: "LinkedIn-icon",
+            link: "https://www.linkedin.com/company/react-native-nigeria-community/",
         },
         {
             image: FaceBookSVG,
             altText: "Facebook-icon",
+            link: "",
         },
         {
             image: TwitterSVG,
             altText: "Twitter-icon",
+            link: "https://x.com/ReactNativeNG",
         },
         {
             image: SlackSVG,
             altText: "Slack-icon",
+            link: "https://slack.com/",
         },
     ];
-}
-
-export const socials: SocialIcon[] = getSocialIcons();
