@@ -4,7 +4,7 @@ import ArrowRightSvg from "../../assets/svg/svgs/arrow-right.jsx";
 
 const WriteForUsCard = ({ title, description }) => {
     return (
-        <div className="monotone-noise rounded-[0.625rem] border-[1px] border-[#E7E9ED] px-7 pt-[3.625rem] pb-[1.125rem] lg:w-[21.938rem]">
+        <div className="monotone-noise grid rounded-[0.625rem] border-[1px] border-[#E7E9ED] px-7 pt-[3.625rem] pb-[1.125rem] lg:w-[21.938rem]">
             <div>
                 <TypographyComponent
                     as="h4"
@@ -19,7 +19,7 @@ const WriteForUsCard = ({ title, description }) => {
                 <TypographyComponent
                     as="h5"
                     variant="h5"
-                    className="leading-8 tracking-[0.031] text-secondary font-normal"
+                    className="leading-8! tracking-[-0.5px]! text-secondary font-normal!"
                 >
                     {description}
                 </TypographyComponent>

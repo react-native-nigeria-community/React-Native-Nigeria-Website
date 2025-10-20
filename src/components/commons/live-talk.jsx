@@ -10,10 +10,10 @@ const LiveTalkCard = ({
                           buttonText = "Watch Live Talk",
                       }) => {
     return (
-        <div className="monotone-noise px-6 pt-6 pb-3.5 rounded-lg lg:px-0 lg:w-[350px] lg:pb-[51px]">
+        <div className="monotone-noise grid px-6 pt-6 pb-3.5 rounded-lg lg:px-0 lg:w-[350px] lg:pb-[51px]">
             {/* Label */}
-            <div className="w-fit py-2 px-[3px] bg-secondary/10 rounded-[14.5px] uppercase lg:mt-10 lg:ml-7">
-                <p className="text-primary text-[13px] font-medium leading-none tracking-[1.63px]">
+            <div className="w-fit py-2 px-[3px] bg-bg3/10 rounded-[14.5px] uppercase lg:mt-10 lg:ml-7">
+                <p className="text-secondary text-[13px] font-medium leading-none tracking-[1.63px]">
                     {label}
                 </p>
             </div>
@@ -29,14 +29,14 @@ const LiveTalkCard = ({
 
                 <TypographyComponent
                     as="h6"
-                    className="text-h6/5! font-normal text-primary opacity-70 lg:text-[20px]! lg:leading-[29px]!"
+                    className="text-h6/5! font-normal text-secondary opacity-70 lg:text-[20px]! lg:leading-[29px]!"
                 >
                     {date}
                 </TypographyComponent>
 
                 <TypographyComponent
                     as="h6"
-                    className="text-h6/5! font-normal text-primary opacity-70 lg:text-[20px]! lg:leading-[29px]!"
+                    className="text-h6/5! font-normal text-secondary opacity-70 lg:text-[20px]! lg:leading-[29px]!"
                 >
                     {time}
                 </TypographyComponent>
@@ -45,7 +45,7 @@ const LiveTalkCard = ({
             {/* Button */}
             <div className="mt-6 lg:mt-20 text-center text-[14px]! leading-[17px] font-medium lg:flex lg:justify-center">
                 <ButtonComponent
-                    variant="accent"
+                    variant="primary"
                     className="lg:text-[18px] lg:leading-[26px]! lg:py-3 lg:px-[38px]"
                 >
                     {buttonText}

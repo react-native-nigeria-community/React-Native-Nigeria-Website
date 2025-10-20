@@ -2,9 +2,9 @@ import React from "react";
 import LogoPNG from "../../assets/img/nav-logo.png";
 import TypographyComponent from "../commons/typography.jsx";
 import en from "../../locales/en.js";
-import {links} from "../../../utils/get-links.js";
+import {getNavLinks} from "../../../utils/nav-links.jsx";
 import NavList from "../commons/nav-list.jsx";
-import {socials} from "../../../utils/social-icons.js";
+import {getSocials} from "../../../utils/social-links.jsx";
 import SocialIcon from "../commons/social-icon.jsx";
 
 const FooterComponent = () => {
@@ -23,7 +23,7 @@ const FooterComponent = () => {
                 </div>
                 <div className={"grid w-full pt-11 lg:pt-0 lg:flex-none lg:flex-row lg:w-auto"}>
                     <ul className="flex justify-between text-h6 lg:flex-row lg:items-center lg:gap-4 font-medium">
-                        {links.map((link, index) => (
+                        {getNavLinks.map((link, index) => (
                             <NavList
                                 key={index}
                                 label={link.label}
@@ -32,11 +32,12 @@ const FooterComponent = () => {
                         ))}
                     </ul>
                     <div className={"flex justify-center gap-6 py-11 lg:justify-end lg:py-0 lg:pt-8"}>
-                        {socials.map((social, index) => (
+                        {getSocials.map((social, index) => (
                             <SocialIcon
                                 key={index}
                                 image={social.image}
                                 altText={social.altText}
+                                link={social.link}
                             />
                         ))}
                     </div>
