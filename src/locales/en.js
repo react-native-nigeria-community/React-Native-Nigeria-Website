@@ -9,6 +9,7 @@ export default {
 
     // button strings
     joinCommunity: "Join Community",
+    joinCommunityLink: "https://reactnativenigeria.slack.com/join/shared_invite/zt-3e527jgs1-mIbtHa_fTrMXXZLxQTQuWA#/shared-invite/email",
     explore: "Explore",
     viewCalendar: "View Calendar",
     registerNext: "Register for Next",
