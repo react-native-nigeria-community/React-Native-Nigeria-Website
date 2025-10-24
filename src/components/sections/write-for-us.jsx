@@ -2,7 +2,7 @@ import React from "react";
 import TypographyComponent from "../commons/typography.jsx";
 import ArrowRightSvg from "../../assets/svg/svgs/arrow-right.jsx";
 
-const WriteForUsCard = ({ title, description }) => {
+const WriteForUsCard = ({ title, description, link }) => {
     return (
         <div className="monotone-noise grid rounded-[0.625rem] border-[1px] border-[#E7E9ED] px-7 pt-[3.625rem] pb-[1.125rem] lg:w-[21.938rem]">
             <div>
@@ -26,9 +26,17 @@ const WriteForUsCard = ({ title, description }) => {
             </div>
 
             <div className="grid justify-items-end-safe">
-                <div className="mt-2.5 w-[2.625rem] h-[2.625rem] rounded-full flex justify-center items-center bg-bg2/20">
-                    <ArrowRightSvg className={"text-bg1"} />
-                </div>
+      <div className="grid justify-items-end-safe">
+        {/* Wrap the arrow in an <a> so it becomes clickable */}
+        <a
+          href={link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-2.5 w-[2.625rem] h-[2.625rem] rounded-full flex justify-center items-center bg-bg2/20 hover:bg-bg2/40 transition"
+        >
+          <ArrowRightSvg className="text-bg1" />
+        </a>
+      </div>
             </div>
         </div>
     );

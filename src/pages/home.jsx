@@ -203,6 +203,7 @@ function HomePage () {
                         key={index}
                         title={writeUps.title}
                         description={writeUps.description}
+                        link={writeUps.link}
                         />
                     ))}
                 </div>
