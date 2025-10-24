@@ -131,7 +131,19 @@ function HomePage () {
                 </div>
 
                 <div className={"text-center pt-4 lg:pt-12 lg:pb-[54px]"}>
-                    <ButtonComponent variant={"primary"} className={"text-xs/4 tracking-normal font-normal py-1.5 px-9 lg:text-[18px]/0! lg:py-3.5 lg:px-[23px] lg:tracking-[-0.5px] lg:w-[157px] lg:h-[50px] rounded-lg!"}>Explore</ButtonComponent>
+                    <a
+                    href={en.exploreLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >
+                    <ButtonComponent
+                        variant="primary"
+                        className="text-xs/4 tracking-normal font-normal py-1.5 px-9 lg:text-[18px]/0! lg:py-3.5 lg:px-[23px] lg:tracking-[-0.5px] lg:w-[157px] lg:h-[50px] rounded-lg!"
+                    >
+                        {en.explore}
+                    </ButtonComponent>
+                    </a>
+
                 </div>
             </section>
 

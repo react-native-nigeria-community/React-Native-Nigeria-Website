@@ -10,6 +10,7 @@ export default {
     // button strings
     joinCommunity: "Join Community",
     explore: "Explore",
+    exploreLink: "https://medium.com/react-native-nigeria" ,
     viewCalendar: "View Calendar",
     registerNext: "Register for Next",
     subscribe: "Subscribe",

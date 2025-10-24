@@ -22,6 +22,6 @@ export const getSocials = [
         {
             image: SlackSVG,
             altText: "Slack-icon",
-            link: "https://slack.com/",
+            link: "https://reactnativenigeria.slack.com/join/shared_invite/zt-c8od4rkl-xUOp01GMiKOt_7_mFvyOzA#/shared-invite/email",
         },
     ];
