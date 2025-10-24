@@ -34,9 +34,16 @@ const NavbarComponent = () => {
             </ul>
 
             {/* Desktop Button */}
+            <a
+            href={en.joinCommunityLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            >
             <ButtonComponent variant="primary" className="hidden lg:block cursor-pointer">
                 {en.joinCommunity}
             </ButtonComponent>
+            </a>
+
 
             {/* Mobile Menu Button + Dropdown */}
             <div className="lg:hidden relative">
@@ -57,7 +64,7 @@ const NavbarComponent = () => {
                         link={link.link}
                         />
                     ))}
-                    <NavList label={"Join Community"} link={""} />
+                    <NavList label={"Join Community"} link={en.joinCommunityLink} />
                 </ul>
             </div>
         </nav>

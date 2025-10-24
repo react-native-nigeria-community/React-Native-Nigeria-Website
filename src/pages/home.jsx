@@ -102,7 +102,19 @@ function HomePage () {
                         </TypographyComponent>
                     </div>
                     <div>
-                        <ButtonComponent variant={"primary"} className={"font-normal! flex mx-auto text-xs/4 text-nowrap lg:h-fit lg:py-3.5 lg:px-[23px] lg:text-[18px] lg:font-medium!"}>{en.joinCommunity}</ButtonComponent>
+                        <a
+                        href={en.joinCommunityLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        >
+                        <ButtonComponent
+                            variant="primary"
+                            className="font-normal! flex mx-auto text-xs/4 text-nowrap lg:h-fit lg:py-3.5 lg:px-[23px] lg:text-[18px] lg:font-medium!"
+                        >
+                            {en.joinCommunity}
+                        </ButtonComponent>
+                        </a>
+
                     </div>
                 </div>
             </section>
