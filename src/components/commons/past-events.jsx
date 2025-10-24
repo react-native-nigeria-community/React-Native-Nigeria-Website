@@ -7,7 +7,7 @@ import React from "react";
 
 const PastEventHighLights = ({ title, date, time, location }) => {
     return (
-        <div className={"bg-primary border-[1px] px-7 pt-[30px] pb-2.5 border-black/25 rounded-[10px]"}>
+       <div className="bg-primary border-[1px] px-7 pt-[30px] pb-2.5 border-black/25 rounded-[10px] flex flex-col justify-between h-[340px] w-full">
             <TypographyComponent as={"h4"} variant={"h4"} className={"tracking-[-0.8px] leading-none font-normal!"}>{title}</TypographyComponent>
 
             <div className={"pt-6 text-secondary space-y-4"}>
