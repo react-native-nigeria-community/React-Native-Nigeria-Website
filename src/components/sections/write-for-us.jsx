@@ -27,7 +27,6 @@ const WriteForUsCard = ({ title, description, link }) => {
 
             <div className="grid justify-items-end-safe">
       <div className="grid justify-items-end-safe">
-        {/* Wrap the arrow in an <a> so it becomes clickable */}
         <a
           href={link}
           target="_blank"
