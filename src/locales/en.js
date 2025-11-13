@@ -177,17 +177,17 @@ export default {
             communityCard1: {
                 title: "Write for Us",
                 description: "Share your knowledge, inspire others, and grow your voice in the React Native community.",
-                link: "https://medium.com/react-native-nigeria"
+                link: "https://github.com/react-native-nigeria-community/React-Native-Nigeria-Community-Contribution-Guideline"
             },
             communityCard2: {
                 title: "Host a Talk",
                 description: "Share your insight, experience, or ideas with the community , on stage or online.",
-                link: "https://reactnativenigeria.slack.com/join/shared_invite/zt-c8od4rkl-xUOp01GMiKOt_7_mFvyOzA#/shared-invite/email",
+                link: "https://github.com/react-native-nigeria-community/React-Native-Nigeria-Community-Contribution-Guideline",
             },
             communityCard3: {
                 title: "Share Projects",
                 description: "Built something cool? Share it, get feedback, and connect with fellow devs.",
-                link: "https://github.com/react-native-nigeria-community",
+                link: "https://github.com/react-native-nigeria-community/React-Native-Nigeria-Community-Contribution-Guideline",
             },
         },
     },
