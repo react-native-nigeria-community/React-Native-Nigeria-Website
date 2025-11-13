@@ -1,9 +1,10 @@
 import React from "react";
 import TypographyComponent from "./typography.jsx";
 
-const FeaturedCard =({image, title, description}) => {
+const FeaturedCard =({image, title, description, link}) => {
 
     return (
+        <a href={link} target="_blank" rel="noopener noreferrer">
         <div className={"space-y-[22px]"}>
             <div className={"rounded-lg flex items-center justify-center"}>
                 <img src={image} alt={`${title}-icon`} />
@@ -17,6 +18,7 @@ const FeaturedCard =({image, title, description}) => {
                 </TypographyComponent>
             </div>
         </div>
+        </a>
     );
 };
 

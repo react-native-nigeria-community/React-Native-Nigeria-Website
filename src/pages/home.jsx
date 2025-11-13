@@ -138,6 +138,7 @@ function HomePage () {
                         image={topic.image}
                         title={topic.title}
                         description={topic.description}
+                        link={topic.link}
                         />
                     ))}
                 </div>
