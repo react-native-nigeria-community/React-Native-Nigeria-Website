@@ -206,6 +206,7 @@ function HomePage () {
                             fork={source.fork}
                             title={source.title}
                             description={source.description}
+                            link={source.link}
                             />
                         ))}
                     </div>

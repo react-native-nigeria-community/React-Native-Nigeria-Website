@@ -4,9 +4,9 @@ import StarSvg from "../../assets/svg/svgs/star.jsx";
 import ForkSvg from "../../assets/svg/svgs/fork-icon.jsx";
 import ArrowRightSvg from "../../assets/svg/svgs/arrow-right.jsx";
 
-const OpenSourceCard = ({star, fork, title, description}) => {
+const OpenSourceCard = ({star, fork, title, description, link}) => {
     return (
-        <div className="bg-bg4 group flex items-center mt-[30px] rounded-[10px] px-[30px] py-[33px] lg:w-[350px] lg:hover:bg-bg1 transition-colors duration-300">
+       <div className="bg-bg4 group relative mt-[30px] rounded-[10px] px-[30px] py-[33px] lg:w-[350px] lg:hover:bg-bg1 transition-colors duration-300">
             <div className="text-left">
                 {/* Stats Section */}
                 <div className="flex gap-2.5 pb-2.5">
@@ -51,9 +51,11 @@ const OpenSourceCard = ({star, fork, title, description}) => {
             </div>
 
             {/* Arrow Icon */}
-            <div className="rounded-full w-[42px] h-[42px] p-3.5 bg-bg2/20 group-hover:bg-bg4/20 flex items-center justify-center transition-colors duration-300">
-                <ArrowRightSvg className={"text-bg1 group-hover:text-bg2 transition-colors duration-300"} />
-            </div>
+            <a href={link} target="_blank" rel="noopener noreferrer" className="absolute bottom-4 right-4 rounded-full w-[42px] h-[42px] p-3.5 bg-bg2/20 group-hover:bg-bg4/20 flex items-center justify-center transition-colors duration-300">
+            <ArrowRightSvg className="text-bg1 group-hover:text-bg2 transition-colors duration-300" />
+            </a>
+
+
         </div>
     );
 };

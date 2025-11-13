@@ -124,45 +124,51 @@ export default {
 
     // fifth section
     fifthSection: {
-        reactNnc1: "BUILD WITH REACT NATIVE",
+        reactNnc1: "REACT NATIVE NIGERIA",
         reactNNC2: "React Native Nigeria Community",
         exploreReactNative: "Explore React Native Open Source Projects",
         sourceProject: {
             project1: {
                 star: "1",
-                fork: "1",
+                fork: "0",
                 title: "React Native Nigeria",
                 description: "The official open source website for React Native Nigeria.",
+                link: "https://github.com/react-native-nigeria-community/bwrn-landing",
             },
             project2: {
                 star: "13",
                 fork: "11",
                 title: "Rave by Flutterwave",
                 description: "Accept payments effortlessly within your React Native app.",
+                link: "https://github.com/react-native-nigeria-community/react-native-rave-webview",
             },
             project3: {
                 star: "4",
                 fork: "4",
                 title: "Quidpay Payments",
                 description: "Effortless payment collection with zero linking.",
+                link: "https://github.com/react-native-nigeria-community/react-native-quidpay-webview",
             },
             project4: {
                 star: "5",
                 fork: "2",
                 title: "RN Number Counter",
                 description: "Smooth animated number counter for React Native.",
+                link: "https://github.com/react-native-nigeria-community/react-native-number-view",
             },
             project5: {
                 star: "16",
                 fork: "5",
                 title: "Cloudinary Image Picker",
                 description: "Quickly select and upload images directly to Cloudinary.",
+                link: "https://github.com/react-native-nigeria-community/react-native-cloudinary-image-picker",
             },
             project6: {
                 star: "19",
                 fork: "3",
                 title: "React Native HEXShade",
                 description: "Generate lighter or darker tones instantly.",
+                link: "https://github.com/react-native-nigeria-community/Lighten-Darken-Color",
             },
         },
     },
