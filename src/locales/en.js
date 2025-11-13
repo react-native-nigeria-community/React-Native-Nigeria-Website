@@ -90,7 +90,7 @@ export default {
     // fourth section
     fourthSection: {
         upComingEvents: {
-            title: "Upcoming Community Events",
+            title: "Previous Community Events",
             description: {
                 description1: "Stay updated on our monthly live sessions, hackathons, and IRL meetups",
                 description2: "Stay updated on our monthly live sessions, hackathons,",
@@ -104,20 +104,23 @@ export default {
                 date: "August 25, 2020",
                 time: "10:00 AM",
                 buttonText: "Watch Live Talk",
+                buttonLink: "https://youtu.be/ayCta8DrpD0?si=pvFbRY4NkxWHXj84"
             },
             eventCard2: {
-                smallText: "MEETUP",
-                title: "React Native Abuja Meetup",
-                date: "September 20, 2025",
+                smallText: "LIVE TALK",
+                title: "After Create React App, What's Next?",
+                date: "August 20, 2020",
                 time: "10:30 AM",
-                buttonText: "RSVP",
+                buttonText: "Watch Live Talk",
+                buttonLink: "https://youtu.be/xftFpHvWJYM?si=nXVldslkTaBrYD8a"
             },
             eventCard3: {
                 smallText: "EVENT",
-                title: "Build with React Native",
-                date: "October 3rd, 2025",
+                title: "React Native Nigeria 2020",
+                date: "October 3rd, 2020",
                 time: "06:00 PM",
-                buttonText: "Register",
+                buttonText: "Watch Live Talk",
+                buttonLink: "https://youtu.be/12f3Cjw2Rbc?si=SWVTIMhMjEdsIDYx"
             },
         },
     },

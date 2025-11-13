@@ -8,6 +8,7 @@ const LiveTalkCard = ({
                           date,
                           time,
                           buttonText = "Watch Live Talk",
+                          buttonLink,
                       }) => {
     return (
         <div className="monotone-noise grid px-6 pt-6 pb-3.5 rounded-lg lg:px-0 lg:w-[350px] lg:pb-[51px]">
@@ -44,12 +45,14 @@ const LiveTalkCard = ({
 
             {/* Button */}
             <div className="mt-6 lg:mt-20 text-center text-[14px]! leading-[17px] font-medium lg:flex lg:justify-center">
+                <a href={buttonLink} target="_blank" rel="noopener noreferrer">
                 <ButtonComponent
                     variant="primary"
                     className="lg:text-[18px] lg:leading-[26px]! lg:py-3 lg:px-[38px]"
                 >
                     {buttonText}
                 </ButtonComponent>
+                </a>
             </div>
         </div>
     );
