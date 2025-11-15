@@ -81,9 +81,12 @@ export default {
         featuredTopicsDescription2: "Explore hands-on tips, lessons, and tools from the React Native developer community.",
         medium: {
             title: "Medium",
-            description1: "Getting started with Tailwind:  Tailwind to create a button",
+            description1: "Getting started with Tailwind:  How to install Tailwind CSS with Create React App",
+            link1: "https://medium.com/react-native-nigeria/getting-started-with-tailwind-how-to-install-tailwind-css-with-create-react-app-e1777f903a3d",
             description2: "I know Tech is the Future but how do i get started",
-            description3: "Using TypeScript effectively for cleaner and scalable apps.",
+            link2: "https://medium.com/react-native-nigeria/i-know-tech-is-the-future-but-how-do-i-get-started-e86cb27ace9b",
+            description3: "React Native: What You Need To Know About Hermes.",
+            link3: "https://medium.com/react-native-nigeria/react-native-what-you-need-to-know-about-hermes-b3686b446e49",
         },
     },
 
