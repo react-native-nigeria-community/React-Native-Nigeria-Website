@@ -180,13 +180,14 @@ function HomePage () {
                             date={liveEvent.date}
                             time={liveEvent.time}
                             buttonText={liveEvent.buttonText}
+                            buttonLink={liveEvent.buttonLink}
                         />
                     ))}
                 </div>
-
-                <div className={"text-center flex justify-center gap-5 pt-[64px] text-[14px]! leading-[17px] font-medium"}>
+               {/* <div className={"text-center flex justify-center gap-5 pt-[64px] text-[14px]! leading-[17px] font-medium"}>
                     <ButtonComponent variant={"primary"} className={"border-primary! border-2! lg:w-[206px] lg:h-[50px]"}>{en.viewCalendar}</ButtonComponent>
-                </div>
+                </div> */}
+                
             </section>
 
             {/* Fifth section */}
