@@ -1,74 +1,123 @@
-import React, { useState } from "react";
-import MenuSVG from "../../assets/svg/mobile/menu.svg";
+import React, { useState, useCallback } from "react";
+import { Link, useLocation } from "react-router-dom";
 import LogoPNG from "../../assets/img/nav-logo.png";
 import ButtonComponent from "../commons/button.jsx";
 import en from "../../locales/en.js";
 import NavList from "../commons/nav-list.jsx";
-import {getNavLinks} from "../../../utils/nav-links.jsx";
-import { useLocation } from "react-router-dom";
+import { getNavLinks } from "../../../utils/nav-links.jsx";
 
 const NavbarComponent = () => {
-    const [isOpen, setIsOpen] = useState(false);
-    const location = useLocation();
+  const [open, setOpen] = useState(false);
+  const location = useLocation();
 
-    return (
-        <nav className="lg:bg-bg1 lg:sticky top-0 left-0 right-0 flex items-center justify-between w-full px-[20px] lg:px-[125px] py-4 z-50">
-            {/* Logo + Branding */}
-            <div className="flex items-center gap-1">
-                <img src={LogoPNG} alt="official-logo" className="w-[31.19px] h-[31.19px] lg:w-12 lg:h-12" />
-                <p className="w-[72.28px] lg:w-[109px] text-[10.84px] leading-none tracking-normal font-semibold text-left text-secondary lg:text-primary lg:text-[16.34px]!">
-                    {en.navLogoText}
-                </p>
-            </div>
+  const toggle = useCallback(() => setOpen((v) => !v), []);
+  const close = useCallback(() => setOpen(false), []);
 
-            {/* Desktop Menu */}
-            <ul aria-label="desktop menu" className="hidden lg:flex items-center gap-14 text-primary">
-                {getNavLinks.slice(0, 3).map((link, index) => (
-                    <NavList
-                        key={index}
-                        label={link.label}
-                        link={link.link}
-                        isActive={location.pathname === link.link}
-                    />
-                ))}
-            </ul>
+  return (
+    <header className="sticky top-0 z-50 bg-bg1">
+      <nav className="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between relative">
+        
+        {/* LEFT NAV LINKS (Desktop) */}
+        <ul className="hidden lg:flex items-center gap-12 text-primary">
+          {getNavLinks.slice(0, 3).map((link, i) => (
+            <NavList
+              key={i}
+              label={link.label}
+              link={link.link}
+              isActive={location.pathname === link.link}
+            />
+          ))}
+        </ul>
 
-            {/* Desktop Button */}
-            <a
+        {/* CENTER LOGO */}
+        <Link
+          to="/"
+          className="absolute left-1/2 -translate-x-1/2 hidden lg:flex items-center"
+        >
+          <img src={LogoPNG} alt="Logo" className="h-10 w-auto" />
+        </Link>
+
+        {/* RIGHT BUTTON (Desktop) */}
+        <a
+          href={en.joinCommunityLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hidden lg:block"
+        >
+          <ButtonComponent variant="primary">{en.joinCommunity}</ButtonComponent>
+        </a>
+
+        {/* MOBILE HEADER */}
+        <div className="lg:hidden flex items-center justify-between w-full">
+          
+          {/* Mobile Logo */}
+          <Link to="/" className="flex items-center">
+            <img src={LogoPNG} alt="Logo" className="h-8 w-auto" />
+          </Link>
+
+          {/* Mobile Menu Toggle */}
+          <button
+            aria-label="open-menu"
+            onClick={toggle}
+            className="text-primary text-3xl"
+          >
+            {open ? "×" : "☰"}
+          </button>
+        </div>
+      </nav>
+
+      {/* FULLSCREEN MOBILE MENU */}
+      <div
+        role="dialog"
+        aria-modal="true"
+        className={`lg:hidden fixed inset-0 bg-bg1 z-40 transition-all duration-200 ${
+          open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+        }`}
+        onClick={close}
+      >
+        <div
+          className={`h-full w-full flex flex-col items-center justify-center space-y-8 transform transition-transform duration-200 ${
+            open ? "translate-y-0" : "translate-y-3"
+          }`}
+          onClick={(e) => e.stopPropagation()}
+        >
+          {/* Close Button */}
+          <button
+            onClick={close}
+            aria-label="close-menu"
+            className="absolute top-7 right-7 text-4xl text-primary"
+          >
+            ×
+          </button>
+
+          {/* Mobile Links */}
+          {getNavLinks.map((link, i) => (
+            <Link
+              key={i}
+              to={link.link}
+              onClick={close}
+              className="text-xl text-primary"
+            >
+              {link.label}
+            </Link>
+          ))}
+
+          {/* Join Button */}
+          <a
             href={en.joinCommunityLink}
             target="_blank"
             rel="noopener noreferrer"
-            >
-            <ButtonComponent variant="primary" className="hidden lg:block cursor-pointer">
-                {en.joinCommunity}
+            onClick={close}
+            className="mt-4"
+          >
+            <ButtonComponent variant="primary" className="px-6 py-3">
+              {en.joinCommunity}
             </ButtonComponent>
-            </a>
-
-
-            {/* Mobile Menu Button + Dropdown */}
-            <div className="lg:hidden relative">
-                <button aria-label="menu-toggle" onClick={() => setIsOpen(!isOpen)}>
-                    <img src={MenuSVG} alt="menu" className="w-7 h-7" />
-                </button>
-
-                {/* Animated Mobile Menu */}
-                <ul aria-label="mobile menu"
-                    className={`absolute right-0 mt-3 divide-y-[1px] divide-bg2! px-[42px] bg-bg1 text-bg2 rounded-[10px] shadow-lg w-[220px] overflow-hidden transform transition-transform duration-300 ${
-                        isOpen ? "scale-y-100 opacity-100" : "scale-y-0 opacity-0"
-                    } origin-top`}
-                >
-                    {getNavLinks.map((link, index) => (
-                        <NavList
-                        key={index}
-                        label={link.label}
-                        link={link.link}
-                        />
-                    ))}
-                    <NavList label={"Join Community"} link={en.joinCommunityLink} />
-                </ul>
-            </div>
-        </nav>
-    );
+          </a>
+        </div>
+      </div>
+    </header>
+  );
 };
 
 export default NavbarComponent;
