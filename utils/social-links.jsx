@@ -1,7 +1,7 @@
 import TwitterSVG from "../src/assets/svg/twitter.svg";
-import FaceBookSVG from "../src/assets/svg/facebook.svg";
 import LinkedInSVG from "../src/assets/svg/linkedIn.svg";
 import SlackSVG from "../src/assets/svg/slack.svg";
+import GitHubSVG from "../src/assets/svg/github.svg";
 
 export const getSocials = [
         {
@@ -10,9 +10,9 @@ export const getSocials = [
             link: "https://www.linkedin.com/company/react-native-nigeria-community/",
         },
         {
-            image: FaceBookSVG,
-            altText: "Facebook-icon",
-            link: "",
+            image: GitHubSVG,
+            altText: "GitHub-icon",
+            link: "https://github.com/react-native-nigeria-community",
         },
         {
             image: TwitterSVG,

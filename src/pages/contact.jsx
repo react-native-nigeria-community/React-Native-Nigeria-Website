@@ -25,10 +25,30 @@ function Contact() {
       toast.dismiss();
 
       if (result.success) {
-        toast.success("Message sent successfully!");
+        toast.success("Message sent successfully!",
+          {
+            style: {
+              border: "2px solid #22c55e",
+            },
+            iconTheme: {
+              primary: "#22c55e",
+              secondary: "#fff",
+            },
+          }
+        );
         form.reset();
       } else {
-        toast.error("Failed to send message. Please try again.");
+        toast.error("Failed to send message. Please try again.",
+                {
+          style: {
+            border: "2px solid #dc2626",
+          },
+          iconTheme: {
+            primary: "#dc2626",
+            secondary: "#fff",
+          },
+        }
+        );
       }
     } catch {
       toast.dismiss();
@@ -48,10 +68,6 @@ function Contact() {
               border: "2px solid #FF9E0C",
               background: "#fff",
               color: "#333",
-            },
-            iconTheme: {
-              primary: "#FF9E0C",
-              secondary: "#fff",
             },
             duration: 5000,
           }}
