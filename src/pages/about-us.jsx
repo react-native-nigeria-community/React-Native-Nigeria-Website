@@ -1,4 +1,5 @@
 import FemaleAvatarPNG from "../assets/img/female-avatar.png";
+import AboutJPG from "../assets/img/about.jpg";
 import TypographyComponent from "../components/commons/typography.jsx";
 import en from "../locales/en.js";
 import AccordionComponent from "../components/commons/accordion.jsx";
@@ -14,7 +15,7 @@ function AboutUs() {
                 <div className={"text-center lg:text-left lg:flex lg:justify-center lg:mx-auto"}>
                     <div className={"lg:grid lg:grid-cols-2 lg:grid-rows-2"}>
                         <p className={"text-[40px] leading-none tracking-[-2px] font-medium lg:w-[621px] lg:content-end lg:pb-6 lg:text-white"}>{en.aboutPage.heroText1}</p>
-                        <img src={FemaleAvatarPNG} alt={"avatar-icon"} className={"h-[328px] lg:h-[636px] mx-auto lg:col-span-1 lg:row-span-2 lg:pl-[104px]"} />
+                        <img src={AboutJPG} alt={"avatar-icon"} className={"h-[328px] lg:h-[636px] mx-auto lg:col-span-1 lg:row-span-2 lg:pl-[104px]"} />
                         <TypographyComponent as={"p"} variant={"p"} className={"font-normal leading-8 tracking-[0.12px] lg:w-[621px] lg:text-white"}>
                             {en.aboutPage.heroText2}
                         </TypographyComponent>
