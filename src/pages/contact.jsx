@@ -3,6 +3,7 @@ import InputFieldComponent from "../components/commons/input-field.jsx";
 import ButtonComponent from "../components/commons/button.jsx";
 import CheckMarkSVG from "../assets/svg/check-mark.svg";
 import MaleAvatarPNG from "../assets/img/male-avatar.png";
+import ContactPNG from "../assets/img/contact.png";
 import TypographyComponent from "../components/commons/typography.jsx";
 import en from "../locales/en.js";
 import toast, { Toaster } from "react-hot-toast";
@@ -78,7 +79,7 @@ function Contact() {
               Contact us
             </p>
             <img
-              src={MaleAvatarPNG}
+              src={ContactPNG}
               alt={"avatar-icon"}
               className={
                 "h-[328px] lg:h-[636px] mx-auto lg:col-span-2 lg:row-span-3 lg:w-fit"
