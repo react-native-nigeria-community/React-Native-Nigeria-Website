@@ -61,7 +61,7 @@ const AccordionComponent = ({ items, allowMultiple = false }) => {
     {item.content.type === "text" && <p>{item.content.value}</p>}
 
     {item.content.type === "links" && (
-      <ul className="list-disc pl-5 space-y-1">
+      <ul className="list-none pl-5 space-y-1">
         {item.content.value.map((link, idx) => (
           <li key={idx}>
             <a
