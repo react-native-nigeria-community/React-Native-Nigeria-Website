@@ -52,14 +52,34 @@ const AccordionComponent = ({ items, allowMultiple = false }) => {
     return (
         <div className="w-full space-y-6 lg:space-y-10">
             {items.map((item, index) => (
-                <AccordionItems
-                    key={index}
-                    title={item.title}
-                    isOpen={openIndexes.includes(index)}
-                    onClick={() => toggleAccordion(index)}
-                >
-                    {item.content}
-                </AccordionItems>
+   <AccordionItems
+    key={index}
+    title={item.title}
+    isOpen={openIndexes.includes(index)}
+    onClick={() => toggleAccordion(index)}
+  >
+    {item.content.type === "text" && <p>{item.content.value}</p>}
+
+    {item.content.type === "links" && (
+      <ul className="list-disc pl-5 space-y-1">
+        {item.content.value.map((link, idx) => (
+          <li key={idx}>
+            <a
+              href={link.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-600 hover:underline"
+            >
+              {link.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    )}
+
+    {item.content.type === "jsx" && item.content.value && item.content.value()}
+  </AccordionItems>
+
             ))}
         </div>
     );
