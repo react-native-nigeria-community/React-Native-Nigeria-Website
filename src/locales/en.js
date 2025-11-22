@@ -46,7 +46,7 @@ export default {
     // first section
     firstSection: {
         reactNnc: "React Native Nigeria Community",
-        reactBrn: "Build with React Native",
+        reactBrn: "React Native Nigeria",
         learnShareConnect: {
             learnShareConnect1: "Learn. Share. Connect.",
             learnShareConnect2: "Learn. Share. Connect. Elevate your React Native journey.",

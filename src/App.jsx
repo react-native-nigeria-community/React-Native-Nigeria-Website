@@ -7,10 +7,12 @@ import NavbarComponent from "./components/layouts/navbar.jsx";
 import FooterComponent from "./components/layouts/footer.jsx";
 import NewsletterComponent from "./components/sections/newsletter.jsx";
 import Events from "./pages/event.jsx";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
     return (
         <>
+         <ScrollToTop />
             <NavbarComponent />
             <Routes>
                 <Route path="/" element={<HomePage />} />
