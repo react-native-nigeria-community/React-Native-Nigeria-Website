@@ -51,13 +51,13 @@ const NavbarComponent = () => {
         <div className="lg:hidden flex items-center justify-between w-full">
           
           {/* Mobile Logo */}
-          <Link to="/" className="flex items-center gap-2">
-            <img src={LogoPNG} alt="Logo" className="h-8 w-auto" />
-            <span className="flex flex-col leading-tight text-black lg:text-primary font-medium text-sm">
-              <span>React Native</span>
-              <span>Nigeria</span>
-            </span>
-          </Link>
+        <Link to="/" className="flex items-center gap-2">
+          <img src={LogoPNG} alt="Logo" className="h-8 w-auto" />
+          <span className="flex flex-col leading-tight text-black lg:text-primary font-medium text-sm">
+          <span>{en.reactNativeNigeria.line1}</span>
+          <span>{en.reactNativeNigeria.line2}</span>
+          </span>
+        </Link>
 
 
 
