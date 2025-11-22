@@ -14,7 +14,7 @@ const NavbarComponent = () => {
   const close = useCallback(() => setOpen(false), []);
 
   return (
-    <header className="sticky top-0 z-50 bg-bg1">
+    <header className="sticky top-0 z-50 bg-white lg:bg-bg1">
       <nav className="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between relative">
         
         {/* LEFT NAV LINKS (Desktop) */}
@@ -51,15 +51,22 @@ const NavbarComponent = () => {
         <div className="lg:hidden flex items-center justify-between w-full">
           
           {/* Mobile Logo */}
-          <Link to="/" className="flex items-center">
+          <Link to="/" className="flex items-center gap-2">
             <img src={LogoPNG} alt="Logo" className="h-8 w-auto" />
+            <span className="flex flex-col leading-tight text-black lg:text-primary font-medium text-sm">
+              <span>React Native</span>
+              <span>Nigeria</span>
+            </span>
           </Link>
+
+
+
 
           {/* Mobile Menu Toggle */}
           <button
             aria-label="open-menu"
             onClick={toggle}
-            className="text-primary text-3xl"
+            className="text-black text-3xl lg:text-primary"
           >
             {open ? "×" : "☰"}
           </button>
