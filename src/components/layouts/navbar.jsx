@@ -18,8 +18,8 @@ const NavbarComponent = () => {
       <nav className="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between relative">
         
         {/* LEFT NAV LINKS (Desktop) */}
-        <ul className="hidden lg:flex items-center gap-12 text-primary">
-          {getNavLinks.slice(0, 3).map((link, i) => (
+        <ul className="hidden lg:flex items-center gap-12 text-primary absolute left-1/2 -translate-x-1/2">
+          {getNavLinks.map((link, i) => (
             <NavList
               key={i}
               label={link.label}
@@ -29,13 +29,23 @@ const NavbarComponent = () => {
           ))}
         </ul>
 
-        {/* CENTER LOGO */}
+        {/* LEFT LOGO */}
         <Link
-          to="/"
-          className="absolute left-1/2 -translate-x-1/2 hidden lg:flex items-center"
-        >
-          <img src={LogoPNG} alt="Logo" className="h-10 w-auto" />
-        </Link>
+            to="/"
+            className="hidden lg:flex items-center gap-2"
+          >
+            <img src={LogoPNG} alt="Logo" className="h-10 w-auto" />
+
+            <div className="flex flex-col leading-tight">
+              <span className="text-primary text-sm font-semibold">
+                {en.reactNativeNigeria.line1}
+              </span>
+              <span className="text-primary text-sm font-semibold">
+                {en.reactNativeNigeria.line2}
+              </span>
+            </div>
+          </Link>
+
 
         {/* RIGHT BUTTON (Desktop) */}
         <a
