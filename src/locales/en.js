@@ -7,6 +7,12 @@ export default {
     navEvent: "Event",
     navContact: "Contact",
 
+    reactNativeNigeria: {
+    line1: "React Native",
+    line2: "Nigeria"
+},
+
+
     // button strings
     joinCommunity: "Join Community",
     joinCommunityLink: "https://reactnativenigeria.slack.com/join/shared_invite/zt-c8od4rkl-xUOp01GMiKOt_7_mFvyOzA#/shared-invite/email",
@@ -42,7 +48,7 @@ export default {
     // first section
     firstSection: {
         reactNnc: "React Native Nigeria Community",
-        reactBrn: "Build with React Native",
+        reactBrn: "React Native Nigeria",
         learnShareConnect: {
             learnShareConnect1: "Learn. Share. Connect.",
             learnShareConnect2: "Learn. Share. Connect. Elevate your React Native journey.",
@@ -221,7 +227,48 @@ export default {
         faqTitle: "Quick answers to common questions about our community.",
     },
 
+    /***************************************
+     FAQ / ACCORDION STRINGS
+     ****************************************/
 
+    faqAccordion: {
+      whoCanJoin: {
+        title: "Who can join the community?",
+        content: "Anyone interested in React Native. Whether you're a beginner, student, or experienced developer, you are welcome to join.",
+      },
+      isMembershipFree: {
+        title: "Is membership free?",
+        content: "Yes, joining the community is completely free. We believe in open knowledge sharing and collaboration.",
+      },
+      needPriorExperience: {
+        title: "Do I need prior experience with React Native?",
+        content: "No, beginners are welcome. The community offers resources and mentorship to help you get started.",
+      },
+      getUpdates: {
+        title: "How do I get updates on events and activities?",
+        content: "Stay informed about our latest events and activities by ",
+        newsletter: {
+          text: "subscribing to our newsletter",
+          url: "https://reactnativenigeria.substack.com/subscribe",
+        },
+        slack: {
+          text: "joining our Slack community",
+          url: "https://reactnativenigeria.slack.com", // or the actual invite link if you prefer
+        },
+        whatsapp: {
+          text: "participating in our WhatsApp group",
+          url: "https://chat.whatsapp.com/Im8fCMmNaml96AMyOZG4mR",
+        },
+        andFollowing: "and following us on social media.",
+      },
+      showcaseProjects: {
+        title: "Can I showcase my React Native projects?",
+        guideline: {
+          label: "Learn how to showcase your projects in our Community Contribution Guideline",
+          url: "https://github.com/react-native-nigeria-community/React-Native-Nigeria-Community-Contribution-Guideline",
+        },
+      },
+    },
     /**
      ---------------------------------------------------------------------------
      ALL CONTACT PAGE STRINGS

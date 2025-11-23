@@ -3,11 +3,12 @@ import '@testing-library/jest-dom';
 import AccordionComponent from "../src/components/commons/accordion.jsx";
 
 describe("Accordion Component", () => {
-    const accordionItems = [
-        { title: "Question 1", content: "Answer 1" },
-        { title: "Question 2", content: "Answer 2" },
-        { title: "Question 3", content: "Answer 3" },
-    ];
+        const accordionItems = [
+            { title: "Question 1", content: { type: "text", value: "Answer 1" } },
+            { title: "Question 2", content: { type: "text", value: "Answer 2" } },
+            { title: "Question 3", content: { type: "text", value: "Answer 3" } },
+        ];
+
 
     it("renders all accordion titles", () => {
         render(<AccordionComponent items={accordionItems} />);

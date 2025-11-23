@@ -5,11 +5,12 @@ const FeaturedCard =({image, title, description, link}) => {
 
     return (
         <a href={link} target="_blank" rel="noopener noreferrer">
-        <div className={"space-y-[22px]"}>
+        <div className={"space-y-[22px] w-{345px}"}>
             <div className={"rounded-lg flex items-center justify-center"}>
-                <img src={image} alt={`${title}-icon`} />
+                <img src={image} alt={`${title}-icon`} className="w-[345px] object-contain" />
+
             </div>
-            <div className={"bg-white mx-auto space-y-6 lg:bg-transparent lg:mx-auto lg:space-y-2.5 w-[287px]"}>
+           <div className="bg-white mx-auto space-y-6 lg:bg-transparent lg:mx-auto lg:space-y-2.5 w-[345px] mb-6">
                 <TypographyComponent as={"h6"} variant={"h6"} className={"font-normal! leading-none! text-secondary! lg:text-secondary/70!"}>
                     {title}
                 </TypographyComponent>
