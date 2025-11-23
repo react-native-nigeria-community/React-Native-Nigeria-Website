@@ -19,6 +19,8 @@ function App() {
                 <Route path="/about-us" element={<AboutUs />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/events" element={<Events />} />
+                <Route path="/privacy" element={<PrivacyPolicy />} />
+                <Route path="/terms" element={<TermsAndConditions />} />
             </Routes>
             <NewsletterComponent />
             <FooterComponent />

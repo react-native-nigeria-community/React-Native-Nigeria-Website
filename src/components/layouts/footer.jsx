@@ -1,10 +1,11 @@
 import React from "react";
+import { Link } from "react-router-dom"; // ← ONLY THIS LINE ADDED
 import LogoPNG from "../../assets/img/nav-logo.png";
 import TypographyComponent from "../commons/typography.jsx";
 import en from "../../locales/en.js";
-import {getNavLinks} from "../../../utils/nav-links.jsx";
+import { getNavLinks } from "../../../utils/nav-links.jsx";
 import NavList from "../commons/nav-list.jsx";
-import {getSocials} from "../../../utils/social-links.jsx";
+import { getSocials } from "../../../utils/social-links.jsx";
 import SocialIcon from "../commons/social-icon.jsx";
 
 const FooterComponent = () => {
@@ -48,8 +49,16 @@ const FooterComponent = () => {
                     © {new Date().getFullYear()} {en.copyRight}
                 </TypographyComponent>
                 <ul className={"flex justify-between lg:gap-6"}>
-                    <li>{en.privacyPolicy}</li>
-                    <li>{en.termsConditions}</li>
+                    <li>
+                        <Link to={en.privacyPolicyLink} className="hover:underline">
+                            {en.privacyPolicy}
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to={en.termsConditionsLink} className="hover:underline">
+                            {en.termsConditions}
+                        </Link>
+                    </li>
                 </ul>
             </div>
         </footer>
