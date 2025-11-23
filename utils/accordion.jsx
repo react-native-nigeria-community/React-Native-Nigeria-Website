@@ -1,71 +1,79 @@
+import en from "../src/locales/en.js";
+
+const t = (keyPath) => {
+  return keyPath
+    .split(".")
+    .reduce((obj, key) => (obj && obj[key] !== undefined ? obj[key] : keyPath), en);
+};
+
 export const getAccordions = [
   {
-    title: "Who can join the community?",
+    title: t("faqAccordion.whoCanJoin.title"),
     content: {
       type: "text",
-      value: "Anyone interested in React Native. Whether you're a beginner, student, or experienced developer, you are welcome to join.",
+      value: t("faqAccordion.whoCanJoin.content"),
     },
   },
   {
-    title: "Is membership free?",
+    title: t("faqAccordion.isMembershipFree.title"),
     content: {
       type: "text",
-      value: "Yes, joining the community is completely free. We believe in open knowledge sharing and collaboration.",
+      value: t("faqAccordion.isMembershipFree.content"),
     },
   },
   {
-    title: "Do I need prior experience with React Native?",
+    title: t("faqAccordion.needPriorExperience.title"),
     content: {
       type: "text",
-      value: "No, beginners are welcome. The community offers resources and mentorship to help you get started.",
+      value: t("faqAccordion.needPriorExperience.content"),
     },
   },
   {
-    title: "How do I get updates on events and activities?",
+    title: t("faqAccordion.getUpdates.title"),
     content: {
       type: "jsx",
       value: () => (
         <p>
-          Stay informed about our latest events and activities by{" "}
+          {t("faqAccordion.getUpdates.content")}
           <a
-            href="https://reactnativenigeria.substack.com/subscribe"
+            href={t("faqAccordion.getUpdates.newsletter.url")}
             target="_blank"
             rel="noopener noreferrer"
             className="text-blue-600 hover:underline"
           >
-            subscribing to our newsletter
+            {t("faqAccordion.getUpdates.newsletter.text")}
           </a>
           ,{" "}
           <a
-            href="https://reactnativenigeria.slack.com"
+            href={t("faqAccordion.getUpdates.slack.url")}
             target="_blank"
             rel="noopener noreferrer"
             className="text-blue-600 hover:underline"
           >
-            joining our Slack community
+            {t("faqAccordion.getUpdates.slack.text")}
           </a>
           ,{" "}
           <a
-            href="https://chat.whatsapp.com/Im8fCMmNaml96AMyOZG4mR"
+            href={t("faqAccordion.getUpdates.whatsapp.url")}
             target="_blank"
             rel="noopener noreferrer"
             className="text-blue-600 hover:underline"
           >
-            participating in our WhatsApp group
+            {t("faqAccordion.getUpdates.whatsapp.text")}
           </a>
-          , and following us on social media.
+          , {t("faqAccordion.getUpdates.andFollowing")}
         </p>
       ),
     },
   },
   {
-    title: "Can I showcase my React Native projects?",
+    title: t("faqAccordion.showcaseProjects.title"),
     content: {
       type: "links",
       value: [
         {
-          label: "Learn how to showcase your projects in our Community Contribution Guideline",
-          url: "https://github.com/react-native-nigeria-community/React-Native-Nigeria-Community-Contribution-Guideline",
+          label: t("faqAccordion.showcaseProjects.guideline.label"),
+          url: t("faqAccordion.showcaseProjects.guideline.url"),
         },
       ],
     },
