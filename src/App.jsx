@@ -7,6 +7,9 @@ import NavbarComponent from "./components/layouts/navbar.jsx";
 import FooterComponent from "./components/layouts/footer.jsx";
 import NewsletterComponent from "./components/sections/newsletter.jsx";
 import Events from "./pages/event.jsx";
+import PrivacyPolicy from "./pages/PrivacyPolicy.jsx";
+import TermsAndConditions from "./pages/TermsAndConditions.jsx";
+
 
 function App() {
     return (
@@ -17,6 +20,8 @@ function App() {
                 <Route path="/about-us" element={<AboutUs />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/events" element={<Events />} />
+                <Route path="/privacy" element={<PrivacyPolicy />} />
+                <Route path="/terms" element={<TermsAndConditions />} />
             </Routes>
             <NewsletterComponent />
             <FooterComponent />

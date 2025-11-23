@@ -29,6 +29,8 @@ export default {
     copyRight: "React Native Nigeria. All rights reserved",
     privacyPolicy: "Privacy & Policy",
     termsConditions: "Terms & Conditions",
+    privacyPolicyLink: "/privacy",
+    termsConditionsLink: "/terms",
     writeHere: "Write here...",
 
     /***************************************
