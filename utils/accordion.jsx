@@ -1,22 +1,81 @@
+import en from "../src/locales/en.js";
+
+const t = (keyPath) => {
+  return keyPath
+    .split(".")
+    .reduce((obj, key) => (obj && obj[key] !== undefined ? obj[key] : keyPath), en);
+};
+
 export const getAccordions = [
+  {
+    title: t("faqAccordion.whoCanJoin.title"),
+    content: {
+      type: "text",
+      value: t("faqAccordion.whoCanJoin.content"),
+    },
+  },
+  {
+    title: t("faqAccordion.isMembershipFree.title"),
+    content: {
+      type: "text",
+      value: t("faqAccordion.isMembershipFree.content"),
+    },
+  },
+  {
+    title: t("faqAccordion.needPriorExperience.title"),
+    content: {
+      type: "text",
+      value: t("faqAccordion.needPriorExperience.content"),
+    },
+  },
+  {
+    title: t("faqAccordion.getUpdates.title"),
+    content: {
+      type: "jsx",
+      value: () => (
+        <p>
+          {t("faqAccordion.getUpdates.content")}
+          <a
+            href={t("faqAccordion.getUpdates.newsletter.url")}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-600 hover:underline"
+          >
+            {t("faqAccordion.getUpdates.newsletter.text")}
+          </a>
+          ,{" "}
+          <a
+            href={t("faqAccordion.getUpdates.slack.url")}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-600 hover:underline"
+          >
+            {t("faqAccordion.getUpdates.slack.text")}
+          </a>
+          ,{" "}
+          <a
+            href={t("faqAccordion.getUpdates.whatsapp.url")}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-600 hover:underline"
+          >
+            {t("faqAccordion.getUpdates.whatsapp.text")}
+          </a>
+          , {t("faqAccordion.getUpdates.andFollowing")}
+        </p>
+      ),
+    },
+  },
+  {
+    title: t("faqAccordion.showcaseProjects.title"),
+    content: {
+      type: "links",
+      value: [
         {
-            title: "Who can join the community?",
-            content: "Yes, joining the community is completely free. We believe in open knowledge sharing and collaboration.",
+          label: t("faqAccordion.showcaseProjects.guideline.label"),
+          url: t("faqAccordion.showcaseProjects.guideline.url"),
         },
-        {
-            title: "Is membership free?",
-            content: "Yes, joining the community is completely free. We believe in open knowledge sharing and collaboration.",
-        },
-        {
-            title: " Do I need prior experience with React Native?",
-            content: "No, beginners are welcome. The community offers resources and mentorship to help you get started.",
-        },
-        {
-            title: "How do I get updates on events and activities?",
-            content: "No, beginners are welcome. The community offers resources and mentorship to help you get started.",
-        },
-        {
-            title: "Can I showcase my React Native projects?",
-            content: "No, beginners are welcome. The community offers resources and mentorship to help you get started.",
-        },
-    ];
+      ],
+    },
+  },
+];
