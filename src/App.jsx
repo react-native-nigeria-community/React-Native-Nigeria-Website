@@ -8,6 +8,9 @@ import FooterComponent from "./components/layouts/footer.jsx";
 import NewsletterComponent from "./components/sections/newsletter.jsx";
 import Events from "./pages/event.jsx";
 import ScrollToTop from "./components/ScrollToTop";
+import PrivacyPolicy from "./pages/PrivacyPolicy.jsx";
+import TermsAndConditions from "./pages/TermsAndConditions.jsx";
+
 
 function App() {
     return (

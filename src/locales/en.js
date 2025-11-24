@@ -33,7 +33,7 @@ export default {
     labelEmail: "Email Address",
     labelMessage: "Message",
     copyRight: "React Native Nigeria. All rights reserved",
-    privacyPolicy: "Privacy & Policy",
+    privacyPolicy: "Privacy Policy",
     termsConditions: "Terms & Conditions",
     privacyPolicyLink: "/privacy",
     termsConditionsLink: "/terms",
