@@ -193,7 +193,7 @@ function HomePage () {
             {/* Fifth section */}
             <section className={"pt-12"}>
                 <div className={"mb-8 gap-2.5 lg:w-[589px] lg:mx-auto lg:mb-[30px] text-center"}>
-                    <TypographyComponent as={"h6"} variant={"h6"} className={"uppercase text-accent! text-base/5 font-normal"}>{en.fifthSection.reactNnc1}</TypographyComponent>
+                   {/* <TypographyComponent as={"h6"} variant={"h6"} className={"uppercase text-accent! text-base/5 font-normal"}>{en.fifthSection.reactNnc1}</TypographyComponent> */}
                     <TypographyComponent as={"h3"} variant={"h3"} className={"font-semibold! leading-none! tracking-[-1.2px]! text-mh3! text-secondary! lg:leading-12"}>
                         {en.fifthSection.exploreReactNative}
                     </TypographyComponent>
