@@ -220,7 +220,7 @@ export default {
      ****************************************/
 
     aboutPage: {
-        heroText1: "About Us : Powered by Passion,  React Native Nigeria.",
+        heroText1: "Powered by passion, Driven by innovation .",
         heroText2: "React Native Nigeria, is where mobile creators connect, learn, and grow. From beginners to pros, our community shares insights, builds real projects, and explores the latest in React Native. Together, we’re not just coding apps, we’re shaping the future of mobile.",
         missionStatement: "Our mission is to connect people who are building with React Native, share real-world experiences, and provide resources that help members grow their skills. Whether you’re a beginner taking your first steps in mobile development or an experienced professional pushing the boundaries of what’s possible, you’ll find support, inspiration, and collaboration here. Through shared projects, discussions, tutorials, and events, we aim to empower developers to bring their ideas to life, solve challenges together, and contribute to the global React Native ecosystem.",
         faq: "FAQ",
