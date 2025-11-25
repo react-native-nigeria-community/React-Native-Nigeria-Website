@@ -145,9 +145,9 @@ export default {
             project1: {
                 star: "1",
                 fork: "0",
-                title: "React Native Nigeria",
+                title: "React Native Nigeria Website",
                 description: "The official open source website for React Native Nigeria.",
-                link: "https://github.com/react-native-nigeria-community/bwrn-landing",
+                link: "https://github.com/react-native-nigeria-community/React-Native-Nigeria-Website",
             },
             project2: {
                 star: "13",
