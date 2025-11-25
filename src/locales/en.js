@@ -157,11 +157,11 @@ export default {
                 link: "https://github.com/react-native-nigeria-community/react-native-rave-webview",
             },
             project3: {
-                star: "4",
-                fork: "4",
-                title: "Quidpay Payments",
-                description: "Effortless payment collection with zero linking.",
-                link: "https://github.com/react-native-nigeria-community/react-native-quidpay-webview",
+                star: "2",
+                fork: "0",
+                title: "Iboju.app",
+                description: "Make appstore preview images with ease.",
+                link: "https://github.com/react-native-nigeria-community/iboju.app",
             },
             project4: {
                 star: "5",
