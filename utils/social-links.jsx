@@ -2,6 +2,8 @@ import TwitterSVG from "../src/assets/svg/twitter.svg";
 import LinkedInSVG from "../src/assets/svg/linkedIn.svg";
 import SlackSVG from "../src/assets/svg/slack.svg";
 import GitHubSVG from "../src/assets/svg/github.svg";
+import YouTubeSVG from "../src/assets/svg/youtube.svg";
+
 
 export const getSocials = [
         {
@@ -18,6 +20,11 @@ export const getSocials = [
             image: TwitterSVG,
             altText: "Twitter-icon",
             link: "https://x.com/ReactNativeNG",
+        },
+        {
+            image: YouTubeSVG,
+            altText: "Youtube-icon",
+            link: "https://www.youtube.com/@Reactnativenigeria",
         },
         {
             image: SlackSVG,
