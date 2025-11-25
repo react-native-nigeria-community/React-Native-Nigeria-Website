@@ -20,7 +20,7 @@ const NewsletterComponent = () => {
 
         // Redirect to Substack with email pre-filled
         const substackUrl = `https://reactnativenigeria.substack.com/subscribe?email=${encodeURIComponent(email)}`;
-        window.location.href = substackUrl;
+        window.open(substackUrl, "_blank", "noopener,noreferrer");
 
         setEmail("");
     };
