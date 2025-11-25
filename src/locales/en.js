@@ -290,7 +290,7 @@ export default {
         firstSection: {
             title1: "Build with React Native Events",
             title2: "React Native Community Events",
-            slogan: "Learn, connect, and grow with our community.",
+            slogan: "Stay Updated With Our Upcoming and Previous Events.",
         },
         secondSection: {
             title: "React Native Nigeria Abuja Meetup",
