@@ -20,7 +20,7 @@ function HomePage () {
     return (
         <>
             {/* First section */}
-            <section className={"lg:bg-bg1 bg-[url(./assets/img/mb-blue.png)] md:bg-[url(./assets/img/lg-bg-screen.png)] bg-no-repeat bg-bottom h-[366px] bg-contain lg:h-[655px] flex items-center justify-center text-center lg:w-full"}>
+            <section className={"lg:bg-bg1 bg-[url(./assets/img/mb-blue.png)] md:bg-[url(./assets/img/lg-bg-screen.png)] bg-no-repeat bg-bottom h-screen bg-contain lg:h-[655px] flex items-center justify-center text-center lg:w-full"}>
                 <div className={"gird justify-items-center content-center"}>
                     <div className={"px-6 lg:w-[758px] text-secondary lg:text-primary"}>
                         <div className={"space-y-2.5"}>
