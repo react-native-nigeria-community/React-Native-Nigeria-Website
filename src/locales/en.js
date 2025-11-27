@@ -105,7 +105,7 @@ export default {
             description: {
                 description1: "Stay updated on our monthly live sessions, hackathons, and IRL meetups",
                 description2: "Stay updated on our monthly live sessions, hackathons,",
-                description3: "and IRL meetups",
+                description3: "and In Person meetups",
             },
         },
         eventCards: {
