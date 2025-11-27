@@ -5,11 +5,11 @@ import Host1PNG from "../assets/img/host1.png";
 import Host2PNG from "../assets/img/host2.png";
 import TypographyComponent from "../components/commons/typography.jsx";
 import ButtonComponent from "../components/commons/button.jsx";
-import {firstEventList} from "../../utils/first-event-list.jsx";
+//import {firstEventList} from "../../utils/first-event-list.jsx";
 import DefaultList1 from "../components/commons/default-list1.jsx";
-import {secondEventList} from "../../utils/second-event-list.jsx";
+//import {secondEventList} from "../../utils/second-event-list.jsx";
 import DefaultList2 from "../components/commons/default-list2.jsx";
-import {thirdEventList} from "../../utils/third-event-list.jsx";
+//import {thirdEventList} from "../../utils/third-event-list.jsx";
 import {fourthEventList} from "../../utils/fourth-event-list.jsx";
 import PastEventHighLights from "../components/commons/past-events.jsx";
 
