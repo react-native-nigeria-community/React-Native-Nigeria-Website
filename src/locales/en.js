@@ -331,6 +331,18 @@ export default {
                 time: "9:00AM",
                 location: "Akure",
             },
+             event4: {
+                title: "React Native Nigeria Abuja Meetup",
+                date: "20th September 2025",
+                time: "11.00AM",
+                location: "The bunker",
+            },
+            event5: {
+                title: "React Native Nigeria 2020",
+                date: "3rd October 2020",
+                time: "18.00PM",
+                location: "Online",
+            },
         },
     }
 

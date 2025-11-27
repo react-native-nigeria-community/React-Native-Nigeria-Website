@@ -19,4 +19,16 @@ export const fourthEventList = [
         time: en.eventPage.fourthSection.event3.time,
         location: en.eventPage.fourthSection.event3.location,
     },
+     {
+        title: en.eventPage.fourthSection.event4.title,
+        date: en.eventPage.fourthSection.event4.date,
+        time: en.eventPage.fourthSection.event4.time,
+        location: en.eventPage.fourthSection.event4.location,
+    },
+     {
+        title: en.eventPage.fourthSection.event5.title,
+        date: en.eventPage.fourthSection.event5.date,
+        time: en.eventPage.fourthSection.event5.time,
+        location: en.eventPage.fourthSection.event5.location,
+    },
 ];
