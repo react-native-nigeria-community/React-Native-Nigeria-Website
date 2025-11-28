@@ -314,15 +314,15 @@ export default {
         fourthSection: {
             title: "Past Events & Highlights",
             event1: {
-                title: "Starting a React Native Project in 2020",
-                date: "3rd October 2020",
-                time: "10.00AM",
-                location: "Online",
+                title: "React Native Nigeria Workshop",
+                date: "21st December, 2019",
+                time: "10:00 AM",
+                location: "IBI Center",
             },
             event2: {
-                title: "After Create React App, What's Next?",
-                date: "5th November 2020",
-                time: "2:00PM",
+                title: "React Native To Infinity And Beyond",
+                date: "27th June 2020",
+                time: "10:00 AM",
                 location: "Online",
             },
             event3: {
@@ -332,16 +332,16 @@ export default {
                 location: "Akure",
             },
              event4: {
-                title: "React Native Nigeria Abuja Meetup",
-                date: "20th September 2025",
-                time: "11.00AM",
-                location: "The bunker",
+                title: "React Native Nigeria Abuja Meetup 2021",
+                date: "29th May, 2021",
+                time: "09:00 AM",
+                location: "National Trauma Center",
             },
             event5: {
-                title: "React Native Nigeria 2020",
-                date: "3rd October 2020",
-                time: "18.00PM",
-                location: "Online",
+                title: "React Native Nigeria Abuja Meetup 2025",
+                date: "20th September 2025",
+                time: "11:00 AM",
+                location: "theBUNKER, Abuja",
             },
         },
     }
