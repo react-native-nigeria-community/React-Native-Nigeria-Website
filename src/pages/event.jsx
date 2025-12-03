@@ -116,7 +116,7 @@ function Events() {
                         <TypographyComponent as={"h3"} variant={"h3"} className={"text-mh3!"}>{en.eventPage.fourthSection.title}</TypographyComponent>
 
                         <div className={"py-6 grid md:grid-cols-3 gap-6 justify-items-stretch items-stretch"}>
-                            {fourthEventList.map((list, index) => (
+                            {fourthEventList.map((list) => (
                                 <PastEventHighLights
                                 key={list.id}
                                 id={list.id}
