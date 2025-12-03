@@ -26,7 +26,7 @@ function App() {
                 <Route path="/events" element={<Events />} />
                 <Route path="/privacy" element={<PrivacyPolicy />} />
                 <Route path="/terms" element={<TermsAndConditions />} />
-                  <Route path="/eventdetails" element={<EventDetails />} />
+                  <Route path="/event-details" element={<EventDetails />} />
             </Routes>
             <NewsletterComponent />
             <FooterComponent />

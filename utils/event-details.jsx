@@ -93,7 +93,7 @@ export const eventDetails = [
     title: "React Native Nigeria Abuja Meetup 2021",
     date: "29th May, 2021",
     time: "09:00 AM",
-    location: "National Trauma Center",
+    location: "National Trauma Center - National hospital Abuja, Central area",
     description:
       "A meetup in Abuja connecting React Native enthusiasts, with talks, workshops, and networking opportunities.",
     images: [

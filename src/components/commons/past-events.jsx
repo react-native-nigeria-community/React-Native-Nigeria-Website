@@ -33,7 +33,7 @@ const PastEventHighLights = ({ id, title, date, time, location }) => {
       </div>
 
       <div className="mt-6">
-        <a href={`/eventdetails#${id}`}>
+        <a href={`/event-details#${id}`}>
           <ButtonComponent className="mt-2">View Details</ButtonComponent>
         </a>
       </div>

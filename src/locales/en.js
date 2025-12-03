@@ -349,6 +349,15 @@ export default {
                 id: "event5",
             },
         },
-    }
+    },
+
+eventDetailsPage: {
+    pageTitle: "Event Details",
+    pageSubtitle: "A comprehensive look back at the speakers, media, and insights from our past conferences and seminars.",
+    backButton: "Back to All Events",
+    dateLocationSeparator: " | "
+}
+    
+    
 
 };
