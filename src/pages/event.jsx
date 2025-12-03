@@ -118,11 +118,13 @@ function Events() {
                         <div className={"py-6 grid md:grid-cols-3 gap-6 justify-items-stretch items-stretch"}>
                             {fourthEventList.map((list, index) => (
                                 <PastEventHighLights
-                                key={index}
+                                key={list.id}
+                                id={list.id}
                                 title={list.title}
                                 date={list.date}
                                 time={list.time}
                                 location={list.location}
+                                
                                 />
                             ))}
                         </div>
