@@ -4,10 +4,8 @@
 import rnnw1 from "../src/assets/img/RNNW1.jpg";
 import rnnw2 from "../src/assets/img/RNNW2.jpg";
 import rnnw3 from "../src/assets/img/RNNW3.jpg";
-import rnnw4 from "../src/assets/img/RNNW4.jpg";
-import rnnw5 from "../src/assets/img/RNNW5.jpg";
-import rnnw6 from "../src/assets/img/RNNW6.jpg";
-import rnnw7 from "../src/assets/img/RNNW7.jpg";
+import rnnw4 from "../src/assets/img/RNNW4.jpg"; 
+import rnnw6 from "../src/assets/img/RNNW6.jpg"; 
 import rnnw8 from "../src/assets/img/RNNW8.jpg";
 
 import rnn21_1 from "../src/assets/img/RNN21_1.jpeg";
@@ -59,7 +57,7 @@ export const eventDetails: EventType[] = [
     location: "IBI Center",
     description:
       "An in-depth React Native workshop where developers in Nigeria came together to learn, collaborate, and build amazing projects.",
-    images: [rnnw1, rnnw2, rnnw3, rnnw4, rnnw5, rnnw6, rnnw7, rnnw8],
+    images: [rnnw1, rnnw2, rnnw3, rnnw4, rnnw6, rnnw8],
     videos: [],
     embed: null,
     galleryLink:
