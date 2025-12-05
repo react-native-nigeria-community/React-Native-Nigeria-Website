@@ -5,11 +5,11 @@ import Host1PNG from "../assets/img/host1.png";
 import Host2PNG from "../assets/img/host2.png";
 import TypographyComponent from "../components/commons/typography.jsx";
 import ButtonComponent from "../components/commons/button.jsx";
-import {firstEventList} from "../../utils/first-event-list.jsx";
+//import {firstEventList} from "../../utils/first-event-list.jsx";
 import DefaultList1 from "../components/commons/default-list1.jsx";
-import {secondEventList} from "../../utils/second-event-list.jsx";
+//import {secondEventList} from "../../utils/second-event-list.jsx";
 import DefaultList2 from "../components/commons/default-list2.jsx";
-import {thirdEventList} from "../../utils/third-event-list.jsx";
+//import {thirdEventList} from "../../utils/third-event-list.jsx";
 import {fourthEventList} from "../../utils/fourth-event-list.jsx";
 import PastEventHighLights from "../components/commons/past-events.jsx";
 
@@ -43,8 +43,8 @@ function Events() {
 
             {/* Second section */}
             <section className={"px-6 py-12 space-y-6"}>
-                <div className={"lg:flex lg:justify-center lg:gap-[55px]"}>
-                    <div className={"bg-black flex justify-center rounded-lg bg-[url(./assets/img/react-lg.png)]! bg-contain bg-no-repeat bg-center h-[342px] lg:w-[498px] lg:h-[498px]"}>
+               {/* <div className={"lg:flex lg:justify-center lg:gap-[55px]"}>
+                 <div className={"bg-black flex justify-center rounded-lg bg-[url(./assets/img/react-lg.png)]! bg-contain bg-no-repeat bg-center h-[342px] lg:w-[498px] lg:h-[498px]"}>
                         <div className={"text-center grid place-items-center pb-10"}>
                             <div className={"flex items-center py-6"}>
                                 <img src={ReactSmPNG} alt={"react-logo"} />
@@ -68,7 +68,7 @@ function Events() {
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> 
                     <div className={"space-y-6 lg:space-y-4 lg:w-[650px] lg:place-self-center"}>
                         <TypographyComponent as={"h4"} variant={"h4"} className={"font-medium! tracking-[-1.2px]! leading-none! text-secondary pt-6 lg:py-0 lg:text-h2! lg:leading-12! lg:tracking-[-1px]!"}>React Native Nigeria Abuja Meetup</TypographyComponent>
                         <div className={"space-y-2.5"}>
@@ -84,9 +84,9 @@ function Events() {
                         <TypographyComponent as={"h6"} variant={"h6"} className={"font-normal! leading-5! tracking-normal text-secondary lg:text-p! lg:leading-7!"}>Collaborate, learn, and connect with React Native developers in Nigeria. 🚀 Talks, hands-on sessions & networking await!</TypographyComponent>
                         <ButtonComponent variant={"primary"}>Register</ButtonComponent>
                     </div>
-                </div>
+                </div> */}
 
-                <div className={"lg:flex lg:justify-stretch lg:mx-[125px]"}>
+               {/* <div className={"lg:flex lg:justify-stretch lg:mx-[125px]"}>
                     <div className={"py-6"}>
                         <TypographyComponent as={"h3"} variant={"h3"} className={"text-mh3!"}>{en.eventPage.thirdSection.title}</TypographyComponent>
 
@@ -109,20 +109,22 @@ function Events() {
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> */}
 
                 <div className={"lg:flex lg:justify-center lg:mx-[125px]"}>
                     <div className={"py-6"}>
                         <TypographyComponent as={"h3"} variant={"h3"} className={"text-mh3!"}>{en.eventPage.fourthSection.title}</TypographyComponent>
 
                         <div className={"py-6 grid md:grid-cols-3 gap-6 justify-items-stretch items-stretch"}>
-                            {fourthEventList.map((list, index) => (
+                            {fourthEventList.map((list) => (
                                 <PastEventHighLights
-                                key={index}
+                                key={list.id}
+                                id={list.id}
                                 title={list.title}
                                 date={list.date}
                                 time={list.time}
                                 location={list.location}
+                                
                                 />
                             ))}
                         </div>

@@ -314,24 +314,72 @@ export default {
         fourthSection: {
             title: "Past Events & Highlights",
             event1: {
-                title: "Starting a React Native Project in 2020",
-                date: "3rd October 2020",
-                time: "10.00AM",
-                location: "Online",
+                title: "React Native Nigeria Workshop",
+                date: "21st December, 2019",
+                time: "10:00 AM",
+                location: "IBI Center",
+                id: "event1",
             },
             event2: {
-                title: "After Create React App, What's Next?",
-                date: "5th November 2020",
-                time: "2:00PM",
+                title: "React Native To Infinity And Beyond",
+                date: "27th June 2020",
+                time: "10:00 AM",
                 location: "Online",
+                id: "event2",
             },
             event3: {
                 title: "React Native Community Akure",
                 date: "18th December 2021",
                 time: "9:00AM",
                 location: "Akure",
+                id: "event3",
+            },
+             event4: {
+                title: "React Native Nigeria Abuja Meetup 2021",
+                date: "29th May, 2021",
+                time: "09:00 AM",
+                location: "National Trauma Center",
+                id: "event4",
+            },
+            event5: {
+                title: "React Native Nigeria Abuja Meetup 2025",
+                date: "20th September 2025",
+                time: "11:00 AM",
+                location: "theBUNKER, Abuja",
+                id: "event5",
             },
         },
-    }
+    },
+
+eventDetailsPage: {
+    pageTitle: "Event Details",
+    pageSubtitle: "A comprehensive look back at the speakers, media, and insights from our past conferences and seminars.",
+    backButton: "← Back to all Events",
+    dateLocationSeparator: " | "
+},
+
+    eventDetailsTab: {
+    tabs: {
+      about: { id: "about", name: "Details & Description" },
+      speakers: { id: "speakers", name: "Speakers" },
+      photos: { id: "photos", name: "Photos" },
+      videos: { id: "videos", name: "Videos" },
+      gallery: { id: "gallery", name: "Gallery" },
+    },
+    summaryTitle: "Event Summary",
+    date: "Date",
+    time: "Time",
+    location: "Location",
+    aboutEvent: "About the Event",
+    viewCollection: "View the entire collection of high-resolution images",
+    accessGallery: "Access Gallery →",
+  },
+        pastEvents: {
+        date: "Date",
+        time: "Time",
+        location: "Location",
+        viewDetails: "View Details",
+        },
+
 
 };
