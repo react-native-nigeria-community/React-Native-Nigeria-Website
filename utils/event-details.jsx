@@ -5,7 +5,7 @@ import rnnw1 from "../src/assets/img/RNNW1.jpg";
 import rnnw2 from "../src/assets/img/RNNW2.jpg";
 import rnnw3 from "../src/assets/img/RNNW3.jpg";
 import rnnw4 from "../src/assets/img/RNNW4.jpg";
-import rnnw5 from "../src/assets/img/RNNW5.jpg";
+import rnnw5 from  "../src/assets/img/RNNW4.jpg";
 import rnnw6 from "../src/assets/img/RNNW6.jpg";
 import rnnw7 from "../src/assets/img/RNNW7.jpg";
 import rnnw8 from "../src/assets/img/RNNW8.jpg";
