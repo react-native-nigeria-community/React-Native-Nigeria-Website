@@ -354,10 +354,33 @@ export default {
 eventDetailsPage: {
     pageTitle: "Event Details",
     pageSubtitle: "A comprehensive look back at the speakers, media, and insights from our past conferences and seminars.",
-    backButton: "Back to All Events",
+    backButton: "← Back to all Events",
     dateLocationSeparator: " | "
-}
-    
-    
+},
+
+ eventDetailsTab: {
+    tabs: {
+      about: "Details & Description",
+      speakers: "Speakers",
+      photos: "Photos",
+      videos: "Videos",
+      gallery: "Gallery",
+    },
+    summaryTitle: "Event Summary",
+    date: "Date",
+    time: "Time",
+    location: "Location",
+    aboutEvent: "About the Event",
+    viewCollection: "View the entire collection of high-resolution media here:",
+    accessGallery: "Access Full Event Gallery →",
+  },
+
+        pastEvents: {
+        date: "Date",
+        time: "Time",
+        location: "Location",
+        viewDetails: "View Details",
+        },
+
 
 };
