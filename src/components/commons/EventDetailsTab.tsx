@@ -42,15 +42,14 @@ interface TabItem {
 const EventDetailsTab: React.FC<EventDetailsTabProps> = ({ event, getEmbedUrl }) => {
   const T = en.eventDetailsTab;
 
-  // Extract string name from en
   const TAB_CONFIG: TabItem[] = BASE_TAB_CONFIG.map((t) => ({
-    ...t,
-    name: T.tabs[t.id].name, // <- fixed
+    id: t.id,
+    name: t.name,
   }));
 
-  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
-  const [modalImageSrc, setModalImageSrc] = useState<string | null>(null);
   const [activeTab, setActiveTab] = useState<ActiveTab>("about");
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalImageSrc, setModalImageSrc] = useState<string | null>(null);
 
   const openModal = (src: string) => {
     setModalImageSrc(src);
@@ -87,7 +86,7 @@ const EventDetailsTab: React.FC<EventDetailsTabProps> = ({ event, getEmbedUrl })
                 : "border-transparent text-gray-400 hover:border-gray-600 hover:text-gray-200"
             }`}
           >
-            {T.tabs.about.name} {/* <- use .name if about is structured same way */}
+            {T.tabs.about.name}
           </button>
 
           {tabs.map((tab) => (
@@ -100,10 +99,7 @@ const EventDetailsTab: React.FC<EventDetailsTabProps> = ({ event, getEmbedUrl })
                   : "border-transparent text-gray-400 hover:border-gray-600 hover:text-gray-200"
               }`}
             >
-              {tab.name}{" "}
-              {tab.count && tab.count > 1 && (
-                <span className="hidden sm:inline">({tab.count})</span>
-              )}
+              {tab.name} {tab.count && tab.count > 1 && <span className="hidden sm:inline">({tab.count})</span>}
             </button>
           ))}
         </nav>
@@ -123,46 +119,31 @@ const EventDetailsTab: React.FC<EventDetailsTabProps> = ({ event, getEmbedUrl })
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-y-4 text-base sm:text-lg text-gray-300">
                 <p>
-                  <strong className="text-indigo-400 block text-lg sm:text-xl">
-                    {T.date}
-                  </strong>{" "}
-                  {event.date}
+                  <strong className="text-indigo-400 block text-lg sm:text-xl">{T.date}</strong> {event.date}
                 </p>
                 <p>
-                  <strong className="text-indigo-400 block text-lg sm:text-xl">
-                    {T.time}
-                  </strong>{" "}
-                  {event.time}
+                  <strong className="text-indigo-400 block text-lg sm:text-xl">{T.time}</strong> {event.time}
                 </p>
                 <p>
-                  <strong className="text-indigo-400 block text-lg sm:text-xl">
-                    {T.location}
-                  </strong>{" "}
-                  {event.location}
+                  <strong className="text-indigo-400 block text-lg sm:text-xl">{T.location}</strong> {event.location}
                 </p>
               </div>
             </div>
 
             <div>
-              <TypographyComponent
-                as="h2"
-                variant="h3"
-                className="text-2xl sm:text-3xl font-bold text-white mb-4"
-              >
+              <TypographyComponent as="h2" variant="h3" className="text-2xl sm:text-3xl font-bold text-white mb-4">
                 {T.aboutEvent}
               </TypographyComponent>
-              <p className="text-gray-300 text-base sm:text-lg leading-relaxed whitespace-pre-line">
-                {event.description}
-              </p>
+              <p className="text-gray-300 text-base sm:text-lg leading-relaxed whitespace-pre-line">{event.description}</p>
             </div>
           </div>
         )}
 
-        {activeTab === "speakers" && event.speakers?.length ? (
+        {activeTab === "speakers" && event.speakers?.length && (
           <div className="grid grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
-            {event.speakers.map((speaker, index) => (
+            {event.speakers.map((speaker, i) => (
               <div
-                key={index}
+                key={i}
                 className="flex flex-col items-center text-center bg-gray-700 p-4 sm:p-6 rounded-xl shadow-lg border border-gray-600 hover:shadow-xl transition-shadow"
               >
                 <img
@@ -171,18 +152,14 @@ const EventDetailsTab: React.FC<EventDetailsTabProps> = ({ event, getEmbedUrl })
                   className="w-20 h-20 sm:w-28 sm:h-28 rounded-full object-cover object-[50%_30%] shadow-md ring-4 ring-indigo-300/30 mb-3 sm:mb-4"
                 />
                 <h4 className="text-lg sm:text-xl font-bold text-white">{speaker.name}</h4>
-                <p className="text-indigo-400 font-semibold text-sm sm:text-md mt-1">
-                  {speaker.role}
-                </p>
-                {speaker.company && (
-                  <p className="text-gray-400 text-xs sm:text-sm mt-1">{speaker.company}</p>
-                )}
+                <p className="text-indigo-400 font-semibold text-sm sm:text-md mt-1">{speaker.role}</p>
+                {speaker.company && <p className="text-gray-400 text-xs sm:text-sm mt-1">{speaker.company}</p>}
               </div>
             ))}
           </div>
-        ) : null}
+        )}
 
-        {activeTab === "photos" && event.images?.length ? (
+        {activeTab === "photos" && event.images?.length && (
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
             {event.images.map((src, i) => (
               <img
@@ -194,29 +171,20 @@ const EventDetailsTab: React.FC<EventDetailsTabProps> = ({ event, getEmbedUrl })
               />
             ))}
           </div>
-        ) : null}
+        )}
 
-        {activeTab === "videos" && event.videos?.length ? (
+        {activeTab === "videos" && event.videos?.length && (
           <div className="space-y-8">
-            {event.videos.map((url, index) => {
+            {event.videos.map((url, i) => {
               const embedUrl = getEmbedUrl ? getEmbedUrl(url) : url;
               return (
-                <div
-                  key={index}
-                  className="rounded-xl overflow-hidden shadow-2xl bg-black border-2 border-gray-700"
-                >
-                  <iframe
-                    src={embedUrl}
-                    title={`Video ${index + 1}`}
-                    className="w-full aspect-video"
-                    allowFullScreen
-                    loading="lazy"
-                  />
+                <div key={i} className="rounded-xl overflow-hidden shadow-2xl bg-black border-2 border-gray-700">
+                  <iframe src={embedUrl} title={`Video ${i + 1}`} className="w-full aspect-video" allowFullScreen loading="lazy" />
                 </div>
               );
             })}
           </div>
-        ) : null}
+        )}
 
         {activeTab === "gallery" && (event.embed || event.galleryLink) && (
           <div className="space-y-10">
@@ -235,13 +203,7 @@ const EventDetailsTab: React.FC<EventDetailsTabProps> = ({ event, getEmbedUrl })
             )}
             {event.embed && (
               <div className="rounded-2xl overflow-hidden shadow-xl border border-gray-700 mt-8">
-                <iframe
-                  src={event.embed}
-                  title="Embedded Gallery"
-                  className="w-full h-[400px] sm:h-[600px] lg:h-[800px]"
-                  allowFullScreen
-                  loading="lazy"
-                />
+                <iframe src={event.embed} title="Embedded Gallery" className="w-full h-[400px] sm:h-[600px] lg:h-[800px]" allowFullScreen loading="lazy" />
               </div>
             )}
           </div>
