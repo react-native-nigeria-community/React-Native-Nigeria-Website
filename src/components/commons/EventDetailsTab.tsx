@@ -2,7 +2,10 @@ import React, { useState, useMemo } from "react";
 import TypographyComponent from "./typography.jsx";
 import ImageModal from "./ImageModal.jsx";
 import en from "../../locales/en.js";
+import { BASE_TAB_CONFIG } from "../../config/eventTabs";
+import type { TabId } from "../../config/eventTabs";
 
+type ActiveTab = "about" | TabId;
 
 interface Speaker {
   name: string;
@@ -22,35 +25,32 @@ interface EventDetailsData {
   images?: string[];
   videos?: string[];
   embed?: string | null;
-  galleryLink?: string | null; 
+  galleryLink?: string | null;
 }
 
 interface EventDetailsTabProps {
   event: EventDetailsData;
-  getEmbedUrl?: (url: string) => string; 
+  getEmbedUrl?: (url: string) => string;
 }
 
 interface TabItem {
-  id: string;
+  id: TabId;
   name: string;
   count?: number;
 }
 
-// ---------------------
-
 const EventDetailsTab: React.FC<EventDetailsTabProps> = ({ event, getEmbedUrl }) => {
   const T = en.eventDetailsTab;
 
-  const TAB_CONFIG: TabItem[] = [
-    { id: "speakers", name: T.tabs.speakers },
-    { id: "photos", name: T.tabs.photos },
-    { id: "videos", name: T.tabs.videos },
-    { id: "gallery", name: T.tabs.gallery },
-  ];
+  // Extract string name from en
+  const TAB_CONFIG: TabItem[] = BASE_TAB_CONFIG.map((t) => ({
+    ...t,
+    name: T.tabs[t.id].name, // <- fixed
+  }));
 
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [modalImageSrc, setModalImageSrc] = useState<string | null>(null);
-  const [activeTab, setActiveTab] = useState<string>("about");
+  const [activeTab, setActiveTab] = useState<ActiveTab>("about");
 
   const openModal = (src: string) => {
     setModalImageSrc(src);
@@ -77,7 +77,6 @@ const EventDetailsTab: React.FC<EventDetailsTabProps> = ({ event, getEmbedUrl })
 
   return (
     <div className="pt-10">
-      {/* Tabs Navigation */}
       <div className="border-b border-gray-700">
         <nav className="-mb-px flex space-x-6 sm:space-x-10 overflow-x-auto">
           <button
@@ -88,7 +87,7 @@ const EventDetailsTab: React.FC<EventDetailsTabProps> = ({ event, getEmbedUrl })
                 : "border-transparent text-gray-400 hover:border-gray-600 hover:text-gray-200"
             }`}
           >
-            {T.tabs.about}
+            {T.tabs.about.name} {/* <- use .name if about is structured same way */}
           </button>
 
           {tabs.map((tab) => (
@@ -110,10 +109,7 @@ const EventDetailsTab: React.FC<EventDetailsTabProps> = ({ event, getEmbedUrl })
         </nav>
       </div>
 
-      {/* Tab Content */}
       <div className="py-8 sm:py-12 space-y-10">
-
-        {/* ABOUT TAB */}
         {activeTab === "about" && (
           <div className="space-y-10">
             <div className="bg-gray-700 p-6 sm:p-8 rounded-2xl shadow-inner border border-gray-600">
@@ -162,8 +158,7 @@ const EventDetailsTab: React.FC<EventDetailsTabProps> = ({ event, getEmbedUrl })
           </div>
         )}
 
-        {/* SPEAKERS TAB */}
-        {activeTab === "speakers" && event.speakers && event.speakers.length > 0 && (
+        {activeTab === "speakers" && event.speakers?.length ? (
           <div className="grid grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
             {event.speakers.map((speaker, index) => (
               <div
@@ -175,24 +170,19 @@ const EventDetailsTab: React.FC<EventDetailsTabProps> = ({ event, getEmbedUrl })
                   alt={speaker.name}
                   className="w-20 h-20 sm:w-28 sm:h-28 rounded-full object-cover object-[50%_30%] shadow-md ring-4 ring-indigo-300/30 mb-3 sm:mb-4"
                 />
-                <h4 className="text-lg sm:text-xl font-bold text-white">
-                  {speaker.name}
-                </h4>
+                <h4 className="text-lg sm:text-xl font-bold text-white">{speaker.name}</h4>
                 <p className="text-indigo-400 font-semibold text-sm sm:text-md mt-1">
                   {speaker.role}
                 </p>
                 {speaker.company && (
-                  <p className="text-gray-400 text-xs sm:text-sm mt-1">
-                    {speaker.company}
-                  </p>
+                  <p className="text-gray-400 text-xs sm:text-sm mt-1">{speaker.company}</p>
                 )}
               </div>
             ))}
           </div>
-        )}
+        ) : null}
 
-        {/* PHOTOS TAB */}
-        {activeTab === "photos" && event.images && event.images.length > 0 && (
+        {activeTab === "photos" && event.images?.length ? (
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
             {event.images.map((src, i) => (
               <img
@@ -204,13 +194,12 @@ const EventDetailsTab: React.FC<EventDetailsTabProps> = ({ event, getEmbedUrl })
               />
             ))}
           </div>
-        )}
+        ) : null}
 
-        {/* VIDEOS TAB */}
-        {activeTab === "videos" && event.videos && event.videos.length > 0 && (
+        {activeTab === "videos" && event.videos?.length ? (
           <div className="space-y-8">
             {event.videos.map((url, index) => {
-              const embedUrl = getEmbedUrl ? getEmbedUrl(url) : url; 
+              const embedUrl = getEmbedUrl ? getEmbedUrl(url) : url;
               return (
                 <div
                   key={index}
@@ -227,17 +216,13 @@ const EventDetailsTab: React.FC<EventDetailsTabProps> = ({ event, getEmbedUrl })
               );
             })}
           </div>
-        )}
+        ) : null}
 
-        {/* GALLERY TAB */}
         {activeTab === "gallery" && (event.embed || event.galleryLink) && (
           <div className="space-y-10">
             {event.galleryLink && (
               <div className="p-4 sm:p-6 bg-indigo-900/40 rounded-xl border-l-4 border-indigo-500 shadow-sm">
-                <p className="text-base sm:text-lg text-gray-300 font-medium">
-                  {T.viewCollection}
-                </p>
-
+                <p className="text-base sm:text-lg text-gray-300 font-medium">{T.viewCollection}</p>
                 <a
                   href={event.galleryLink}
                   target="_blank"
@@ -248,7 +233,6 @@ const EventDetailsTab: React.FC<EventDetailsTabProps> = ({ event, getEmbedUrl })
                 </a>
               </div>
             )}
-
             {event.embed && (
               <div className="rounded-2xl overflow-hidden shadow-xl border border-gray-700 mt-8">
                 <iframe
@@ -262,13 +246,9 @@ const EventDetailsTab: React.FC<EventDetailsTabProps> = ({ event, getEmbedUrl })
             )}
           </div>
         )}
-
       </div>
 
-     
-      {isModalOpen && (
-        <ImageModal src={modalImageSrc} onClose={closeModal} />
-      )}
+      {isModalOpen && <ImageModal src={modalImageSrc} onClose={closeModal} />}
     </div>
   );
 };

@@ -358,23 +358,22 @@ eventDetailsPage: {
     dateLocationSeparator: " | "
 },
 
- eventDetailsTab: {
+    eventDetailsTab: {
     tabs: {
-      about: "Details & Description",
-      speakers: "Speakers",
-      photos: "Photos",
-      videos: "Videos",
-      gallery: "Gallery",
+      about: { id: "about", name: "Details & Description" },
+      speakers: { id: "speakers", name: "Speakers" },
+      photos: { id: "photos", name: "Photos" },
+      videos: { id: "videos", name: "Videos" },
+      gallery: { id: "gallery", name: "Gallery" },
     },
     summaryTitle: "Event Summary",
     date: "Date",
     time: "Time",
     location: "Location",
     aboutEvent: "About the Event",
-    viewCollection: "View the entire collection of high-resolution media here:",
-    accessGallery: "Access Full Event Gallery →",
+    viewCollection: "View the entire collection of high-resolution images",
+    accessGallery: "Access Gallery →",
   },
-
         pastEvents: {
         date: "Date",
         time: "Time",
