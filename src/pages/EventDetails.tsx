@@ -1,94 +1,75 @@
-
-import React, { useEffect } from "react";
+import React, { useEffect, useMemo } from "react";
 import { useLocation } from "react-router-dom";
-import eventDetails, { EventType } from "../../utils/event-details";
+import eventDetails from "../../utils/event-details";
 import TypographyComponent from "../components/commons/typography";
 import ButtonComponent from "../components/commons/button";
 import EventDetailsTab from "../components/commons/EventDetailsTab";
 import en from "../locales/en";
 
-const EventDetails: React.FC = () => {
+const EventDetails = () => {
   const { hash } = useLocation();
+  const eventId = hash?.replace("#", "");
 
- 
+  const event = useMemo(
+    () => eventDetails.find((evt) => evt.id === eventId),
+    [eventId]
+  );
+
   useEffect(() => {
     if (hash) {
-      const timer = setTimeout(() => {
+      setTimeout(() => {
         document.querySelector(hash)?.scrollIntoView({ behavior: "smooth" });
-      }, 150);
-
-      return () => clearTimeout(timer);
+      }, 200);
     }
   }, [hash]);
 
-  return (
-    <div className="min-h-screen bg-gray-900 py-6 sm:py-10">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
-
-        
-        <div className="text-center pb-10 sm:pb-16 pt-4 sm:pt-6">
-          <TypographyComponent
-            as="h1"
-            variant="h1"
-            className="text-4xl sm:text-5xl font-extrabold text-white mb-3"
-          >
-            {en.eventDetailsPage.pageTitle}
-          </TypographyComponent>
-
-          <p className="text-lg sm:text-xl text-gray-300 font-medium max-w-4xl mx-auto">
-            {en.eventDetailsPage.pageSubtitle}
-          </p>
-        </div>
-
-        
-        <div className="space-y-24 sm:space-y-32">
-          {eventDetails.map((event: EventType) => (
-            <article
-              key={event.id}
-              id={event.id}
-              className="bg-gray-800 rounded-xl sm:rounded-3xl shadow-2xl overflow-hidden ring-1 ring-gray-700"
-            >
-              
-              <header className="w-full bg-slate-900 p-6 sm:p-10 lg:p-12">
-                <hgroup>
-                  <h1 className="text-2xl sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-white leading-tight">
-                    {event.title}
-                  </h1>
-
-                  <p className="text-indigo-300 text-lg sm:text-xl font-medium mt-2">
-                    {event.date}
-                    {en.eventDetailsPage.dateLocationSeparator}
-                    {event.location}
-                  </p>
-                </hgroup>
-              </header>
-
-              
-              <div className="p-6 sm:p-8 md:p-12 lg:p-16">
-
-               
-                <div className="pb-6 sm:pb-8 border-b border-gray-700 mb-6 sm:mb-8 flex justify-start">
-                  <a href="/events" className="w-full sm:w-auto">
-                    <ButtonComponent
-                      variant="secondary"
-                      size="lg"
-                      className="w-full sm:w-auto justify-center px-6 py-2 sm:px-8 sm:py-3 text-sm sm:text-lg font-semibold 
-                        bg-gray-900 text-indigo-400 border border-indigo-400 rounded-full 
-                        hover:bg-slate-700 transition-colors shadow-md"
-                    >
-                      {en.eventDetailsPage.backButton}
-                    </ButtonComponent>
-                  </a>
-                </div>
-
-                
-                <EventDetailsTab event={event} />
-              </div>
-            </article>
-          ))}
-        </div>
+  if (!event) {
+    return (
+      <div className="py-20 text-center text-bg1 text-2xl">
+        Event Not Found
       </div>
-    </div>
+    );
+  }
+
+  return (
+    <>
+
+      {/* HERO — Matches home top section */}
+      <section className="py-16 px-6 bg-bg1 text-white text-center">
+        <TypographyComponent
+          as="h1"
+          variant="h1"
+          className="text-white tracking-tight"
+        >
+          {event.title}
+        </TypographyComponent>
+
+        <p className="mt-4 text-lg opacity-90">
+          {event.date} • {event.location}
+        </p>
+      </section>
+
+      {/* BACK BUTTON — clean, white background */}
+      <section className="py-10 px-6 bg-white">
+        <div className="max-w-4xl mx-auto text-center">
+          <a href="/events">
+            <ButtonComponent className="px-8 py-3 rounded-full text-white bg-[#FF9E0C] hover:opacity-90">
+              {en.eventDetailsPage.backButton}
+            </ButtonComponent>
+          </a>
+        </div>
+      </section>
+
+      {/* CONTENT SECTION — Matches card sections on Home */}
+      <section className="py-20 px-6 bg-[#F4F7FA]">
+        <div className="max-w-6xl mx-auto">
+          <div className="bg-white rounded-3xl shadow-xl p-6 md:p-12 border border-gray-100">
+            <EventDetailsTab event={event} />
+          </div>
+        </div>
+      </section>
+
+    </>
   );
 };
 

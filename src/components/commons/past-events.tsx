@@ -22,41 +22,41 @@ const PastEventHighLights: React.FC<PastEventProps> = ({
   location,
 }) => {
   return (
-    <div className="bg-white border border-gray-200 rounded-xl p-6 flex flex-col justify-between h-[340px] w-full shadow-sm">
-      <div>
-        <TypographyComponent
-          as="h4"
-          variant="h4"
-          className="leading-none font-medium"
-        >
-          {title}
-        </TypographyComponent>
+    <div className="bg-white border border-gray-200 rounded-xl p-6 flex flex-col w-full shadow-sm">
+      
+      <TypographyComponent
+        as="h4"
+        variant="h4"
+        className="leading-none font-medium"
+      >
+        {title}
+      </TypographyComponent>
 
-        <div className="pt-6 text-secondary space-y-4">
-          <div className="flex items-center gap-3">
-            <img src={CalendarSVG} alt="" className="h-5 w-5" />
-            <p className="text-p leading-7 tracking-normal font-light">
-              {date}
-            </p>
-          </div>
+      <div className="pt-6 text-secondary space-y-4">
+        <div className="flex items-center gap-3">
+          <img src={CalendarSVG} alt="" className="h-5 w-5" />
+          <p className="text-p leading-7 tracking-normal font-light">
+            {date}
+          </p>
+        </div>
 
-          <div className="flex items-center gap-3">
-            <img src={ClockSVG} alt="" className="h-5 w-5" />
-            <p className="text-p leading-7 tracking-normal font-light">
-              {time}
-            </p>
-          </div>
+        <div className="flex items-center gap-3">
+          <img src={ClockSVG} alt="" className="h-5 w-5" />
+          <p className="text-p leading-7 tracking-normal font-light">
+            {time}
+          </p>
+        </div>
 
-          <div className="flex items-center gap-3">
-            <img src={MarkerSVG} alt="" className="h-5 w-5" />
-            <p className="text-p leading-7 tracking-normal font-light">
-              {location}
-            </p>
-          </div>
+        <div className="flex items-center gap-3">
+          <img src={MarkerSVG} alt="" className="h-5 w-5" />
+          <p className="text-p leading-7 tracking-normal font-light">
+            {location}
+          </p>
         </div>
       </div>
 
-      <div className="mt-6">
+      {/* Push button to bottom, but let card grow naturally */}
+      <div className="mt-auto pt-6">
         <a href={`/event-details#${id}`}>
           <ButtonComponent className="mt-2">
             {en.pastEvents.viewDetails}

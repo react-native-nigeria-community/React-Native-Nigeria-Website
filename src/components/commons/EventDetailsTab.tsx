@@ -2,19 +2,42 @@ import React, { useState, useMemo } from "react";
 import TypographyComponent from "./typography.jsx";
 import ImageModal from "./ImageModal.jsx";
 import en from "../../locales/en.js";
-import { BASE_TAB_CONFIG } from "../../config/eventTabs";
-import type { TabId } from "../../config/eventTabs";
 
-type ActiveTab = "about" | TabId;
+interface HostSocials {
+  twitter?: string;
+  linkedin?: string;
+  github?: string;
+  website?: string;
+}
+
+interface Host {
+  name: string;
+  photo: string;
+  socials?: HostSocials;
+}
 
 interface Speaker {
   name: string;
   role: string;
   company?: string;
   photo: string;
+  socials?: {
+    twitter?: string;
+    linkedin?: string;
+    github?: string;
+    website?: string;
+  };
 }
 
-interface EventDetailsData {
+interface Panelist {
+  name: string;
+  role?: string;
+  company?: string;
+  photo: string;
+  socials?: HostSocials;
+}
+
+export interface EventDetailsData {
   id: string;
   title: string;
   date: string;
@@ -22,6 +45,8 @@ interface EventDetailsData {
   location: string;
   description: string;
   speakers?: Speaker[];
+  hosts?: Host[];
+  panelists?: Panelist[];
   images?: string[];
   videos?: string[];
   embed?: string | null;
@@ -33,21 +58,37 @@ interface EventDetailsTabProps {
   getEmbedUrl?: (url: string) => string;
 }
 
-interface TabItem {
-  id: TabId;
-  name: string;
-  count?: number;
-}
+type ActiveTab =
+  | "about"
+  | "speakers"
+  | "hosts"
+  | "panelists"
+  | "photos"
+  | "videos"
+  | "gallery";
 
-const EventDetailsTab: React.FC<EventDetailsTabProps> = ({ event, getEmbedUrl }) => {
+// brand colors from your site
+const COLORS = {
+  orange: "#FF9E0C",
+};
+
+const EventDetailsTab: React.FC<EventDetailsTabProps> = ({
+  event,
+  getEmbedUrl,
+}) => {
   const T = en.eventDetailsTab;
 
-  const TAB_CONFIG: TabItem[] = BASE_TAB_CONFIG.map((t) => ({
-    id: t.id,
-    name: t.name,
-  }));
+  const TAB_CONFIG = [
+    { id: "speakers", name: "Speakers" },
+    { id: "hosts", name: "Hosts" },
+    { id: "panelists", name: "Panelists" }, // ⭐ NEW TAB
+    { id: "photos", name: "Photos" },
+    { id: "videos", name: "Videos" },
+    { id: "gallery", name: "Gallery" },
+  ] as const;
 
   const [activeTab, setActiveTab] = useState<ActiveTab>("about");
+
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalImageSrc, setModalImageSrc] = useState<string | null>(null);
 
@@ -64,27 +105,33 @@ const EventDetailsTab: React.FC<EventDetailsTabProps> = ({ event, getEmbedUrl })
   };
 
   const tabs = useMemo(() => {
-    return TAB_CONFIG.map((t) => {
-      let count = 0;
-      if (t.id === "speakers") count = event.speakers?.length ?? 0;
-      if (t.id === "photos") count = event.images?.length ?? 0;
-      if (t.id === "videos") count = event.videos?.length ?? 0;
-      if (t.id === "gallery") count = event.embed || event.galleryLink ? 1 : 0;
-      return { ...t, count };
-    }).filter((tab) => tab.count && tab.count > 0);
+    return TAB_CONFIG.filter((t) => {
+      if (t.id === "speakers") return event.speakers?.length;
+      if (t.id === "hosts") return event.hosts?.length;
+      if (t.id === "panelists") return event.panelists?.length; // ⭐ NEW
+      if (t.id === "photos") return event.images?.length;
+      if (t.id === "videos") return event.videos?.length;
+      if (t.id === "gallery") return event.galleryLink || event.embed;
+      return false;
+    });
   }, [event]);
 
   return (
-    <div className="pt-10">
-      <div className="border-b border-gray-700">
-        <nav className="-mb-px flex space-x-6 sm:space-x-10 overflow-x-auto">
+    <div className="pt-8">
+      {/* Tabs */}
+      <div className="border-b border-gray-200">
+        <nav className="flex space-x-6 overflow-x-auto">
           <button
             onClick={() => setActiveTab("about")}
-            className={`whitespace-nowrap py-4 px-1 border-b-2 text-base sm:text-lg font-semibold transition-colors ${
+            style={
               activeTab === "about"
-                ? "border-indigo-400 text-indigo-400"
-                : "border-transparent text-gray-400 hover:border-gray-600 hover:text-gray-200"
-            }`}
+                ? {
+                  borderBottom: `2px solid ${COLORS.orange}`,
+                  color: COLORS.orange,
+                }
+                : {}
+            }
+            className="py-4 text-lg font-medium whitespace-nowrap border-b-2 border-transparent text-gray-600 hover:text-gray-800"
           >
             {T.tabs.about.name}
           </button>
@@ -92,125 +139,258 @@ const EventDetailsTab: React.FC<EventDetailsTabProps> = ({ event, getEmbedUrl })
           {tabs.map((tab) => (
             <button
               key={tab.id}
-              onClick={() => setActiveTab(tab.id)}
-              className={`whitespace-nowrap py-4 px-1 border-b-2 text-base sm:text-lg font-semibold transition-colors ${
+              onClick={() => setActiveTab(tab.id as ActiveTab)}
+              style={
                 activeTab === tab.id
-                  ? "border-indigo-400 text-indigo-400"
-                  : "border-transparent text-gray-400 hover:border-gray-600 hover:text-gray-200"
-              }`}
+                  ? {
+                    borderBottom: `2px solid ${COLORS.orange}`,
+                    color: COLORS.orange,
+                  }
+                  : {}
+              }
+              className="py-4 text-lg font-medium whitespace-nowrap border-b-2 border-transparent text-gray-600 hover:text-gray-800"
             >
-              {tab.name} {tab.count && tab.count > 1 && <span className="hidden sm:inline">({tab.count})</span>}
+              {tab.name}
             </button>
           ))}
         </nav>
       </div>
 
-      <div className="py-8 sm:py-12 space-y-10">
+      {/* Tab Content */}
+      <div className="py-10 space-y-12">
+        {/* ABOUT */}
         {activeTab === "about" && (
           <div className="space-y-10">
-            <div className="bg-gray-700 p-6 sm:p-8 rounded-2xl shadow-inner border border-gray-600">
+            <div className="bg-white p-8 rounded-3xl shadow-sm border border-gray-200">
               <TypographyComponent
                 as="h3"
-                variant="h4"
-                className="text-xl sm:text-2xl font-bold text-white mb-5 border-b border-gray-600 pb-3"
+                variant="h3"
+                className="text-[22px] font-semibold text-primary mb-4"
               >
                 {T.summaryTitle}
               </TypographyComponent>
 
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-y-4 text-base sm:text-lg text-gray-300">
-                <p>
-                  <strong className="text-indigo-400 block text-lg sm:text-xl">{T.date}</strong> {event.date}
-                </p>
-                <p>
-                  <strong className="text-indigo-400 block text-lg sm:text-xl">{T.time}</strong> {event.time}
-                </p>
-                <p>
-                  <strong className="text-indigo-400 block text-lg sm:text-xl">{T.location}</strong> {event.location}
-                </p>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-lg text-secondary">
+                <p><strong>Date:</strong> {event.date}</p>
+                <p><strong>Time:</strong> {event.time}</p>
+                <p><strong>Location:</strong> {event.location}</p>
               </div>
             </div>
 
             <div>
-              <TypographyComponent as="h2" variant="h3" className="text-2xl sm:text-3xl font-bold text-white mb-4">
+              <TypographyComponent
+                as="h2"
+                variant="h3"
+                className="text-primary text-[28px] font-semibold mb-3"
+              >
                 {T.aboutEvent}
               </TypographyComponent>
-              <p className="text-gray-300 text-base sm:text-lg leading-relaxed whitespace-pre-line">{event.description}</p>
+              <p className="text-secondary text-[17px] leading-[1.7]">
+                {event.description}
+              </p>
             </div>
           </div>
         )}
 
-        {activeTab === "speakers" && event.speakers?.length && (
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
-            {event.speakers.map((speaker, i) => (
+        {/* SPEAKERS */}
+        {activeTab === "speakers" && event.speakers && (
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
+            {event.speakers.map((sp, i) => (
               <div
                 key={i}
-                className="flex flex-col items-center text-center bg-gray-700 p-4 sm:p-6 rounded-xl shadow-lg border border-gray-600 hover:shadow-xl transition-shadow"
+                className="bg-white p-6 rounded-2xl shadow-sm border border-gray-200 text-center"
               >
                 <img
-                  src={speaker.photo}
-                  alt={speaker.name}
-                  className="w-20 h-20 sm:w-28 sm:h-28 rounded-full object-cover object-[50%_30%] shadow-md ring-4 ring-indigo-300/30 mb-3 sm:mb-4"
+                  src={sp.photo}
+                  alt={sp.name}
+                  className="w-24 h-24 rounded-full mx-auto mb-3 object-cover"
                 />
-                <h4 className="text-lg sm:text-xl font-bold text-white">{speaker.name}</h4>
-                <p className="text-indigo-400 font-semibold text-sm sm:text-md mt-1">{speaker.role}</p>
-                {speaker.company && <p className="text-gray-400 text-xs sm:text-sm mt-1">{speaker.company}</p>}
+
+                <h4 className="font-semibold text-lg">{sp.name}</h4>
+
+                <p className="text-secondary">{sp.role}</p>
+                {sp.company && (
+                  <p className="text-gray-500 text-sm">{sp.company}</p>
+                )}
+
+                {/* ⭐ LinkedIn / Socials */}
+                <div className="flex justify-center gap-3 mt-3 text-sm">
+                  {sp.socials?.linkedin && (
+                    <a
+                      href={sp.socials.linkedin}
+                      target="_blank"
+                      className="text-blue-600"
+                    >
+                      LinkedIn
+                    </a>
+                  )}
+
+                  {sp.socials?.twitter && (
+                    <a
+                      href={sp.socials.twitter}
+                      target="_blank"
+                      className="text-blue-400"
+                    >
+                      Twitter
+                    </a>
+                  )}
+
+                  {sp.socials?.github && (
+                    <a
+                      href={sp.socials.github}
+                      target="_blank"
+                      className="text-gray-800"
+                    >
+                      GitHub
+                    </a>
+                  )}
+                </div>
               </div>
             ))}
           </div>
         )}
 
-        {activeTab === "photos" && event.images?.length && (
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+
+        {/* HOSTS */}
+        {activeTab === "hosts" && event.hosts && (
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
+            {event.hosts.map((host, i) => (
+              <div
+                key={i}
+                className="bg-white p-6 rounded-2xl shadow-sm border border-gray-200 text-center"
+              >
+                <img
+                  src={host.photo}
+                  alt={host.name}
+                  className="w-24 h-24 rounded-full mx-auto mb-3 object-cover"
+                />
+
+                <h4 className="font-semibold  text-lg">{host.name}</h4>
+
+                <div className="flex justify-center gap-3 mt-3 text-sm">
+                  {host.socials?.twitter && (
+                    <a href={host.socials.twitter} target="_blank" className="text-blue-400">
+                      Twitter
+                    </a>
+                  )}
+                  {host.socials?.linkedin && (
+                    <a href={host.socials.linkedin} target="_blank" className="text-blue-600">
+                      LinkedIn
+                    </a>
+                  )}
+                  {host.socials?.github && (
+                    <a href={host.socials.github} target="_blank" className="text-gray-800">
+                      GitHub
+                    </a>
+                  )}
+                  {host.socials?.website && (
+                    <a href={host.socials.website} target="_blank" className="text-[#FF9E0C]">
+                      Website
+                    </a>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
+
+        {/* ⭐ PANELISTS */}
+        {activeTab === "panelists" && event.panelists && (
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
+            {event.panelists.map((p, i) => (
+              <div
+                key={i}
+                className="bg-white p-6 rounded-2xl shadow-sm border border-gray-200 text-center"
+              >
+                <img
+                  src={p.photo}
+                  alt={p.name}
+                  className="w-24 h-24 rounded-full mx-auto mb-3 object-cover"
+                />
+
+                <h4 className="font-semibold text-lg">{p.name}</h4>
+
+                {p.role && <p className="text-secondary">{p.role}</p>}
+                {p.company && <p className="text-gray-500 text-sm">{p.company}</p>}
+
+                <div className="flex justify-center gap-3 mt-3 text-sm">
+                  {p.socials?.twitter && (
+                    <a href={p.socials.twitter} target="_blank" className="text-blue-400">
+                      Twitter
+                    </a>
+                  )}
+                  {p.socials?.linkedin && (
+                    <a href={p.socials.linkedin} target="_blank" className="text-blue-600">
+                      LinkedIn
+                    </a>
+                  )}
+                  {p.socials?.github && (
+                    <a href={p.socials.github} target="_blank" className="text-gray-800">
+                      GitHub
+                    </a>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
+
+        {/* PHOTOS */}
+        {activeTab === "photos" && event.images && (
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {event.images.map((src, i) => (
               <img
                 key={i}
                 src={src}
-                alt={`Photo ${i + 1}`}
                 onClick={() => openModal(src)}
-                className="w-full h-32 sm:h-48 object-cover rounded-xl shadow-md hover:scale-[1.02] transition-transform cursor-pointer"
+                className="rounded-2xl shadow cursor-pointer hover:scale-[1.02] transition"
+                alt=""
               />
             ))}
           </div>
         )}
 
-        {activeTab === "videos" && event.videos?.length && (
+        {/* VIDEOS */}
+        {activeTab === "videos" && event.videos && (
           <div className="space-y-8">
-            {event.videos.map((url, i) => {
-              const embedUrl = getEmbedUrl ? getEmbedUrl(url) : url;
-              return (
-                <div key={i} className="rounded-xl overflow-hidden shadow-2xl bg-black border-2 border-gray-700">
-                  <iframe src={embedUrl} title={`Video ${i + 1}`} className="w-full aspect-video" allowFullScreen loading="lazy" />
-                </div>
-              );
-            })}
+            {event.videos.map((v, i) => (
+              <iframe
+                key={i}
+                src={getEmbedUrl ? getEmbedUrl(v) : v}
+                className="w-full aspect-video rounded-2xl shadow border border-gray-200"
+                allowFullScreen
+              />
+            ))}
           </div>
         )}
 
+        {/* GALLERY */}
         {activeTab === "gallery" && (event.embed || event.galleryLink) && (
-          <div className="space-y-10">
+          <div className="space-y-8">
             {event.galleryLink && (
-              <div className="p-4 sm:p-6 bg-indigo-900/40 rounded-xl border-l-4 border-indigo-500 shadow-sm">
-                <p className="text-base sm:text-lg text-gray-300 font-medium">{T.viewCollection}</p>
-                <a
-                  href={event.galleryLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-indigo-400 text-lg sm:text-xl font-bold hover:underline mt-2 inline-block"
-                >
-                  {T.accessGallery}
-                </a>
-              </div>
+              <a
+                href={event.galleryLink}
+                target="_blank"
+                className="text-[#FF9E0C] text-lg font-semibold underline"
+              >
+                Open Full Gallery
+              </a>
             )}
+
             {event.embed && (
-              <div className="rounded-2xl overflow-hidden shadow-xl border border-gray-700 mt-8">
-                <iframe src={event.embed} title="Embedded Gallery" className="w-full h-[400px] sm:h-[600px] lg:h-[800px]" allowFullScreen loading="lazy" />
-              </div>
+              <iframe
+                src={event.embed}
+                className="w-full h-[600px] rounded-2xl shadow border border-gray-200"
+                allowFullScreen
+              />
             )}
           </div>
         )}
       </div>
 
-      {isModalOpen && <ImageModal src={modalImageSrc} onClose={closeModal} />}
+      {isModalOpen && (
+        <ImageModal src={modalImageSrc} onClose={closeModal} />
+      )}
     </div>
   );
 };

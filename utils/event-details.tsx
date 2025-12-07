@@ -1,11 +1,8 @@
-// utils/event-details.ts
-
-// ---- IMPORTS ---- //
 import rnnw1 from "../src/assets/img/RNNW1.jpg";
 import rnnw2 from "../src/assets/img/RNNW2.jpg";
 import rnnw3 from "../src/assets/img/RNNW3.jpg";
-import rnnw4 from "../src/assets/img/RNNW4.jpg"; 
-import rnnw6 from "../src/assets/img/RNNW6.jpg"; 
+import rnnw4 from "../src/assets/img/RNNW4.jpg";
+import rnnw6 from "../src/assets/img/RNNW6.jpg";
 import rnnw8 from "../src/assets/img/RNNW8.jpg";
 
 import rnn21_1 from "../src/assets/img/RNN21_1.jpeg";
@@ -21,14 +18,56 @@ import rnn21_10 from "../src/assets/img/RNN21_10.jpeg";
 
 import oluwatobiPhoto from "../src/assets/img/ay.jpg";
 
+import ayo from "../src/assets/img/ayo.png";
+import chibuke from "../src/assets/img/chibuke.png";
+import chinonso from "../src/assets/img/chinonso.png";
+import naomi from "../src/assets/img/naomi.png";
+import fisayo from "../src/assets/img/fisayo.png";
+import ali from "../src/assets/img/ali.png";
+import shodipo from "../src/assets/img/shodipo.png";
+import godswill from "../src/assets/img/godswill.png";
+import valentino from "../src/assets/img/valentino.png";
+import moso from "../src/assets/img/moso.png";
+import abdul from "../src/assets/img/abdul.png";
 
-// ---- TYPES ---- //
+
+// ---------------- TYPES ----------------
 
 export interface SpeakerType {
   name: string;
   role: string;
   company?: string;
   photo: string;
+  socials?: {
+    linkedin?: string;
+    twitter?: string;
+    github?: string;
+    website?: string;
+  };
+}
+
+export interface HostType {
+  name: string;
+  photo: string;
+  socials?: {
+    twitter?: string;
+    linkedin?: string;
+    github?: string;
+    website?: string;
+  };
+}
+
+export interface PanelistType {
+  name: string;
+  role?: string;
+  company?: string;
+  photo: string;
+  socials?: {
+    linkedin?: string;
+    twitter?: string;
+    github?: string;
+    website?: string;
+  };
 }
 
 export interface EventType {
@@ -43,12 +82,15 @@ export interface EventType {
   embed: string | null;
   galleryLink: string | null;
   speakers: SpeakerType[];
+  hosts?: HostType[];
+  panelists?: PanelistType[];
 }
 
-
-// ---- EVENT DATA ---- //
+// ---------------- EVENTS ----------------
 
 export const eventDetails: EventType[] = [
+
+  // EVENT 1 ---------------------------------
   {
     id: "event1",
     title: "React Native Nigeria Workshop",
@@ -62,15 +104,50 @@ export const eventDetails: EventType[] = [
     embed: null,
     galleryLink:
       "https://photos.google.com/share/AF1QipPc49tLOW3EZO1RMO8awcVCBIBz92OMZIiHhSCtQKhlLP5-ro4m3vYbsdezylP0yg?key=cE5LeVNNelh0dEJNNHIxRU1mWDhWMG1wd0FsUkJn",
+
+    hosts: [
+      {
+        name: "Oluwatobi Shokunbi",
+        photo: oluwatobiPhoto,
+        socials: {
+          twitter: "https://x.com/just1and0",
+          linkedin: "https://www.linkedin.com/in/just1and0/",
+        },
+      },
+    ],
+
     speakers: [
       {
-        name: "Oluwatobi Shokunmbi",
+        name: "Abdulrazaq Imam, MITS",
+        role: "Software Engineering Lead",
+        company: "Tsari 360 Consulting",
+        photo: abdul,
+        socials: {
+          linkedin: "https://www.linkedin.com/in/aimamisa/"
+        }
+      },
+      {
+        name: "Oluwatobi Shokunbi",
         role: "React Native Nigeria Founder",
         company: "React Native Nigeria",
         photo: oluwatobiPhoto,
+        socials: {
+          linkedin: "https://www.linkedin.com/in/just1and0/"
+        }
+      },
+      {
+        name: "Mishael (Mosolasi) Akinyemi",
+        role: "Senior iOS / React Native Developer",
+        company: "Callstack",
+        photo: moso,
+        socials: {
+          linkedin: "https://www.linkedin.com/in/akinyemi-mosolasi/"
+        }
       },
     ],
   },
+
+  // EVENT 2 — ONLINE EVENT ---------------------------------
   {
     id: "event2",
     title: "React Native To Infinity And Beyond",
@@ -82,20 +159,62 @@ export const eventDetails: EventType[] = [
     images: [],
     videos: [
       "https://www.youtube.com/embed/12f3Cjw2Rbc?start=6",
-      "https://youtu.be/ayCta8DrpD0?si=duvo4-PcbRezDMiw",
-      "https://youtu.be/xftFpHvWJYM?si=p0gihzKCCXMudZ47",
     ],
     embed: null,
     galleryLink: null,
+
+    hosts: [
+      {
+        name: "Oluwatobi Shokunbi",
+        photo: oluwatobiPhoto,
+        socials: {
+          twitter: "https://x.com/just1and0",
+          linkedin: "https://www.linkedin.com/in/just1and0/",
+        },
+      },
+    ],
+
     speakers: [
       {
-        name: "Oluwatobi Shokunmbi",
-        role: "React Native Nigeria Founder",
-        company: "React Native Nigeria",
-        photo: oluwatobiPhoto,
+        name: "Shodipo Ayomide",
+        role: "Guest Speaker",
+        company: "Head of Developer Relations at Nuklai",
+        photo: shodipo,
+        socials: {
+          linkedin: "https://www.linkedin.com/in/shodipo-ayomide/",
+        },
+      },
+      {
+        name: "Godswill",
+        role: "Guest Speaker",
+        company: "Senior Software Engineer at Analog Republic",
+        photo: godswill,
+        socials: {
+          linkedin: "https://www.linkedin.com/in/godswill-okokon/",
+        },
+      },
+      {
+        name: "Syed Zain Ali",
+        role: "Guest Speaker",
+        company: "Senior Software Engineer at Prop.com",
+        photo: ali,
+        socials: {
+          linkedin: "https://www.linkedin.com/in/syed-zain-ali-7279b6115/",
+        },
+      },
+      {
+        name: "Valentino Ugbala",
+        role: "Guest Speaker",
+        company: "Senior Software Engineer at WorkHQ",
+        photo: valentino,
+        socials: {
+          linkedin: "https://www.linkedin.com/in/teenoh/",
+        },
       },
     ],
   },
+
+  // EVENT 3 ---------------------------------
   {
     id: "event3",
     title: "React Native Community Akure",
@@ -108,15 +227,32 @@ export const eventDetails: EventType[] = [
     videos: [],
     embed: null,
     galleryLink: null,
+
+    hosts: [
+      {
+        name: "Oluwatobi Shokunbi",
+        photo: oluwatobiPhoto,
+        socials: {
+          twitter: "https://x.com/just1and0",
+          linkedin: "https://www.linkedin.com/in/just1and0/",
+        },
+      },
+    ],
+
     speakers: [
       {
-        name: "Oluwatobi Shokunmbi",
+        name: "Oluwatobi Shokunbi",
         role: "React Native Nigeria Founder",
         company: "React Native Nigeria",
         photo: oluwatobiPhoto,
+        socials: {
+          linkedin: "https://www.linkedin.com/in/just1and0/",
+        }
       },
     ],
   },
+
+  // EVENT 4 ---------------------------------
   {
     id: "event4",
     title: "React Native Nigeria Abuja Meetup 2021",
@@ -127,29 +263,38 @@ export const eventDetails: EventType[] = [
     description:
       "A meetup in Abuja connecting React Native enthusiasts, with talks, workshops, and networking opportunities.",
     images: [
-      rnn21_1,
-      rnn21_2,
-      rnn21_3,
-      rnn21_4,
-      rnn21_5,
-      rnn21_6,
-      rnn21_7,
-      rnn21_8,
-      rnn21_9,
-      rnn21_10,
+      rnn21_1, rnn21_2, rnn21_3, rnn21_4, rnn21_5,
+      rnn21_6, rnn21_7, rnn21_8, rnn21_9, rnn21_10,
     ],
     videos: [],
     embed: null,
     galleryLink: null,
+
+    hosts: [
+      {
+        name: "Oluwatobi Shokunbi",
+        photo: oluwatobiPhoto,
+        socials: {
+          twitter: "https://x.com/just1and0",
+          linkedin: "https://www.linkedin.com/in/just1and0/",
+        },
+      },
+    ],
+
     speakers: [
       {
-        name: "Oluwatobi Shokunmbi",
+        name: "Oluwatobi Shokunbi",
         role: "React Native Nigeria Founder",
         company: "React Native Nigeria",
         photo: oluwatobiPhoto,
+        socials: {
+          linkedin: "https://www.linkedin.com/in/just1and0/",
+        }
       },
     ],
   },
+
+  // EVENT 5 — WITH PANELISTS ---------------------------------
   {
     id: "event5",
     title: "React Native Nigeria Abuja Meetup 2025",
@@ -164,15 +309,72 @@ export const eventDetails: EventType[] = [
       "https://drive.google.com/embeddedfolderview?id=1z97DrKOxFA2PoQdLwOXqzcB0mL9yG-hP#grid",
     galleryLink:
       "https://drive.google.com/folderview?id=1z97DrKOxFA2PoQdLwOXqzcB0mL9yG-hP#grid",
+
+    hosts: [
+      {
+        name: "Fisayo Afowowe",
+        photo: fisayo,
+        socials: {
+          linkedin: "https://www.linkedin.com/in/fisayo-afowowe-7932911b1/",
+        },
+      },
+      {
+        name: "Naomi Igimoh",
+        photo: naomi,
+        socials: {
+          linkedin: "https://www.linkedin.com/in/naomi-igimoh/",
+        },
+      },
+      {
+        name: "Oluwatobi Shokunbi",
+        photo: oluwatobiPhoto,
+        socials: {
+          twitter: "https://x.com/just1and0",
+          linkedin: "https://www.linkedin.com/in/just1and0/",
+        },
+      },
+    ],
+
     speakers: [
       {
-        name: "Oluwatobi Shokunmbi",
+        name: "Oluwatobi Shokunbi",
         role: "React Native Nigeria Founder",
         company: "React Native Nigeria",
         photo: oluwatobiPhoto,
+        socials: {
+          linkedin: "https://www.linkedin.com/in/just1and0/",
+        }
+      },
+    ],
+
+    panelists: [
+      {
+        name: "Chinonso Ichoku",
+        role: "Panelist",
+        photo: chinonso,
+        socials: {
+          linkedin: "https://www.linkedin.com/in/chinonso-ichoku/",
+        },
+      },
+      {
+        name: "Chibuokem Onyekwelu",
+        role: "Panelist",
+        photo: chibuke,
+        socials: {
+          linkedin: "https://www.linkedin.com/in/chibuokem-onyekwelu/",
+        },
+      },
+      {
+        name: "Ayo-David Ajayi",
+        role: "Panelist",
+        photo: ayo,
+        socials: {
+          linkedin: "https://www.linkedin.com/in/ayodavidajayi/",
+        },
       },
     ],
   },
+
 ];
 
 export default eventDetails;
