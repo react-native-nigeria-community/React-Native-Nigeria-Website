@@ -29,6 +29,9 @@ import godswill from "../src/assets/img/godswill.png";
 import valentino from "../src/assets/img/valentino.png";
 import moso from "../src/assets/img/moso.png";
 import abdul from "../src/assets/img/abdul.png";
+import jason from "../src/assets/img/jason.png";
+import andrew from "../src/assets/img/andrew.png";
+import daniel from "../src/assets/img/daniel.png";
 
 
 // ---------------- TYPES ----------------
@@ -241,13 +244,10 @@ export const eventDetails: EventType[] = [
 
     speakers: [
       {
-        name: "Oluwatobi Shokunbi",
-        role: "React Native Nigeria Founder",
-        company: "React Native Nigeria",
-        photo: oluwatobiPhoto,
-        socials: {
-          linkedin: "https://www.linkedin.com/in/just1and0/",
-        }
+        name: "Adepoju Daniel",
+        role: "Software Engineer",
+        company: "Freelancer",
+        photo: daniel
       },
     ],
   },
@@ -281,15 +281,47 @@ export const eventDetails: EventType[] = [
       },
     ],
 
+
     speakers: [
       {
+        name: "Adepoju Daniel",
+        role: "Software Engineer",
+        company: "Freelancer",
+        photo: daniel
+      },
+      {
+        name: "Jason Safaiyeh",
+        role: "Software Enginner",
+        company: "Somo Logic",
+        photo: jason,
+      },
+      {
+        name: "Andrew Ogaga",
+        role: "Software Engineer",
+        company: "Farm innovation LTD.",
+        photo: andrew,
+        socials: {
+          linkedin: "https://www.linkedin.com/in/andy-ogaga/",
+        }
+      },
+    ],
+
+    panelists: [
+      {
         name: "Oluwatobi Shokunbi",
-        role: "React Native Nigeria Founder",
-        company: "React Native Nigeria",
+        role: "Panelist",
         photo: oluwatobiPhoto,
         socials: {
           linkedin: "https://www.linkedin.com/in/just1and0/",
-        }
+        },
+      },
+      {
+        name: "Godswill Okokon",
+        role: "Panelist",
+        photo: godswill,
+        socials: {
+          linkedin: "https://www.linkedin.com/in/godswill-okokon/",
+        },
       },
     ],
   },
