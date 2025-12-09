@@ -6,6 +6,8 @@ import AccordionComponent from "../components/commons/accordion.jsx";
 import en from "../locales/en.js";
 import { getAccordions } from "../../utils/accordion.jsx";
 
+
+
 function AboutUs() {
   return (
     <>

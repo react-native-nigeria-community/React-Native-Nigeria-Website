@@ -7,6 +7,8 @@ import en from "../../locales/en.js";
 import NavList from "../commons/nav-list.jsx";
 import { getNavLinks } from "../../../utils/nav-links.jsx";
 
+
+
 const NavbarComponent = () => {
   const [open, setOpen] = useState(false);
   const location = useLocation();
@@ -18,7 +20,7 @@ const NavbarComponent = () => {
     <header className="sticky top-0 z-50 bg-white lg:bg-bg1">
       <nav className="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between relative">
 
-        {/* Desktop Nav Links — use motion.div instead of motion.li */}
+        
         <motion.ul
           initial={{ opacity: 0, y: -15 }}
           animate={{ opacity: 1, y: 0 }}

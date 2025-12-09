@@ -1,5 +1,5 @@
-import React, { useState, useRef } from "react";
-import { motion, useInView } from "framer-motion";
+import React, { useState} from "react";
+import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
 import TypographyComponent from "../components/commons/typography.jsx";
 import ButtonComponent from "../components/commons/button.jsx";
@@ -15,6 +15,8 @@ import { getWriteUps } from "../../utils/write-for-us.jsx";
 import { getOpenSourceProjects } from "../../utils/open-source-projects.jsx";
 import { getTopics } from "../../utils/topics.jsx";
 
+
+
 function HomePage() {
   const [phase, setPhase] = useState(0);
 
@@ -22,7 +24,7 @@ function HomePage() {
 
   return (
     <>
-      {/* HERO — EXACTLY AS YOU HAD IT (untouched) */}
+      
       <section className="lg:bg-bg1 bg-[url(./assets/img/mb-blue.png)] md:bg-[url(./assets/img/lg-bg-screen.png)] bg-no-repeat bg-bottom h-[366px] bg-contain lg:h-[655px] flex items-center justify-center text-center lg:w-full">
         <div className="grid justify-items-center content-center">
           <div className="px-6 lg:w-[758px] text-secondary lg:text-primary">
@@ -129,7 +131,7 @@ function HomePage() {
         </motion.div>
       </section>
 
-      {/* FEATURED TOPICS — Wobble + slide */}
+      {/* FEATURED TOPICS */}
       <section className="px-6 py-12 bg-[#F4F7FA]">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -183,7 +185,7 @@ function HomePage() {
         </motion.div>
       </section>
 
-      {/* LIVE EVENTS — Pop bounce */}
+      {/* LIVE EVENTS  */}
       <section className="bg-secondary lg:bg-bg1 py-12 px-6 lg:px-[165px] lg:pt-[100px] lg:pb-[39px]">
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
@@ -216,7 +218,7 @@ function HomePage() {
         </div>
       </section>
 
-      {/* OPEN SOURCE — Bounce from bottom */}
+      {/* OPEN SOURCE  */}
       <section className="pt-12">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -248,7 +250,7 @@ function HomePage() {
         </div>
       </section>
 
-      {/* CONTRIBUTE — Swing in from sides */}
+      {/* CONTRIBUTE  */}
       <section className="bg-secondary px-6 pt-12 pb-[3.625rem] lg:bg-bg1">
         <motion.div
           initial={{ opacity: 0, rotateX: -40 }}

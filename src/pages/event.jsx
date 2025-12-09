@@ -6,10 +6,12 @@ import PastEventHighLights from "../components/commons/past-events.jsx";
 import en from "../locales/en.js";
 import { eventDetails } from "../../utils/event-details";
 
+
+
 function Events() {
   return (
     <>
-      {/* First section — only text animates */}
+      {/* First section */}
       <section className="lg:bg-bg1 bg-[url(./assets/img/mb-blue.png)] lg:bg-[url(./assets/img/lg-bg-screen.png)] bg-no-repeat bg-bottom bg-contain h-[366px] lg:h-[655px] flex items-center justify-center text-center lg:w-full">
         <div className="gird justify-items-center content-center">
           <div className="px-6 space-y-3 lg:w-[758px] text-secondary lg:text-primary">
@@ -46,7 +48,7 @@ function Events() {
         </div>
       </section>
 
-      {/* Second section — only cards animate */}
+      {/* Second section  */}
       <section className="px-6 py-12 space-y-6">
         <div className="lg:flex lg:justify-center lg:mx-[125px]">
           <div className="py-6">

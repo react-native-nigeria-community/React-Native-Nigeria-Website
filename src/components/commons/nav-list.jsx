@@ -6,7 +6,7 @@ const NavList = ({ label, link, isActive }) => {
         <li>
             <Link
                 to={link}
-                className={`hover:text-bg2 transition-colors duration-200 ${
+                className={`hover:text-black transition-colors duration-200 ${
                     isActive ? "text-bg2 font-semibold border-b-2 border-bg2 pb-1" : "text-primary"
                 }`}
             >
