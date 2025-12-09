@@ -6,7 +6,7 @@ import ArrowRightSvg from "../../assets/svg/svgs/arrow-right.jsx";
 
 const OpenSourceCard = ({star, fork, title, description, link}) => {
     return (
-       <div className="bg-bg4 group relative mt-[30px] rounded-[10px] px-[30px] py-[33px] lg:w-[350px] lg:hover:bg-bg1 transition-colors duration-300">
+       <div className="bg-bg4 group relative mt-[30px] rounded-[10px] px-[30px] py-[33px] lg:w-[350px] lg:hover:bg-bg1 transition-colors duration-300 min-h-[220px]">
             <div className="text-left">
                 {/* Stats Section */}
                 <div className="flex gap-2.5 pb-2.5">

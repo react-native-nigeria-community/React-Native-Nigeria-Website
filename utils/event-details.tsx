@@ -1,18 +1,18 @@
 import rnnw1 from "../src/assets/img/RNNW1.jpg";
-import rnnw2 from "../src/assets/img/RNNW2.jpg";
+import rnnw2 from "../src/assets/img/RNNW2_fixed.jpg";
 import rnnw3 from "../src/assets/img/RNNW3.jpg";
-import rnnw4 from "../src/assets/img/RNNW4.jpg";
+import rnnw4 from "../src/assets/img/RNNW4_Fixed.jpg";
 import rnnw6 from "../src/assets/img/RNNW6.jpg";
 import rnnw8 from "../src/assets/img/RNNW8.jpg";
 
-import rnn21_1 from "../src/assets/img/RNN21_1.jpeg";
+import rnn21_1 from "../src/assets/img/RNN21_1_fixed.jpg";
 import rnn21_2 from "../src/assets/img/RNN21_2.jpeg";
 import rnn21_3 from "../src/assets/img/RNN21_3.jpeg";
 import rnn21_4 from "../src/assets/img/RNN21_4.jpeg";
 import rnn21_5 from "../src/assets/img/RNN21_5.jpeg";
 import rnn21_6 from "../src/assets/img/RNN21_6.jpeg";
 import rnn21_7 from "../src/assets/img/RNN21_7.jpeg";
-import rnn21_8 from "../src/assets/img/RNN21_8.jpeg";
+import rnn21_8 from "../src/assets/img/RNN21_8_fixed.jpg";
 import rnn21_9 from "../src/assets/img/RNN21_9.jpeg";
 import rnn21_10 from "../src/assets/img/RNN21_10.jpeg";
 
