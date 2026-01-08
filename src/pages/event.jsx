@@ -3,7 +3,7 @@ import TypographyComponent from "../components/commons/typography.jsx";
 import PastEventHighLights from "../components/commons/past-events.jsx";
 import eventDetails from "../../utils/event-details";
 
-import { useTranslation } from "../context/LanguageContext";
+import { useTranslation } from "../context/useTranslation.jsx";
 
 function Events() {
     

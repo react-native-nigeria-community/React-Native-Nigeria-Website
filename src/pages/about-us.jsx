@@ -3,7 +3,7 @@ import AboutJPG from "../assets/img/about.jpg";
 import TypographyComponent from "../components/commons/typography.jsx";
 import AccordionComponent from "../components/commons/accordion.jsx";
 import { getAccordions } from "../../utils/accordion.jsx"; 
-import { useTranslation } from "../context/LanguageContext";
+import { useTranslation } from "../context/useTranslation";
 
 function AboutUs() {
     const { t } = useTranslation();

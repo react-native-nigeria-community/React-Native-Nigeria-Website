@@ -5,7 +5,7 @@ import ButtonComponent from "../commons/button.jsx";
 import NavList from "../commons/nav-list.jsx";
 import { getNavLinks } from "../../../utils/nav-links.jsx";
 import LanguageSwitcher from "../LanguageSwitcher.jsx"; 
-import { useTranslation } from "../../context/LanguageContext";
+import { useTranslation } from "../../context/useTranslation";
 
 const NavbarComponent = () => {
   const [open, setOpen] = useState(false);

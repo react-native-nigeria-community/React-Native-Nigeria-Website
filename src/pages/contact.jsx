@@ -5,7 +5,7 @@ import CheckMarkSVG from "../assets/svg/check-mark.svg";
 import ContactPNG from "../assets/img/contact.png";
 import TypographyComponent from "../components/commons/typography.jsx";
 import toast, { Toaster } from "react-hot-toast";
-import { useTranslation } from "../context/LanguageContext";
+import { useTranslation } from "../context/useTranslation.jsx";
 
 function Contact() {
   const { t } = useTranslation();

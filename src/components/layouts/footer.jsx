@@ -6,7 +6,7 @@ import { getNavLinks } from "../../../utils/nav-links.jsx";
 import NavList from "../commons/nav-list.jsx";
 import { getSocials } from "../../../utils/social-links.jsx";
 import SocialIcon from "../commons/social-icon.jsx";
-import { useTranslation } from "../../context/LanguageContext";
+import { useTranslation } from "../../context/useTranslation";
 
 const FooterComponent = () => {
     const { t } = useTranslation();

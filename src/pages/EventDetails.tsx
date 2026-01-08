@@ -5,7 +5,7 @@ import TypographyComponent from "../components/commons/typography";
 import ButtonComponent from "../components/commons/button";
 import EventDetailsTab from "../components/commons/EventDetailsTab";
 
-import { useTranslation } from "../context/LanguageContext";
+import { useTranslation } from "../context/useTranslation";
 
 const EventDetails = () => {
   const { t } = useTranslation(); 

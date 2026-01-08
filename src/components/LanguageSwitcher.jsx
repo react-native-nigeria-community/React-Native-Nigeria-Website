@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { useTranslation } from '../context/LanguageContext';
+import { useTranslation } from '../context/useTranslation';
 
 const LanguageSwitcher = () => {
   const { currentLang, changeLanguage, availableLanguages } = useTranslation();

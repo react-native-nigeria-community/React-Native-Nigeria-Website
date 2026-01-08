@@ -4,7 +4,7 @@ import { useState } from "react";
 import ButtonComponent from "../components/commons/button.jsx";
 import GridFlowCard from "../components/commons/grid-flow-card.jsx";
 import FeaturedCard from "../components/commons/featured-card.jsx";
-import { useTranslation } from "../context/LanguageContext"; 
+import { useTranslation } from "../context/useTranslation.jsx"; 
 import { getFeatures } from "../../utils/features.jsx";
 import { getLiveEvents } from "../../utils/live-events.jsx";
 import { getWriteUps } from "../../utils/write-for-us.jsx";

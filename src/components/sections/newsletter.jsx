@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import ButtonComponent from "../commons/button.jsx";
 import TypographyComponent from "../commons/typography.jsx";
 import InputFieldComponent from "../commons/input-field.jsx";
-import { useTranslation } from "../../context/LanguageContext";
+import { useTranslation } from "../../context/useTranslation.jsx";
 
 const NewsletterComponent = () => {
     const { t } = useTranslation();
