@@ -2,16 +2,21 @@ import React, { useState } from "react";
 import ButtonComponent from "../commons/button.jsx";
 import TypographyComponent from "../commons/typography.jsx";
 import InputFieldComponent from "../commons/input-field.jsx";
-import en from "../../locales/en.js";
+import { useTranslation } from "../../context/LanguageContext";
 
 const NewsletterComponent = () => {
+    const { t } = useTranslation();
     const [email, setEmail] = useState("");
     const [error, setError] = useState("");
+
+    
+    if (!t) return null;
 
     const handleSubmit = (e) => {
         e.preventDefault();
 
         if (!email.includes("@")) {
+            
             setError("Please enter a valid email address.");
             return;
         }
@@ -34,19 +39,19 @@ const NewsletterComponent = () => {
                     as="h3" 
                     variant="h3" 
                     responsiveVariant={{ lg: "h4" }} 
-                    className={"text-secondary!"}
+                    className="text-secondary!"
                 >
-                    {en.newsletterTitle}
+                    {t.newsletterTitle}
                 </TypographyComponent>
 
                 {/* Subheading */}
                 <TypographyComponent 
                     as="h6" 
                     variant="h6" 
-                    className={"text-secondary! mt-2 mb-6 text-h6 lg:text-p"} 
+                    className="text-secondary! mt-2 mb-6 text-h6 lg:text-p" 
                     responsiveVariant={{ lg: "p" }}
                 >
-                    {en.newsletterDescription}
+                    {t.newsletterDescription}
                 </TypographyComponent>
 
                 {/* Form */}
@@ -56,20 +61,20 @@ const NewsletterComponent = () => {
                         <InputFieldComponent
                             id="email"
                             type="email"
-                            className={"w-full p-3 lg:w-lg h-10 focus:outline-none border border-black rounded-[10px] lg:border-none"}
-                            placeholder={en.placeholderEmail}
+                            className="w-full p-3 lg:w-lg h-10 focus:outline-none border border-black rounded-[10px] lg:border-none"
+                            placeholder={t.placeholderEmail}
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                             error={error}
                         />
 
-                        <div className="">
+                        <div>
                             <ButtonComponent 
                                 type="submit" 
                                 className="w-full py-3" 
                                 variant="primary"
                             >
-                                {en.subscribe}
+                                {t.subscribe}
                             </ButtonComponent>
                         </div>
 

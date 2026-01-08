@@ -1,12 +1,14 @@
 import React, { useEffect, useMemo } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom"; 
 import eventDetails from "../../utils/event-details";
 import TypographyComponent from "../components/commons/typography";
 import ButtonComponent from "../components/commons/button";
 import EventDetailsTab from "../components/commons/EventDetailsTab";
-import en from "../locales/en";
+
+import { useTranslation } from "../context/LanguageContext";
 
 const EventDetails = () => {
+  const { t } = useTranslation(); 
   const { hash } = useLocation();
   const eventId = hash?.replace("#", "");
 
@@ -23,9 +25,13 @@ const EventDetails = () => {
     }
   }, [hash]);
 
+  
+  if (!t) return null;
+
   if (!event) {
     return (
       <div className="py-20 text-center text-bg1 text-2xl">
+       
         Event Not Found
       </div>
     );
@@ -33,7 +39,6 @@ const EventDetails = () => {
 
   return (
     <>
-
       {/* HERO — Matches home top section */}
       <section className="py-16 px-6 bg-bg1 text-white text-center">
         <TypographyComponent
@@ -52,11 +57,12 @@ const EventDetails = () => {
       {/* BACK BUTTON — clean, white background */}
       <section className="py-10 px-6 bg-white">
         <div className="max-w-4xl mx-auto text-center">
-          <a href="/events">
+          
+          <Link to="/events">
             <ButtonComponent className="px-8 py-3 rounded-full text-white bg-[#FF9E0C] hover:opacity-90">
-              {en.eventDetailsPage.backButton}
+              {t.eventDetailsPage?.backButton}
             </ButtonComponent>
-          </a>
+          </Link>
         </div>
       </section>
 
@@ -68,7 +74,6 @@ const EventDetails = () => {
           </div>
         </div>
       </section>
-
     </>
   );
 };
