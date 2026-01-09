@@ -2,15 +2,11 @@ import { TypeAnimation } from "react-type-animation";
 import TypographyComponent from "../components/commons/typography.jsx"; 
 import PastEventHighLights from "../components/commons/past-events.jsx";
 import eventDetails from "../../utils/event-details";
-
 import { useTranslation } from "../context/useTranslation.jsx";
 
 function Events() {
-    
-    const { t } = useTranslation();
-
-   
-    if (!t) return null;
+      const { t } = useTranslation();
+  if (!t) return null;
 
     return (
         <>
@@ -21,14 +17,13 @@ function Events() {
                         <p className="font-semibold leading-none lg:leading[60px] lg:font-medium text-[40px] tracking-[-0.125rem] md:text-h1">
                             {/* Mobile view */}
                             <span className={"lg:hidden"}>
-                                {t.eventPage?.firstSection?.title1}
+                                {t.eventPage.firstSection.title1}
                             </span>
 
                             {/* Desktop view */}
-                            
                             <TypeAnimation
-                                key={t.eventPage?.firstSection?.title2} 
-                                sequence={[t.eventPage?.firstSection?.title2 || ""]}
+                                key={t.eventPage.firstSection.title2} 
+                                sequence={[t.eventPage.firstSection.title2]}
                                 speed={50}
                                 repeat={1}
                                 cursor={false}
@@ -37,7 +32,7 @@ function Events() {
                             />
                         </p>
                         <p className={"leading-5 text-secondary lg:text-primary tracking-normal text-[16px] lg:text-[14px]"}>
-                            {t.eventPage?.firstSection?.slogan}
+                            {t.eventPage.firstSection.slogan}
                         </p>
                     </div>
                 </div>
@@ -48,7 +43,7 @@ function Events() {
                 <div className={"lg:flex lg:justify-center lg:mx-[125px]"}>
                     <div className={"py-6"}>
                         <TypographyComponent as={"h3"} variant={"h3"} className={"text-mh3!"}>
-                            {t.eventPage?.fourthSection?.title}
+                            {t.eventPage.fourthSection.title}
                         </TypographyComponent>
 
                         <div className={"py-6 grid md:grid-cols-3 gap-6 justify-items-stretch items-stretch"}>

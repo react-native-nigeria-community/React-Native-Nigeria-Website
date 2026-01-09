@@ -381,5 +381,13 @@ eventDetailsPage: {
         viewDetails: "View Details",
         },
 
+    toastMessages: {
+    submitting: "Submitting message...",
+    success: "Message sent successfully!",
+    error: "Failed to send message. Please try again.",
+    connectionError: "An error occurred. Please check your connection."
+},
 
-};
+
+}; 
+

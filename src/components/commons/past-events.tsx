@@ -4,7 +4,7 @@ import CalendarSVG from "../../assets/svg/calendar.svg";
 import ClockSVG from "../../assets/svg/clock.svg";
 import MarkerSVG from "../../assets/svg/marker.svg";
 import ButtonComponent from "./button";
-import en from "../../locales/en";
+import { useTranslation } from "../../context/useTranslation";
 
 interface PastEventProps {
   id: string;
@@ -21,6 +21,8 @@ const PastEventHighLights: React.FC<PastEventProps> = ({
   time,
   location,
 }) => {
+  const { t } = useTranslation();
+
   return (
     <div className="bg-white border border-gray-200 rounded-xl p-6 flex flex-col w-full shadow-sm">
       
@@ -55,11 +57,11 @@ const PastEventHighLights: React.FC<PastEventProps> = ({
         </div>
       </div>
 
-      {/* Push button to bottom, but let card grow naturally */}
+      
       <div className="mt-auto pt-6">
         <a href={`/event-details#${id}`}>
           <ButtonComponent className="mt-2">
-            {en.pastEvents.viewDetails}
+            {t.pastEvents.viewDetails}
           </ButtonComponent>
         </a>
       </div>

@@ -16,7 +16,7 @@ function Contact() {
     const formData = new FormData(form);
 
     try {
-      toast.loading("Submitting message...");
+      toast.loading(t.toastMessages.submitting);
 
       const response = await fetch("https://api.myqrmenu.co/api/submit-form", {
         method: "POST",
@@ -27,25 +27,22 @@ function Contact() {
       toast.dismiss();
 
       if (result.success) {
-        toast.success("Message sent successfully!", {
+        toast.success(t.toastMessages.success, {
           style: { border: "2px solid #22c55e" },
           iconTheme: { primary: "#22c55e", secondary: "#fff" },
         });
         form.reset();
       } else {
-        toast.error("Failed to send message. Please try again.", {
+        toast.error(t.toastMessages.error, {
           style: { border: "2px solid #dc2626" },
           iconTheme: { primary: "#dc2626", secondary: "#fff" },
         });
       }
     } catch {
       toast.dismiss();
-      toast.error("An error occurred. Please check your connection.");
+      toast.error(t.toastMessages.connectionError);
     }
   };
-
-  
-  if (!t) return null;
 
   return (
     <>
@@ -67,7 +64,7 @@ function Contact() {
           <div className={"flex flex-col lg:grid lg:grid-cols-4 lg:grid-rows-2"}>
             {/* Mobile Title */}
             <p className={"text-[40px] pb-6 leading-none tracking-[-2px] font-medium lg:hidden"}>
-              {t.contactPage?.titleText}
+              {t.contactPage.titleText}
             </p>
             
             <img
@@ -78,7 +75,7 @@ function Contact() {
 
             {/* Desktop Title */}
             <p className={"hidden text-[40px] leading-none tracking-[-2px] font-medium lg:w-[621px] lg:content-end lg:pb-6 lg:block lg:text-white"}>
-              {t.contactPage?.titleText}
+              {t.contactPage.titleText}
             </p>
 
             <TypographyComponent
@@ -86,7 +83,7 @@ function Contact() {
               variant={"h6"}
               className={"py-6 text-bg1! font-normal leading-[20px] lg:text-white! lg:col-span-2"}
             >
-              {t.contactPage?.titleDescription}
+              {t.contactPage.titleDescription}
             </TypographyComponent>
 
             <form

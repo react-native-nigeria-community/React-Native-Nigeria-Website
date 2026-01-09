@@ -1,48 +1,27 @@
-import React, { useState, useCallback, useMemo } from "react";
+import React, { useState, useCallback } from "react";
 import { Link, useLocation } from "react-router-dom";
 import LogoPNG from "../../assets/img/nav-logo.png";
 import ButtonComponent from "../commons/button.jsx";
 import NavList from "../commons/nav-list.jsx";
 import { getNavLinks } from "../../../utils/nav-links.jsx";
-import LanguageSwitcher from "../LanguageSwitcher.jsx"; 
 import { useTranslation } from "../../context/useTranslation";
+import LanguageSwitcher from "../LanguageSwitcher.jsx";
 
 const NavbarComponent = () => {
   const [open, setOpen] = useState(false);
   const location = useLocation();
-  
-  
   const { t } = useTranslation();
 
   const toggle = useCallback(() => setOpen((v) => !v), []);
   const close = useCallback(() => setOpen(false), []);
 
-  
-  const navLinks = useMemo(() => (t ? getNavLinks(t) : []), [t]);
-
-  
-  if (!t) return null;
-
   return (
-    <header className="sticky top-0 z-50 bg-white lg:bg-bg1 border-b border-gray-100 lg:border-none">
+    <header className="sticky top-0 z-50 bg-white lg:bg-bg1">
       <nav className="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between relative">
         
-        {/* LEFT LOGO (Desktop & Mobile) */}
-        <Link to="/" className="flex items-center gap-2 z-50">
-          <img src={LogoPNG} alt="Logo" className="h-8 lg:h-10 w-auto" />
-          <div className="flex flex-col leading-tight">
-            <span className="text-primary text-xs lg:text-sm font-semibold">
-              {t.reactNativeNigeria?.line1}
-            </span>
-            <span className="text-primary text-xs lg:text-sm font-semibold">
-              {t.reactNativeNigeria?.line2}
-            </span>
-          </div>
-        </Link>
-
-        {/* CENTER NAV LINKS (Desktop) */}
+        {/* LEFT NAV LINKS (Desktop) */}
         <ul className="hidden lg:flex items-center gap-12 text-primary absolute left-1/2 -translate-x-1/2">
-          {navLinks.map((link, i) => (
+          {getNavLinks(t).map((link, i) => (
             <NavList
               key={i}
               label={link.label}
@@ -52,7 +31,25 @@ const NavbarComponent = () => {
           ))}
         </ul>
 
-        {/* RIGHT ACTIONS (Desktop) */}
+        {/* LEFT LOGO */}
+        <Link
+            to="/"
+            className="hidden lg:flex items-center gap-2"
+          >
+            <img src={LogoPNG} alt="Logo" className="h-10 w-auto" />
+
+            <div className="flex flex-col leading-tight">
+              <span className="text-primary text-sm font-semibold">
+                {t.reactNativeNigeria.line1}
+              </span>
+              <span className="text-primary text-sm font-semibold">
+                {t.reactNativeNigeria.line2}
+              </span>
+            </div>
+          </Link>
+
+
+        {/* RIGHT BUTTON (Desktop) */}
         <div className="hidden lg:flex items-center gap-4">
           <LanguageSwitcher />
           <a
@@ -60,18 +57,30 @@ const NavbarComponent = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <ButtonComponent variant="primary">
-              {t.joinCommunity}
-            </ButtonComponent>
+            <ButtonComponent variant="primary">{t.joinCommunity}</ButtonComponent>
           </a>
         </div>
 
-        {/* MOBILE MENU TOGGLE */}
-        <div className="lg:hidden flex items-center">
+        {/* MOBILE HEADER */}
+        <div className="lg:hidden flex items-center justify-between w-full">
+          
+          {/* Mobile Logo */}
+        <Link to="/" className="flex items-center gap-2">
+          <img src={LogoPNG} alt="Logo" className="h-8 w-auto" />
+          <span className="flex flex-col leading-tight text-black lg:text-primary font-medium text-sm">
+          <span>{t.reactNativeNigeria.line1}</span>
+          <span>{t.reactNativeNigeria.line2}</span>
+          </span>
+        </Link>
+
+
+
+
+          {/* Mobile Menu Toggle */}
           <button
             aria-label="open-menu"
             onClick={toggle}
-            className="text-black text-3xl z-50"
+            className="text-black text-3xl lg:text-primary"
           >
             {open ? "×" : "☰"}
           </button>
@@ -82,7 +91,7 @@ const NavbarComponent = () => {
       <div
         role="dialog"
         aria-modal="true"
-        className={`lg:hidden fixed inset-0 bg-white z-40 transition-all duration-200 ${
+        className={`lg:hidden fixed inset-0 bg-bg1 z-40 transition-all duration-200 ${
           open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         }`}
         onClick={close}
@@ -93,26 +102,30 @@ const NavbarComponent = () => {
           }`}
           onClick={(e) => e.stopPropagation()}
         >
-          {/* Mobile Links - Mapping over navLinks variable */}
-          {navLinks.map((link, i) => (
+          {/* Close Button */}
+          <button
+            onClick={close}
+            aria-label="close-menu"
+            className="absolute top-7 right-7 text-4xl text-primary"
+          >
+            ×
+          </button>
+
+          {/* Mobile Links */}
+          {getNavLinks(t).map((link, i) => (
             <Link
               key={i}
               to={link.link}
               onClick={close}
-              className={`text-xl font-medium ${
-                location.pathname === link.link ? "text-bg2 font-bold" : "text-primary"
-              }`}
+              className="text-xl text-primary"
             >
               {link.label}
             </Link>
           ))}
 
-          {/* Language Switcher in Mobile Menu */}
-          <div className="pt-2">
-            <LanguageSwitcher />
-          </div>
+          <LanguageSwitcher />
 
-          {/* Join Button (Mobile) */}
+          {/* Join Button */}
           <a
             href={t.joinCommunityLink}
             target="_blank"
@@ -120,7 +133,7 @@ const NavbarComponent = () => {
             onClick={close}
             className="mt-4"
           >
-            <ButtonComponent variant="primary" className="px-8 py-3">
+            <ButtonComponent variant="primary" className="px-6 py-3">
               {t.joinCommunity}
             </ButtonComponent>
           </a>

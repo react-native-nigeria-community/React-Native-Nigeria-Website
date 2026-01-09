@@ -60,7 +60,7 @@ const EventDetails = () => {
           
           <Link to="/events">
             <ButtonComponent className="px-8 py-3 rounded-full text-white bg-[#FF9E0C] hover:opacity-90">
-              {t.eventDetailsPage?.backButton}
+              {t.eventDetailsPage.backButton}
             </ButtonComponent>
           </Link>
         </div>

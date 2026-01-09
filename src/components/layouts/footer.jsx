@@ -13,10 +13,7 @@ const FooterComponent = () => {
 
     
     const navLinks = useMemo(() => (t ? getNavLinks(t) : []), [t]);
-
-    
     if (!t) return null;
-
     return (
         <footer className="bg-bg2 px-9 py-12 lg:px-[125px] lg:py-12 right-0 left-0 bottom-0">
             <div className={"grid justify-items-center-safe lg:flex lg:items-start"}>

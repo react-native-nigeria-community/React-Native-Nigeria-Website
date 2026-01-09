@@ -380,4 +380,11 @@ export default {
         viewDetails: "Wo Àwọn Àlàyé",
     },
 
+    toastMessages: {
+    submitting: "Ń fi ìfiránṣẹ́ ránṣẹ́...",
+    success: "A ti fi ìfiránṣẹ́ ránṣẹ́ ní àṣeyọrí!",
+    error: "Kò ṣe é fi ìfiránṣẹ́ ránṣẹ́. Jọ̀wọ́ gbìyànjú lẹ́ẹ̀kan si.",
+    connectionError: "Àṣìṣe kan ṣẹlẹ̀. Jọ̀wọ́ ṣayẹwo ìsopọ̀ rẹ."
+},
+
 };

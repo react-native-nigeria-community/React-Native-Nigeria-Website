@@ -380,4 +380,12 @@ export default {
         viewDetails: "Lee Nkọwa",
     },
 
+
+    toastMessages: {
+    submitting: "Na-eziga ozi...",
+    success: "Ezigara ozi nke ọma!",
+    error: "Enweghị ike iziga ozi. Biko nwaa ọzọ.",
+    connectionError: "Njehie mere. Biko lelee njikọ gị."
+},
+
 };

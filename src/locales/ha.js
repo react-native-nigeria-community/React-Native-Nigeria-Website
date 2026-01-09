@@ -380,4 +380,11 @@ export default {
         viewDetails: "Duba Cikakkun Bayanai",
     },
 
+    toastMessages: {
+    submitting: "Ana aika saƙo...",
+    success: "An aika saƙon cikin nasara!",
+    error: "Ba a iya aika saƙo ba. Da fatan sake gwadawa.",
+    connectionError: "An sami kuskure. Da fatan duba haɗin ku."
+},
+
 };
