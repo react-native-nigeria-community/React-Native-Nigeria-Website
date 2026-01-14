@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import LogoPNG from "../../assets/img/nav-logo.png";
 import TypographyComponent from "../commons/typography.jsx";
@@ -10,10 +10,7 @@ import { useTranslation } from "../../context/useTranslation";
 
 const FooterComponent = () => {
     const { t } = useTranslation();
-
-    
-    const navLinks = useMemo(() => (t ? getNavLinks(t) : []), [t]);
-    if (!t) return null;
+    const navLinks = getNavLinks(t);
     return (
         <footer className="bg-bg2 px-9 py-12 lg:px-[125px] lg:py-12 right-0 left-0 bottom-0">
             <div className={"grid justify-items-center-safe lg:flex lg:items-start"}>

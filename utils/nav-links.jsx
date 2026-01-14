@@ -1,18 +1,18 @@
 export const getNavLinks = (t) => [
     {
-        label: t?.navHome || "Home", 
+        label: t?.navHome,
         link: "/",
     },
     {
-        label: t?.navAbout || "About Us",
+        label: t?.navAbout,
         link: "/about-us",
     },
     {
-        label: t?.navEvent || "Events",
+        label: t?.navEvent,
         link: "/events",
     },
     {
-        label: t?.navContact || "Contact",
+        label: t?.navContact,
         link: "/contact",
     },
 ];

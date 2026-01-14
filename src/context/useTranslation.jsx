@@ -1,5 +1,6 @@
 import { useContext } from 'react';
 import { LanguageContext } from './LanguageContext';
+import { languageNames } from '../constants/languages';
 
 export const useTranslation = () => {
   const context = useContext(LanguageContext);
@@ -12,11 +13,5 @@ export const useTranslation = () => {
 };
 
 export const getLanguageName = (code) => {
-  const languages = {
-    en: 'English',
-    yo: 'Yoruba',
-    ig: 'Igbo',
-    ha: 'Hausa'
-  };
-  return languages[code] || 'English';
+  return languageNames[code] || 'English';
 };

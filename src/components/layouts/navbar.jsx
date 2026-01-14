@@ -50,7 +50,7 @@ const NavbarComponent = () => {
 
 
         {/* RIGHT BUTTON (Desktop) */}
-        <div className="hidden lg:flex items-center gap-4">
+         <div className="hidden lg:flex items-center gap-4">
           <LanguageSwitcher />
           <a
             href={t.joinCommunityLink}
@@ -59,7 +59,8 @@ const NavbarComponent = () => {
           >
             <ButtonComponent variant="primary">{t.joinCommunity}</ButtonComponent>
           </a>
-        </div>
+          </div>
+        
 
         {/* MOBILE HEADER */}
         <div className="lg:hidden flex items-center justify-between w-full">

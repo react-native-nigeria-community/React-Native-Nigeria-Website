@@ -3,6 +3,7 @@ import en from '../locales/en';
 import yo from '../locales/yo';
 import ig from '../locales/ig';
 import ha from '../locales/ha';
+import { availableLanguages } from '../constants/languages';
 
 const translations = { en, yo, ig, ha };
 
@@ -31,12 +32,7 @@ export const LanguageProvider = ({ children }) => {
     t,
     currentLang,
     changeLanguage,
-    availableLanguages: [
-      { code: 'en', name: 'English', flag: '🇬🇧' },
-      { code: 'yo', name: 'Yoruba', flag: '🇳🇬' },
-      { code: 'ig', name: 'Igbo', flag: '🇳🇬' },
-      { code: 'ha', name: 'Hausa', flag: '🇳🇬' }
-    ]
+    availableLanguages
   };
 
   return (

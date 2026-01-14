@@ -7,12 +7,7 @@ import { useTranslation } from "../context/useTranslation";
 
 function AboutUs() {
     const { t } = useTranslation();
-
-    if (!t) return null;
-
-    
     const translatedAccordions = getAccordions(t);
-
     return (
         <>
             {/* First section */}
