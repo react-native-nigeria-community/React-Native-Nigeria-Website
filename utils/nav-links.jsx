@@ -15,4 +15,8 @@ export const getNavLinks = [
             label: "Contact",
             link: "/contact",
         },
+        {
+            label: "Newsletter",
+            link: "/newsletter",
+        },
     ];

@@ -380,6 +380,61 @@ eventDetailsPage: {
         location: "Location",
         viewDetails: "View Details",
         },
+    // Add this to your en.js file after the eventDetailsTab section
 
+    /**
+     ---------------------------------------------------------------------------
+     NEWSLETTER PAGE
+     ---------------------------------------------------------------------------
+     **/
+
+    newsletterPage: {
+        // Newsletter Data
+        newsletterData: {
+            newsletter1: {
+                title: "It's a wrap!",
+                date: "2025-12-22",
+                description: "What a year it has been. June feels like just yesterday, so how are we already hearing sleigh bells? Reflecting on the time invested in your craft this year — the hours spent debugging, the courses completed, the new programming languages learned, and the tech events attended.",
+                url: "https://reactnativenigeria.substack.com/p/its-a-wrap",
+                image: "/src/assets/img/newsletter4.png",
+            },
+            newsletter2: {
+                title: "November in React Native Nigeria",
+                date: "2025-12-01",
+                description: "Welcome to another edition of the React Native Nigeria Community Newsletter, live from November 2025. The community was buzzing this month with exciting updates and developments. It is important that we create solutions that actually solve problems without creating more problems.",
+                url: "https://reactnativenigeria.substack.com/p/november-in-react-native-nigeria",
+                image: "/src/assets/img/newsletter3.png",
+            },
+            newsletter3: {
+                title: "October Recap from React Native Nigeria Community",
+                date: "2025-11-03",
+                description: "There's a new update in the React Native Universe. You can now target React Native DOM-style elements – just like you would in a browser. October was wild – from hackathons to global conferences – the tech scene was buzzing.",
+                url: "https://reactnativenigeria.substack.com/p/october-recap",
+                image: "/src/assets/img/newsletter2.png",
+            },
+            newsletter4: {
+                title: "React Native Nigeria Community Publication",
+                date: "2025-10-03",
+                description: "Welcome to another edition of the React Native Nigeria Newsletter! Ready for all the things we're bringing to you in this edition? A lot went down last week, so we decided to keep you updated on everything happening in the community.",
+                url: "https://reactnativenigeria.substack.com/p/from-the-react-native-nigeria-community-300",
+                image: "/src/assets/img/newsletter1.png",
+            }
+        },
+
+        // Page Content
+        heroSection: {
+            title: "Newsletter Archive",
+            description: "Insights, updates, and stories from the React Native Nigeria community.",
+        },
+
+        ctaSection: {
+            title: "Explore More Stories",
+            description: "Visit our Substack for the complete collection and subscribe to stay in the loop.",
+            viewArchiveText: "View Full Archive",
+            viewArchiveLink: "https://reactnativenigeria.substack.com/archive",
+            subscribeText: "Subscribe",
+            subscribeLink: "https://reactnativenigeria.substack.com/subscribe",
+        },
+    },
 
 };

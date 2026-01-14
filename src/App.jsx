@@ -11,6 +11,7 @@ import ScrollToTop from "./components/ScrollToTop";
 import PrivacyPolicy from "./pages/PrivacyPolicy.jsx";
 import TermsAndConditions from "./pages/TermsAndConditions.jsx";
 import EventDetails from "./pages/EventDetails.jsx";
+import NewsletterPage from './pages/NewsletterPage';
 
 
 
@@ -27,6 +28,7 @@ function App() {
                 <Route path="/privacy" element={<PrivacyPolicy />} />
                 <Route path="/terms" element={<TermsAndConditions />} />
                 <Route path="/event-details" element={<EventDetails />} />
+                <Route path="/newsletter" element={<NewsletterPage />} />
             </Routes>
             <NewsletterComponent />
             <FooterComponent />
