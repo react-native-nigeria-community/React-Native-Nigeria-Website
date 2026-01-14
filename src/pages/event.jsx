@@ -1,7 +1,6 @@
 import en from "../locales/en.js";
 import {TypeAnimation} from "react-type-animation"; 
 import TypographyComponent from "../components/commons/typography.jsx"; 
-import {fourthEventList} from "../../utils/fourth-event-list.jsx";
 import PastEventHighLights from "../components/commons/past-events.jsx";
  import eventDetails from "../../utils/event-details";
 
