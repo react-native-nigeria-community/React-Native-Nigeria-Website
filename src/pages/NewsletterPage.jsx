@@ -1,14 +1,8 @@
 import React from 'react';
 import en from '../locales/en';
+import ArrowRight from '../assets/svg/svgs/arrow-right';
 
-// Arrow Icon
-const ArrowIcon = () => (
-  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-  </svg>
-);
 
-// Newsletter data from en.js
 const newsletters = Object.values(en.newsletterPage.newsletterData);
 
 function NewsletterPage() {
@@ -20,12 +14,10 @@ function NewsletterPage() {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
       <section className="relative bg-white lg:bg-bg1 py-20 lg:py-32 px-6 overflow-hidden">
-        {/* Background pattern */}
         <div className="absolute inset-0 opacity-5">
           <div className="absolute inset-0" style={{
-            backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)',
+            backgroundImage: 'radial-gradient(circle at 2px 2px, black 1px, transparent 0)',
             backgroundSize: '40px 40px'
           }}></div>
         </div>
@@ -36,10 +28,10 @@ function NewsletterPage() {
               React Native Nigeria
             </span>
           </div>
-          <h1 className="text-5xl lg:text-7xl font-bold text-primary mb-6 leading-tight">
+          <h1 className="text-5xl lg:text-7xl font-bold text-secondary lg:text-primary mb-6 leading-tight">
             {en.newsletterPage.heroSection.title}
           </h1>
-          <p className="text-xl text-primary/60 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-xl text-secondary/60 lg:text-primary/60 max-w-2xl mx-auto leading-relaxed">
             {en.newsletterPage.heroSection.description}
           </p>
         </div>
@@ -104,7 +96,7 @@ function NewsletterPage() {
                     className="inline-flex items-center gap-3 bg-accent text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-accent/90 hover:gap-5 transition-all duration-300 shadow-md"
                   >
                     <span>Read Full Newsletter</span>
-                    <ArrowIcon />
+                    <ArrowRight className="w-5 h-5" />
                   </a>
                 </div>
               </article>
@@ -135,7 +127,7 @@ function NewsletterPage() {
               className="group inline-flex items-center justify-center gap-3 bg-white text-secondary px-10 py-5 rounded-xl font-bold text-lg hover:shadow-2xl hover:scale-105 transition-all duration-300"
             >
               <span>{en.newsletterPage.ctaSection.viewArchiveText}</span>
-              <ArrowIcon />
+              <ArrowRight className="w-5 h-5" />
             </a>
             <a
               href={en.newsletterPage.ctaSection.subscribeLink}
