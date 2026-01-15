@@ -17,8 +17,6 @@ import LiveTalkCard from "../components/commons/live-talk.jsx";
 function HomePage() {
     const [phase, setPhase] = useState(0);
     const { t } = useTranslation();
-  
-    if (!t) return null;
     const features = getFeatures(t);
     const topics = getTopics(t);
     const liveEvents = getLiveEvents(t);
