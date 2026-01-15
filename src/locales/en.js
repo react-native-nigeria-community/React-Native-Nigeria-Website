@@ -356,6 +356,7 @@ eventDetailsPage: {
     pageSubtitle: "A comprehensive look back at the speakers, media, and insights from our past conferences and seminars.",
     backButton: "← Back to all Events",
     dateLocationSeparator: " | "
+    eventNotFound: "Event Not Found",
 },
 
     eventDetailsTab: {

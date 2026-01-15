@@ -1,11 +1,5 @@
 import React, { createContext, useState, useEffect } from 'react';
-import en from '../locales/en';
-import yo from '../locales/yo';
-import ig from '../locales/ig';
-import ha from '../locales/ha';
-import { availableLanguages } from '../constants/languages';
-
-const translations = { en, yo, ig, ha };
+import { availableLanguages, translations } from '../constants/languages';
 
 const LanguageContext = createContext();
 

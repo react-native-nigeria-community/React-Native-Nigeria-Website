@@ -6,7 +6,6 @@ import { useTranslation } from "../context/useTranslation.jsx";
 
 function Events() {
       const { t } = useTranslation();
-  if (!t) return null;
 
     return (
         <>

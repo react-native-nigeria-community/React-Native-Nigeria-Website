@@ -25,14 +25,11 @@ const EventDetails = () => {
     }
   }, [hash]);
 
-  
-  if (!t) return null;
 
   if (!event) {
     return (
       <div className="py-20 text-center text-bg1 text-2xl">
-       
-        Event Not Found
+       {t.eventDetailsPage.eventNotFound}
       </div>
     );
   }
