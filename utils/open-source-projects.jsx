@@ -1,6 +1,4 @@
 export const getOpenSourceProjects = (t) => {
-    if (!t?.fifthSection?.sourceProject) return [];
-
     return [
         {
             star: t.fifthSection.sourceProject.project1.star,
