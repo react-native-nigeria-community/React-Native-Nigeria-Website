@@ -1,6 +1,6 @@
 import TypographyComponent from "../components/commons/typography.jsx";
 import { TypeAnimation } from 'react-type-animation';
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import ButtonComponent from "../components/commons/button.jsx";
 import GridFlowCard from "../components/commons/grid-flow-card.jsx";
 import FeaturedCard from "../components/commons/featured-card.jsx";
@@ -17,11 +17,15 @@ import LiveTalkCard from "../components/commons/live-talk.jsx";
 function HomePage() {
     const [phase, setPhase] = useState(0);
     const { t } = useTranslation();
-    const features = getFeatures(t);
-    const topics = getTopics(t);
-    const liveEvents = getLiveEvents(t);
-    const openSourceProjects = getOpenSourceProjects(t);
-    const writeUps = getWriteUps(t);
+
+    // Memoizing these ensures we don't recalculate unless the translation object 't' changes
+    const features = useMemo(() => getFeatures(t), [t]);
+    const topics = useMemo(() => getTopics(t), [t]);
+    const liveEvents = useMemo(() => getLiveEvents(t), [t]);
+    const openSourceProjects = useMemo(() => getOpenSourceProjects(t), [t]);
+    const writeUps = useMemo(() => getWriteUps(t), [t]);
+
+    const animatedText = t.firstSection.learnShareConnect.learnShareConnect2;
 
     return (
         <>
@@ -31,23 +35,24 @@ function HomePage() {
                     <div className={"px-6 lg:w-[758px] text-secondary lg:text-primary"}>
                         <div className={"space-y-2.5"}>
                             <p className={"text-[16px] lg:text-[14px] text-secondary"}>
-                                {/* Mobile view */}
                                 <span className={"lg:hidden leading-5 tracking-normal"}>{t.firstSection.reactBrn}</span>
-                                {/* Desktop view */}
                                 <span className={"hidden uppercase font-normal text-primary tracking-[1.63px] leading-none lg:block"}>{t.firstSection.reactNnc}</span>
                             </p>
-                            <p className="font-semibold text-[40px] text-secondary leading-none tracking-[-0.125rem] lg:hidden">{t.firstSection.learnShareConnect.learnShareConnect2}</p>
+                            {/* Mobile View Text - This will update instantly */}
+                            <p className="font-semibold text-[40px] text-secondary leading-none tracking-[-0.125rem] lg:hidden">
+                                {animatedText}
+                            </p>
                         </div>
+
+                        {/* Desktop Animated Text */}
                         <p className="hidden font-semibold lg:leading[60px] lg:block lg:font-medium text-[40px] tracking-[-0.125rem] md:text-h1">
                             {phase === 0 ? (
                                 <TypeAnimation
-                                    key={`first-${t.firstSection.learnShareConnect.learn}`} 
+                                    // The key is the "secret sauce". By including the text string in the key,
+                                    // React will kill the old animation and start a new one the moment the language changes.
+                                    key={`phase0-${animatedText}`} 
                                     sequence={[
-                                        t.firstSection.learnShareConnect.learn,
-                                        500,
-                                        t.firstSection.learnShareConnect.share,
-                                        500,
-                                        t.firstSection.learnShareConnect.connect,
+                                        animatedText,
                                         500,
                                         () => {
                                             setTimeout(() => setPhase(1), 40);
@@ -58,8 +63,8 @@ function HomePage() {
                                 />
                             ) : (
                                 <TypeAnimation
-                                    key="second"
-                                    sequence={[t.firstSection.learnShareConnect.learnShareConnect2.toString()]}
+                                    key={`phase1-${animatedText}`}
+                                    sequence={[animatedText.toString()]}
                                     speed={50}
                                     repeat={1}
                                     cursor={false}
@@ -84,7 +89,7 @@ function HomePage() {
                     <div className={"mx-6 md:grid md:place-content-start md:place-items-start md:grid-cols-2 md:space-x-[50px] lg:space-y-[80px] lg:w-[960px]"}>
                         {features.map((feature, index) => (
                             <GridFlowCard
-                                key={index}
+                                key={`${feature.title}-${index}`} // Using title in key helps with translation updates
                                 icon={feature.icon}
                                 title={feature.title}
                                 description={feature.description}
@@ -125,7 +130,7 @@ function HomePage() {
                 <div className={"space-y-4 lg:mx-[155px] lg:flex lg:justify-center lg:space-x-10"}>
                     {topics.map((topic, index) => (
                         <FeaturedCard
-                            key={index}
+                            key={`${topic.title}-${index}`}
                             image={topic.image}
                             title={topic.title}
                             description={topic.description}
@@ -157,7 +162,7 @@ function HomePage() {
                 <div className={"space-y-6 lg:space-y-0 lg:flex lg:justify-center lg:mx-auto lg:space-x-[30px]"}>
                     {liveEvents.map((liveEvent, index) => (
                         <LiveTalkCard
-                            key={index}
+                            key={`${liveEvent.title}-${index}`}
                             label={liveEvent.label}
                             title={liveEvent.title}
                             date={liveEvent.date}
@@ -181,7 +186,7 @@ function HomePage() {
                     <div className={"md:grid md:grid-cols-2 md:space-x-[15px] lg:grid lg:grid-cols-3 lg:space-x-[30px]"}>
                         {openSourceProjects.map((source, index) => (
                             <OpenSourceCard
-                                key={index}
+                                key={`${source.title}-${index}`}
                                 star={source.star}
                                 fork={source.fork}
                                 title={source.title}
@@ -205,7 +210,7 @@ function HomePage() {
                 <div className={"space-y-[1.875rem] lg:space-y-0 lg:flex lg:justify-center lg:gap-[1.875rem]"}>
                     {writeUps.map((item, index) => (
                         <WriteForUsCard
-                            key={index}
+                            key={`${item.title}-${index}`}
                             title={item.title}
                             description={item.description}
                             link={item.link}
