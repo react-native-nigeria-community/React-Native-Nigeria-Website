@@ -2,13 +2,15 @@ import React, { useState, useCallback } from "react";
 import { Link, useLocation } from "react-router-dom";
 import LogoPNG from "../../assets/img/nav-logo.png";
 import ButtonComponent from "../commons/button.jsx";
-import en from "../../locales/en.js";
 import NavList from "../commons/nav-list.jsx";
 import { getNavLinks } from "../../../utils/nav-links.jsx";
+import { useTranslation } from "../../context/useTranslation";
+import LanguageSwitcher from "../LanguageSwitcher.jsx";
 
 const NavbarComponent = () => {
   const [open, setOpen] = useState(false);
   const location = useLocation();
+  const { t } = useTranslation();
 
   const toggle = useCallback(() => setOpen((v) => !v), []);
   const close = useCallback(() => setOpen(false), []);
@@ -19,7 +21,7 @@ const NavbarComponent = () => {
         
         {/* LEFT NAV LINKS (Desktop) */}
         <ul className="hidden lg:flex items-center gap-12 text-primary absolute left-1/2 -translate-x-1/2">
-          {getNavLinks.map((link, i) => (
+          {getNavLinks(t).map((link, i) => (
             <NavList
               key={i}
               label={link.label}
@@ -38,24 +40,27 @@ const NavbarComponent = () => {
 
             <div className="flex flex-col leading-tight">
               <span className="text-primary text-sm font-semibold">
-                {en.reactNativeNigeria.line1}
+                {t.reactNativeNigeria.line1}
               </span>
               <span className="text-primary text-sm font-semibold">
-                {en.reactNativeNigeria.line2}
+                {t.reactNativeNigeria.line2}
               </span>
             </div>
           </Link>
 
 
         {/* RIGHT BUTTON (Desktop) */}
-        <a
-          href={en.joinCommunityLink}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hidden lg:block"
-        >
-          <ButtonComponent variant="primary">{en.joinCommunity}</ButtonComponent>
-        </a>
+         <div className="hidden lg:flex items-center gap-4">
+          <LanguageSwitcher />
+          <a
+            href={t.joinCommunityLink}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <ButtonComponent variant="primary">{t.joinCommunity}</ButtonComponent>
+          </a>
+          </div>
+        
 
         {/* MOBILE HEADER */}
         <div className="lg:hidden flex items-center justify-between w-full">
@@ -64,8 +69,8 @@ const NavbarComponent = () => {
         <Link to="/" className="flex items-center gap-2">
           <img src={LogoPNG} alt="Logo" className="h-8 w-auto" />
           <span className="flex flex-col leading-tight text-black lg:text-primary font-medium text-sm">
-          <span>{en.reactNativeNigeria.line1}</span>
-          <span>{en.reactNativeNigeria.line2}</span>
+          <span>{t.reactNativeNigeria.line1}</span>
+          <span>{t.reactNativeNigeria.line2}</span>
           </span>
         </Link>
 
@@ -108,7 +113,7 @@ const NavbarComponent = () => {
           </button>
 
           {/* Mobile Links */}
-          {getNavLinks.map((link, i) => (
+          {getNavLinks(t).map((link, i) => (
             <Link
               key={i}
               to={link.link}
@@ -119,16 +124,18 @@ const NavbarComponent = () => {
             </Link>
           ))}
 
+          <LanguageSwitcher />
+
           {/* Join Button */}
           <a
-            href={en.joinCommunityLink}
+            href={t.joinCommunityLink}
             target="_blank"
             rel="noopener noreferrer"
             onClick={close}
             className="mt-4"
           >
             <ButtonComponent variant="primary" className="px-6 py-3">
-              {en.joinCommunity}
+              {t.joinCommunity}
             </ButtonComponent>
           </a>
         </div>

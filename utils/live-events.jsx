@@ -1,28 +1,27 @@
-import en from "../src/locales/en";
 
-export const getLiveEvents = [
-        {
-            label: en.fourthSection.eventCards.eventCard1.smallText,
-            title: en.fourthSection.eventCards.eventCard1.title,
-            date: en.fourthSection.eventCards.eventCard1.date,
-            time: en.fourthSection.eventCards.eventCard1.time,
-            buttonText: en.fourthSection.eventCards.eventCard1.buttonText,
-            buttonLink: en.fourthSection.eventCards.eventCard1.buttonLink,
-        },
-        {
-            label: en.fourthSection.eventCards.eventCard2.smallText,
-            title: en.fourthSection.eventCards.eventCard2.title,
-            date: en.fourthSection.eventCards.eventCard2.date,
-            time: en.fourthSection.eventCards.eventCard2.time,
-            buttonText: en.fourthSection.eventCards.eventCard2.buttonText,
-             buttonLink: en.fourthSection.eventCards.eventCard2.buttonLink,
-        },
-        {
-            label: en.fourthSection.eventCards.eventCard3.smallText,
-            title: en.fourthSection.eventCards.eventCard3.title,
-            date: en.fourthSection.eventCards.eventCard3.date,
-            time: en.fourthSection.eventCards.eventCard3.time,
-            buttonText: en.fourthSection.eventCards.eventCard3.buttonText,
-            buttonLink: en.fourthSection.eventCards.eventCard3.buttonLink,
-        },
-    ];
+export const getLiveEvents = (t) => [
+    {
+        label: t?.fourthSection?.eventCards?.eventCard1?.smallText,
+        title: t?.fourthSection?.eventCards?.eventCard1?.title,
+        date: t?.fourthSection?.eventCards?.eventCard1?.date,
+        time: t?.fourthSection?.eventCards?.eventCard1?.time,
+        buttonText: t?.fourthSection?.eventCards?.eventCard1?.buttonText,
+        buttonLink: t?.fourthSection?.eventCards?.eventCard1?.buttonLink,
+    },
+    {
+        label: t?.fourthSection?.eventCards?.eventCard2?.smallText,
+        title: t?.fourthSection?.eventCards?.eventCard2?.title,
+        date: t?.fourthSection?.eventCards?.eventCard2?.date,
+        time: t?.fourthSection?.eventCards?.eventCard2?.time,
+        buttonText: t?.fourthSection?.eventCards?.eventCard2?.buttonText,
+        buttonLink: t?.fourthSection?.eventCards?.eventCard2?.buttonLink,
+    },
+    {
+        label: t?.fourthSection?.eventCards?.eventCard3?.smallText,
+        title: t?.fourthSection?.eventCards?.eventCard3?.title,
+        date: t?.fourthSection?.eventCards?.eventCard3?.date,
+        time: t?.fourthSection?.eventCards?.eventCard3?.time,
+        buttonText: t?.fourthSection?.eventCards?.eventCard3?.buttonText,
+        buttonLink: t?.fourthSection?.eventCards?.eventCard3?.buttonLink,
+    },
+];

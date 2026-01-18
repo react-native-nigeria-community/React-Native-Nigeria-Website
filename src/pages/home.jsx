@@ -4,19 +4,25 @@ import { useState } from "react";
 import ButtonComponent from "../components/commons/button.jsx";
 import GridFlowCard from "../components/commons/grid-flow-card.jsx";
 import FeaturedCard from "../components/commons/featured-card.jsx";
-import en from "../locales/en.js";
-import {getFeatures} from "../../utils/features.jsx";
-import {getLiveEvents} from "../../utils/live-events.jsx";
-import {getWriteUps} from "../../utils/write-for-us.jsx";
+import { useTranslation } from "../context/useTranslation.jsx"; 
+import { getFeatures } from "../../utils/features.jsx";
+import { getLiveEvents } from "../../utils/live-events.jsx";
+import { getWriteUps } from "../../utils/write-for-us.jsx";
 import WriteForUsCard from "../components/sections/write-for-us.jsx";
 import OpenSourceCard from "../components/sections/open-source.jsx";
-import {getOpenSourceProjects} from "../../utils/open-source-projects.jsx";
-import {getTopics} from "../../utils/topics.jsx";
+import { getOpenSourceProjects } from "../../utils/open-source-projects.jsx";
+import { getTopics } from "../../utils/topics.jsx";
 import LiveTalkCard from "../components/commons/live-talk.jsx";
 
-function HomePage () {
+function HomePage() {
     const [phase, setPhase] = useState(0);
-    
+    const { t } = useTranslation();
+    const features = getFeatures(t);
+    const topics = getTopics(t);
+    const liveEvents = getLiveEvents(t);
+    const openSourceProjects = getOpenSourceProjects(t);
+    const writeUps = getWriteUps(t);
+
     return (
         <>
             {/* First section */}
@@ -25,25 +31,24 @@ function HomePage () {
                     <div className={"px-6 lg:w-[758px] text-secondary lg:text-primary"}>
                         <div className={"space-y-2.5"}>
                             <p className={"text-[16px] lg:text-[14px] text-secondary"}>
-                                {/*  Mobile view  */}
-                                <span className={"lg:hidden leading-5 tracking-normal"}>{en.firstSection.reactBrn}</span>
-                                {/*  Desktop view  */}
-                                <span className={"hidden uppercase font-normal text-primary tracking-[1.63px] leading-none lg:block"}>{en.firstSection.reactNnc}</span>
+                                {/* Mobile view */}
+                                <span className={"lg:hidden leading-5 tracking-normal"}>{t.firstSection.reactBrn}</span>
+                                {/* Desktop view */}
+                                <span className={"hidden uppercase font-normal text-primary tracking-[1.63px] leading-none lg:block"}>{t.firstSection.reactNnc}</span>
                             </p>
-                            <p className="font-semibold text-[40px] text-secondary leading-none tracking-[-0.125rem] lg:hidden">{en.firstSection.learnShareConnect.learnShareConnect2}</p>
+                            <p className="font-semibold text-[40px] text-secondary leading-none tracking-[-0.125rem] lg:hidden">{t.firstSection.learnShareConnect.learnShareConnect2}</p>
                         </div>
                         <p className="hidden font-semibold lg:leading[60px] lg:block lg:font-medium text-[40px] tracking-[-0.125rem] md:text-h1">
                             {phase === 0 ? (
                                 <TypeAnimation
-                                    key="first"
+                                    key={`first-${t.firstSection.learnShareConnect.learn}`} 
                                     sequence={[
-                                        "Learn.",
+                                        t.firstSection.learnShareConnect.learn,
                                         500,
-                                        "Share.",
+                                        t.firstSection.learnShareConnect.share,
                                         500,
-                                        "Connect.",
+                                        t.firstSection.learnShareConnect.connect,
                                         500,
-                                        // callback at end -> give a tiny delay so unmount is smooth
                                         () => {
                                             setTimeout(() => setPhase(1), 40);
                                         },
@@ -54,11 +59,10 @@ function HomePage () {
                             ) : (
                                 <TypeAnimation
                                     key="second"
-                                    sequence={[en.firstSection.learnShareConnect.learnShareConnect2.toString()]}
+                                    sequence={[t.firstSection.learnShareConnect.learnShareConnect2.toString()]}
                                     speed={50}
                                     repeat={1}
                                     cursor={false}
-                                    className={""}
                                     preRenderFirstString={false}
                                 />
                             )}
@@ -69,18 +73,16 @@ function HomePage () {
 
             {/* Second section */}
             <section className={"text-center py-6 lg:py-[112px] lg:bg-bg1"}>
-                {/* First block */}
                 <div className={"mb-8 gap-2.5 lg:w-[589px] lg:mx-auto lg:mb-[90px]"}>
-                    <TypographyComponent as={"h6"} variant={"h6"} className={"uppercase text-accent! text-base/5 font-normal"}>{en.secondSection.whyRnn}</TypographyComponent>
+                    <TypographyComponent as={"h6"} variant={"h6"} className={"uppercase text-accent! text-base/5 font-normal"}>{t.secondSection.whyRnn}</TypographyComponent>
                     <TypographyComponent as={"h3"} variant={"h3"} className={"font-semibold leading-0 tracking-normal text-bg1! lg:text-primary!"}>
-                        {en.secondSection.chosenByDevs1} <span className={"lg:hidden"}>{en.secondSection.chosenByDevs2}</span>
+                        {t.secondSection.chosenByDevs1} <span className={"lg:hidden"}>{t.secondSection.chosenByDevs2}</span>
                     </TypographyComponent>
                 </div>
 
-                {/* Second block */}
                 <div className={"space-y-[30px] lg:flex lg:items-center lg:justify-center"}>
                     <div className={"mx-6 md:grid md:place-content-start md:place-items-start md:grid-cols-2 md:space-x-[50px] lg:space-y-[80px] lg:w-[960px]"}>
-                        {getFeatures.map((feature, index) => (
+                        {features.map((feature, index) => (
                             <GridFlowCard
                                 key={index}
                                 icon={feature.icon}
@@ -91,30 +93,21 @@ function HomePage () {
                     </div>
                 </div>
 
-                {/* Third block */}
                 <div className={"px-6 text-left lg:flex lg:items-center lg:mx-[183px] lg:justify-between"}>
                     <div className={"pb-8 space-y-6 lg:w-[589px]!"}>
                         <TypographyComponent as={"h3"} variant={"h3"} className={"text-mh3! font-normal! text-bg1! leading-[44px]! tracking-[-1.2px] lg:text-primary!"}>
-                            {en.secondSection.readyToBuildRna.title}
+                            {t.secondSection.readyToBuildRna.title}
                         </TypographyComponent>
                         <TypographyComponent className={"font-normal text-[15px]/7! tracking-normal! text-left text-bg1! lg:text-primary/70!"}>
-                            {en.secondSection.readyToBuildRna.description}
+                            {t.secondSection.readyToBuildRna.description}
                         </TypographyComponent>
                     </div>
                     <div>
-                        <a
-                        href={en.joinCommunityLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        >
-                        <ButtonComponent
-                            variant="primary"
-                            className="font-normal! flex mx-auto text-xs/4 text-nowrap lg:h-fit lg:py-3.5 lg:px-[23px] lg:text-[18px] lg:font-medium!"
-                        >
-                            {en.joinCommunity}
-                        </ButtonComponent>
+                        <a href={t.joinCommunityLink} target="_blank" rel="noopener noreferrer">
+                            <ButtonComponent variant="primary" className="font-normal! flex mx-auto text-xs/4 text-nowrap lg:h-fit lg:py-3.5 lg:px-[23px] lg:text-[18px] lg:font-medium!">
+                                {t.joinCommunity}
+                            </ButtonComponent>
                         </a>
-
                     </div>
                 </div>
             </section>
@@ -122,41 +115,31 @@ function HomePage () {
             {/* Third section */}
             <section className={"px-6 py-12 bg-[#F4F7FA]"}>
                 <div className={"lg:w-[513px] space-y-6 text-center pb-8 lg:mx-auto"}>
-                    <TypographyComponent as={"h3"} variant={"h3"} responsiveVariant={"h2"} className={"text-mh3! leading-none! tracking-[-1.2px]! text-secondary font-semibold! lg:text-h2/12! lg:font-medium!"}>{en.thirdSection.featuredTopics}</TypographyComponent>
+                    <TypographyComponent as={"h3"} variant={"h3"} responsiveVariant={"h2"} className={"text-mh3! leading-none! tracking-[-1.2px]! text-secondary font-semibold! lg:text-h2/12! lg:font-medium!"}>{t.thirdSection.featuredTopics}</TypographyComponent>
                     <TypographyComponent as={"p"} variant={"p"} className={"leading-8! tracking-[-0.013em]! text-secondary!"}>
-                        {/* Mobile view */}
-                        <span className={"lg:hidden"}>{en.thirdSection.featuredTopicsDescription1}</span>
-                        {/* Desktop view */}
-                        <span className={"hidden lg:block"}>{en.thirdSection.featuredTopicsDescription2}</span>
+                        <span className={"lg:hidden"}>{t.thirdSection.featuredTopicsDescription1}</span>
+                        <span className={"hidden lg:block"}>{t.thirdSection.featuredTopicsDescription2}</span>
                     </TypographyComponent>
                 </div>
 
                 <div className={"space-y-4 lg:mx-[155px] lg:flex lg:justify-center lg:space-x-10"}>
-                    {getTopics.map((topic, index) => (
+                    {topics.map((topic, index) => (
                         <FeaturedCard
-                        key={index}
-                        image={topic.image}
-                        title={topic.title}
-                        description={topic.description}
-                        link={topic.link}
+                            key={index}
+                            image={topic.image}
+                            title={topic.title}
+                            description={topic.description}
+                            link={topic.link}
                         />
                     ))}
                 </div>
 
                 <div className={"text-center pt-4 lg:pt-12 lg:pb-[54px]"}>
-                    <a
-                    href={en.exploreLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    >
-                    <ButtonComponent
-                        variant="primary"
-                        className="text-xs/4 tracking-normal font-normal py-1.5 px-9 lg:text-[18px]/0! lg:py-3.5 lg:px-[23px] lg:tracking-[-0.5px] lg:w-[157px] lg:h-[50px] rounded-lg!"
-                    >
-                        {en.explore}
-                    </ButtonComponent>
+                    <a href={t.exploreLink} target="_blank" rel="noopener noreferrer">
+                        <ButtonComponent variant="primary" className="text-xs/4 tracking-normal font-normal py-1.5 px-9 lg:text-[18px]/0! lg:py-3.5 lg:px-[23px] lg:tracking-[-0.5px] lg:w-[157px] lg:h-[50px] rounded-lg!">
+                            {t.explore}
+                        </ButtonComponent>
                     </a>
-
                 </div>
             </section>
 
@@ -164,15 +147,15 @@ function HomePage () {
             <section className={"bg-secondary lg:bg-bg1 py-12 px-6 lg:px-[165px] lg:pt-[100px] lg:pb-[39px]"}>
                 <div className={"px-6 space-y-6 pb-6"}>
                     <TypographyComponent as={"h3"} className={"text-mh3! text-center font-semibold! leading-none! tracking-[-1.2px]! text-primary lg:text-h2/12!"}>
-                        {en.fourthSection.upComingEvents.title}
+                        {t.fourthSection.upComingEvents.title}
                     </TypographyComponent>
                     <TypographyComponent as={"p"} variant={"p"} className={"text-primary text-p/8! tracking-[-0.2px] text-center lg:text-p/8!"}>
-                        {en.fourthSection.upComingEvents.description.description2} <br className={"hidden lg:block"}/> {en.fourthSection.upComingEvents.description.description3}
+                        {t.fourthSection.upComingEvents.description.description2} <br className={"hidden lg:block"}/> {t.fourthSection.upComingEvents.description.description3}
                     </TypographyComponent>
                 </div>
 
                 <div className={"space-y-6 lg:space-y-0 lg:flex lg:justify-center lg:mx-auto lg:space-x-[30px]"}>
-                    {getLiveEvents.map((liveEvent, index) => (
+                    {liveEvents.map((liveEvent, index) => (
                         <LiveTalkCard
                             key={index}
                             label={liveEvent.label}
@@ -184,31 +167,26 @@ function HomePage () {
                         />
                     ))}
                 </div>
-               {/* <div className={"text-center flex justify-center gap-5 pt-[64px] text-[14px]! leading-[17px] font-medium"}>
-                    <ButtonComponent variant={"primary"} className={"border-primary! border-2! lg:w-[206px] lg:h-[50px]"}>{en.viewCalendar}</ButtonComponent>
-                </div> */}
-                
             </section>
 
             {/* Fifth section */}
             <section className={"pt-12"}>
                 <div className={"mb-8 gap-2.5 lg:w-[589px] lg:mx-auto lg:mb-[30px] text-center"}>
-                   {/* <TypographyComponent as={"h6"} variant={"h6"} className={"uppercase text-accent! text-base/5 font-normal"}>{en.fifthSection.reactNnc1}</TypographyComponent> */}
                     <TypographyComponent as={"h3"} variant={"h3"} className={"font-semibold! leading-none! tracking-[-1.2px]! text-mh3! text-secondary! lg:leading-12"}>
-                        {en.fifthSection.exploreReactNative}
+                        {t.fifthSection.exploreReactNative}
                     </TypographyComponent>
                 </div>
 
                 <div className={"px-6 pb-[40px] lg:flex lg:justify-center"}>
                     <div className={"md:grid md:grid-cols-2 md:space-x-[15px] lg:grid lg:grid-cols-3 lg:space-x-[30px]"}>
-                        {getOpenSourceProjects.map((source, index) => (
+                        {openSourceProjects.map((source, index) => (
                             <OpenSourceCard
-                            key={index}
-                            star={source.star}
-                            fork={source.fork}
-                            title={source.title}
-                            description={source.description}
-                            link={source.link}
+                                key={index}
+                                star={source.star}
+                                fork={source.fork}
+                                title={source.title}
+                                description={source.description}
+                                link={source.link}
                             />
                         ))}
                     </div>
@@ -218,25 +196,25 @@ function HomePage () {
             {/* Sixth section */}
             <section className={"bg-secondary px-6 pt-12 pb-[3.625rem] lg:bg-bg1"}>
                 <div className={"mb-6 space-y-6 lg:w-[589px] lg:mx-auto lg:mb-[1.875rem] text-center"}>
-                    <TypographyComponent as={"h3"} variant={"h3"} className={"text-primary text-mh3/none! tracking-[-0.075rem]! font-normal"}>{en.sixthSection.contributeCommunity.title}</TypographyComponent>
+                    <TypographyComponent as={"h3"} variant={"h3"} className={"text-primary text-mh3/none! tracking-[-0.075rem]! font-normal"}>{t.sixthSection.contributeCommunity.title}</TypographyComponent>
                     <TypographyComponent as={"p"} variant={"p"} className={"font-normal! text-primary leading-8 tracking-[-0.013rem] lg:tracking-[-0.013rem]! lg:leading-8"}>
-                        {en.sixthSection.contributeCommunity.description}
+                        {t.sixthSection.contributeCommunity.description}
                     </TypographyComponent>
                 </div>
 
                 <div className={"space-y-[1.875rem] lg:space-y-0 lg:flex lg:justify-center lg:gap-[1.875rem]"}>
-                    {getWriteUps.map((writeUps, index) => (
+                    {writeUps.map((item, index) => (
                         <WriteForUsCard
-                        key={index}
-                        title={writeUps.title}
-                        description={writeUps.description}
-                        link={writeUps.link}
+                            key={index}
+                            title={item.title}
+                            description={item.description}
+                            link={item.link}
                         />
                     ))}
                 </div>
             </section>
         </>
-    )
+    );
 }
 
 export default HomePage;

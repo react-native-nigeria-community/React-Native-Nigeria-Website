@@ -2,20 +2,21 @@ import React from "react";
 import InputFieldComponent from "../components/commons/input-field.jsx";
 import ButtonComponent from "../components/commons/button.jsx";
 import CheckMarkSVG from "../assets/svg/check-mark.svg";
-import MaleAvatarPNG from "../assets/img/male-avatar.png";
 import ContactPNG from "../assets/img/contact.png";
 import TypographyComponent from "../components/commons/typography.jsx";
-import en from "../locales/en.js";
 import toast, { Toaster } from "react-hot-toast";
+import { useTranslation } from "../context/useTranslation.jsx";
 
 function Contact() {
+  const { t } = useTranslation();
+
   const onSubmit = async (event) => {
     event.preventDefault();
     const form = event.target;
     const formData = new FormData(form);
 
     try {
-      toast.loading("Submitting message...");
+      toast.loading(t.toastMessages.submitting);
 
       const response = await fetch("https://api.myqrmenu.co/api/submit-form", {
         method: "POST",
@@ -26,34 +27,20 @@ function Contact() {
       toast.dismiss();
 
       if (result.success) {
-        toast.success("Message sent successfully!",
-          {
-            style: {
-              border: "2px solid #22c55e",
-            },
-            iconTheme: {
-              primary: "#22c55e",
-              secondary: "#fff",
-            },
-          }
-        );
+        toast.success(t.toastMessages.success, {
+          style: { border: "2px solid #22c55e" },
+          iconTheme: { primary: "#22c55e", secondary: "#fff" },
+        });
         form.reset();
       } else {
-        toast.error("Failed to send message. Please try again.",
-                {
-          style: {
-            border: "2px solid #dc2626",
-          },
-          iconTheme: {
-            primary: "#dc2626",
-            secondary: "#fff",
-          },
-        }
-        );
+        toast.error(t.toastMessages.error, {
+          style: { border: "2px solid #dc2626" },
+          iconTheme: { primary: "#dc2626", secondary: "#fff" },
+        });
       }
     } catch {
       toast.dismiss();
-      toast.error("An error occurred. Please check your connection.");
+      toast.error(t.toastMessages.connectionError);
     }
   };
 
@@ -75,37 +62,35 @@ function Contact() {
         />
         <div className={"text-left lg:flex lg:justify-center lg:mx-auto"}>
           <div className={"flex flex-col lg:grid lg:grid-cols-4 lg:grid-rows-2"}>
+            {/* Mobile Title */}
             <p className={"text-[40px] pb-6 leading-none tracking-[-2px] font-medium lg:hidden"}>
-              Contact us
+              {t.contactPage.titleText}
             </p>
+            
             <img
               src={ContactPNG}
-              alt={"avatar-icon"}
-              className={
-                "h-[328px] lg:h-[636px] mx-auto lg:col-span-2 lg:row-span-3 lg:w-fit"
-              }
+              alt={"contact-illustration"}
+              className={"h-[328px] lg:h-[636px] mx-auto lg:col-span-2 lg:row-span-3 lg:w-fit"}
             />
-            <p
-              className={
-                "hidden text-[40px] leading-none tracking-[-2px] font-medium lg:w-[621px] lg:content-end lg:pb-6 lg:block lg:text-white"
-              }
-            >
-              Contact us
+
+            {/* Desktop Title */}
+            <p className={"hidden text-[40px] leading-none tracking-[-2px] font-medium lg:w-[621px] lg:content-end lg:pb-6 lg:block lg:text-white"}>
+              {t.contactPage.titleText}
             </p>
+
             <TypographyComponent
               as={"h6"}
               variant={"h6"}
-              className={
-                "py-6 text-bg1! font-normal leading-[20px] lg:text-white! lg:col-span-2"
-              }
+              className={"py-6 text-bg1! font-normal leading-[20px] lg:text-white! lg:col-span-2"}
             >
-              Have questions or ideas? We’d love to hear from you.
+              {t.contactPage.titleDescription}
             </TypographyComponent>
 
             <form
               onSubmit={onSubmit}
               className={"lg:row-span-1 lg:col-span-2"}
             >
+              {/* Full Name Field */}
               <div className="mt-5 px-3 flex items-center gap-3 border-1 rounded-sm border-bd-secondary/50 py-1 lg:bg-primary">
                 <div className="border-r-1 py-4 pr-2">
                   <img src={CheckMarkSVG} alt="check-mark" className="h-6" />
@@ -113,14 +98,15 @@ function Contact() {
                 <InputFieldComponent
                   id="name"
                   name="fullName"
-                  label="Full Name"
+                  label={t.labelName}
                   type="text"
-                  placeholder="Write here..."
+                  placeholder={t.writeHere}
                   className="flex focus:outline-none h-10"
                   required
                 />
               </div>
 
+              {/* Email Field */}
               <div className="mt-5 px-3 flex items-center gap-3 border-1 rounded-sm border-bd-secondary/50 py-1 lg:bg-primary">
                 <div className="border-r-1 py-4 pr-2">
                   <img src={CheckMarkSVG} alt="check-mark" className="h-6" />
@@ -128,32 +114,30 @@ function Contact() {
                 <InputFieldComponent
                   id="email"
                   name="email"
-                  label="Email Address"
+                  label={t.labelEmail}
                   type="email"
-                  placeholder="Write here..."
+                  placeholder={t.writeHere}
                   className="flex focus:outline-none h-10"
                   required
                 />
               </div>
 
+              {/* Message Textarea */}
               <div className="border-1 mt-5 p-5 border-bd-secondary/50 rounded-sm lg:bg-primary">
                 <InputFieldComponent
                   as="textarea"
                   id="message"
                   name="message"
-                  label="Message"
-                  placeholder="Write here..."
+                  label={t.labelMessage}
+                  placeholder={t.writeHere}
                   rows="7"
                   className="w-full block focus:outline-none resize-none"
                   required
                 />
               </div>
 
-              <div
-                className={
-                  "py-6 text-bg1/75 flex items-center gap-4 tracking-normal lg:hidden"
-                }
-              >
+              {/* Checkbox Section */}
+              <div className={"py-6 text-bg1/75 flex items-center gap-4 tracking-normal lg:hidden"}>
                 <div className={"border-[1px] border-bg1"}>
                   <input
                     type="checkbox"
@@ -163,15 +147,16 @@ function Contact() {
                     readOnly
                   />
                 </div>
-                <p className={"text-[16px] leading-5"}>{en.checkBoxText}</p>
+                <p className={"text-[16px] leading-5"}>{t.checkBoxText}</p>
               </div>
 
+              {/* Submit Button */}
               <ButtonComponent
                 variant={"primary"}
                 type="submit"
                 className={"lg:mt-6"}
               >
-                {en.sendMessage}
+                {t.sendMessage}
               </ButtonComponent>
             </form>
           </div>

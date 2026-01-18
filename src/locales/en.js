@@ -355,7 +355,8 @@ eventDetailsPage: {
     pageTitle: "Event Details",
     pageSubtitle: "A comprehensive look back at the speakers, media, and insights from our past conferences and seminars.",
     backButton: "← Back to all Events",
-    dateLocationSeparator: " | "
+    dateLocationSeparator: " | ",
+    eventNotFound: "Event Not Found",
 },
 
     eventDetailsTab: {
@@ -381,5 +382,13 @@ eventDetailsPage: {
         viewDetails: "View Details",
         },
 
+    toastMessages: {
+    submitting: "Submitting message...",
+    success: "Message sent successfully!",
+    error: "Failed to send message. Please try again.",
+    connectionError: "An error occurred. Please check your connection."
+},
 
-};
+
+}; 
+
