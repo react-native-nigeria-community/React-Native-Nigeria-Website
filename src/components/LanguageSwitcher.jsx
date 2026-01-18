@@ -36,7 +36,7 @@ const LanguageSwitcher = () => {
       >
         {/* <LanguageIcon className="w-5 h-5 text-gray-600" /> */}
         <span className="font-medium text-gray-700">
-          {currentLanguage.flag} {currentLanguage.code}
+          {currentLanguage.flag} {currentLanguage.code.toUpperCase()}
         </span>
         <ChevronIcon 
           className={`w-4 h-4 text-gray-600 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} 
