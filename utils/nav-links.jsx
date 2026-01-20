@@ -12,6 +12,10 @@ export const getNavLinks = (t) => [
         link: "/events",
     },
     {
+        label: "Newsletter",
+        link: "/newsletters"
+    },
+    {
         label: t?.navContact,
         link: "/contact",
     },
