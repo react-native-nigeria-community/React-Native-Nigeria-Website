@@ -16,7 +16,6 @@ import EventDetails from "./pages/EventDetails.tsx";
 
 
 function App() {
-    
     return (
         <LanguageProvider>
          <ScrollToTop />
@@ -36,5 +35,4 @@ function App() {
         
     );
 }
-
 export default App;

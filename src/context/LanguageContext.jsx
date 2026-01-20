@@ -1,58 +1,54 @@
 import React, { createContext, useState, useEffect } from "react";
 import { availableLanguages, translations } from "../constants/languages";
-import { useLocation, useNavigate } from "react-router-dom";
 
 const LanguageContext = createContext();
 
-const DEFAULT_LANGUAGE = "en";
-const SAVED_LANGUAGE_KEY = "language";
-
 export const LanguageProvider = ({ children }) => {
-  const location = useLocation();
-  const navigate = useNavigate();
+  const [currentLang, setCurrentLang] = useState("en");
 
-  const [currentLang, setCurrentLang] = useState(DEFAULT_LANGUAGE);
-
-  
   useEffect(() => {
-    const params = new URLSearchParams(location.search);
-    let langParam = params.get("lang");
-    const savedLang = sessionStorage.getItem(SAVED_LANGUAGE_KEY);
+    const params = new URLSearchParams(window.location.search);
+    const urlLang = params.get("lang");
 
-    // for invalid lang codes in URL
-    const isValid = availableLanguages.some(lang => lang.code === langParam);
-    if (!isValid) {
-      langParam = null; 
+    const savedLang = localStorage.getItem("react-native-nigeria-language");
+
+    let initialLang = "en";
+
+    if (urlLang && translations[urlLang]) {
+      initialLang = urlLang;
+      localStorage.setItem("react-native-nigeria-language", urlLang);
+    } else if (savedLang && translations[savedLang]) {
+      initialLang = savedLang;
     }
-
-     const validSavedLang = availableLanguages.some(lang => lang.code === savedLang)
-      ? savedLang
-      : null;
-    // This is used to determine language priority
-    const initialLang = langParam || validSavedLang || DEFAULT_LANGUAGE;
 
     setCurrentLang(initialLang);
-    sessionStorage.setItem(SAVED_LANGUAGE_KEY, initialLang);
 
-    
-     if (langParam !== initialLang) {
+    // ensure URL always reflects the resolved language
+    if (!urlLang || urlLang !== initialLang) {
       params.set("lang", initialLang);
-      navigate(`${location.pathname}?${params.toString()}`, { replace: true });
+      window.history.replaceState(
+        null,
+        "",
+        `${window.location.pathname}?${params.toString()}`,
+      );
     }
-  }, [location.pathname, location.search, navigate]);
+  }, []);
 
-  // Change language manually
+  
   const changeLanguage = (langCode) => {
-    if (!translations[langCode]) return;
+    if (translations[langCode]) {
+      setCurrentLang(langCode);
+      localStorage.setItem("react-native-nigeria-language", langCode);
+    }
 
-    setCurrentLang(langCode);
-    sessionStorage.setItem(SAVED_LANGUAGE_KEY, langCode);
-
-    // Update URL query param
-    const params = new URLSearchParams(location.search);
+    const params = new URLSearchParams(window.location.search);
     params.set("lang", langCode);
 
-    navigate(`${location.pathname}?${params.toString()}`, { replace: true });
+    window.history.replaceState(
+      null,
+      "",
+      `${window.location.pathname}?${params.toString()}`,
+    );
   };
 
   const t = translations[currentLang];
