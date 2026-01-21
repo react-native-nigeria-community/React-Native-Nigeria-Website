@@ -5,6 +5,7 @@ export default {
     navHome: "Ụlọ",
     navAbout: "Gbasara Anyị",
     navEvent: "Emume",
+    navNewsletter: "Akwụkwọ Akụkọ",
     navContact: "Kpọtụrụ Anyị",
 
     reactNativeNigeria: {
@@ -386,6 +387,22 @@ export default {
     success: "Ezigara ozi nke ọma!",
     error: "Enweghị ike iziga ozi. Biko nwaa ọzọ.",
     connectionError: "Njehie mere. Biko lelee njikọ gị."
+},
+
+/***************************************
+ ---------------------------------------------------------------------------
+ ALL NEWSLETTER PAGE STRINGS
+ ---------------------------------------------------------------------------
+ ****************************************/
+
+newsletterPage: {
+  title: "Newsletter Archive",
+  description:
+    "Read past React Native Nigeria newsletters and community updates.",
+},
+
+newsletterCard: {
+  readNewsletter: "Read newsletter",
 },
 
 };

@@ -5,6 +5,7 @@ export default {
     navHome: "Ilé",
     navAbout: "Nípa Wa",
     navEvent: "Ìṣẹ̀lẹ̀",
+    navNewsletter: "Ìwé Ìròyìn",
     navContact: "Kàn Sí Wa",
 
     reactNativeNigeria: {
@@ -385,6 +386,22 @@ export default {
     success: "A ti fi ìfiránṣẹ́ ránṣẹ́ ní àṣeyọrí!",
     error: "Kò ṣe é fi ìfiránṣẹ́ ránṣẹ́. Jọ̀wọ́ gbìyànjú lẹ́ẹ̀kan si.",
     connectionError: "Àṣìṣe kan ṣẹlẹ̀. Jọ̀wọ́ ṣayẹwo ìsopọ̀ rẹ."
+},
+
+/***************************************
+ ---------------------------------------------------------------------------
+ ALL NEWSLETTER PAGE STRINGS
+ ---------------------------------------------------------------------------
+ ****************************************/
+
+newsletterPage: {
+  title: "Newsletter Archive",
+  description:
+    "Read past React Native Nigeria newsletters and community updates.",
+},
+
+newsletterCard: {
+  readNewsletter: "Read newsletter",
 },
 
 };

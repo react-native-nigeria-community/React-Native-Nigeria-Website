@@ -12,7 +12,7 @@ export const getNavLinks = (t) => [
         link: "/events",
     },
     {
-        label: "Newsletter",
+        label: t?.navNewsletter,
         link: "/newsletters"
     },
     {

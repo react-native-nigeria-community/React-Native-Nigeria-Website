@@ -5,6 +5,7 @@ export default {
     navHome: "Home",
     navAbout: "About",
     navEvent: "Event",
+    navNewsletter: "Newsletter",
     navContact: "Contact",
 
     reactNativeNigeria: {
@@ -389,6 +390,21 @@ eventDetailsPage: {
     connectionError: "An error occurred. Please check your connection."
 },
 
+/***************************************
+ ---------------------------------------------------------------------------
+ ALL NEWSLETTER PAGE STRINGS
+ ---------------------------------------------------------------------------
+ ****************************************/
+
+newsletterPage: {
+  title: "Newsletter Archive",
+  description:
+    "Read past React Native Nigeria newsletters and community updates.",
+},
+
+newsletterCard: {
+  readNewsletter: "Read newsletter",
+},
 
 }; 
 

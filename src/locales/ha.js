@@ -5,6 +5,7 @@ export default {
     navHome: "Gida",
     navAbout: "Game da Mu",
     navEvent: "Taron",
+    navNewsletter: "Jarida",
     navContact: "Tuntuɓe Mu",
 
     reactNativeNigeria: {
@@ -385,6 +386,22 @@ export default {
     success: "An aika saƙon cikin nasara!",
     error: "Ba a iya aika saƙo ba. Da fatan sake gwadawa.",
     connectionError: "An sami kuskure. Da fatan duba haɗin ku."
+},
+
+/***************************************
+ ---------------------------------------------------------------------------
+ ALL NEWSLETTER PAGE STRINGS
+ ---------------------------------------------------------------------------
+ ****************************************/
+
+newsletterPage: {
+  title: "Newsletter Archive",
+  description:
+    "Read past React Native Nigeria newsletters and community updates.",
+},
+
+newsletterCard: {
+  readNewsletter: "Read newsletter",
 },
 
 };

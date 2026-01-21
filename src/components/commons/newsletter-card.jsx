@@ -1,6 +1,10 @@
 import TypographyComponent from "./typography.jsx";
+import { useTranslation } from "../../context/useTranslation";
+
 
 function NewsletterCard({ title, date, description, link }) {
+    const { t } = useTranslation();
+    
     return (
         <div className={"p-6 border rounded-lg space-y-2"}>
             <TypographyComponent as={"h4"} variant={"h4"}>
@@ -25,7 +29,7 @@ function NewsletterCard({ title, date, description, link }) {
                 rel="noopener noreferrer"
                 className={"text-accent underline"}
             >
-                Read newsletter
+                {t.newsletterCard.readNewsletter}
             </a>
         </div>
     );
