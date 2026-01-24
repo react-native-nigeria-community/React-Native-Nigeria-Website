@@ -44,7 +44,7 @@ const NewsletterComponent = () => {
                 <TypographyComponent 
                     as="h6" 
                     variant="h6" 
-                    className={"text-secondary! mt-2 mb-6 text-h6 lg:text-p"} 
+                    className={"max-w-[55ch] mx-auto text-secondary! mt-2 mb-6 text-h6 lg:text-p"} 
                     responsiveVariant={{ lg: "p" }}
                 >
                     {t.newsletterDescription}
@@ -67,7 +67,7 @@ const NewsletterComponent = () => {
                         <div className="">
                             <ButtonComponent 
                                 type="submit" 
-                                className="w-full py-3" 
+                                className="min-w-full w-max py-3" 
                                 variant="primary"
                             >
                                 {t.subscribe}
