@@ -395,13 +395,13 @@ export default {
  ****************************************/
 
 newsletterPage: {
-  title: "Newsletter Archive",
+  title: "Taskar Labarai",
   description:
-    "Read past React Native Nigeria newsletters and community updates.",
+    "Karanta jaridun React Native Nigeria da suka gabata da sabunta al'umma.",
 },
 
 newsletterCard: {
-  readNewsletter: "Read newsletter",
+  readNewsletter: "Karanta labarai",
 },
 
 };

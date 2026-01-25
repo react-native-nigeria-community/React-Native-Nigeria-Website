@@ -396,13 +396,13 @@ export default {
  ****************************************/
 
 newsletterPage: {
-  title: "Newsletter Archive",
+  title: "Ndekọ akwụkwọ akụkọ",
   description:
-    "Read past React Native Nigeria newsletters and community updates.",
+    "Gụọ akwụkwọ akụkọ React Native Nigeria gara aga na mmelite obodo.",
 },
 
 newsletterCard: {
-  readNewsletter: "Read newsletter",
+  readNewsletter: "Gụọ akwụkwọ akụkọ",
 },
 
 };
