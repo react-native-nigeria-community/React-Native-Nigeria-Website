@@ -86,7 +86,7 @@ function HomePage() {
                 </div>
 
                 <div className={"space-y-[30px] lg:flex lg:items-center lg:justify-center"}>
-                    <div className={"mx-6 md:grid md:place-content-start md:place-items-start md:grid-cols-2 md:space-x-[50px] lg:space-y-[80px] lg:w-[960px]"}>
+                    <div className={"mx-6 md:grid md:grid-cols-2 md:gap-x-[80px] lg:space-y-[80px]"}>
                         {features.map((feature, index) => (
                             <GridFlowCard
                                 key={`${feature.title}-${index}`} // Using title in key helps with translation updates
