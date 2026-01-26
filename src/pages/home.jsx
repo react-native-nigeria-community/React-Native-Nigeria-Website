@@ -86,7 +86,7 @@ function HomePage() {
                 </div>
 
                 <div className={"space-y-[30px] lg:flex lg:items-center lg:justify-center"}>
-                    <div className={"grid md:grid-cols-2 gap-[40px] lg:gap-x-[80px] lg:space-y-[80px]"}>                        {features.map((feature, index) => (
+                    <div className={"grid auto-rows-fr md:grid-cols-2 gap-[40px] lg:gap-[80px] lg:mb-[80px]"}>                        {features.map((feature, index) => (
                             <GridFlowCard
                                 key={`${feature.title}-${index}`} // Using title in key helps with translation updates
                                 icon={feature.icon}
@@ -97,7 +97,7 @@ function HomePage() {
                     </div>
                 </div>
 
-                <div className={"mt-10 px-6 text-left lg:flex lg:items-center lg:mx-[90px] lg:justify-between"}>
+                <div className={"mt-10 px-6 text-left lg:flex lg:items-center lg:mx-[7%] lg:justify-between"}>
                     <div className={"pb-8 space-y-6 lg:w-[589px]!"}>
                         <TypographyComponent as={"h3"} variant={"h3"} className={"text-mh3! font-normal! text-bg1! leading-[44px]! tracking-[-1.2px] lg:text-primary!"}>
                             {t.secondSection.readyToBuildRna.title}
