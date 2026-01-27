@@ -33,15 +33,19 @@ function NewsletterArchive() {
             {/* Second section: Newsletter list (empty for now) */}
             <section className={"px-6 py-12"}>
                 <div className={"grid gap-6 md:grid-cols-2 lg:max-w-[1000px] mx-auto"}>
-                    {newsletters.map((newsletter) => (
-                        <NewsletterCard
-                        key={newsletter.id}
-                        title={newsletter.title}
-                        date={newsletter.date}
-                        description={newsletter.description}
-                        link={newsletter.link}
-                    />
-                    ))}
+                    {newsletters.map((newsletter) => {
+                        const item = t.newsletterPage.items[newsletter.id];
+                        
+                        return (
+                            <NewsletterCard
+                                key={newsletter.id}
+                                title={item.title}
+                                date={item.date}
+                                description={item.description}
+                                link={newsletter.link}
+                            />
+                        );
+                    })}
                 </div>
             </section>
 
