@@ -76,15 +76,15 @@ export interface PanelistType {
 export interface EventType {
   id: string;
   title: string;
-  date: string;
-  time: string;
-  location: string;
-  description: string;
-  images: string[];
-  videos: string[];
-  embed: string | null;
-  galleryLink: string | null;
-  speakers: SpeakerType[];
+  date?: string;
+  time?: string;
+  location?: string;
+  description?: string;
+  images?: string[];
+  videos?: string[];
+  embed?: string | null;
+  galleryLink?: string | null;
+  speakers?: SpeakerType[];
   hosts?: HostType[];
   panelists?: PanelistType[];
 }
@@ -407,6 +407,14 @@ export const eventDetails: EventType[] = [
     ],
   },
 
+   // EVENT 6 — WITH PANELISTS ---------------------------------
+  {
+    id: "event6",
+    title: "Campus Edition",
+    date: "Upcoming",
+    time: "TBD",
+    location: "TBD",
+  },
 ];
 
 export default eventDetails;
