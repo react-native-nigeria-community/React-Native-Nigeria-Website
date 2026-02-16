@@ -71,3 +71,16 @@
 .custom-checkbox:checked::after {
     content: url('./assets/svg/gray-check-mark.svg');
 }
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 20s linear infinite;
+}
