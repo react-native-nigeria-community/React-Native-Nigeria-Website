@@ -13,6 +13,7 @@ import PrivacyPolicy from "./pages/PrivacyPolicy.jsx";
 import TermsAndConditions from "./pages/TermsAndConditions.jsx";
 import EventDetails from "./pages/EventDetails.tsx";
 import NewsletterArchive from "./pages/newsletters.jsx";
+import Campus from './pages/campus';
 
 
 
@@ -26,6 +27,7 @@ function App() {
                 <Route path="/about-us" element={<AboutUs />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/events" element={<Events />} />
+                <Route path="/campus" element={<Campus />} />
                 <Route path="/privacy" element={<PrivacyPolicy />} />
                 <Route path="/terms" element={<TermsAndConditions />} />
                 <Route path="/event-details" element={<EventDetails />} />

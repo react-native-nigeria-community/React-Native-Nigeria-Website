@@ -7,6 +7,7 @@ export default {
     navEvent: "Event",
     navNewsletter: "Newsletter",
     navContact: "Contact",
+    navCampus: "Campus",
 
     reactNativeNigeria: {
     line1: "React Native",
@@ -352,6 +353,7 @@ export default {
         },
 
         fifthSection:{
+            pageTitle: "React Native Nigeria Campus Edition",
             title: "Campus Edition",
             email:"contact@reactnativenigeria.com",
             collaboration:" We are currently open to university collaborations across Nigeria. If you would like to host a React Native Nigeria Campus Edition event at your institution, please reach out to us at:",
@@ -370,6 +372,10 @@ export default {
                 goal2: "Reduce the barrier to entry into tech",
                 goal3: "Equip students with practical skills that improve their graduate readiness",
                 goal4: "Foster a vibrant community of mobile developers across Nigerian universities",
+            },
+            carousel:{
+                title:"Moments in time",
+                description:"From hands-on sessions to community meetups",
             }
         }
     },

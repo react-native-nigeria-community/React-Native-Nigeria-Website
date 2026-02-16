@@ -11,16 +11,15 @@ const NavbarComponent = () => {
   const [open, setOpen] = useState(false);
   const location = useLocation();
   const { t } = useTranslation();
-
   const toggle = useCallback(() => setOpen((v) => !v), []);
   const close = useCallback(() => setOpen(false), []);
 
   return (
     <header className="sticky top-0 z-50 bg-white lg:bg-bg1">
-      <nav className="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between relative">
+      <nav className="relative flex items-center justify-between h-16 px-4 mx-auto max-w-7xl">
         
         {/* LEFT NAV LINKS (Desktop) */}
-        <ul className="hidden lg:flex items-center gap-12 text-primary absolute left-1/2 -translate-x-1/2">
+        <ul className="absolute items-center hidden gap-12 -translate-x-1/2 lg:flex text-primary left-1/2">
           {getNavLinks(t).map((link, i) => (
             <NavList
               key={i}
@@ -34,15 +33,15 @@ const NavbarComponent = () => {
         {/* LEFT LOGO */}
         <Link
             to="/"
-            className="hidden lg:flex items-center gap-2"
+            className="items-center hidden gap-2 lg:flex"
           >
-            <img src={LogoPNG} alt="Logo" className="h-10 w-auto" />
+            <img src={LogoPNG} alt="Logo" className="w-auto h-10" />
 
             <div className="flex flex-col leading-tight">
-              <span className="text-primary text-sm font-semibold">
+              <span className="text-sm font-semibold text-primary">
                 {t.reactNativeNigeria.line1}
               </span>
-              <span className="text-primary text-sm font-semibold">
+              <span className="text-sm font-semibold text-primary">
                 {t.reactNativeNigeria.line2}
               </span>
             </div>
@@ -50,7 +49,7 @@ const NavbarComponent = () => {
 
 
         {/* RIGHT BUTTON (Desktop) */}
-         <div className="hidden lg:flex items-center gap-4">
+         <div className="items-center hidden gap-4 lg:flex">
           <LanguageSwitcher />
           <a
             href={t.joinCommunityLink}
@@ -63,12 +62,12 @@ const NavbarComponent = () => {
         
 
         {/* MOBILE HEADER */}
-        <div className="lg:hidden flex items-center justify-between w-full">
+        <div className="flex items-center justify-between w-full lg:hidden">
           
           {/* Mobile Logo */}
         <Link to="/" className="flex items-center gap-2">
-          <img src={LogoPNG} alt="Logo" className="h-8 w-auto" />
-          <span className="flex flex-col leading-tight text-black lg:text-primary font-medium text-sm">
+          <img src={LogoPNG} alt="Logo" className="w-auto h-8" />
+          <span className="flex flex-col text-sm font-medium leading-tight text-black lg:text-primary">
           <span>{t.reactNativeNigeria.line1}</span>
           <span>{t.reactNativeNigeria.line2}</span>
           </span>
@@ -81,7 +80,7 @@ const NavbarComponent = () => {
           <button
             aria-label="open-menu"
             onClick={toggle}
-            className="text-black text-3xl lg:text-primary"
+            className="text-3xl text-black lg:text-primary"
           >
             {open ? "×" : "☰"}
           </button>
@@ -107,7 +106,7 @@ const NavbarComponent = () => {
           <button
             onClick={close}
             aria-label="close-menu"
-            className="absolute top-7 right-7 text-4xl text-primary"
+            className="absolute text-4xl top-7 right-7 text-primary"
           >
             ×
           </button>
