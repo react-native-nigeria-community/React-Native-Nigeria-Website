@@ -350,6 +350,28 @@ export default {
                 id: "event5",
             },
         },
+
+        fifthSection:{
+            title: "Campus Edition",
+            email:"contact@reactnativenigeria.com",
+            collaboration:" We are currently open to university collaborations across Nigeria. If you would like to host a React Native Nigeria Campus Edition event at your institution, please reach out to us at:",
+            commitment:"At React Native Nigeria, we are committed to building the next generation of mobile engineers across Nigeria.",
+            beyond:"Beyond hosting community events, we actively collaborate with universities to introduce students to real-world software development early in their academic journey.",
+            through:"Through our",
+            initiative: "initiative, we partner with tertiary institutions to:",
+            institutionBenefits:{
+                benefit1: " Deliver hands-on React Native workshops with practical,hands-on coding sessions with real-world examples",
+                benefit2: "Organize panel sessions featuring experienced engineers who share career insights and answer student questions",
+                benefit3: "Facilitate keynote talks from professionals working in leading global tech companies, including engineers with experience in FAANG (Facebook, Amazon, Apple, Netflix, Google) organizations",
+            },
+            goals:{
+                title:"Our goal is simple:",
+                goal1: "Create early exposure",
+                goal2: "Reduce the barrier to entry into tech",
+                goal3: "Equip students with practical skills that improve their graduate readiness",
+                goal4: "Foster a vibrant community of mobile developers across Nigerian universities",
+            }
+        }
     },
 
 eventDetailsPage: {
