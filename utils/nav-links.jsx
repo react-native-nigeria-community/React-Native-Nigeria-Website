@@ -24,3 +24,4 @@ export const getNavLinks = (t) => [
         link: "/contact",
     },
 ];
+
