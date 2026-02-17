@@ -6,7 +6,7 @@ export default {
   navEvent: "Ìṣẹ̀lẹ̀",
   navNewsletter: "Ìwé Ìròyìn",
   navContact: "Kàn Sí Wa",
-  navCampus: "Ogba",
+  navCampus: "Ilé-ẹ̀kọ́ gíga",
 
   reactNativeNigeria: {
     line1: "React Native",
@@ -380,7 +380,7 @@ export default {
 
     fifthSection: {
       pageTitle: "React Native Nigeria Campus Edition",
-      title: "Campus Edition",
+      title: "Àtẹ̀jáde Ilé-Ẹ̀kọ́ Gíga",
       email: "contact@reactnativenigeria.com",
       collaboration:
         "A ṣí sílẹ̀ fún àwọn ìfowọsowọpọ̀ pẹ̀lú àwọn yunifásítì kárí Nàìjíríà. Tí o bá fẹ́ gbalejo ìṣẹ̀lẹ̀ React Native Nigeria Campus Edition ní ilé-ẹ̀kọ́ rẹ, jọ̀wọ́ kàn sí wa ní:",
