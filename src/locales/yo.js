@@ -6,6 +6,7 @@ export default {
   navEvent: "Ìṣẹ̀lẹ̀",
   navNewsletter: "Ìwé Ìròyìn",
   navContact: "Kàn Sí Wa",
+  navCampus: "Ilé-ẹ̀kọ́ gíga",
 
   reactNativeNigeria: {
     line1: "React Native",
@@ -374,6 +375,41 @@ export default {
         time: "11:00 Àárọ̀",
         location: "theBUNKER, Abuja",
         id: "event5",
+      },
+    },
+
+    fifthSection: {
+      pageTitle: "React Native Nigeria Campus Edition",
+      title: "Àtẹ̀jáde Ilé-Ẹ̀kọ́ Gíga",
+      email: "contact@reactnativenigeria.com",
+      collaboration:
+        "A ṣí sílẹ̀ fún àwọn ìfowọsowọpọ̀ pẹ̀lú àwọn yunifásítì kárí Nàìjíríà. Tí o bá fẹ́ gbalejo ìṣẹ̀lẹ̀ React Native Nigeria Campus Edition ní ilé-ẹ̀kọ́ rẹ, jọ̀wọ́ kàn sí wa ní:",
+      commitment:
+        "Ni React Native Nigeria, a ti pinnu lati kọ iran ti nbọ ti awọn onimọ-ẹrọ alagbeka kaakiri Naijiria.",
+      beyond:
+        "Yàtọ̀ sí gbigbalejo àwọn ìṣẹ̀lẹ̀ àwùjọ, a máa ń ṣiṣẹ́ papọ̀ pẹ̀lú àwọn yunifásítì láti ṣe àfihàn àwọn akẹ́kọ̀ọ́ sí ìgbékalẹ̀ sọ́fítíwéà ti ayé gidi ní ìbẹ̀rẹ̀ ìrìnàjò ẹ̀kọ́ wọn.",
+      through: "Nípasẹ̀",
+      initiative: "ètò wa, a ń ṣiṣẹ́ pọ̀ pẹ̀lú àwọn ilé-ẹ̀kọ́ gíga láti:",
+      institutionBenefits: {
+        benefit1:
+          "Pese ọwọ-lori awọn idanileko abinibi React pẹlu ilowo, ọwọ-lori awọn akoko ifaminsi pẹlu awọn apẹẹrẹ gidi-aye",
+        benefit2:
+          "Ṣeto awọn akoko igbimọ ti n ṣafihan awọn onimọ-ẹrọ ti o ni iriri ti o pin awọn oye iṣẹ ati dahun awọn ibeere ọmọ ile-iwe",
+        benefit3:
+          "Ṣe irọrun awọn ọrọ ọrọ pataki lati ọdọ awọn alamọdaju ti n ṣiṣẹ ni awọn ile-iṣẹ imọ-ẹrọ agbaye, pẹlu awọn onimọ-ẹrọ ti o ni iriri ninu awọn ẹgbẹ FAANG (Facebook, Amazon, Apple, Netflix, Google)",
+      },
+      goals: {
+        title: "Àfojúsùn wa rọrùn:",
+        goal1: "Ṣẹda ni kutukutu ifihan",
+        goal2: "Dín ìdènà ìwọ̀lé sí ìmọ̀-ẹ̀rọ kù",
+        goal3:
+          "Pese awọn ọmọ ile-iwe pẹlu awọn ọgbọn iṣe ti o mu imurasilẹ imurasilẹ wọn pari",
+        goal4:
+          "Ṣe àgbékalẹ̀ àwùjọ àwọn olùdàgbòsókè fóònù alátagbà tó ní agbára kárí àwọn yunifásítì Nàìjíríà",
+      },
+      carousel: {
+        title: "Àwọn àkókò ìgbéyàwó",
+        description: "Láti àwọn ìjókòó tí ó fi ọwọ́ sí sí àwọn ìpàdé àwùjọ",
       },
     },
   },

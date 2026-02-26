@@ -6,6 +6,7 @@ export default {
   navEvent: "Emume",
   navNewsletter: "Akwụkwọ Akụkọ",
   navContact: "Kpọtụrụ Anyị",
+  navCampus: "Ụlọ akwụkwọ",
 
   reactNativeNigeria: {
     line1: "React Native",
@@ -377,6 +378,40 @@ export default {
         time: "11:00 Ụtụtụ",
         location: "theBUNKER, Abuja",
         id: "event5",
+      },
+    },
+    fifthSection: {
+      pageTitle: "React Native Nigeria Campus Edition",
+      title: "Mbipụta ụlọ akwụkwọ",
+      email: "contact@reactnativenigeria.com",
+      collaboration:
+        "Anyị na-emeghe ugbu a maka mmekorita mahadum na Nigeria. Ọ bụrụ na ị ga-achọ ịnabata mmemme React Native Nigeria Campus Edition na ụlọ ọrụ gị, biko kpọtụrụ anyị na:",
+      commitment:
+        "Na React Native Nigeria, anyị kpebisiri ike n'ịwulite ọgbọ na-esote ndị injinia mkpanaka gafee Naịjirịa.",
+      beyond:
+        "E wezụga mmemme obodo, anyị na mahadum na-arụkọ ọrụ ọnụ iji webata ụmụ akwụkwọ na mmepe ngwanrọ ụwa n'oge na njem agụmakwụkwọ ha.",
+      through: "Site na",
+      initiative: "atumatu, anyi na ulo akwukwo di elu na-eso:",
+      institutionBenefits: {
+        benefit1:
+          "Nye ọzụzụ React Native nwere ọrụ aka nwere nnọkọ ọrụ aka n'ezie nwere ihe atụ ụwa n'ezie",
+        benefit2:
+          "Hazie nnọkọ panel nke na-egosipụta ndị injinia nwere ahụmahụ na-ekerịta nghọta ọrụ na zaa ajụjụ ụmụ akwụkwọ",
+        benefit3:
+          "Kwado okwu isi okwu sitere n'aka ndị ọkachamara na-arụ ọrụ na ụlọ ọrụ teknụzụ zuru ụwa ọnụ, gụnyere ndị injinia nwere ahụmịhe na FAANG (Facebook, Amazon, Apple, Netflix, Google)",
+      },
+      goals: {
+        title: "Ebumnuche anyị dị mfe",
+        goal1: "Mepụta mkpughe mbụ",
+        goal2: "Belata ihe mgbochi ịbanye na teknụzụ",
+        goal3:
+          "Kwanyere ụmụ akwụkwọ nka nka nke na-emezi njikere ngụsị akwụkwọ ha",
+        goal4:
+          "Zụlite obodo dị egwu nke ndị mmepe mkpanaka n'ofe mahadum Nigeria",
+      },
+      carousel: {
+        title: "Oge n'ime oge",
+        description: "Site na nnọkọ aka ruo na nzụkọ obodo",
       },
     },
   },

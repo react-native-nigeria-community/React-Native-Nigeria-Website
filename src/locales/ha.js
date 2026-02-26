@@ -6,6 +6,7 @@ export default {
   navEvent: "Taron",
   navNewsletter: "Jarida",
   navContact: "Tuntuɓe Mu",
+  navCampus: "Harabar",
 
   reactNativeNigeria: {
     line1: "React Native",
@@ -382,6 +383,41 @@ export default {
         time: "11:00 Safiya",
         location: "theBUNKER, Abuja",
         id: "event5",
+      },
+    },
+
+    fifthSection: {
+      pageTitle: "React Native Nigeria Campus Edition",
+      title: "Harabar Edition",
+      email: "contact@reactnativenigeria.com",
+      collaboration:
+        "A halin yanzu muna buɗe don haɗin gwiwar jami'a a duk faɗin Najeriya. Idan kuna son karbar bakuncin taron Buga Ɗabi'ar Harabar Karatun 'Yan Najeriya a cibiyar ku, da fatan za a tuntuɓe mu a:",
+      commitment:
+        "A React Native Nigeria, mun himmatu wajen gina na gaba na injiniyoyin wayar hannu a duk faɗin Najeriya.",
+      beyond:
+        "Bayan gudanar da al'amuran al'umma, muna haɗin gwiwa sosai tare da jami'o'i don gabatar da ɗalibai don haɓaka software na duniya a farkon tafiyar karatunsu.",
+      through: "Ta hanyar",
+      initiative: "yunƙurin mu, muna haɗin gwiwa tare da manyan makarantu don:",
+      institutionBenefits: {
+        benefit1:
+          "Gudanar da koyarwar React Native ta aiki tare da zaman firamare na aiki tare da misalai na duniya na gaske",
+        benefit2:
+          "Tsara zaman kwamitin da ke nuna gogaggun injiniyoyi waɗanda ke raba fahimtar aiki da amsa tambayoyin ɗalibi",
+        benefit3:
+          "Gudanar da mahimman magana daga ƙwararrun da ke aiki a cikin manyan kamfanonin fasaha na duniya, gami da injiniyoyi masu ƙwarewa a ƙungiyoyin FAANG (Facebook, Amazon, Apple, Netflix, Google).",
+      },
+      goals: {
+        title: "Manufar mu mai sauki ce:",
+        goal1: "Ƙirƙiri fallasa da wuri",
+        goal2: "Rage shingen shiga fasaha",
+        goal3:
+          "Ba wa ɗalibai ƙwarewa masu amfani waɗanda ke haɓaka shirye-shiryen kammala karatunsu",
+        goal4:
+          "Haɓaka ƙwararrun al'umma masu haɓaka wayar hannu a cikin jami'o'in Najeriya",
+      },
+      carousel: {
+        title: "Lokaci a cikin lokaci",
+        description: "Daga zaman hannu-da-hannu zuwa taron jama'a",
       },
     },
   },
