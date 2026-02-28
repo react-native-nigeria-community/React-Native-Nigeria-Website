@@ -10,4 +10,5 @@ export function useAppNavigation() {
         // goToEvents: () => navigate("/events"),
         // goToContact: () => navigate("/contact"),
     };
+    
 }
