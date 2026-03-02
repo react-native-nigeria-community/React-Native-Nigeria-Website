@@ -3,17 +3,22 @@ import CalendarSVG from "../src/assets/svg/calendar.svg";
 import ClockSVG from "../src/assets/svg/clock.svg";
 import MarkerSVG from "../src/assets/svg/marker.svg";
 
-export const pastEventHighlights = [
+interface EventListItem {
+  image: string;
+  text: string;
+}
+
+export const secondEventList: EventListItem[] = [
     {
-        title: CalendarSVG,
-        text: en.eventPage.fourthSection.event1.date,
+        image: CalendarSVG,
+        text: en.eventPage.secondSection.date,
     },
     {
         image: ClockSVG,
-        text: en.eventPage.fourthSection.event1.time,
+        text: en.eventPage.secondSection.time,
     },
     {
         image: MarkerSVG,
-        text: en.eventPage.fourthSection.event1.location,
+        text: en.eventPage.secondSection.location,
     },
 ];

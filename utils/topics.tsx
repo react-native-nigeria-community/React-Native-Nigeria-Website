@@ -1,8 +1,14 @@
 import Topic1PNG from "../src/assets/img/topics/topic-1.png";
 import Topic2PNG from "../src/assets/img/topics/topic-2.png";
 import Topic3PNG from "../src/assets/img/topics/topic-3.png";
+interface Topic {
+  image: string;
+  title: string;
+  description: string;
+  link: string;
+}
 
-export const getTopics = (t) => [
+export const getTopics = (t: any): Topic[] => [
     {
         image: Topic1PNG,
         title: t?.thirdSection?.medium?.title,

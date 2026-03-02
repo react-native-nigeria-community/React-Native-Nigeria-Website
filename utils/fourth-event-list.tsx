@@ -1,4 +1,12 @@
-export const fourthEventList = (t) => [
+interface EventItem {
+  title: string;
+  date: string;
+  time: string;
+  location: string;
+  id: string;
+}
+
+export const fourthEventList = (t: any): EventItem[] => [
     {
         title: t.eventPage.fourthSection.event1.title,
         date: t.eventPage.fourthSection.event1.date,

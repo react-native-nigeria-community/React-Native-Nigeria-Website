@@ -1,6 +1,31 @@
+interface AccordionLink {
+  label: string;
+  url: string;
+}
 
+interface AccordionContentText {
+  type: "text";
+  value: string;
+}
 
-export const getAccordions = (t) => [
+interface AccordionContentJSX {
+  type: "jsx";
+  value: () => React.ReactElement;
+}
+
+interface AccordionContentLinks {
+  type: "links";
+  value: AccordionLink[];
+}
+
+type AccordionContent = AccordionContentText | AccordionContentJSX | AccordionContentLinks;
+
+interface AccordionItem {
+  title: string;
+  content: AccordionContent;
+}
+
+export const getAccordions = (t: any): AccordionItem[] => [
   {
     title: t?.faqAccordion?.whoCanJoin?.title,
     content: {

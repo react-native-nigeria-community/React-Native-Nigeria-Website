@@ -1,5 +1,13 @@
+interface LiveEvent {
+  label: string;
+  title: string;
+  date: string;
+  time: string;
+  buttonText: string;
+  buttonLink: string;
+}
 
-export const getLiveEvents = (t) => [
+export const getLiveEvents = (t: any): LiveEvent[] => [
     {
         label: t?.fourthSection?.eventCards?.eventCard1?.smallText,
         title: t?.fourthSection?.eventCards?.eventCard1?.title,

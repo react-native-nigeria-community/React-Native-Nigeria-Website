@@ -1,4 +1,12 @@
-export const getOpenSourceProjects = (t) => {
+interface OpenSourceProject {
+  star: string;
+  fork: string;
+  title: string;
+  description: string;
+  link: string;
+}
+
+export const getOpenSourceProjects = (t: any): OpenSourceProject[] => {
     return [
         {
             star: t.fifthSection.sourceProject.project1.star,
