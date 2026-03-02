@@ -1,7 +1,12 @@
 import React from "react";
 import {Link} from "react-router-dom";
+interface NavListProps {
+  label: string;
+  link: string;
+  isActive: boolean;
+}
 
-const NavList = ({ label, link, isActive }) => {
+const NavList = ({ label, link, isActive }: NavListProps) => {
     return (
         <li>
             <Link

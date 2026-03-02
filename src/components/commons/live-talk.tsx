@@ -1,15 +1,24 @@
 import React from "react";
 import TypographyComponent from "./typography.jsx";
-import ButtonComponent from "./button.jsx";
+import ButtonComponent from "./button.js";
+
+interface LiveTalkCardProps {
+  label?: string;
+  title: string;
+  date: string;
+  time: string;
+  buttonText?: string;
+  buttonLink: string;
+}
 
 const LiveTalkCard = ({
-                          label = "Live Talk",
-                          title,
-                          date,
-                          time,
-                          buttonText = "Watch Live Talk",
-                          buttonLink,
-                      }) => {
+    label = "Live Talk",
+    title,
+    date,
+    time,
+    buttonText = "Watch Live Talk",
+    buttonLink,
+}: LiveTalkCardProps) => {
     return (
         <div className="monotone-noise grid px-6 pt-6 pb-3.5 rounded-lg lg:px-0 lg:w-[350px] lg:pb-[51px]">
             {/* Label */}

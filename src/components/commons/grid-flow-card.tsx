@@ -1,7 +1,13 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import TypographyComponent from "./typography.jsx";
+interface GridFlowCardProps {
+  icon: ReactNode;
+  title: string;
+  description: string;
+}
 
-const GridFlowCard = ({ icon, title, description }) => {
+const GridFlowCard = ({ icon, title, description }: GridFlowCardProps) => {
+
     return (
         <div className="flex gap-5 lg:w-[455px] h-full text-left">
             <div className="w-fit row-span-1 lg:row-span-4">

@@ -1,8 +1,14 @@
 import React from "react";
 import TypographyComponent from "./typography.jsx";
 
-const FeaturedCard = ({ image, title, description, link }) => {
+interface FeaturedCardProps {
+  image: string;
+  title: string;
+  description: string;
+  link: string;
+}
 
+const FeaturedCard = ({ image, title, description, link }: FeaturedCardProps) => {
     return (
         <a href={link} target="_blank" rel="noopener noreferrer" className="block">
        <div className="w-[345px] mx-auto **text-center lg:text-left**">

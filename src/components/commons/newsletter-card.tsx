@@ -1,13 +1,19 @@
 import TypographyComponent from "./typography.jsx";
-import { useTranslation } from "../../context/useTranslation";
+import { useTranslation } from "../../context/useTranslation.jsx";
 
+interface NewsletterCardProps {
+  title: string;
+  date: string;
+  description: string;
+  link: string;
+}
 
-function NewsletterCard({ title, date, description, link }) {
+function NewsletterCard({ title, date, description, link }: NewsletterCardProps) {
     const { t } = useTranslation();
     
     return (
         <div className={"p-6 border rounded-lg space-y-2"}>
-            <TypographyComponent as={"h4"} variant={"h4"}>
+            <TypographyComponent as={"h4"} variant={"h4"} className={""}>
                 {title}
             </TypographyComponent>
 
@@ -19,7 +25,7 @@ function NewsletterCard({ title, date, description, link }) {
                 {date}
             </TypographyComponent>
 
-            <TypographyComponent as={"p"} variant={"p"}>
+            <TypographyComponent as={"p"} variant={"p"} className={""}>
                 {description}
             </TypographyComponent>
 

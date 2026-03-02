@@ -1,6 +1,9 @@
 import React from "react";
+interface ImageStripProps {
+  images: string[];
+}
 
-export function ImageStrip({ images }) {
+export function ImageStrip({ images }: ImageStripProps) {
     return (
         <>
             {images.flatMap((src, i) => (

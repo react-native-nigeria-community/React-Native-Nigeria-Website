@@ -1,6 +1,22 @@
 import React from "react";
 import clsx from "clsx";
 
+interface InputFieldComponentProps {
+  label?: string;
+  id?: string;
+  cols?: number;
+  rows?: number;
+  as?: "textarea" | "input";
+  type?: string;
+  placeholder?: string;
+  value?: string;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  error?: string;
+  className?: string;
+  required?: boolean;
+  name?: string;
+}
+
 const InputFieldComponent = ({
   label,
   id,
@@ -14,7 +30,7 @@ const InputFieldComponent = ({
   error,
   className,
   ...props
-}) => {
+}: InputFieldComponentProps) => {
   return (
     <div className="w-full">
       {/* Label */}
@@ -39,7 +55,7 @@ const InputFieldComponent = ({
           placeholder={placeholder}
           value={value}
           onChange={onChange}
-          aria-invalid={!!error}
+          aria-invalid={error ? "true" : "false"}
           aria-describedby={error ? `${id}-error` : undefined}
           className={clsx(
             "",
