@@ -415,6 +415,18 @@ export const eventDetails: EventType[] = [
     time: "TBD",
     location: "TBD",
   },
+
+   // EVENT 6 — WITH PANELISTS ---------------------------------
+  {
+    id: "event7",
+    title: "React Native Nigeria Abuja Meetup 2026",
+    date: "28th March 2026",
+    time: "TBD",
+    location: "theBUNKER, Abuja",
+    description:
+      "The latest React Native community meetup in Abuja. Expect hands-on coding sessions, expert talks, and vibrant networking.",
+
+  },
 ];
 
 export default eventDetails;
