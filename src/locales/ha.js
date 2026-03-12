@@ -446,6 +446,13 @@ export default {
     viewCollection: "Duba dukkan tarin hotunan masu inganci",
     accessGallery: "Shiga Gidan Hotunan →",
   },
+  upcomingEvents: {
+    date: "Kwanan wata",
+    time: "Lokaci",
+    location: "Wurin",
+    viewDetails: "Duba Cikakkun Bayanai",
+  },
+
   pastEvents: {
     date: "Kwanan wata",
     time: "Lokaci",
