@@ -1,27 +1,27 @@
 import React, { useState, useEffect, useMemo } from 'react'
 
-function calculateTimeLeft(cleanDate) {
-  const difference = cleanDate - new Date().getTime()
-
-  if (difference <= 0) return { days: 0, hours: 0, minutes: 0, seconds: 0 }
-
-  return {
-    days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-    hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-    minutes: Math.floor((difference / 1000 / 60) % 60),
-    seconds: Math.floor((difference / 1000) % 60),
-  }
-}
-
-function formatNumber(num) {
-  String(num).padStart(2, '0')
-}
-
 const CountdownTimer = ({ targetDate }) => {
   const cleanDate = useMemo(() => {
     const sanitized = targetDate.replace(/(\d+)(st|nd|rd|th)/, '$1')
     return new Date(sanitized).getTime()
   }, [targetDate])
+
+  function calculateTimeLeft() {
+    const difference = cleanDate - new Date().getTime()
+
+    if (difference <= 0) return { days: 0, hours: 0, minutes: 0, seconds: 0 }
+
+    return {
+      days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+      hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+      minutes: Math.floor((difference / 1000 / 60) % 60),
+      seconds: Math.floor((difference / 1000) % 60),
+    }
+  }
+
+  function formatNumber(num) {
+   return String(num).padStart(2, '0')
+  }
 
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft())
 

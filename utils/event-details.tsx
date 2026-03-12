@@ -95,14 +95,14 @@ export interface EventType {
 export const eventDetails: EventType[] = [
   
   //RESTRUCTURED THE ARRAY IN DESCENDING ORDER
-  
+
   // EVENT 7 — WITH PANELISTS ---------------------------------
   {
     id: "event7",
     status: "upcoming",
     title: "React Native Nigeria Abuja Meetup 2026",
     date: "28th March 2026",
-    time: "TBD",
+    time: "10am to 2pm",
     location: "Ventures Park HQ, Maitama, Abuja",
     description:
       "The latest React Native community meetup in Abuja. Expect hands-on coding sessions, expert talks, and vibrant networking.",
@@ -116,6 +116,7 @@ export const eventDetails: EventType[] = [
     date: "TBA",
     time: "TBD",
     location: "TBD",
+    description: "The ultimate developer tour is coming to a campus near you."
   },
 
   // EVENT 5 — WITH PANELISTS ---------------------------------

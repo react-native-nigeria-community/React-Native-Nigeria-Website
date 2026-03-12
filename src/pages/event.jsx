@@ -77,6 +77,7 @@ function Events() {
                   date={list.date}
                   time={list.time}
                   location={list.location}
+                  description={list.description}
                 />
               ))}
             </div>

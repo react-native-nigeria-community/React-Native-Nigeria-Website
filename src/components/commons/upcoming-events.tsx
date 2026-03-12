@@ -14,6 +14,7 @@ interface UpcomingEventProps {
   date: string;
   time: string;
   location: string;
+  description: string;
 }
 
 const UpcomingEventHighLights: React.FC<UpcomingEventProps> = ({
@@ -22,6 +23,7 @@ const UpcomingEventHighLights: React.FC<UpcomingEventProps> = ({
   date,
   time,
   location,
+  description,
 }) => {
   const { t } = useTranslation();
 
@@ -46,7 +48,7 @@ const UpcomingEventHighLights: React.FC<UpcomingEventProps> = ({
           {title}
         </TypographyComponent>
         {id === "event6" && (
-          <p>The ultimate developer tour is coming to a campus near you.</p>
+          <p>{description}</p>
         )}
       </div>
       <div className="pt-6 space-y-4 text-[#121212]">
