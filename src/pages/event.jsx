@@ -1,7 +1,7 @@
 import { TypeAnimation } from "react-type-animation";
 import TypographyComponent from "../components/commons/typography.jsx";
 import PastEventHighLights from "../components/commons/past-events.jsx";
-import eventDetails, { getPastEvents, getUpcomingEvents } from "../../utils/event-details";
+import { getPastEvents, getUpcomingEvents } from "../../utils/event-details";
 import { useTranslation } from "../context/useTranslation.jsx";
 import UpcomingEventHighLights from "../components/commons/upcoming-events.jsx";
 
