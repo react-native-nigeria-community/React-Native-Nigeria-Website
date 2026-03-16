@@ -404,6 +404,13 @@ eventDetailsPage: {
     viewCollection: "View the entire collection of high-resolution images",
     accessGallery: "Access Gallery →",
   },
+        upcomingEvents: {
+        date: "Date",
+        time: "Time",
+        location: "Location",
+        viewDetails: "View Details",
+        },
+
         pastEvents: {
         date: "Date",
         time: "Time",

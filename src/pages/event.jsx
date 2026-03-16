@@ -1,12 +1,16 @@
 import { TypeAnimation } from "react-type-animation";
 import TypographyComponent from "../components/commons/typography.jsx";
 import PastEventHighLights from "../components/commons/past-events.jsx";
-import eventDetails from "../../utils/event-details";
+import { getPastEvents, getUpcomingEvents } from "../../utils/event-details";
 import { useTranslation } from "../context/useTranslation.jsx";
+import UpcomingEventHighLights from "../components/commons/upcoming-events.jsx";
 
 function Events() {
   const { t } = useTranslation();
 
+  const upcomingEvents = getUpcomingEvents()
+  const pastEvents = getPastEvents()
+  
   return (
     <>
       {/* First section */}
@@ -49,6 +53,38 @@ function Events() {
         </div>
       </section>
       {/* Second section */}
+      <section className={"px-6 py-12 space-y-6 lg:bg-bg1"}>
+        <div className={"lg:flex lg:justify-center lg:mx-[125px]"}>
+          <div className={"py-6 w-full"}>
+            <TypographyComponent
+              as={"h3"}
+              variant={"h3"}
+              className={"text-mh3! text-4  xl lg:text-primary"}
+            >
+              {t.eventPage.thirdSection.title}
+            </TypographyComponent>
+
+            <div
+              className={
+                "py-6 grid md:grid-cols-2 xl:grid-cols-3 gap-6 justify-items-stretch items-stretch"
+              }
+            >
+              {upcomingEvents.map((list) => (
+                <UpcomingEventHighLights
+                  key={list.id}
+                  id={list.id}
+                  title={list.title}
+                  date={list.date}
+                  time={list.time}
+                  location={list.location}
+                  description={list.description}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* Third section */}
       <section className={"px-6 py-12 space-y-6"}>
         <div className={"lg:flex lg:justify-center lg:mx-[125px]"}>
           <div className={"py-6"}>
@@ -62,10 +98,10 @@ function Events() {
 
             <div
               className={
-                "py-6 grid md:grid-cols-3 gap-6 justify-items-stretch items-stretch"
+                "py-6 grid md:grid-cols-2 xl:grid-cols-3 gap-6 justify-items-stretch items-stretch"
               }
             >
-              {eventDetails.map((list) => (
+              {pastEvents.map((list) => (
                 <PastEventHighLights
                   key={list.id}
                   id={list.id}

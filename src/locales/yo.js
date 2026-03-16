@@ -438,6 +438,13 @@ export default {
     viewCollection: "Wo gbogbo àkójọ àwọn àwòrán gíga-ìpínlẹ̀",
     accessGallery: "Wọlé sí Ilé-ìṣèwò Àwòrán →",
   },
+   upcomingEvents: {
+    date: "Ọjọ́",
+    time: "Àkókò",
+    location: "Ibùdó",
+    viewDetails: "Wo Àwọn Àlàyé",
+  },
+
   pastEvents: {
     date: "Ọjọ́",
     time: "Àkókò",

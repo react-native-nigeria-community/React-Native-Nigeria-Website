@@ -69,7 +69,7 @@ const PastEventHighLights: React.FC<PastEventProps> = ({
         ): 
         (
         <a href={`/event-details#${id}`}>
-          <ButtonComponent className="mt-2">
+          <ButtonComponent className="mt-2 border-bg2" variant={"outline"}>
             {t.pastEvents.viewDetails}
           </ButtonComponent>
         </a>

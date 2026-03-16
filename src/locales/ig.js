@@ -440,6 +440,12 @@ export default {
     viewCollection: "Lee mkpokọta foto niile dị elu",
     accessGallery: "Banye Ọnụ Ụlọ Foto →",
   },
+  upcomingEvents: {
+    date: "Ụbọchị",
+    time: "Oge",
+    location: "Ebe",
+    viewDetails: "Lee Nkọwa",
+  },
   pastEvents: {
     date: "Ụbọchị",
     time: "Oge",
