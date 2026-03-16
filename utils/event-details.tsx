@@ -281,43 +281,7 @@ export const eventDetails: EventType[] = [
       },
     ],
   },
-
-  // EVENT 3 ---------------------------------
-  {
-    id: "event3",
-    status: "past",
-    title: "React Native Community Akure",
-    date: "18th December 2021",
-    time: "9:00 AM",
-    location: "Akure",
-    description:
-      "A local meetup for React Native developers in Akure. Focused on hands-on sessions and real-life project walkthroughs.",
-    images: [],
-    videos: [],
-    embed: null,
-    galleryLink: null,
-
-    hosts: [
-      {
-        name: "Oluwatobi Shokunbi",
-        photo: oluwatobiPhoto,
-        socials: {
-          twitter: "https://x.com/just1and0",
-          linkedin: "https://www.linkedin.com/in/just1and0/",
-        },
-      },
-    ],
-
-    speakers: [
-      {
-        name: "Adepoju Daniel",
-        role: "Software Engineer",
-        company: "Freelancer",
-        photo: daniel,
-      },
-    ],
-  },
-
+  
   // EVENT 2 — ONLINE EVENT ---------------------------------
   {
     id: "event2",
