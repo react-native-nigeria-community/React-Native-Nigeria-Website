@@ -5,7 +5,7 @@ import MarkerSVG from "../src/assets/svg/marker.svg";
 
 export const upcomingEventHighlights = [
     {
-        title: CalendarSVG,
+        image: CalendarSVG,
         text: en.eventPage.thirdSection.event1.date,
     },
     {
