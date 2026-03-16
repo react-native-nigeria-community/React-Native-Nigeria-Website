@@ -12,6 +12,6 @@ export const useTranslation = () => {
   return context;
 };
 
-export const getLanguageName = (code) => {
+export const getLanguageName = (code: string): string => {
   return languageNames[code] || 'English';
 };
