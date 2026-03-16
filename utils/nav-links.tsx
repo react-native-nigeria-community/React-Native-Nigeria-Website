@@ -16,10 +16,10 @@ export const getNavLinks = (t: any): NavLink[] => [
         label: t?.navEvent,
         link: "/events",
     },
-     {
-        label: t?.navCampus,
-        link: "/campus",
-    },
+    //  {
+    //     label: t?.navCampus,
+    //     link: "/campus",
+    // },
     {
         label: t?.navNewsletter,
         link: "/newsletters"
