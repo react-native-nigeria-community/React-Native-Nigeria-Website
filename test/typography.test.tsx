@@ -1,22 +1,22 @@
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
-import TypographyComponent from "../src/components/commons/typography.jsx";
+import TypographyComponent from "../src/components/commons/typography";
 
 describe("Typography Component", () => {
     it("renders text inside the correct HTML tag", () => {
-        render(<TypographyComponent variant="h1" as="h1">Heading 1</TypographyComponent>);
+        render(<TypographyComponent variant="h1" as="h1" className={undefined} children={undefined}>Heading 1</TypographyComponent>);
         const heading = screen.getByText("Heading 1");
         expect(heading.tagName).toBe("H1");
     });
 
     it("applies the correct variant class", () => {
-        render(<TypographyComponent variant="h2" as="h2">Heading 2</TypographyComponent>);
+        render(<TypographyComponent variant="h2" as="h2" className={undefined} children={undefined}>Heading 2</TypographyComponent>);
         const heading = screen.getByText("Heading 2");
         expect(heading).toHaveClass("text-h2");
     });
 
     it("defaults to paragraph if no props are passed", () => {
-        render(<TypographyComponent>Default Paragraph</TypographyComponent>);
+        render(<TypographyComponent className={undefined} children={undefined}>Default Paragraph</TypographyComponent>);
         const para = screen.getByText("Default Paragraph");
         expect(para.tagName).toBe("P");
         expect(para).toHaveClass("text-p");
@@ -37,8 +37,8 @@ describe("Typography Component", () => {
     it("renders multiple variants correctly", () => {
         render(
             <>
-                <TypographyComponent variant="h4" as="h4">Heading 4</TypographyComponent>
-                <TypographyComponent variant="p" as="p">Paragraph</TypographyComponent>
+                <TypographyComponent variant="h4" as="h4" className={undefined} children={undefined}>Heading 4</TypographyComponent>
+                <TypographyComponent variant="p" as="p" className={undefined} children={undefined}>Paragraph</TypographyComponent>
             </>
         );
 
@@ -51,8 +51,7 @@ describe("Typography Component", () => {
             <TypographyComponent
                 variant="p"
                 as="p"
-                responsiveVariant={{ lg: "h4", md: "h2" }}
-            >
+                responsiveVariant={{ lg: "h4", md: "h2" }} className={undefined} children={undefined}            >
                 Responsive Text
             </TypographyComponent>
         );
