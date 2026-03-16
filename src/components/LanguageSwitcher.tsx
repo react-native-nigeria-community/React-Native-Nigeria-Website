@@ -6,14 +6,14 @@ import ChevronIcon from "./icons/ChevronIcon";
 
 const LanguageSwitcher = () => {
   const { currentLang, changeLanguage, availableLanguages } = useTranslation();
-  const [isOpen, setIsOpen] = useState(false);
-  const dropdownRef = useRef(null);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
-  const currentLanguage = availableLanguages.find(lang => lang.code === currentLang);
+  const currentLanguage = availableLanguages.find((lang: { code: string; flag: string; name: string }) => lang.code === currentLang);
 
   useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
         setIsOpen(false);
       }
     };
@@ -21,7 +21,7 @@ const LanguageSwitcher = () => {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  const handleLanguageChange = (langCode) => {
+  const handleLanguageChange = (langCode: string) => {
     changeLanguage(langCode);
     setIsOpen(false);
   };
@@ -36,16 +36,16 @@ const LanguageSwitcher = () => {
       >
         {/* <LanguageIcon className="w-5 h-5 text-gray-600" /> */}
         <span className="font-medium text-gray-700">
-          {currentLanguage.flag} {currentLanguage.code.toUpperCase()}
+          {currentLanguage?.flag} {currentLanguage?.code.toUpperCase()}
         </span>
-        <ChevronIcon 
-          className={`w-4 h-4 text-gray-600 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} 
+        <ChevronIcon
+          className={`w-4 h-4 text-gray-600 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}
         />
       </button>
 
       {isOpen && (
         <div className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-xl border border-gray-200 py-2 z-50 animate-fadeIn">
-          {availableLanguages.map((language) => (
+          {availableLanguages.map((language: { code: string; flag: string; name: string }) => (
             <button
               key={language.code}
               onClick={() => handleLanguageChange(language.code)}

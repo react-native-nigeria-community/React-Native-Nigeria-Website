@@ -11,11 +11,9 @@ import Events from "./pages/event.jsx";
 import ScrollToTop from "./components/ScrollToTop";
 import PrivacyPolicy from "./pages/PrivacyPolicy.jsx";
 import TermsAndConditions from "./pages/TermsAndConditions.jsx";
-import EventDetails from "./pages/EventDetails.tsx";
+import EventDetails from "./pages/EventDetails";
 import NewsletterArchive from "./pages/newsletters.jsx";
 import Campus from './pages/campus';
-
-
 
 function App() {
     return (
