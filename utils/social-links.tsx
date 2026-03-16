@@ -3,9 +3,13 @@ import LinkedInSVG from "../src/assets/svg/linkedIn.svg";
 import SlackSVG from "../src/assets/svg/slack.svg";
 import GitHubSVG from "../src/assets/svg/github.svg";
 import YouTubeSVG from "../src/assets/svg/youtube.svg";
+interface Social {
+  image: string;
+  altText: string;
+  link: string;
+}
 
-
-export const getSocials = [
+export const getSocials: Social[] = [
         {
             image: LinkedInSVG,
             altText: "LinkedIn-icon",

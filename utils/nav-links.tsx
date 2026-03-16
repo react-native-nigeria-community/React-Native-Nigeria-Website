@@ -1,4 +1,9 @@
-export const getNavLinks = (t) => [
+interface NavLink {
+  label: string;
+  link: string;
+}
+
+export const getNavLinks = (t: any): NavLink[] => [
     {
         label: t?.navHome,
         link: "/",

@@ -1,5 +1,10 @@
+interface WriteUp {
+  title: string;
+  description: string;
+  link: string;
+}
 
-export const getWriteUps = (t) => [
+export const getWriteUps = (t: any): WriteUp[] => [
     {
         title: t?.sixthSection?.communityCard?.communityCard1?.title,
         description: t?.sixthSection?.communityCard?.communityCard1?.description,
