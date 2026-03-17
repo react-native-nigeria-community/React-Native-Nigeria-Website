@@ -165,7 +165,7 @@ const EventDetailsTab: React.FC<EventDetailsTabProps> = ({
               <TypographyComponent
                 as="h3"
                 variant="h3"
-                className="text-[22px] font-semibold text-primary mb-4"
+                className="text-[22px] font-semibold text-secondary mb-4"
               >
                 {T.summaryTitle}
               </TypographyComponent>
