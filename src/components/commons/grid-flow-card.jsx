@@ -3,15 +3,15 @@ import TypographyComponent from "./typography.jsx";
 
 const GridFlowCard = ({ icon, title, description }) => {
     return (
-        <div className="flex gap-5 lg:w-[455px] h-full text-left">
+        <div className="flex gap-5 xl:w-[455px] text-left">
             <div className="w-fit row-span-1 lg:row-span-4">
                 <div className="rounded-[15px] w-[60px] h-[60px] flex items-center justify-center lg:p-[22px] bg-bg2/10 lg:w-[79px] lg:h-[79px]">
                     {icon}
                 </div>
             </div>
 
-            <div>
-                <div className="pl-2 col-span-3 place-self-center lg:place-self-start lg:pl-0 lg:col-span-3 lg:text-nowrap lg:row-span-1 lg:h-fit">
+            <div className="flex flex-col  lg:max-w-[32ch] xl:max-w-none">
+                <div className="col-span-3 md:place-self-center lg:place-self-start lg:pl-0 lg:col-span-3 lg:text-nowrap lg:row-span-1 lg:h-fit">
                     <TypographyComponent
                         as="h4"
                         variant="h4"

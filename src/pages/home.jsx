@@ -77,8 +77,8 @@ function HomePage() {
             </section>
 
             {/* Second section */}
-            <section className={"text-center py-6 lg:py-[112px] lg:bg-bg1"}>
-                <div className={"mb-8 gap-2.5 lg:w-[589px] lg:mx-auto lg:mb-[90px]"}>
+            <section className={"text-center px-6  py-12 lg:py-[112px] lg:bg-bg1"}>
+                <div className={"mb-8 max-w-[55ch] mx-auto gap-2.5 lg:w-[589px] lg:mx-auto lg:mb-[90px]"}>
                     <TypographyComponent as={"h6"} variant={"h6"} className={"uppercase text-accent! text-base/5 font-normal"}>{t.secondSection.whyRnn}</TypographyComponent>
                     <TypographyComponent as={"h3"} variant={"h3"} className={"font-semibold leading-0 tracking-normal text-bg1! lg:text-primary!"}>
                         {t.secondSection.chosenByDevs1} <span className={"lg:hidden"}>{t.secondSection.chosenByDevs2}</span>
@@ -86,8 +86,7 @@ function HomePage() {
                 </div>
 
                 <div className={"space-y-[30px] lg:flex lg:items-center lg:justify-center"}>
-                    <div className={"mx-6 md:grid md:grid-cols-2 md:gap-x-[80px] lg:space-y-[80px]"}>
-                        {features.map((feature, index) => (
+                    <div className={"grid auto-rows-fr md:grid-cols-2 gap-[40px] lg:gap-[80px] lg:mb-[80px]"}>                        {features.map((feature, index) => (
                             <GridFlowCard
                                 key={`${feature.title}-${index}`} // Using title in key helps with translation updates
                                 icon={feature.icon}
@@ -98,7 +97,7 @@ function HomePage() {
                     </div>
                 </div>
 
-                <div className={"px-6 text-left lg:flex lg:items-center lg:mx-[183px] lg:justify-between"}>
+                <div className={"mt-10 px-6 text-left lg:flex lg:items-center lg:mx-[7%] lg:justify-between"}>
                     <div className={"pb-8 space-y-6 lg:w-[589px]!"}>
                         <TypographyComponent as={"h3"} variant={"h3"} className={"text-mh3! font-normal! text-bg1! leading-[44px]! tracking-[-1.2px] lg:text-primary!"}>
                             {t.secondSection.readyToBuildRna.title}
@@ -109,7 +108,7 @@ function HomePage() {
                     </div>
                     <div>
                         <a href={t.joinCommunityLink} target="_blank" rel="noopener noreferrer">
-                            <ButtonComponent variant="primary" className="font-normal! flex mx-auto text-xs/4 text-nowrap lg:h-fit lg:py-3.5 lg:px-[23px] lg:text-[18px] lg:font-medium!">
+                            <ButtonComponent variant="primary" className="font-normal! flex mx-auto text-xs/4 text-wrap lg:h-fit lg:py-3.5 lg:px-[23px] lg:text-[18px] lg:font-medium!">
                                 {t.joinCommunity}
                             </ButtonComponent>
                         </a>
@@ -118,7 +117,7 @@ function HomePage() {
             </section>
 
             {/* Third section */}
-            <section className={"px-6 py-12 bg-[#F4F7FA]"}>
+            <section className={"px-6 py-12 md:pt-[100px] md:pb-[54px] bg-[#F4F7FA]"}>
                 <div className={"lg:w-[513px] space-y-6 text-center pb-8 lg:mx-auto"}>
                     <TypographyComponent as={"h3"} variant={"h3"} responsiveVariant={"h2"} className={"text-mh3! leading-none! tracking-[-1.2px]! text-secondary font-semibold! lg:text-h2/12! lg:font-medium!"}>{t.thirdSection.featuredTopics}</TypographyComponent>
                     <TypographyComponent as={"p"} variant={"p"} className={"leading-8! tracking-[-0.013em]! text-secondary!"}>
@@ -127,7 +126,7 @@ function HomePage() {
                     </TypographyComponent>
                 </div>
 
-                <div className={"space-y-4 lg:mx-[155px] lg:flex lg:justify-center lg:space-x-10"}>
+                <div className={"grid gap-8  lg:flex sm:justify-center sm:self-stretch lg:gap-x-10"}>
                     {topics.map((topic, index) => (
                         <FeaturedCard
                             key={`${topic.title}-${index}`}
@@ -139,7 +138,7 @@ function HomePage() {
                     ))}
                 </div>
 
-                <div className={"text-center pt-4 lg:pt-12 lg:pb-[54px]"}>
+                <div className={"text-center pt-6 lg:pt-12 lg:pb-[54px]"}>
                     <a href={t.exploreLink} target="_blank" rel="noopener noreferrer">
                         <ButtonComponent variant="primary" className="text-xs/4 tracking-normal font-normal py-1.5 px-9 lg:text-[18px]/0! lg:py-3.5 lg:px-[23px] lg:tracking-[-0.5px] lg:w-[157px] lg:h-[50px] rounded-lg!">
                             {t.explore}
@@ -149,8 +148,8 @@ function HomePage() {
             </section>
 
             {/* Fourth section */}
-            <section className={"bg-secondary lg:bg-bg1 py-12 px-6 lg:px-[165px] lg:pt-[100px] lg:pb-[39px]"}>
-                <div className={"px-6 space-y-6 pb-6"}>
+            <section className={"bg-secondary lg:bg-bg1 py-12 px-6"}>
+                <div className={"space-y-6 pb-6"}>
                     <TypographyComponent as={"h3"} className={"text-mh3! text-center font-semibold! leading-none! tracking-[-1.2px]! text-primary lg:text-h2/12!"}>
                         {t.fourthSection.upComingEvents.title}
                     </TypographyComponent>
@@ -175,15 +174,15 @@ function HomePage() {
             </section>
 
             {/* Fifth section */}
-            <section className={"pt-12"}>
-                <div className={"mb-8 gap-2.5 lg:w-[589px] lg:mx-auto lg:mb-[30px] text-center"}>
+            <section className={"px-6 py-12 md:py-[76px] sm:px-12"}>
+                <div className={"mb-8 min-w-0 max-w-[40ch] mx-auto px-4 gap-2.5 lg:w-[589px] lg:mx-auto lg:mb-[30px] text-center"}>
                     <TypographyComponent as={"h3"} variant={"h3"} className={"font-semibold! leading-none! tracking-[-1.2px]! text-mh3! text-secondary! lg:leading-12"}>
                         {t.fifthSection.exploreReactNative}
                     </TypographyComponent>
                 </div>
 
-                <div className={"px-6 pb-[40px] lg:flex lg:justify-center"}>
-                    <div className={"md:grid md:grid-cols-2 md:space-x-[15px] lg:grid lg:grid-cols-3 lg:space-x-[30px]"}>
+                <div className={"lg:flex lg:justify-center"}>
+                    <div className={"grid auto-rows-fr sm:grid-cols-2 gap-[24px] lg:grid lg:grid-cols-3 lg:gap-[30px]"}>
                         {openSourceProjects.map((source, index) => (
                             <OpenSourceCard
                                 key={`${source.title}-${index}`}
@@ -199,7 +198,7 @@ function HomePage() {
             </section>
 
             {/* Sixth section */}
-            <section className={"bg-secondary px-6 pt-12 pb-[3.625rem] lg:bg-bg1"}>
+            <section className={"bg-secondary px-6 pt-12 pb-[3.625rem] md:py-[90px] lg:bg-bg1"}>
                 <div className={"mb-6 space-y-6 lg:w-[589px] lg:mx-auto lg:mb-[1.875rem] text-center"}>
                     <TypographyComponent as={"h3"} variant={"h3"} className={"text-primary text-mh3/none! tracking-[-0.075rem]! font-normal"}>{t.sixthSection.contributeCommunity.title}</TypographyComponent>
                     <TypographyComponent as={"p"} variant={"p"} className={"font-normal! text-primary leading-8 tracking-[-0.013rem] lg:tracking-[-0.013rem]! lg:leading-8"}>

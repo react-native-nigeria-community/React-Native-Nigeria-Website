@@ -25,7 +25,7 @@ const FooterComponent = () => {
                     </TypographyComponent>
                 </div>
                 <div className={"grid w-full pt-11 lg:pt-0 lg:flex-none lg:flex-row lg:w-auto"}>
-                    <ul className="flex justify-between text-h6 lg:flex-row lg:items-center lg:gap-4 font-medium">
+                    <ul className="flex justify-center gap-4 flex-wrap text-h6 lg:flex-row lg:items-center lg:gap-4 font-medium">
                         
                         {navLinks.map((link, index) => (
                             <NavList
@@ -35,7 +35,7 @@ const FooterComponent = () => {
                             />
                         ))}
                     </ul>
-                    <div className={"flex justify-center gap-6 py-11 lg:justify-end lg:py-0 lg:pt-8"}>
+                    <div className={"flex flex-wrap min-w-0 w-full justify-center gap-6 py-11 lg:justify-end lg:py-0 lg:pt-8"}>
                         {getSocials.map((social, index) => (
                             <SocialIcon
                                 key={index}
