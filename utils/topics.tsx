@@ -1,6 +1,6 @@
-import Topic1PNG from "../src/assets/img/topics/topic-1.png";
-import Topic2PNG from "../src/assets/img/topics/topic-2.png";
-import Topic3PNG from "../src/assets/img/topics/topic-3.png";
+import Topic1PNG from "../src/assets/img/topics/topic-1.webp";
+import Topic2PNG from "../src/assets/img/topics/topic-2.webp";
+import Topic3PNG from "../src/assets/img/topics/topic-3.webp";
 interface Topic {
   image: string;
   title: string;

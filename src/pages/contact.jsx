@@ -2,7 +2,7 @@ import React from "react";
 import InputFieldComponent from "../components/commons/input-field.jsx";
 import ButtonComponent from "../components/commons/button.jsx";
 import CheckMarkSVG from "../assets/svg/check-mark.svg";
-import ContactPNG from "../assets/img/contact.png";
+import ContactPNG from "../assets/img/contact.webp";
 import TypographyComponent from "../components/commons/typography.jsx";
 import toast, { Toaster } from "react-hot-toast";
 import { useTranslation } from "../context/useTranslation.jsx";

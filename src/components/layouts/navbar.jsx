@@ -1,6 +1,6 @@
 import React, { useState, useCallback } from "react";
 import { Link, useLocation } from "react-router-dom";
-import LogoPNG from "../../assets/img/nav-logo.png";
+import LogoPNG from "../../assets/img/nav-logo.webp";
 import ButtonComponent from "../commons/button.jsx";
 import NavList from "../commons/nav-list.jsx";
 import { getNavLinks } from "../../../utils/nav-links.jsx";

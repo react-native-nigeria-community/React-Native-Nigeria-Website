@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import LogoPNG from "../../assets/img/nav-logo.png";
+import LogoPNG from "../../assets/img/nav-logo.webp";
 import TypographyComponent from "../commons/typography.jsx";
 import { getNavLinks } from "../../../utils/nav-links.jsx";
 import NavList from "../commons/nav-list.jsx";
