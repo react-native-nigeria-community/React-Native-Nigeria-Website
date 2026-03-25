@@ -16,7 +16,7 @@ function Events() {
       {/* First section */}
       <section
         className={
-          "lg:bg-bg1 bg-[url(./assets/img/mb-blue.png)] lg:bg-[url(./assets/img/lg-bg-screen.png)] bg-no-repeat bg-bottom bg-contain h-[366px] lg:h-[655px] flex items-center justify-center text-center lg:w-full"
+          "lg:bg-bg1 bg-[url(./assets/img/mb-blue.webp)] lg:bg-[url(./assets/img/lg-bg-screen.webp)] bg-no-repeat bg-bottom bg-contain h-[366px] lg:h-[655px] flex items-center justify-center text-center lg:w-full"
         }
       >
         <div className={"gird justify-items-center content-center"}>
