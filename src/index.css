@@ -36,22 +36,8 @@
     background-size: cover;
 }
 
-.mb-yellow-bg  {
-    background-image: url('./assets/img/mb-yellow.png');
-    background-repeat: no-repeat;
-    background-position: bottom center;
-    background-size: contain;
-}
-
-.yellow-bg  {
-    background-image: url('./assets/img/yellow-swiggly-bg.png');
-    background-repeat: no-repeat;
-    background-position: bottom center;
-    background-size: contain;
-}
-
 .silver-wave    {
-    background-image: url('./assets/img/silver-wave.png');
+    background-image: url('./assets/img/silver-wave.webp');
     background-size: contain;
     background-repeat: no-repeat;
 }
@@ -73,7 +59,7 @@
 }
 
 .pill {
-    @apply w-fit items-center rounded-full bg-cyan-50 text-cyan-900 px-2 py-1 text-xs font-medium ring-1 ring-inset ring-indigo-700/10;
+    @apply items-center px-2 py-1 text-xs font-medium rounded-full w-fit bg-cyan-50 text-cyan-900 ring-1 ring-inset ring-indigo-700/10;
 }
 
 .glow-shadow {

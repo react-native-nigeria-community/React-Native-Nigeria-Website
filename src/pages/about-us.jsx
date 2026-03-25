@@ -1,8 +1,8 @@
 
-import AboutJPG from "../assets/img/about.jpg";
+import AboutJPG from "../assets/img/about.webp";
 import TypographyComponent from "../components/commons/typography.jsx";
 import AccordionComponent from "../components/commons/accordion.jsx";
-import { getAccordions } from "../../utils/accordion.jsx"; 
+import { getAccordions } from "../../utils/accordion.jsx";
 import { useTranslation } from "../context/useTranslation";
 
 function AboutUs() {
