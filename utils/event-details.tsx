@@ -99,7 +99,7 @@ export const eventDetails: EventType[] = [
   // EVENT 7 — WITH PANELISTS ---------------------------------
   {
     id: "event7",
-    status: "upcoming",
+    status: "past",
     title: "React Native Nigeria Abuja Meetup 2026",
     date: "28th March 2026",
     time: "10am to 2pm",
