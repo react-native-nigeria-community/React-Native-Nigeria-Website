@@ -106,6 +106,94 @@ export const eventDetails: EventType[] = [
     location: "Ventures Park HQ, Maitama, Abuja",
     description:
       "The latest React Native community meetup in Abuja. Expect hands-on coding sessions, expert talks, and vibrant networking.",
+    images: [rnnw1, rnnw2, rnnw3, rnnw4],
+    videos: [],
+    embed:
+      "https://drive.google.com/embeddedfolderview?id=1qqtp6maveBK5zDc_EXGKs4Jbcm3jWxjU#grid",
+    galleryLink:
+      "https://drive.google.com/folderview?id=1qqtp6maveBK5zDc_EXGKs4Jbcm3jWxjU#grid",
+
+    hosts: [
+      {
+        name: "Fisayo Afowowe",
+        photo: fisayo,
+        socials: {
+          linkedin: "https://www.linkedin.com/in/fisayo-afowowe-7932911b1/",
+        },
+      },
+      {
+        name: "Naomi Igimoh",
+        photo: naomi,
+        socials: {
+          linkedin: "https://www.linkedin.com/in/naomi-igimoh/",
+        },
+      },
+      {
+        name: "Oluwatobi Shokunbi",
+        photo: oluwatobiPhoto,
+        socials: {
+          twitter: "https://x.com/just1and0",
+          linkedin: "https://www.linkedin.com/in/just1and0/",
+        },
+      },
+    ],
+
+    speakers: [
+      {
+        name: "Fisayo Afowowe",
+        role: "Software Engineer",
+        company: "React Native Nigeria",
+        photo: fisayo,
+        socials: {
+          linkedin: "https://www.linkedin.com/in/fisayo-afowowe-7932911b1/",
+        },
+      },
+      {
+        name: "Mishael Akinyemi",
+        role: "React Native Engineer",
+        company: "React Native Nigeria",
+        photo: moso,
+        socials: {
+          linkedin: "https://www.linkedin.com/in/akinyemi-mosolasi/",
+        },
+      },
+      {
+        name: "Oluwatobi Shokunbi",
+        role: "Founder & Speaker",
+        company: "React Native Nigeria",
+        photo: oluwatobiPhoto,
+        socials: {
+          linkedin: "https://www.linkedin.com/in/just1and0/",
+        },
+      },
+    ],
+
+    panelists: [
+      {
+        name: "Fisayo Afowowe",
+        role: "Panelist",
+        photo: fisayo,
+        socials: {
+          linkedin: "https://www.linkedin.com/in/fisayo-afowowe-7932911b1/",
+        },
+      },
+      {
+        name: "Mishael Akinyemi",
+        role: "Panelist",
+        photo: moso,
+        socials: {
+          linkedin: "https://www.linkedin.com/in/akinyemi-mosolasi/",
+        },
+      },
+      {
+        name: "Chinonso Ichoku",
+        role: "Panelist",
+        photo: chinonso,
+        socials: {
+          linkedin: "https://www.linkedin.com/in/chinonso-ichoku/",
+        },
+      },
+    ],
   },
 
   // EVENT 6 — ---------------------------------

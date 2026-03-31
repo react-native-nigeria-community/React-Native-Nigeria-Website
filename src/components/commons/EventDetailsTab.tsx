@@ -82,7 +82,6 @@ const EventDetailsTab: React.FC<EventDetailsTabProps> = ({
     { id: "speakers", name: "Speakers" },
     { id: "hosts", name: "Hosts" },
     { id: "panelists", name: "Panelists" }, // ⭐ NEW TAB
-    { id: "photos", name: "Photos" },
     { id: "videos", name: "Videos" },
     { id: "gallery", name: "Gallery" },
   ] as const;
@@ -109,7 +108,6 @@ const EventDetailsTab: React.FC<EventDetailsTabProps> = ({
       if (t.id === "speakers") return event.speakers?.length;
       if (t.id === "hosts") return event.hosts?.length;
       if (t.id === "panelists") return event.panelists?.length; // ⭐ NEW
-      if (t.id === "photos") return event.images?.length;
       if (t.id === "videos") return event.videos?.length;
       if (t.id === "gallery") return event.galleryLink || event.embed;
       return false;
