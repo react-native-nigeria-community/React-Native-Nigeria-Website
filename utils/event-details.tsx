@@ -23,6 +23,8 @@ import chibuke from "../src/assets/img/chibuke.webp";
 import chinonso from "../src/assets/img/chinonso.webp";
 import naomi from "../src/assets/img/naomi.webp";
 import fisayo from "../src/assets/img/fisayo.webp";
+import mabel from "../src/assets/img/mabel.webp";
+import semilore from "../src/assets/img/semilore.webp";
 import ali from "../src/assets/img/ali.webp";
 import shodipo from "../src/assets/img/shodipo.webp";
 import godswill from "../src/assets/img/godswill.webp";
@@ -115,10 +117,10 @@ export const eventDetails: EventType[] = [
 
     hosts: [
       {
-        name: "Fisayo Afowowe",
-        photo: fisayo,
+        name: "Marbel Ogbu",
+        photo: mabel,
         socials: {
-          linkedin: "https://www.linkedin.com/in/fisayo-afowowe-7932911b1/",
+          linkedin: "https://www.linkedin.com/in/marbel-ogbu-014358279/",
         },
       },
       {
@@ -129,11 +131,10 @@ export const eventDetails: EventType[] = [
         },
       },
       {
-        name: "Oluwatobi Shokunbi",
-        photo: oluwatobiPhoto,
+        name: "Semilore Atolagbe",
+        photo: semilore,
         socials: {
-          twitter: "https://x.com/just1and0",
-          linkedin: "https://www.linkedin.com/in/just1and0/",
+          linkedin: "https://www.linkedin.com/in/semilore-atolagbe/",
         },
       },
     ],
