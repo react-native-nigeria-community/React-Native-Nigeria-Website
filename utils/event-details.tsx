@@ -23,6 +23,8 @@ import chibuke from "../src/assets/img/chibuke.webp";
 import chinonso from "../src/assets/img/chinonso.webp";
 import naomi from "../src/assets/img/naomi.webp";
 import fisayo from "../src/assets/img/fisayo.webp";
+import mabel from "../src/assets/img/mabel.webp";
+import semilore from "../src/assets/img/semilore.webp";
 import ali from "../src/assets/img/ali.webp";
 import shodipo from "../src/assets/img/shodipo.webp";
 import godswill from "../src/assets/img/godswill.webp";
@@ -99,13 +101,100 @@ export const eventDetails: EventType[] = [
   // EVENT 7 — WITH PANELISTS ---------------------------------
   {
     id: "event7",
-    status: "upcoming",
+    status: "past",
     title: "React Native Nigeria Abuja Meetup 2026",
     date: "28th March 2026",
     time: "10am to 2pm",
     location: "Ventures Park HQ, Maitama, Abuja",
     description:
       "The latest React Native community meetup in Abuja. Expect hands-on coding sessions, expert talks, and vibrant networking.",
+    images: [rnnw1, rnnw2, rnnw3, rnnw4],
+    videos: [],
+    embed:
+      "https://drive.google.com/embeddedfolderview?id=1qqtp6maveBK5zDc_EXGKs4Jbcm3jWxjU#grid",
+    galleryLink:
+      "https://drive.google.com/folderview?id=1qqtp6maveBK5zDc_EXGKs4Jbcm3jWxjU#grid",
+
+    hosts: [
+      {
+        name: "Marbel Ogbu",
+        photo: mabel,
+        socials: {
+          linkedin: "https://www.linkedin.com/in/marbel-ogbu-014358279/",
+        },
+      },
+      {
+        name: "Naomi Igimoh",
+        photo: naomi,
+        socials: {
+          linkedin: "https://www.linkedin.com/in/naomi-igimoh/",
+        },
+      },
+      {
+        name: "Semilore Atolagbe",
+        photo: semilore,
+        socials: {
+          linkedin: "https://www.linkedin.com/in/semilore-atolagbe/",
+        },
+      },
+    ],
+
+    speakers: [
+      {
+        name: "Fisayo Afowowe",
+        role: "Software Engineer",
+        company: "React Native Nigeria",
+        photo: fisayo,
+        socials: {
+          linkedin: "https://www.linkedin.com/in/fisayo-afowowe-7932911b1/",
+        },
+      },
+      {
+        name: "Mishael Akinyemi",
+        role: "React Native Engineer",
+        company: "React Native Nigeria",
+        photo: moso,
+        socials: {
+          linkedin: "https://www.linkedin.com/in/akinyemi-mosolasi/",
+        },
+      },
+      {
+        name: "Oluwatobi Shokunbi",
+        role: "Founder & Speaker",
+        company: "React Native Nigeria",
+        photo: oluwatobiPhoto,
+        socials: {
+          linkedin: "https://www.linkedin.com/in/just1and0/",
+        },
+      },
+    ],
+
+    panelists: [
+      {
+        name: "Fisayo Afowowe",
+        role: "Panelist",
+        photo: fisayo,
+        socials: {
+          linkedin: "https://www.linkedin.com/in/fisayo-afowowe-7932911b1/",
+        },
+      },
+      {
+        name: "Mishael Akinyemi",
+        role: "Panelist",
+        photo: moso,
+        socials: {
+          linkedin: "https://www.linkedin.com/in/akinyemi-mosolasi/",
+        },
+      },
+      {
+        name: "Chinonso Ichoku",
+        role: "Panelist",
+        photo: chinonso,
+        socials: {
+          linkedin: "https://www.linkedin.com/in/chinonso-ichoku/",
+        },
+      },
+    ],
   },
 
   // EVENT 6 — ---------------------------------
