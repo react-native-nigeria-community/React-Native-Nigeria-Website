@@ -4,12 +4,12 @@ import { useState, useMemo } from "react";
 import ButtonComponent from "../components/commons/button.jsx";
 import GridFlowCard from "../components/commons/grid-flow-card.jsx";
 import FeaturedCard from "../components/commons/featured-card.jsx";
-import { useTranslation } from "../context/useTranslation.jsx"; 
+import { useTranslation } from "../context/useTranslation.jsx";
 import { getFeatures } from "../../utils/features.jsx";
 import { getLiveEvents } from "../../utils/live-events.jsx";
 import { getWriteUps } from "../../utils/write-for-us.jsx";
-import WriteForUsCard from "../components/sections/write-for-us.jsx";
-import OpenSourceCard from "../components/sections/open-source.jsx";
+import WriteForUsCard from "../components/sections/write-for-us";
+import OpenSourceCard from "../components/sections/open-source";
 import { getOpenSourceProjects } from "../../utils/open-source-projects.jsx";
 import { getTopics } from "../../utils/topics.jsx";
 import LiveTalkCard from "../components/commons/live-talk.jsx";
@@ -50,7 +50,7 @@ function HomePage() {
                                 <TypeAnimation
                                     // The key is the "secret sauce". By including the text string in the key,
                                     // React will kill the old animation and start a new one the moment the language changes.
-                                    key={`phase0-${animatedText}`} 
+                                    key={`phase0-${animatedText}`}
                                     sequence={[
                                         animatedText,
                                         500,
@@ -87,13 +87,13 @@ function HomePage() {
 
                 <div className={"space-y-[30px] lg:flex lg:items-center lg:justify-center"}>
                     <div className={"grid auto-rows-fr md:grid-cols-2 gap-[40px] lg:gap-[80px] lg:mb-[80px]"}>                        {features.map((feature, index) => (
-                            <GridFlowCard
-                                key={`${feature.title}-${index}`} // Using title in key helps with translation updates
-                                icon={feature.icon}
-                                title={feature.title}
-                                description={feature.description}
-                            />
-                        ))}
+                        <GridFlowCard
+                            key={`${feature.title}-${index}`} // Using title in key helps with translation updates
+                            icon={feature.icon}
+                            title={feature.title}
+                            description={feature.description}
+                        />
+                    ))}
                     </div>
                 </div>
 
@@ -154,7 +154,7 @@ function HomePage() {
                         {t.fourthSection.upComingEvents.title}
                     </TypographyComponent>
                     <TypographyComponent as={"p"} variant={"p"} className={"text-primary text-p/8! tracking-[-0.2px] text-center lg:text-p/8!"}>
-                        {t.fourthSection.upComingEvents.description.description2} <br className={"hidden lg:block"}/> {t.fourthSection.upComingEvents.description.description3}
+                        {t.fourthSection.upComingEvents.description.description2} <br className={"hidden lg:block"} /> {t.fourthSection.upComingEvents.description.description3}
                     </TypographyComponent>
                 </div>
 

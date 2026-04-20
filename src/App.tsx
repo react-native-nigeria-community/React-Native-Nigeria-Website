@@ -6,7 +6,7 @@ import AboutUs from "./pages/about-us.jsx";
 import Contact from "./pages/contact.jsx";
 import NavbarComponent from "./components/layouts/navbar.jsx";
 import FooterComponent from "./components/layouts/footer.jsx";
-import NewsletterComponent from "./components/sections/newsletter.jsx";
+import NewsletterComponent from "./components/sections/newsletter";
 import Events from "./pages/event.jsx";
 import ScrollToTop from "./components/ScrollToTop";
 import PrivacyPolicy from "./pages/PrivacyPolicy.jsx";

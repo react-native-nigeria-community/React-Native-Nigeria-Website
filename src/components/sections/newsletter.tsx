@@ -1,15 +1,15 @@
 import React, { useState } from "react";
-import ButtonComponent from "../commons/button.jsx";
-import TypographyComponent from "../commons/typography.jsx";
-import InputFieldComponent from "../commons/input-field.jsx";
-import { useTranslation } from "../../context/useTranslation.jsx";
+import ButtonComponent from "../commons/button";
+import TypographyComponent from "../commons/typography";
+import InputFieldComponent from "../commons/input-field";
+import { useTranslation } from "../../context/useTranslation";
 
-const NewsletterComponent = () => {
+const NewsletterComponent: React.FC = () => {
     const { t } = useTranslation();
-    const [email, setEmail] = useState("");
-    const [error, setError] = useState("");
+    const [email, setEmail] = useState<string>("");
+    const [error, setError] = useState<string>("");
 
-    const handleSubmit = (e) => {
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
         if (!email.includes("@")) {
@@ -60,7 +60,7 @@ const NewsletterComponent = () => {
                             className={"w-full p-3 lg:w-lg h-10 focus:outline-none border border-black rounded-[10px] lg:border-none"}
                             placeholder={t.placeholderEmail}
                             value={email}
-                            onChange={(e) => setEmail(e.target.value)}
+                            onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
                             error={error}
                         />
 
