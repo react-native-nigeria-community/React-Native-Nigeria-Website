@@ -1,8 +1,15 @@
-import TypographyComponent from "./typography.jsx";
+import React from "react";
+import TypographyComponent from "./typography";
 import { useTranslation } from "../../context/useTranslation";
 
+interface NewsletterCardProps {
+    title: string;
+    date: string;
+    description: string;
+    link: string;
+}
 
-function NewsletterCard({ title, date, description, link }) {
+const NewsletterCard: React.FC<NewsletterCardProps> = ({ title, date, description, link }) => {
     const { t } = useTranslation();
     
     return (
