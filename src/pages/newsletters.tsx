@@ -1,11 +1,11 @@
-import TypographyComponent from "../components/commons/typography.jsx";
+import React from "react";
+import TypographyComponent from "../components/commons/typography";
 import { useTranslation } from "../context/useTranslation";
-import NewsletterCard from "../components/commons/newsletter-card.jsx";
-import newsletters from "../constants/newsletters.js";
+import NewsletterCard from "../components/commons/newsletter-card";
+import newsletters from "../constants/newsletters";
 
-function NewsletterArchive() {
+    const NewsletterArchive: React.FC = () => {
     const { t } = useTranslation();
-
     return (
         <>
             {/* First section: Page introduction */}

@@ -1,17 +1,18 @@
+
+import React from "react";
 import { TypeAnimation } from "react-type-animation";
-import TypographyComponent from "../components/commons/typography.jsx";
-import PastEventHighLights from "../components/commons/past-events.jsx";
+import TypographyComponent from "../components/commons/typography";
+import PastEventHighLights from "../components/commons/past-events";
 import { getPastEvents, getUpcomingEvents } from "../../utils/event-details";
-import { useTranslation } from "../context/useTranslation.jsx";
-import UpcomingEventHighLights from "../components/commons/upcoming-events.jsx";
+import { useTranslation } from "../context/useTranslation";
+import UpcomingEventHighLights from "../components/commons/upcoming-events";
 
-function Events() {
-  const { t } = useTranslation();
-
-  const upcomingEvents = getUpcomingEvents()
-  const pastEvents = getPastEvents()
-  
-  return (
+    const Events: React.FC = () => {
+    const { t } = useTranslation();
+    const upcomingEvents = getUpcomingEvents();
+    const pastEvents = getPastEvents();
+    
+    return (
     <>
       {/* First section */}
       <section

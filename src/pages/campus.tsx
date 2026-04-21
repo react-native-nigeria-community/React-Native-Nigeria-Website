@@ -1,14 +1,15 @@
+
+import React from "react";
 import { TypeAnimation } from "react-type-animation";
-import TypographyComponent from "../components/commons/typography.jsx";
+import TypographyComponent from "../components/commons/typography";
 import eventDetails from "../../utils/event-details";
-import { useTranslation } from "../context/useTranslation.jsx";
-import { ImageStrip } from "../components/commons/image-carousel.jsx";
+import { useTranslation } from "../context/useTranslation";
+import { ImageStrip } from "../components/commons/image-carousel";
 
-function Campus() {
-  const { t } = useTranslation();
-  const images = eventDetails.flatMap((item) => item.images);
-
-  return (
+    const Campus: React.FC = () => {
+    const { t } = useTranslation();
+    const images = eventDetails.flatMap((item) => item.images);
+    return (
     <>
       {/* First section */}
       <section

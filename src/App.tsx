@@ -1,24 +1,24 @@
 import './App.css';
 import { Routes, Route } from "react-router-dom";
 import { LanguageProvider } from "./context/LanguageContext";
-import HomePage from "./pages/home.jsx";
-import AboutUs from "./pages/about-us.jsx";
-import Contact from "./pages/contact.jsx";
-import NavbarComponent from "./components/layouts/navbar.jsx";
-import FooterComponent from "./components/layouts/footer.jsx";
-import NewsletterComponent from "./components/sections/newsletter.jsx";
-import Events from "./pages/event.jsx";
+import HomePage from "./pages/home";
+import AboutUs from "./pages/about-us";
+import Contact from "./pages/contact";
+import NavbarComponent from "./components/layouts/navbar";
+import FooterComponent from "./components/layouts/footer";
+import NewsletterComponent from "./components/sections/newsletter";
+import Events from "./pages/event";
 import ScrollToTop from "./components/ScrollToTop";
-import PrivacyPolicy from "./pages/PrivacyPolicy.jsx";
-import TermsAndConditions from "./pages/TermsAndConditions.jsx";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsAndConditions from "./pages/TermsAndConditions";
 import EventDetails from "./pages/EventDetails";
-import NewsletterArchive from "./pages/newsletters.jsx";
+import NewsletterArchive from "./pages/newsletters";
 import Campus from './pages/campus';
 
 function App() {
     return (
         <LanguageProvider>
-         <ScrollToTop />
+          <ScrollToTop />
             <NavbarComponent />
             <Routes>
                 <Route path="/" element={<HomePage />} />
@@ -34,7 +34,6 @@ function App() {
             <NewsletterComponent />
             <FooterComponent />
         </LanguageProvider>
-        
     );
 }
 
