@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from "react";
-import TypographyComponent from "./typography.tsx";
-import ImageModal from "./ImageModal.tsx";
-import en from "../../locales/en.ts";
+import TypographyComponent from "./typography";
+import ImageModal from "./ImageModal";
+import en from "../../locales/en";
 
 interface HostSocials {
   twitter?: string;
