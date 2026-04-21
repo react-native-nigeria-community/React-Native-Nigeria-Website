@@ -1,5 +1,6 @@
-export default {
-  // navigation strings
+import { TranslationSchema } from "../types/translations";
+
+const yo: TranslationSchema = {
   navLogoText: "React Native Nigeria",
   navHome: "Ilé",
   navAbout: "Nípa Wa",
@@ -13,22 +14,18 @@ export default {
     line2: "Nigeria",
   },
 
-  // button strings
   joinCommunity: "Darapọ̀ Mọ́ Àwùjọ",
-  joinCommunityLink:
-    "https://reactnativenigeria.slack.com/join/shared_invite/zt-c8od4rkl-xUOp01GMiKOt_7_mFvyOzA#/shared-invite/email",
+  joinCommunityLink: "https://reactnativenigeria.slack.com/join/shared_invite/zt-c8od4rkl-xUOp01GMiKOt_7_mFvyOzA#/shared-invite/email",
   explore: "Ṣàwárí",
   exploreLink: "https://medium.com/react-native-nigeria",
   viewCalendar: "Wo Kálẹ́ńdà",
   registerNext: "Forúkọsílẹ̀ Fún Èyí Tókàn",
   subscribe: "Forúkọsílẹ̀",
 
-  // extra strings
   sendMessage: "Fi Ìfiránṣẹ́ Ránṣẹ́",
   checkBoxText: "Jẹ́ kí n wà ní ìmúdójúìwọ̀n lórí àwọn ìròyìn àti ìṣẹ̀lẹ̀",
   newsletterTitle: "Forúkọsílẹ̀ sí ìwé ìròyìn wa",
-  newsletterDescription:
-    "Wà ní ìmúdójúìwọ̀n pẹ̀lú àwọn ìṣẹ̀lẹ̀, àwọn ohun èlò, àti ohun tuntun nínú React Native.",
+  newsletterDescription: "Wà ní ìmúdójúìwọ̀n pẹ̀lú àwọn ìṣẹ̀lẹ̀, àwọn ohun èlò, àti ohun tuntun nínú React Native.",
   inputEmail: "Ímeèlì",
   placeholderEmail: "Àdírẹ́ẹ̀sì ímeèlì",
   labelName: "Orúkọ Ní Kíkún",
@@ -41,13 +38,6 @@ export default {
   termsConditionsLink: "/terms",
   writeHere: "Kọ síbí...",
 
-  /***************************************
-     ---------------------------------------------------------------------------
-     ALL LANDING PAGE STRINGS
-     ---------------------------------------------------------------------------
-     ****************************************/
-
-  // first section
   firstSection: {
     reactNnc: "Àwùjọ React Native Nigeria",
     reactBrn: "React Native Nigeria",
@@ -57,69 +47,53 @@ export default {
     },
   },
 
-  // second section
   secondSection: {
     whyRnn: "Kí Ni Ìdí React Native Nigeria",
     chosenByDevs1: "Tí àwọn olùdàgbòsókè tó bìkítà nípa ìṣesẹ,",
     chosenByDevs2: "àwùjọ, àti ipa yàn",
     communityTalks: {
       title: "Àwọn ọ̀rọ̀ àwùjọ àti àwọn ìmọ̀ àlàfo",
-      description:
-        "Kọ́ láti àwọn ìrírí gidi, àwọn ìmọ̀ àlàfo, àti àwọn ọ̀nà tó dára jù láti kọ́ pẹ̀lú React Native.",
+      description: "Kọ́ láti àwọn ìrírí gidi, àwọn ìmọ̀ àlàfo, àti àwọn ọ̀nà tó dára jù láti kọ́ pẹ̀lú React Native.",
     },
     communityEvents: {
       title: "Àwọn ìṣẹ̀lẹ̀ àwùjọ àti àwọn ìpàdé",
-      description:
-        "Sopọ̀, kọ́, kí o sì dàgbà nípasẹ̀ àwọn ìṣẹ̀lẹ̀ wa, àwọn ọ̀rọ̀, àti àwọn ìpàdé agbègbè. Yálà lórí alátagbà tàbí àìsí lórí alátagbà.",
+      description: "Sopọ̀, kọ́, kí o sì dàgbà nípasẹ̀ àwọn ìṣẹ̀lẹ̀ wa, àwọn ọ̀rọ̀, àti àwọn ìpàdé agbègbè. Yálà lórí alátagbà tàbí àìsí lórí alátagbà.",
     },
     realWorldProject: {
       title: "Ìfihàn iṣẹ́ àkọsílẹ̀ gidi",
-      description:
-        "Ṣàwárí àwọn ìṣàmúlò gidi tí àwùjọ wa kọ́, pẹ̀lú òye nípa bí wọ́n ṣe ṣe é.",
+      description: "Ṣàwárí àwọn ìṣàmúlò gidi tí àwùjọ wa kọ́, pẹ̀lú òye nípa bí wọ́n ṣe ṣe é.",
     },
     performanceTips: {
       title: "Àwọn ìmọ̀ ìṣesẹ tó jinlẹ̀",
-      description:
-        "Ṣàwárí àwọn ìlànà ilọsíwájú láti jẹ́ kí àwọn ìṣàmúlò React Native rẹ yára kí ó sì rọrùn.",
+      description: "Ṣàwárí àwọn ìlànà ilọsíwájú láti jẹ́ kí àwọn ìṣàmúlò React Native rẹ yára kí ó sì rọrùn.",
     },
     readyToBuildRna: {
       title: "Ṣetán láti kọ́ ìṣàmúlò React Native tókàn rẹ?",
-      description:
-        "Ṣe ìfilọlẹ iṣẹ́ React Native tókàn rẹ pẹ̀lú wa, gba òye, àtìlẹ́yìn, àti àwọn irinṣẹ́ láti àwùjọ olùdàgbòsókè tó ní agbára.",
+      description: "Ṣe ìfilọlẹ iṣẹ́ React Native tókàn rẹ pẹ̀lú wa, gba òye, àtìlẹ́yìn, àti àwọn irinṣẹ́ láti àwùjọ olùdàgbòsókè tó ní agbára.",
     },
   },
 
-  // third section
   thirdSection: {
     featuredTopics: "Àwọn Kókó-ọ̀rọ̀/Òye Pàtàkì",
-    featuredTopicsDescription1:
-      "Ṣàwárí àwọn ẹ̀kọ́ pàtàkì, àwọn irinṣẹ́, àti àwọn ìlànà tí àwùjọ pín.",
-    featuredTopicsDescription2:
-      "Ṣàwárí àwọn ìmọ̀ tí ó fi ọwọ́ sí, àwọn ẹ̀kọ́, àti àwọn irinṣẹ́ láti àwùjọ olùdàgbòsókè React Native.",
+    featuredTopicsDescription1: "Ṣàwárí àwọn ẹ̀kọ́ pàtàkì, àwọn irinṣẹ́, àti àwọn ìlànà tí àwùjọ pín.",
+    featuredTopicsDescription2: "Ṣàwárí àwọn ìmọ̀ tí ó fi ọwọ́ sí, àwọn ẹ̀kọ́, àti àwọn irinṣẹ́ láti àwùjọ olùdàgbòsókè React Native.",
     medium: {
       title: "Medium",
-      description1:
-        "Bíbẹ̀rẹ̀ pẹ̀lú Tailwind: Bí a ṣe lè fi Tailwind CSS sórí ìfilọlẹ pẹ̀lú Create React App",
-      link1:
-        "https://medium.com/react-native-nigeria/getting-started-with-tailwind-how-to-install-tailwind-css-with-create-react-app-e1777f903a3d",
+      description1: "Bíbẹ̀rẹ̀ pẹ̀lú Tailwind: Bí a ṣe lè fi Tailwind CSS sórí ìfilọlẹ pẹ̀lú Create React App",
+      link1: "https://medium.com/react-native-nigeria/getting-started-with-tailwind-how-to-install-tailwind-css-with-create-react-app-e1777f903a3d",
       description2: "Mo mọ̀ pé Ìmọ̀-ẹ̀rọ ni Ọjọ́ Ọ̀la ṣùgbọ́n báwo ni mo ṣe lè bẹ̀rẹ̀",
-      link2:
-        "https://medium.com/react-native-nigeria/i-know-tech-is-the-future-but-how-do-i-get-started-e86cb27ace9b",
+      link2: "https://medium.com/react-native-nigeria/i-know-tech-is-the-future-but-how-do-i-get-started-e86cb27ace9b",
       description3: "React Native: Ohun Tó Yẹ Kí O Mọ̀ Nípa Hermes.",
-      link3:
-        "https://medium.com/react-native-nigeria/react-native-what-you-need-to-know-about-hermes-b3686b446e49",
+      link3: "https://medium.com/react-native-nigeria/react-native-what-you-need-to-know-about-hermes-b3686b446e49",
     },
   },
 
-  // fourth section
   fourthSection: {
     upComingEvents: {
       title: "Àwọn Ìṣẹ̀lẹ̀ Àwùjọ Tẹ́lẹ̀",
       description: {
-        description1:
-          "Wà ní ìmúdójúìwọ̀n lórí àwọn ìjókòó alààyè oṣù wa, àwọn ìdíje kọ̀mpútà, àti àwọn ìpàdé IRL",
-        description2:
-          "Wà ní ìmúdójúìwọ̀n lórí àwọn ìjókòó alààyè oṣù wa, àwọn ìdíje kọ̀mpútà,",
+        description1: "Wà ní ìmúdójúìwọ̀n lórí àwọn ìjókòó alààyè oṣù wa, àwọn ìdíje kọ̀mpútà, àti àwọn ìpàdé IRL",
+        description2: "Wà ní ìmúdójúìwọ̀n lórí àwọn ìjókòó alààyè oṣù wa, àwọn ìdíje kọ̀mpútà,",
         description3: "àti àwọn ìpàdé tààrà",
       },
     },
@@ -151,7 +125,6 @@ export default {
     },
   },
 
-  // fifth section
   fifthSection: {
     reactNnc1: "REACT NATIVE NIGERIA",
     reactNNC2: "Àwùjọ React Native Nigeria",
@@ -161,8 +134,7 @@ export default {
         star: "1",
         fork: "0",
         title: "Ojú-òpó React Native Nigeria",
-        description:
-          "Ojú-òpó orísi ìmọ̀ ṣíṣí òfíṣíàlì fún React Native Nigeria.",
+        description: "Ojú-òpó orísi ìmọ̀ ṣíṣí òfíṣíàlì fún React Native Nigeria.",
         link: "https://github.com/react-native-nigeria-community/React-Native-Nigeria-Website",
       },
       project2: {
@@ -203,74 +175,53 @@ export default {
     },
   },
 
-  // sixth section
   sixthSection: {
     contributeCommunity: {
       title: "Ṣe Ìdásí Sí Àwùjọ",
-      description:
-        "Pín ìmọ̀ rẹ, ṣe ìmísí àwọn ẹlòmíràn, kí o sì ràn wá lọ́wọ́ láti mú àwùjọ React Native dàgbà.",
+      description: "Pín ìmọ̀ rẹ, ṣe ìmísí àwọn ẹlòmíràn, kí o sì ràn wá lọ́wọ́ láti mú àwùjọ React Native dàgbà.",
     },
     communityCard: {
       communityCard1: {
         title: "Kọ Fún Wa",
-        description:
-          "Pín ìmọ̀ rẹ, ṣe ìmísí àwọn ẹlòmíràn, kí o sì jẹ́ kí ohùn rẹ dàgbà nínú àwùjọ React Native.",
+        description: "Pín ìmọ̀ rẹ, ṣe ìmísí àwọn ẹlòmíràn, kí o sì jẹ́ kí ohùn rẹ dàgbà nínú àwùjọ React Native.",
         link: "https://github.com/react-native-nigeria-community/React-Native-Nigeria-Community-Contribution-Guideline",
       },
       communityCard2: {
         title: "Ṣe Àgbàlejò Ọ̀rọ̀",
-        description:
-          "Pín òye, ìrírí, tàbí èrò rẹ pẹ̀lú àwùjọ, lórí ìpele tàbí lórí alátagbà.",
+        description: "Pín òye, ìrírí, tàbí èrò rẹ pẹ̀lú àwùjọ, lórí ìpele tàbí lórí alátagbà.",
         link: "https://github.com/react-native-nigeria-community/React-Native-Nigeria-Community-Contribution-Guideline",
       },
       communityCard3: {
         title: "Pín Àwọn Iṣẹ́",
-        description:
-          "Ṣe o kọ́ nǹkan tó dára? Pín rẹ̀, gba èrò, kí o sì sopọ̀ mọ́ àwọn olùdàgbòsókè ẹlẹgbẹ́.",
+        description: "Ṣe o kọ́ nǹkan tó dára? Pín rẹ̀, gba èrò, kí o sì sopọ̀ mọ́ àwọn olùdàgbòsókè ẹlẹgbẹ́.",
         link: "https://github.com/react-native-nigeria-community/React-Native-Nigeria-Community-Contribution-Guideline",
       },
     },
   },
 
-  /***************************************
-     ---------------------------------------------------------------------------
-     ALL ABOUT-US PAGE STRINGS
-     ---------------------------------------------------------------------------
-     ****************************************/
-
   aboutPage: {
     heroText1: "Tí Agbára Ìfẹ́ Ń Darí, Àwùjọ Ń Wakọ̀.",
-    heroText2:
-      "React Native Nigeria, ni ibi tí àwọn olùṣẹ̀dá alagbeka ti ń sopọ̀, kọ́, kí wọ́n sì dàgbà. Láti àwọn abẹ̀rẹ̀ sí àwọn àlàfo, àwùjọ wa ń pín òye, kọ́ àwọn iṣẹ́ gidi, kí ó sì ṣàwárí ohun tuntun nínú React Native. Papọ̀, a kò kan ń kọ àwọn ìṣàmúlò, a ń ṣe ọjọ́ ọ̀la alagbeka.",
-    missionStatement:
-      "Iṣẹ́ àpèrò wa ni láti so àwọn èèyàn tó ń kọ́ pẹ̀lú React Native pọ̀, láti pín àwọn ìrírí àkọsílẹ̀ gidi, àti láti pèsè àwọn ohun èlò tí ó ràn àwọn ọmọ ẹgbẹ́ lọ́wọ́ láti mú àwọn ọgbọ́n wọn dàgbà. Yálà o jẹ́ olùbẹ̀rẹ̀ tó ń gbé ìgbésẹ̀ àkọ́kọ́ rẹ nínú ìdàgbòsókè alagbeka tàbí olùṣiṣẹ́ àlàfo tó ń ta àwọn ààlà ohun tó ṣeé ṣe, ìwọ yóò rí àtìlẹ́yìn, ìmísí, àti ìfọwọ́sowọ́pọ̀ níbí. Nípasẹ̀ àwọn iṣẹ́ tí a pín, àwọn ìjíròrò, àwọn ẹ̀kọ́, àti àwọn ìṣẹ̀lẹ̀, àfẹ́mọ́jú wa ni láti fún àwọn olùdàgbòsókè ní agbára láti mú àwọn èrò wọn wá sí ayé, yanjú àwọn ìpènijá papọ̀, àti láti ṣe ìdásí sí ètò React Native àgbáyé.",
+    heroText2: "React Native Nigeria, ni ibi tí àwọn olùṣẹ̀dá alagbeka ti ń sopọ̀, kọ́, kí wọ́n sì dàgbà. Láti àwọn abẹ̀rẹ̀ sí àwọn àlàfo, àwùjọ wa ń pín òye, kọ́ àwọn iṣẹ́ gidi, kí ó sì ṣàwárí ohun tuntun nínú React Native. Papọ̀, a kò kan ń kọ àwọn ìṣàmúlò, a ń ṣe ọjọ́ ọ̀la alagbeka.",
+    missionStatement: "Iṣẹ́ àpèrò wa ni láti so àwọn èèyàn tó ń kọ́ pẹ̀lú React Native pọ̀, láti pín àwọn ìrírí àkọsílẹ̀ gidi, àti láti pèsè àwọn ohun èlò tí ó ràn àwọn ọmọ ẹgbẹ́ lọ́wọ́ láti mú àwọn ọgbọ́n wọn dàgbà. Yálà o jẹ́ olùbẹ̀rẹ̀ tó ń gbé ìgbésẹ̀ àkọ́kọ́ rẹ nínú ìdàgbòsókè alagbeka tàbí olùṣiṣẹ́ àlàfo tó ń ta àwọn ààlà ohun tó ṣeé ṣe, ìwọ yóò rí àtìlẹ́yìn, ìmísí, àti ìfọwọ́sowọ́pọ̀ níbí. Nípasẹ̀ àwọn iṣẹ́ tí a pín, àwọn ìjíròrò, àwọn ẹ̀kọ́, àti àwọn ìṣẹ̀lẹ̀, àfẹ́mọ́jú wa ni láti fún àwọn olùdàgbòsókè ní agbára láti mú àwọn èrò wọn wá sí ayé, yanjú àwọn ìpènijá papọ̀, àti láti ṣe ìdásí sí ètò React Native àgbáyé.",
     faq: "FAQ",
     faqTitle: "Àwọn ìdáhùn kíákíá sí àwọn ìbéèrè tó wọ́pọ̀ nípa àwùjọ wa.",
   },
 
-  /***************************************
-     FAQ / ACCORDION STRINGS
-     ****************************************/
-
   faqAccordion: {
     whoCanJoin: {
       title: "Ta ni ó lè darapọ̀ mọ́ àwùjọ náà?",
-      content:
-        "Ẹnikẹ́ni tó ní ìfẹ́ sí React Native. Yálà o jẹ́ olùbẹ̀rẹ̀, akẹ́kọ̀ọ́, tàbí olùdàgbòsókè àlàfo, a kí ọ káàbọ̀ láti darapọ̀ mọ́.",
+      content: "Ẹnikẹ́ni tó ní ìfẹ́ sí React Native. Yálà o jẹ́ olùbẹ̀rẹ̀, akẹ́kọ̀ọ́, tàbí olùdàgbòsókè àlàfo, a kí ọ káàbọ̀ láti darapọ̀ mọ́.",
     },
     isMembershipFree: {
       title: "Ṣé ọmọ ẹgbẹ́ jẹ́ ọ̀fẹ́?",
-      content:
-        "Bẹ́ẹ̀ni, dídarapọ̀ mọ́ àwùjọ náà jẹ́ ọ̀fẹ́ pátápátá. A gbà pé kí a pín ìmọ̀ ṣíṣí àti ìfọwọ́sowọ́pọ̀.",
+      content: "Bẹ́ẹ̀ni, dídarapọ̀ mọ́ àwùjọ náà jẹ́ ọ̀fẹ́ pátápátá. A gbà pé kí a pín ìmọ̀ ṣíṣí àti ìfọwọ́sowọ́pọ̀.",
     },
     needPriorExperience: {
       title: "Ṣé mo nílò ìrírí tẹ́lẹ̀ pẹ̀lú React Native?",
-      content:
-        "Rárá, a kí àwọn olùbẹ̀rẹ̀ káàbọ̀. Àwùjọ náà ń pèsè àwọn ohun èlò àti ìtọ́sọ́nà láti ràn ọ́ lọ́wọ́ láti bẹ̀rẹ̀.",
+      content: "Rárá, a kí àwọn olùbẹ̀rẹ̀ káàbọ̀. Àwùjọ náà ń pèsè àwọn ohun èlò àti ìtọ́sọ́nà láti ràn ọ́ lọ́wọ́ láti bẹ̀rẹ̀.",
     },
     getUpdates: {
-      title:
-        "Báwo ni mo ṣe lè gba àwọn ìmúdójúìwọ̀n lórí àwọn ìṣẹ̀lẹ̀ àti àwọn iṣẹ́?",
+      title: "Báwo ni mo ṣe lè gba àwọn ìmúdójúìwọ̀n lórí àwọn ìṣẹ̀lẹ̀ àti àwọn iṣẹ́?",
       content: "Wà ní ìmúlára nípa àwọn ìṣẹ̀lẹ̀ àti iṣẹ́ tuntun wa nípa ",
       newsletter: {
         text: "fíforúkọsílẹ̀ sí ìwé ìròyìn wa",
@@ -295,22 +246,10 @@ export default {
     },
   },
 
-  /**
-     ---------------------------------------------------------------------------
-     ALL CONTACT PAGE STRINGS
-     ---------------------------------------------------------------------------
-     **/
-
   contactPage: {
     titleText: "Kàn sí wa",
     titleDescription: "Ṣé o ní àwọn ìbéèrè tàbí èrò? A fẹ́ láti gbọ́ lọ́dọ̀ rẹ.",
   },
-
-  /**
-     ---------------------------------------------------------------------------
-     ALL EVENTS PAGE STRINGS
-     ---------------------------------------------------------------------------
-     **/
 
   eventPage: {
     firstSection: {
@@ -322,10 +261,8 @@ export default {
       title: "Ìpàdé React Native Nigeria Abuja",
       date: "Ọjọ́ Àbámẹ́ta ọjọ́ 20 Oṣù Kẹsàn-án 2025",
       time: "11.00 Àárọ̀",
-      location:
-        "The bunker, 3 Atbara Street, off Cairo Street. Ademola Adetokunbo",
-      collaborationText:
-        "Ṣiṣẹ́ papọ̀, kọ́, kí o sì sopọ̀ mọ́ àwọn olùdàgbòsókè React Native ní Nàìjíríà. 🚀 Àwọn ọ̀rọ̀, àwọn ìjókòó àtisẹ̀tọ́wọ́, àti àwọn ìdàpọ̀ ń retí!",
+      location: "The bunker, 3 Atbara Street, off Cairo Street. Ademola Adetokunbo",
+      collaborationText: "Ṣiṣẹ́ papọ̀, kọ́, kí o sì sopọ̀ mọ́ àwọn olùdàgbòsókè React Native ní Nàìjíríà. 🚀 Àwọn ọ̀rọ̀, àwọn ìjókòó àtisẹ̀tọ́wọ́, àti àwọn ìdàpọ̀ ń retí!",
       hostText: "Pàdé alágbàlejò",
       xText: "@ReactNativeNG",
       gitText: "react-native-nigeria",
@@ -377,35 +314,26 @@ export default {
         id: "event5",
       },
     },
-
     fifthSection: {
       pageTitle: "React Native Nigeria Campus Edition",
       title: "Àtẹ̀jáde Ilé-Ẹ̀kọ́ Gíga",
       email: "contact@reactnativenigeria.com",
-      collaboration:
-        "A ṣí sílẹ̀ fún àwọn ìfowọsowọpọ̀ pẹ̀lú àwọn yunifásítì kárí Nàìjíríà. Tí o bá fẹ́ gbalejo ìṣẹ̀lẹ̀ React Native Nigeria Campus Edition ní ilé-ẹ̀kọ́ rẹ, jọ̀wọ́ kàn sí wa ní:",
-      commitment:
-        "Ni React Native Nigeria, a ti pinnu lati kọ iran ti nbọ ti awọn onimọ-ẹrọ alagbeka kaakiri Naijiria.",
-      beyond:
-        "Yàtọ̀ sí gbigbalejo àwọn ìṣẹ̀lẹ̀ àwùjọ, a máa ń ṣiṣẹ́ papọ̀ pẹ̀lú àwọn yunifásítì láti ṣe àfihàn àwọn akẹ́kọ̀ọ́ sí ìgbékalẹ̀ sọ́fítíwéà ti ayé gidi ní ìbẹ̀rẹ̀ ìrìnàjò ẹ̀kọ́ wọn.",
+      collaboration: "A ṣí sílẹ̀ fún àwọn ìfowọsowọpọ̀ pẹ̀lú àwọn yunifásítì kárí Nàìjíríà. Tí o bá fẹ́ gbalejo ìṣẹ̀lẹ̀ React Native Nigeria Campus Edition ní ilé-ẹ̀kọ́ rẹ, jọ̀wọ́ kàn sí wa ní:",
+      commitment: "Ni React Native Nigeria, a ti pinnu lati kọ iran ti nbọ ti awọn onimọ-ẹrọ alagbeka kaakiri Naijiria.",
+      beyond: "Yàtọ̀ sí gbigbalejo àwọn ìṣẹ̀lẹ̀ àwùjọ, a máa ń ṣiṣẹ́ papọ̀ pẹ̀lú àwọn yunifásítì láti ṣe àfihàn àwọn akẹ́kọ̀ọ́ sí ìgbékalẹ̀ sọ́fítíwéà ti ayé gidi ní ìbẹ̀rẹ̀ ìrìnàjò ẹ̀kọ́ wọn.",
       through: "Nípasẹ̀",
       initiative: "ètò wa, a ń ṣiṣẹ́ pọ̀ pẹ̀lú àwọn ilé-ẹ̀kọ́ gíga láti:",
       institutionBenefits: {
-        benefit1:
-          "Pese ọwọ-lori awọn idanileko abinibi React pẹlu ilowo, ọwọ-lori awọn akoko ifaminsi pẹlu awọn apẹẹrẹ gidi-aye",
-        benefit2:
-          "Ṣeto awọn akoko igbimọ ti n ṣafihan awọn onimọ-ẹrọ ti o ni iriri ti o pin awọn oye iṣẹ ati dahun awọn ibeere ọmọ ile-iwe",
-        benefit3:
-          "Ṣe irọrun awọn ọrọ ọrọ pataki lati ọdọ awọn alamọdaju ti n ṣiṣẹ ni awọn ile-iṣẹ imọ-ẹrọ agbaye, pẹlu awọn onimọ-ẹrọ ti o ni iriri ninu awọn ẹgbẹ FAANG (Facebook, Amazon, Apple, Netflix, Google)",
+        benefit1: "Pese ọwọ-lori awọn idanileko abinibi React pẹlu ilowo, ọwọ-lori awọn akoko ifaminsi pẹlu awọn apẹẹrẹ gidi-aye",
+        benefit2: "Ṣeto awọn akoko igbimọ ti n ṣafihan awọn onimọ-ẹrọ ti o ni iriri ti o pin awọn oye iṣẹ ati dahun awọn ibeere ọmọ ile-iwe",
+        benefit3: "Ṣe irọrun awọn ọrọ ọrọ pataki lati ọdọ awọn alamọdaju ti n ṣiṣẹ ni awọn ile-iṣẹ imọ-ẹrọ agbaye, pẹlu awọn onimọ-ẹrọ ti o ni iriri ninu awọn ẹgbẹ FAANG (Facebook, Amazon, Apple, Netflix, Google)",
       },
       goals: {
         title: "Àfojúsùn wa rọrùn:",
         goal1: "Ṣẹda ni kutukutu ifihan",
         goal2: "Dín ìdènà ìwọ̀lé sí ìmọ̀-ẹ̀rọ kù",
-        goal3:
-          "Pese awọn ọmọ ile-iwe pẹlu awọn ọgbọn iṣe ti o mu imurasilẹ imurasilẹ wọn pari",
-        goal4:
-          "Ṣe àgbékalẹ̀ àwùjọ àwọn olùdàgbòsókè fóònù alátagbà tó ní agbára kárí àwọn yunifásítì Nàìjíríà",
+        goal3: "Pese awọn ọmọ ile-iwe pẹlu awọn ọgbọn iṣe ti o mu imurasilẹ imurasilẹ wọn pari",
+        goal4: "Ṣe àgbékalẹ̀ àwùjọ àwọn olùdàgbòsókè fóònù alátagbà tó ní agbára kárí àwọn yunifásítì Nàìjíríà",
       },
       carousel: {
         title: "Àwọn àkókò ìgbéyàwó",
@@ -416,8 +344,7 @@ export default {
 
   eventDetailsPage: {
     pageTitle: "Àwọn Àlàyé Ìṣẹ̀lẹ̀",
-    pageSubtitle:
-      "Ìwòye tó pé nípa àwọn agbọ́rọ̀sọ, àwọn àwòrán, àti òye láti àwọn àpérò àti àwọn ìkàwẹ́ tẹ́lẹ̀ wa.",
+    pageSubtitle: "Ìwòye tó pé nípa àwọn agbọ́rọ̀sọ, àwọn àwòrán, àti òye láti àwọn àpérò àti àwọn ìkàwẹ́ tẹ́lẹ̀ wa.",
     backButton: "← Padà sí gbogbo Àwọn Ìṣẹ̀lẹ̀",
     dateLocationSeparator: " | ",
   },
@@ -438,7 +365,8 @@ export default {
     viewCollection: "Wo gbogbo àkójọ àwọn àwòrán gíga-ìpínlẹ̀",
     accessGallery: "Wọlé sí Ilé-ìṣèwò Àwòrán →",
   },
-   upcomingEvents: {
+
+  upcomingEvents: {
     date: "Ọjọ́",
     time: "Àkókò",
     location: "Ibùdó",
@@ -459,43 +387,28 @@ export default {
     connectionError: "Àṣìṣe kan ṣẹlẹ̀. Jọ̀wọ́ ṣayẹwo ìsopọ̀ rẹ.",
   },
 
-  /***************************************
- ---------------------------------------------------------------------------
- ALL NEWSLETTER PAGE STRINGS
- ---------------------------------------------------------------------------
- ****************************************/
-
   newsletterPage: {
     title: "Iwe Iroyin Iwe Iroyin",
-    description:
-      "Ka awọn iwe iroyin React Native Nigeria ti o kọja ati awọn imudojuiwọn agbegbe.",
-
+    description: "Ka awọn iwe iroyin React Native Nigeria ti o kọja ati awọn imudojuiwọn agbegbe.",
     items: {
       item1: {
         title: "Lati agbegbe React Native Nigeria",
-        description:
-          "Awọn imudojuiwọn agbegbe, awọn iṣẹlẹ, ati awọn ikede fun oṣu naa.",
+        description: "Awọn imudojuiwọn agbegbe, awọn iṣẹ lẹ, ati awọn ikede fun oṣu naa.",
         date: "Oṣu Kẹwa 03 2025",
       },
-
       item2: {
         title: "October Ibojuwẹhin wo nkan lati React Native Nigeria Community",
-        description:
-          "Awọn oye ati awọn ifojusi fun oṣu Oṣu Kẹwa lati ọdọ agbegbe React Native Nigeria.",
+        description: "Awọn oye ati awọn ifojusi fun oṣu Oṣu Kẹwa lati ọdọ agbegbe React Native Nigeria.",
         date: "Oṣu kọkanla 03 2025",
       },
-
       item3: {
         title: "Kọkànlá Oṣù ni React Native Nigeria",
-        description:
-          "Awọn imudojuiwọn, awọn imọran ati ẹtan lati agbegbe React Native Nigeria.",
+        description: "Awọn imudojuiwọn, awọn imọran ati ẹtan lati agbegbe React Native Nigeria.",
         date: "Oṣu kejila ọjọ 01, ọdun 2025",
       },
-
       item4: {
         title: "Atunwo Ọdun 2025: Ipari kan ni !!",
-        description:
-          "Ka lori iṣaro ọdun, awọn imudojuiwọn diẹ sii ati awọn iṣẹlẹ imọ-ẹrọ lati nireti si.",
+        description: "Ka lori iṣaro ọdun, awọn imudojuiwọn diẹ sii ati awọn iṣẹlẹ imọ-ẹrọ lati nireti si.",
         date: "Oṣu kejila ọjọ 22, ọdun 2025",
       },
     },
@@ -505,3 +418,5 @@ export default {
     readNewsletter: "Ka iwe iroyin",
   },
 };
+
+export default yo;
