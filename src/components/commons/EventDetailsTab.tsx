@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from "react";
-import TypographyComponent from "./typography.jsx";
-import ImageModal from "./ImageModal.jsx";
+import TypographyComponent from "./typography";
+import ImageModal from "./ImageModal";
 import en from "../../locales/en";
 
 interface HostSocials {

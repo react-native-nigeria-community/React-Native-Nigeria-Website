@@ -1,7 +1,13 @@
 import React from "react";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
-const NavList = ({ label, link, isActive }) => {
+interface NavListProps {
+    label: string;
+    link: string;
+    isActive: boolean;
+}
+
+const NavList: React.FC<NavListProps> = ({ label, link, isActive }) => {
     return (
         <li>
             <Link

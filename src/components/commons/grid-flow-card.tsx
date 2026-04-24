@@ -1,7 +1,13 @@
 import React from "react";
-import TypographyComponent from "./typography.jsx";
+import TypographyComponent from "./typography";
 
-const GridFlowCard = ({ icon, title, description }) => {
+interface GridFlowCardProps {
+    icon: React.ReactNode;
+    title: string;
+    description: string;
+}
+
+const GridFlowCard: React.FC<GridFlowCardProps> = ({ icon, title, description }) => {
     return (
         <div className="flex gap-5 xl:w-[455px] text-left">
             <div className="w-fit row-span-1 lg:row-span-4">
@@ -10,7 +16,7 @@ const GridFlowCard = ({ icon, title, description }) => {
                 </div>
             </div>
 
-            <div className="flex flex-col  lg:max-w-[32ch] xl:max-w-none">
+            <div className="flex flex-col lg:max-w-[32ch] xl:max-w-none">
                 <div className="col-span-3 md:place-self-center lg:place-self-start lg:pl-0 lg:col-span-3 lg:text-nowrap lg:row-span-1 lg:h-fit">
                     <TypographyComponent
                         as="h4"
