@@ -1,6 +1,4 @@
-import { TranslationSchema } from "../types/translations";
-
-const ha: TranslationSchema = {
+const ha = {
   navLogoText: "React Native Nigeria",
   navHome: "Gida",
   navAbout: "Game da Mu",

@@ -1,6 +1,4 @@
-import { TranslationSchema } from "../types/translations";
-
-const en: TranslationSchema = {
+const en = {
   navLogoText: "React Native Nigeria",
   navHome: "Home",
   navAbout: "About Us",
@@ -43,7 +41,7 @@ const en: TranslationSchema = {
     reactBrn: "React Native Nigeria",
     learnShareConnect: {
       learnShareConnect1: "Learn, Share, and Connect",
-      learnShareConnect2: "The home for React Native developers in Nigeria",
+      learnShareConnect2: "Learn. Share. Connect. Elevate your React Native journey.",
     },
   },
 
