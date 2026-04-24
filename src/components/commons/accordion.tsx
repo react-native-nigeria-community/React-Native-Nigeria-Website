@@ -2,7 +2,14 @@ import React, { useState } from "react";
 import ChevronUpSVG from "../../assets/svg/chevronup.svg";
 import ChevronDownSVG from "../../assets/svg/chevrondown.svg";
 
-const AccordionItems = ({ title, children, isOpen, onClick }) => {
+interface AccordionItemProps {
+    title: string;
+    children: React.ReactNode;
+    isOpen: boolean;
+    onClick: () => void;
+}
+
+const AccordionItems: React.FC<AccordionItemProps> = ({ title, children, isOpen, onClick }) => {
     return (
         <div className="mx-6 lg:mx-[155px]">
             <button
@@ -23,7 +30,6 @@ const AccordionItems = ({ title, children, isOpen, onClick }) => {
                 )
                 }
             </button>
-            {/* Accordion Content */}
             <div
                 className={`overflow-hidden transition-all duration-500 ease-in-out 
                 ${isOpen ? "max-h-96 opacity-100 mt-4" : "max-h-0 opacity-0"}`}
@@ -36,10 +42,25 @@ const AccordionItems = ({ title, children, isOpen, onClick }) => {
     );
 };
 
-const AccordionComponent = ({ items, allowMultiple = false }) => {
-    const [openIndexes, setOpenIndexes] = useState([]);
+interface ItemContent {
+    type: "text" | "links" | "jsx";
+    value: any;
+}
 
-    const toggleAccordion = (index) => {
+interface Item {
+    title: string;
+    content: ItemContent;
+}
+
+interface AccordionComponentProps {
+    items: Item[];
+    allowMultiple?: boolean;
+}
+
+const AccordionComponent: React.FC<AccordionComponentProps> = ({ items, allowMultiple = false }) => {
+    const [openIndexes, setOpenIndexes] = useState<number[]>([]);
+
+    const toggleAccordion = (index: number) => {
         if (allowMultiple) {
             setOpenIndexes((prev) =>
                 prev.includes(index) ? prev.filter((i) => i !== index) : [...prev, index]
@@ -52,34 +73,33 @@ const AccordionComponent = ({ items, allowMultiple = false }) => {
     return (
         <div className="w-full space-y-6 lg:space-y-10">
             {items.map((item, index) => (
-   <AccordionItems
-    key={index}
-    title={item.title}
-    isOpen={openIndexes.includes(index)}
-    onClick={() => toggleAccordion(index)}
-  >
-    {item.content.type === "text" && <p>{item.content.value}</p>}
+                <AccordionItems
+                    key={index}
+                    title={item.title}
+                    isOpen={openIndexes.includes(index)}
+                    onClick={() => toggleAccordion(index)}
+                >
+                    {item.content.type === "text" && <p>{item.content.value}</p>}
 
-    {item.content.type === "links" && (
-      <ul className="list-none pl-5 space-y-1">
-        {item.content.value.map((link, idx) => (
-          <li key={idx}>
-            <a
-              href={link.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-600 hover:underline"
-            >
-              {link.label}
-            </a>
-          </li>
-        ))}
-      </ul>
-    )}
+                    {item.content.type === "links" && (
+                        <ul className="list-none pl-5 space-y-1">
+                            {item.content.value.map((link: any, idx: number) => (
+                                <li key={idx}>
+                                    <a
+                                        href={link.url}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="text-blue-600 hover:underline"
+                                    >
+                                        {link.label}
+                                    </a>
+                                </li>
+                            ))}
+                        </ul>
+                    )}
 
-    {item.content.type === "jsx" && item.content.value && item.content.value()}
-  </AccordionItems>
-
+                    {item.content.type === "jsx" && item.content.value && item.content.value()}
+                </AccordionItems>
             ))}
         </div>
     );
