@@ -1,6 +1,10 @@
 import React from "react";
 
-export function ImageStrip({ images }) {
+interface ImageStripProps {
+    images: string[];
+}
+
+export const ImageStrip: React.FC<ImageStripProps> = ({ images }) => {
     return (
         <>
             {images.flatMap((src, i) => (
@@ -13,8 +17,9 @@ export function ImageStrip({ images }) {
                         alt=""
                         className="object-cover w-full h-full"
                         onError={(e) => {
-                            e.currentTarget.style.display = "none";
-                            e.currentTarget.parentElement?.classList.add("bg-slate-100");
+                            const target = e.currentTarget as HTMLImageElement;
+                            target.style.display = "none";
+                            target.parentElement?.classList.add("bg-slate-100");
                         }}
                     />
                 </div>

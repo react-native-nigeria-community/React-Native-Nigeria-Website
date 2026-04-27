@@ -62,7 +62,7 @@ import { useTranslation } from "../context/useTranslation";
             <p className={"text-[40px] pb-6 leading-none tracking-[-2px] font-medium lg:hidden"}>
               {t.contactPage.titleText}
             </p>
-            
+
             <img
               src={ContactPNG}
               alt={"contact-illustration"}
