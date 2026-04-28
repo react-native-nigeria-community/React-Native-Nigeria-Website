@@ -1,9 +1,9 @@
 import React from "react";
-import InputFieldComponent from "../components/commons/input-field.jsx";
-import ButtonComponent from "../components/commons/button.jsx";
+import InputFieldComponent from "../components/commons/input-field";
+import ButtonComponent from "../components/commons/button";
 import CheckMarkSVG from "../assets/svg/check-mark.svg";
 import ContactPNG from "../assets/img/contact.webp";
-import TypographyComponent from "../components/commons/typography.jsx";
+import TypographyComponent from "../components/commons/typography";
 import toast, { Toaster } from "react-hot-toast";
 import { useTranslation } from "../context/useTranslation.jsx";
 
@@ -66,7 +66,7 @@ function Contact() {
             <p className={"text-[40px] pb-6 leading-none tracking-[-2px] font-medium lg:hidden"}>
               {t.contactPage.titleText}
             </p>
-            
+
             <img
               src={ContactPNG}
               alt={"contact-illustration"}

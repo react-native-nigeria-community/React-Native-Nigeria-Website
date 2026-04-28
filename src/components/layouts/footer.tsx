@@ -1,16 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import LogoPNG from "../../assets/img/nav-logo.webp";
-import TypographyComponent from "../commons/typography.jsx";
-import { getNavLinks } from "../../../utils/nav-links.jsx";
-import NavList from "../commons/nav-list.jsx";
-import { getSocials } from "../../../utils/social-links.jsx";
-import SocialIcon from "../commons/social-icon.jsx";
+import TypographyComponent from "../commons/typography";
+import { getNavLinks } from "../../../utils/nav-links";
+import NavList from "../commons/nav-list";
+import { getSocials } from "../../../utils/social-links";
+import SocialIcon from "../commons/social-icon";
 import { useTranslation } from "../../context/useTranslation";
 
-const FooterComponent = () => {
+const FooterComponent: React.FC = () => {
     const { t } = useTranslation();
     const navLinks = getNavLinks(t);
+    
     return (
         <footer className="bg-bg2 px-9 py-12 lg:px-[125px] lg:py-12 right-0 left-0 bottom-0">
             <div className={"grid justify-items-center-safe lg:flex lg:items-start"}>
@@ -26,12 +27,12 @@ const FooterComponent = () => {
                 </div>
                 <div className={"grid w-full pt-11 lg:pt-0 lg:flex-none lg:flex-row lg:w-auto"}>
                     <ul className="flex justify-center gap-4 flex-wrap text-h6 lg:flex-row lg:items-center lg:gap-4 font-medium">
-                        
                         {navLinks.map((link, index) => (
                             <NavList
                                 key={index}
                                 label={link.label}
                                 link={link.link}
+                                isActive={false} // Adjust if needed
                             />
                         ))}
                     </ul>

@@ -1,7 +1,6 @@
 import React from "react";
 import clsx from "clsx";
 
-// Define default styles for each variant
 const TYPOGRAPHY_VARIANTS = {
     h1: "text-h1 font-bold leading-tight",
     h2: "text-h2 font-semibold leading-snug",
@@ -12,19 +11,27 @@ const TYPOGRAPHY_VARIANTS = {
     p: "text-p leading-relaxed",
 };
 
-const TypographyComponent = ({
-                        as = "p",
-                        variant = "p",
-                        responsiveVariant = {},
-                        className,
-                        children,
-                        ...props
-                    }) => {
-    const Component = as;
+type Variant = keyof typeof TYPOGRAPHY_VARIANTS;
 
-    // Build responsive classes like "lg:text-h4"
+interface TypographyProps {
+    as?: React.ElementType;
+    variant?: Variant;
+    responsiveVariant?: Partial<Record<string, Variant>>;
+    className?: string;
+    children: React.ReactNode;
+    [key: string]: any;
+}
+
+const TypographyComponent: React.FC<TypographyProps> = ({
+    as: Component = "p",
+    variant = "p",
+    responsiveVariant = {},
+    className,
+    children,
+    ...props
+}) => {
     const responsiveClasses = Object.entries(responsiveVariant)
-        .map(([bp, v]) => `${bp}:${TYPOGRAPHY_VARIANTS[v]?.split(" ")[0] || ""}`)
+        .map(([bp, v]) => `${bp}:${TYPOGRAPHY_VARIANTS[v as Variant]?.split(" ")[0] || ""}`)
         .join(" ");
 
     return (
