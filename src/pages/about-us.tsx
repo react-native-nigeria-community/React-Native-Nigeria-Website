@@ -1,11 +1,11 @@
-
+import React from "react";
 import AboutJPG from "../assets/img/about.webp";
-import TypographyComponent from "../components/commons/typography.jsx";
-import AccordionComponent from "../components/commons/accordion.jsx";
-import { getAccordions } from "../../utils/accordion.jsx";
+import TypographyComponent from "../components/commons/typography";
+import AccordionComponent from "../components/commons/accordion";
+import { getAccordions } from "../../utils/accordion";
 import { useTranslation } from "../context/useTranslation";
-
-function AboutUs() {
+    
+    const AboutUs: React.FC = () => {
     const { t } = useTranslation();
     const translatedAccordions = getAccordions(t);
     return (

@@ -1,32 +1,28 @@
-import TypographyComponent from "../components/commons/typography.jsx";
+import React, { useState, useMemo } from "react";
 import { TypeAnimation } from 'react-type-animation';
-import { useState, useMemo } from "react";
-import ButtonComponent from "../components/commons/button.jsx";
-import GridFlowCard from "../components/commons/grid-flow-card.jsx";
-import FeaturedCard from "../components/commons/featured-card.jsx";
-import { useTranslation } from "../context/useTranslation.jsx"; 
-import { getFeatures } from "../../utils/features.jsx";
-import { getLiveEvents } from "../../utils/live-events.jsx";
-import { getWriteUps } from "../../utils/write-for-us.jsx";
-import WriteForUsCard from "../components/sections/write-for-us.jsx";
-import OpenSourceCard from "../components/sections/open-source.jsx";
-import { getOpenSourceProjects } from "../../utils/open-source-projects.jsx";
-import { getTopics } from "../../utils/topics.jsx";
-import LiveTalkCard from "../components/commons/live-talk.jsx";
+import TypographyComponent from "../components/commons/typography";
+import ButtonComponent from "../components/commons/button";
+import GridFlowCard from "../components/commons/grid-flow-card";
+import FeaturedCard from "../components/commons/featured-card";
+import { useTranslation } from "../context/useTranslation";
+import { getFeatures } from "../../utils/features";
+import { getLiveEvents } from "../../utils/live-events";
+import { getWriteUps } from "../../utils/write-for-us";
+import WriteForUsCard from "../components/sections/write-for-us";
+import OpenSourceCard from "../components/sections/open-source";
+import { getOpenSourceProjects } from "../../utils/open-source-projects";
+import { getTopics } from "../../utils/topics";
+import LiveTalkCard from "../components/commons/live-talk";
 
-function HomePage() {
-    const [phase, setPhase] = useState(0);
+    const HomePage: React.FC = () => {
+    const [phase, setPhase] = useState<number>(0);
     const { t } = useTranslation();
-
-    // Memoizing these ensures we don't recalculate unless the translation object 't' changes
     const features = useMemo(() => getFeatures(t), [t]);
     const topics = useMemo(() => getTopics(t), [t]);
     const liveEvents = useMemo(() => getLiveEvents(t), [t]);
     const openSourceProjects = useMemo(() => getOpenSourceProjects(t), [t]);
     const writeUps = useMemo(() => getWriteUps(t), [t]);
-
     const animatedText = t.firstSection.learnShareConnect.learnShareConnect2;
-
     return (
         <>
             {/* First section */}

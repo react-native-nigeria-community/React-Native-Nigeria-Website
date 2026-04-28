@@ -1,48 +1,44 @@
+
 import React from "react";
+import toast, { Toaster } from "react-hot-toast";
 import InputFieldComponent from "../components/commons/input-field";
 import ButtonComponent from "../components/commons/button";
 import CheckMarkSVG from "../assets/svg/check-mark.svg";
 import ContactPNG from "../assets/img/contact.webp";
 import TypographyComponent from "../components/commons/typography";
-import toast, { Toaster } from "react-hot-toast";
-import { useTranslation } from "../context/useTranslation.jsx";
+import { useTranslation } from "../context/useTranslation";
 
-function Contact() {
-  const { t } = useTranslation();
-
-  const onSubmit = async (event) => {
-    event.preventDefault();
-    const form = event.target;
-    const formData = new FormData(form);
-
-    try {
-      toast.loading(t.toastMessages.submitting);
-
-      const response = await fetch("https://api.myqrmenu.co/api/submit-form", {
-        method: "POST",
-        body: formData,
-      });
-
-      const result = await response.json();
-      toast.dismiss();
-
-      if (result.success) {
-        toast.success(t.toastMessages.success, {
-          style: { border: "2px solid #22c55e" },
-          iconTheme: { primary: "#22c55e", secondary: "#fff" },
-        });
-        form.reset();
-      } else {
-        toast.error(t.toastMessages.error, {
-          style: { border: "2px solid #dc2626" },
-          iconTheme: { primary: "#dc2626", secondary: "#fff" },
-        });
-      }
-    } catch {
-      toast.dismiss();
-      toast.error(t.toastMessages.connectionError);
-    }
-  };
+    const Contact: React.FC = () => {
+    const { t } = useTranslation();
+    const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+        event.preventDefault();
+        const form = event.currentTarget;
+        const formData = new FormData(form);
+        try {
+            toast.loading(t.toastMessages.submitting);
+            const response = await fetch("https://api.myqrmenu.co/api/submit-form", {
+                method: "POST",
+                body: formData,
+            });
+            const result = await response.json();
+            toast.dismiss();
+            if (result.success) {
+                toast.success(t.toastMessages.success, {
+                    style: { border: "2px solid #22c55e" },
+                    iconTheme: { primary: "#22c55e", secondary: "#fff" },
+                });
+                form.reset();
+            } else {
+                toast.error(t.toastMessages.error, {
+                    style: { border: "2px solid #dc2626" },
+                    iconTheme: { primary: "#dc2626", secondary: "#fff" },
+                });
+            }
+        } catch {
+            toast.dismiss();
+            toast.error(t.toastMessages.connectionError);
+        }
+    };
 
   return (
     <>
