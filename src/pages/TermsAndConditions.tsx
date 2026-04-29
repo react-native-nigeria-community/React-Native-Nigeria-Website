@@ -1,10 +1,9 @@
 import React from "react";
 
-const TermsAndConditions = () => {
+const TermsAndConditions: React.FC = () => {
   return (
     <div className="min-h-screen bg-white py-16 px-6">
       <div className="max-w-4xl mx-auto font-['Manrope'] text-[#161C2D]/85 leading-relaxed">
-
         {/* Title */}
         <h1 className="font-['Rubik'] text-center text-4xl md:text-5xl font-bold text-[#161C2D] mb-4">
           Terms & Conditions – React Native Nigeria (RNN)
