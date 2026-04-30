@@ -1,15 +1,15 @@
 import React, { useState } from "react";
-import ButtonComponent from "../commons/button.jsx";
-import TypographyComponent from "../commons/typography.jsx";
-import InputFieldComponent from "../commons/input-field.jsx";
-import { useTranslation } from "../../context/useTranslation.jsx";
+import ButtonComponent from "../commons/button";
+import TypographyComponent from "../commons/typography";
+import { useTranslation } from "../../context/useTranslation";
+import InputFieldComponent from "../commons/input-field";
 
-const NewsletterComponent = () => {
+const NewsletterComponent: React.FC = () => {
     const { t } = useTranslation();
-    const [email, setEmail] = useState("");
-    const [error, setError] = useState("");
+    const [email, setEmail] = useState<string>("");
+    const [error, setError] = useState<string>("");
 
-    const handleSubmit = (e) => {
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
         if (!email.includes("@")) {
@@ -27,7 +27,7 @@ const NewsletterComponent = () => {
     };
 
     return (
-        <section className="w-full lg:flex lg:justify-center py-12">
+        <section className="w-full py-12 lg:flex lg:justify-center">
             <div className="text-center px-4 lg:px-[24px] lg:py-[77px]">
                 
                 {/* Heading */}
@@ -56,18 +56,22 @@ const NewsletterComponent = () => {
                         
                         <InputFieldComponent
                             id="email"
+                            label="Email"
                             type="email"
+                            as="input"
+                            cols={1}
+                            rows={1}
                             className={"w-full p-3 lg:w-lg h-10 focus:outline-none border border-black rounded-[10px] lg:border-none"}
                             placeholder={t.placeholderEmail}
                             value={email}
-                            onChange={(e) => setEmail(e.target.value)}
+                            onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
                             error={error}
                         />
 
                         <div className="">
                             <ButtonComponent 
                                 type="submit" 
-                                className="min-w-full w-max py-3" 
+                                className="min-w-full py-3 w-max" 
                                 variant="primary"
                             >
                                 {t.subscribe}

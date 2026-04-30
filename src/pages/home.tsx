@@ -46,7 +46,7 @@ import LiveTalkCard from "../components/commons/live-talk";
                                 <TypeAnimation
                                     // The key is the "secret sauce". By including the text string in the key,
                                     // React will kill the old animation and start a new one the moment the language changes.
-                                    key={`phase0-${animatedText}`} 
+                                    key={`phase0-${animatedText}`}
                                     sequence={[
                                         animatedText,
                                         500,
@@ -83,13 +83,13 @@ import LiveTalkCard from "../components/commons/live-talk";
 
                 <div className={"space-y-[30px] lg:flex lg:items-center lg:justify-center"}>
                     <div className={"grid auto-rows-fr md:grid-cols-2 gap-[40px] lg:gap-[80px] lg:mb-[80px]"}>                        {features.map((feature, index) => (
-                            <GridFlowCard
-                                key={`${feature.title}-${index}`} // Using title in key helps with translation updates
-                                icon={feature.icon}
-                                title={feature.title}
-                                description={feature.description}
-                            />
-                        ))}
+                        <GridFlowCard
+                            key={`${feature.title}-${index}`} // Using title in key helps with translation updates
+                            icon={feature.icon}
+                            title={feature.title}
+                            description={feature.description}
+                        />
+                    ))}
                     </div>
                 </div>
 
@@ -150,7 +150,7 @@ import LiveTalkCard from "../components/commons/live-talk";
                         {t.fourthSection.upComingEvents.title}
                     </TypographyComponent>
                     <TypographyComponent as={"p"} variant={"p"} className={"text-primary text-p/8! tracking-[-0.2px] text-center lg:text-p/8!"}>
-                        {t.fourthSection.upComingEvents.description.description2} <br className={"hidden lg:block"}/> {t.fourthSection.upComingEvents.description.description3}
+                        {t.fourthSection.upComingEvents.description.description2} <br className={"hidden lg:block"} /> {t.fourthSection.upComingEvents.description.description3}
                     </TypographyComponent>
                 </div>
 
