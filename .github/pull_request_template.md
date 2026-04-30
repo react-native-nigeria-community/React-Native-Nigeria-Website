@@ -1,8 +1,8 @@
 ## Description
 <!-- Provide a brief summary of the changes introduced in this pull request. -->
 
-## Jira Ticket URL
-<!-- Include the link to the relevant Jira ticket for this task/feature. -->
+## Issues URL
+<!-- Include the link to the relevant Issue for this task/feature. -->
 
 ## Before and After Demonstrable Content
 
