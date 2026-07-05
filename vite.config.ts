@@ -10,4 +10,13 @@ export default defineConfig({
     tailwindcss(),
     svgr(),
   ],
+  server: {
+    proxy: {
+      '/substack-feed': {
+        target: 'https://reactnativenigeria.substack.com',
+        changeOrigin: true,
+        rewrite: (path) => '/feed',
+      },
+    },
+  },
 })

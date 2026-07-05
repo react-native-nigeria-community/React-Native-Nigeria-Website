@@ -1,7 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useTranslation } from '../context/useTranslation';
 import CheckIcon from "./icons/CheckIcon";
-import LanguageIcon from "./icons/LanguageIcon";
 import ChevronIcon from "./icons/ChevronIcon";
 
 const LanguageSwitcher = () => {

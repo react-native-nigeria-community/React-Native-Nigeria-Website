@@ -72,19 +72,19 @@ const COLORS = {
   orange: "#FF9E0C",
 };
 
+const TAB_CONFIG = [
+  { id: "speakers", name: "Speakers" },
+  { id: "hosts", name: "Hosts" },
+  { id: "panelists", name: "Panelists" },
+  { id: "videos", name: "Videos" },
+  { id: "gallery", name: "Gallery" },
+] as const;
+
 const EventDetailsTab: React.FC<EventDetailsTabProps> = ({
   event,
   getEmbedUrl,
 }) => {
   const T = en.eventDetailsTab;
-
-  const TAB_CONFIG = [
-    { id: "speakers", name: "Speakers" },
-    { id: "hosts", name: "Hosts" },
-    { id: "panelists", name: "Panelists" }, // ⭐ NEW TAB
-    { id: "videos", name: "Videos" },
-    { id: "gallery", name: "Gallery" },
-  ] as const;
 
   const [activeTab, setActiveTab] = useState<ActiveTab>("about");
 
