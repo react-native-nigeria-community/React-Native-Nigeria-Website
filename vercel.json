@@ -1,5 +1,6 @@
 {
   "rewrites": [
+    { "source": "/substack-feed", "destination": "https://reactnativenigeria.substack.com/feed" },
     { "source": "/(.*)", "destination": "/" }
   ]
 }
