@@ -7,7 +7,7 @@ import tseslint from 'typescript-eslint';
 export default tseslint.config(
   // Global ignores
   {
-    ignores: ['dist', 'coverage', '__mocks__', 'eslint.config.ts', 'tailwind.config.ts', 'vite.config.ts', 'utils/**']
+    ignores: ['dist', 'coverage', '__mocks__', 'eslint.config.ts', 'tailwind.config.ts', 'vite.config.ts', 'utils/**', 'src/assets/**/*.jsx']
   },
   
   // Base configuration for TypeScript files
