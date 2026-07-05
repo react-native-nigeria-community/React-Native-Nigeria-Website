@@ -17,7 +17,7 @@ const CountdownTimer: React.FC<CountdownTimerProps> = ({ targetDate }) => {
         return new Date(sanitized).getTime()
     }, [targetDate])
 
-    function calculateTimeLeft(): TimeLeft {
+    const calculateTimeLeft = React.useCallback((): TimeLeft => {
         const difference = cleanDate - new Date().getTime()
 
         if (difference <= 0) return { days: 0, hours: 0, minutes: 0, seconds: 0 }
@@ -28,7 +28,7 @@ const CountdownTimer: React.FC<CountdownTimerProps> = ({ targetDate }) => {
             minutes: Math.floor((difference / 1000 / 60) % 60),
             seconds: Math.floor((difference / 1000) % 60),
         }
-    }
+    }, [cleanDate])
 
     function formatNumber(num: number): string {
         return String(num).padStart(2, '0')
@@ -42,7 +42,7 @@ const CountdownTimer: React.FC<CountdownTimerProps> = ({ targetDate }) => {
         }, 1000)
 
         return () => clearInterval(timer)
-    }, [cleanDate])
+    }, [calculateTimeLeft])
 
     return (
         <div className="w-full flex gap-2 items-center rounded-full mb-4">

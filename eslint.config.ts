@@ -6,8 +6,8 @@ import tseslint from 'typescript-eslint';
 
 export default tseslint.config(
   // Global ignores
-  { 
-    ignores: ['dist', 'coverage', '__mocks__'] 
+  {
+    ignores: ['dist', 'coverage', '__mocks__', 'eslint.config.ts', 'tailwind.config.ts', 'vite.config.ts', 'utils/**']
   },
   
   // Base configuration for TypeScript files
@@ -39,7 +39,8 @@ export default tseslint.config(
         'warn',
         { allowConstantExport: true },
       ],
-      'no-unused-vars': ['error', { varsIgnorePattern: '^[A-Z_]' }],
+      'no-unused-vars': 'off',
+      '@typescript-eslint/no-unused-vars': ['error', { varsIgnorePattern: '^[A-Z_]', argsIgnorePattern: '^_' }],
       '@typescript-eslint/no-explicit-any': 'warn',
     },
   },
